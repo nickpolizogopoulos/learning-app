@@ -1,0 +1,19 @@
+
+
+<div class="box">
+    <h4>1. Data Binding with ngModel</h4>
+
+    <p
+      class="lead">
+      Insert data and see it rendered below.
+    </p>
+    <input
+      class="form-control"
+      type="text"
+      [(ngModel)]="data"
+      placeholder="Insert data" >
+  
+    <h5 class="pt-4">Your data:</h5>
+    <p class="lead">{{ data }}</p>
+</div>
+
