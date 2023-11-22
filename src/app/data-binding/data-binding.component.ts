@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent {
+  
   data = '';
+
 }
