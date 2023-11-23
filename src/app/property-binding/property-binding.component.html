@@ -1,0 +1,24 @@
+
+
+<div class="box">
+    <h4>2. Property Binding</h4>
+
+    <p
+      class="lead">
+      Insert data and add it to the list.
+    </p>
+
+    <input
+      class="form-control"
+      type="text"
+      [(ngModel)]="data"
+    ><br>
+    
+    <button (click)="addData()" class="btn btn-primary me-3">Add data</button>  
+    <button (click)="removeData()" class="btn btn-warning me-3">Remove data</button>  
+    <button (click)="clearArray()" class="btn btn-secondary me-3">Clear list</button>  
+  
+    <h5 class="pt-4">Data list:</h5>
+        <div *ngFor="let item of dataArray">{{ item }}</div>
+</div>
+
