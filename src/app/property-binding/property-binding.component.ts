@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-property-binding',
@@ -6,23 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./property-binding.component.css']
 })
 export class PropertyBindingComponent {
-  
+
+  isDisabled = true;
   dataArray: string[] = [];
   data = '';
-
-  constructor () {}
 
   addData() {
     this.dataArray.push(this.data);
     this.data = '';
+    this.isDisabled = false;
   }
-
-  removeData() {
+  removeData() { 
     this.dataArray.pop()
+    if (this.dataArray.length === 0) this.isDisabled = true;
   }
-
   clearArray() {
-    this.dataArray.length = 0
+    this.dataArray.length = 0;
+    this.isDisabled = true;
   }
 
 
