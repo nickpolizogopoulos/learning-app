@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./property-binding.component.css']
 })
 export class PropertyBindingComponent {
-
+  
   isDisabled = true;
   dataArray: string[] = [];
   data = '';
+
 
   addData() {
     this.dataArray.push(this.data);

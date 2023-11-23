@@ -1,5 +1,4 @@
 
-
 <div class="box">
     <h4>2. Property Binding</h4>
 
@@ -14,7 +13,7 @@
       [(ngModel)]="data"
     ><br>
     
-    <button (click)="addData()" class="btn btn-primary rounded-1 me-3">Add data</button>  
+    <button [disabled]="data === '' ? true : false" (click)="addData()" class="btn btn-primary rounded-1 me-3">Add data</button>  
     <button [disabled]="isDisabled" (click)="removeData()" class="btn btn-warning rounded-1 me-3">Remove data</button>  
     <button [disabled]="isDisabled" (click)="clearArray()" class="btn btn-secondary rounded-1 me-3">Clear list</button>  
   
