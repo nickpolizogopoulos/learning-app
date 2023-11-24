@@ -1,9 +1,8 @@
 
-
     <h4>2. Property Binding</h4>
 
     <p class="lead">
-        Insert groceries to add them in the list.
+      Add your own items to the grocery list.
     </p>
 
     <input
@@ -17,23 +16,27 @@
       <button
         (click)="addData()"
         [disabled]="data === '' ? true : false" 
-        class="btn btn-primary rounded-1 me-2 mb-2">
+        class="btn btn-primary rounded-1 me-2 mb-2"
+        >
         Add item
       </button>  
 
       <button
         (click)="removeData()"
         [disabled]="isDisabled"
-        class="btn btn-warning rounded-1 me-2 mb-2">
+        class="btn btn-warning rounded-1 me-2 mb-2"
+        >
         Remove last
       </button>  
 
       <button
         (click)="clearArray()"
         [disabled]="isDisabled"
-        class="btn btn-secondary rounded-1 me-3 mb-2">
-        Clear list
+        class="btn btn-secondary rounded-1 me-3 mb-2"
+      >
+      Clear list
       </button>  
+
     </div>
 
     <h5 class="pt-4">Grocery list:</h5>
