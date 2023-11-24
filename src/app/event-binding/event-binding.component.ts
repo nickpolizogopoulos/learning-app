@@ -7,14 +7,11 @@ import { Component } from '@angular/core';
 })
 export class EventBindingComponent {
 
-  data = '';
+  data = 'hello';
 
   onInput( event: Event ) {
     this.data = (<HTMLInputElement>event.target).value;
   }
 
 }
-
-
-
 
