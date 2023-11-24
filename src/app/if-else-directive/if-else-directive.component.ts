@@ -10,14 +10,15 @@ export class IfElseDirectiveComponent {
   healthyFood = false;
   realFood = false;
 
+
   onHealthySelect() {
     this.healthyFood = true;
     this.realFood = false;
   }
 
   onRealSelect() {
-    this.healthyFood = !true;
-    this.realFood = !false;
+    this.healthyFood = false;
+    this.realFood = true;
   }
 
 
