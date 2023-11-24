@@ -25,8 +25,8 @@
 </div>
 
 <div class="mt-3 mb-3 d-flex justify-content-start">
-    <button (click)="start()" class="btn btn-outline-success me-2">Play!</button>
-      <button (click)="reset()" class="btn btn-outline-success">Reset</button>
+    <button [disabled]="message === ''" (click)="start()" class="btn btn-outline-success me-2">Play!</button>
+    <button [disabled]="message === '' && userInput === 0" (click)="reset()" class="btn btn-outline-success">Reset</button>
 </div>
 
 
