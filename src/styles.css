@@ -1,7 +1,5 @@
 
-.niceblue {
-    color: rgb(36, 54, 99);
-}
+.niceblue { color: rgb(36, 54, 99); }
 
 .box {
     color: rgb(36, 54, 99);
@@ -10,10 +8,11 @@
     max-width: 450px;
     box-shadow: 4px 4px 10px #cbcbcb;
     border: 1px solid rgb(225, 225, 225);
+    transition: transform 0.3s;
 }
-
-
-
+.box:hover {
+  transform: translate(0px, -3px);
+}
 
 ::-moz-selection { /* Code for Firefox */
     color: inherit;
