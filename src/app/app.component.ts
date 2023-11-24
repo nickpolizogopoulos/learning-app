@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  components = [
+    {name: 'app-data-binding'},
+    {name: 'app-data-binding'},
+    {name: 'app-data-binding'},
+    {name: 'app-data-binding'},
+    {name: 'app-data-binding'},
+    {name: 'app-data-binding'},
+  ]
 }

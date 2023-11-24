@@ -8,6 +8,7 @@ import { PropertyBindingComponent } from './property-binding/property-binding.co
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { IfForDirectivesComponent } from './if-for-directives/if-for-directives.component';
 import { IfElseDirectiveComponent } from './if-else-directive/if-else-directive.component';
+import { NgifComponent } from './ngif/ngif.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IfElseDirectiveComponent } from './if-else-directive/if-else-directive.
     PropertyBindingComponent,
     EventBindingComponent,
     IfForDirectivesComponent,
-    IfElseDirectiveComponent
+    IfElseDirectiveComponent,
+    NgifComponent
   ],
   imports: [
     BrowserModule,

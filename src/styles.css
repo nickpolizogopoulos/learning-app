@@ -3,7 +3,7 @@
 
 .box {
   color: rgb(36, 54, 99);
-  margin: 30px 30px 30px 30px;
+  margin: 30px;
   padding: 40px;
   max-width: 450px;
   box-shadow: 4px 4px 10px #cbcbcb;
@@ -29,6 +29,12 @@
 .nodecor {
   text-decoration: none;
   color: inherit;
+}
+.checkborder {
+  border-color: rgb(176, 176, 176);
+}
+.veryverysmall {
+  font-size: 14px;
 }
 
 
