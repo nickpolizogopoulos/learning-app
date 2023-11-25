@@ -11,6 +11,7 @@ import { IfElseDirectiveComponent } from './if-else-directive/if-else-directive.
 import { NgifComponent } from './ngif/ngif.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     IfElseDirectiveComponent,
     NgifComponent,
     NgStyleComponent,
-    NgClassComponent
+    NgClassComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
