@@ -14,6 +14,8 @@ import { SixNgForComponent } from './the-basics/six-ng-for/six-ng-for.component'
 import { SevenNgStyleComponent } from './the-basics/seven-ng-style/seven-ng-style.component';
 import { EightNgClassComponent } from './the-basics/eight-ng-class/eight-ng-class.component';
 import { NineThankYouComponent } from './the-basics/nine-thank-you/nine-thank-you.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NineThankYouComponent } from './the-basics/nine-thank-you/nine-thank-yo
     SixNgForComponent,
     SevenNgStyleComponent,
     EightNgClassComponent,
-    NineThankYouComponent
+    NineThankYouComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

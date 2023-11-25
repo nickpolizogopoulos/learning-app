@@ -1,3 +1,41 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+.niceblue { color: rgb(36, 54, 99); }
+
+.headtitle {
+  color: rgb(36, 54, 99);
+  padding: 40px 0px 0px 40px;
+}
+
+.nodecor {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.box {
+  color: rgb(36, 54, 99);
+  margin: 30px;
+  padding: 40px;
+  max-width: 450px;
+  box-shadow: 4px 4px 10px #cbcbcb;
+  border: 1px solid rgb(225, 225, 225);
+  transition: transform 0.3s;
+}
+.box:hover {
+  transform: translate(0px, -3px);
+}
+
+
+/* Code for Firefox */
+::-moz-selection { 
+    color: inherit;
+    background: #dcdcdc;
+  }
+    
+  ::selection {
+    color: inherit;
+    background: #dcdcdc;
+  }
+  
