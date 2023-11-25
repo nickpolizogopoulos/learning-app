@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class IfElseDirectiveComponent {
   
+  statement = false;
+
+  onClick() {
+    this.statement = !this.statement;
+  }
+
+  reset() {
+    this.statement = false;
+  }
+
 }
 
