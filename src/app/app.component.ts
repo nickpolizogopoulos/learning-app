@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   lessonSections = [
-    {name: 'The Basics', link: ''},
+    {name: 'Home', link: ''},
+    {name: 'About', link: ''},
+    {name: 'Basics', link: ''},
   ]
 }

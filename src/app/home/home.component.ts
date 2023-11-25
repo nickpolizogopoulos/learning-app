@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  cards = [
+    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+  ]
+
 }
