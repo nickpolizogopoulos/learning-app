@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ngif',
-  templateUrl: './ngif.component.html',
-  styleUrls: ['./ngif.component.css']
+  selector: 'app-four-ng-if',
+  templateUrl: './four-ng-if.component.html',
+  styleUrls: ['./four-ng-if.component.css']
 })
-export class NgifComponent {
+export class FourNgIfComponent {
+  
   healthyFood = false;
   realFood = false;
 
@@ -24,4 +25,5 @@ export class NgifComponent {
     this.healthyFood = false;
     this.realFood = false;
   }
+
 }

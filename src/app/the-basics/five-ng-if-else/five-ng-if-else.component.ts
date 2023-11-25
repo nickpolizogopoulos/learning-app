@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-if-else-directive',
-  templateUrl: './if-else-directive.component.html',
-  styleUrls: ['./if-else-directive.component.css']
+  selector: 'app-five-ng-if-else',
+  templateUrl: './five-ng-if-else.component.html',
+  styleUrls: ['./five-ng-if-else.component.css']
 })
-export class IfElseDirectiveComponent {
+export class FiveNgIfElseComponent {
   
   statement = false;
 
@@ -18,4 +18,3 @@ export class IfElseDirectiveComponent {
   }
 
 }
-

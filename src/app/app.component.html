@@ -1,58 +1,27 @@
+<section>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <h3 class="niceblue">Learning Angular 2+</h3>
+      </a>
 
-<div style="background-color: rgb(223, 240, 255);">
-  <h3 class="p-4 niceblue">
-    This is my Angular playground, I practice everything I learn here.
-    <span class="text-muted">This section is for the Basics.</span>
-    Nice.
-  </h3>
-</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li *ngFor="let section of lessonSections" class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">{{section.name}}</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+</section>
 
 
-<div  class="m-3">
-  <div class="row">
-    
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-data-binding></app-data-binding>
-    </div>
-
-    
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-property-binding></app-property-binding>
-    </div>
-    
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-event-binding></app-event-binding>
-    </div>
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-ngif></app-ngif>
-    </div>
-    
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-if-else-directive></app-if-else-directive>
-    </div>
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-if-for-directives></app-if-for-directives>
-    </div>
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-ng-style></app-ng-style>
-    </div>
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-ng-class></app-ng-class>
-    </div>
-
-    <div class="box col-xxl-3 col-xl-3 col-lg-5 col-md-5">
-      <app-thank-you></app-thank-you>
-    </div>
-
-    
-
-  </div>
-</div>
-
-  
-
+ <app-the-basics></app-the-basics>

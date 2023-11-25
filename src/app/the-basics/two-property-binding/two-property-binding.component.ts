@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-property-binding',
-  templateUrl: './property-binding.component.html',
-  styleUrls: ['./property-binding.component.css']
+  selector: 'app-two-property-binding',
+  templateUrl: './two-property-binding.component.html',
+  styleUrls: ['./two-property-binding.component.css']
 })
-export class PropertyBindingComponent {
-  
+export class TwoPropertyBindingComponent {
+
   isDisabled = true;
   dataArray: string[] = [];
   data = '';
@@ -25,6 +25,5 @@ export class PropertyBindingComponent {
     this.dataArray.length = 0;
     this.isDisabled = true;
   }
-
-
+  
 }

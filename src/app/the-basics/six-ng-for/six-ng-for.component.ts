@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-if-for-directives',
-  templateUrl: './if-for-directives.component.html',
-  styleUrls: ['./if-for-directives.component.css']
+  selector: 'app-six-ng-for',
+  templateUrl: './six-ng-for.component.html',
+  styleUrls: ['./six-ng-for.component.css']
 })
-export class IfForDirectivesComponent {
+export class SixNgForComponent {
 
   // *ngIf
   isVisible = false;

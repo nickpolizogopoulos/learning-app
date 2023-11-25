@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ng-class',
-  templateUrl: './ng-class.component.html',
-  styleUrls: ['./ng-class.component.css']
+  selector: 'app-eight-ng-class',
+  templateUrl: './eight-ng-class.component.html',
+  styleUrls: ['./eight-ng-class.component.css']
 })
-export class NgClassComponent {
-  
+export class EightNgClassComponent {
+
   leftActive = true;
   midActive = false;
   rightActive = false;

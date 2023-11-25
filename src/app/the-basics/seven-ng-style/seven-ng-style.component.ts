@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ng-style',
-  templateUrl: './ng-style.component.html',
-  styleUrls: ['./ng-style.component.css']
+  selector: 'app-seven-ng-style',
+  templateUrl: './seven-ng-style.component.html',
+  styleUrls: ['./seven-ng-style.component.css']
 })
-export class NgStyleComponent {
+export class SevenNgStyleComponent {
 
   showResult = false;
   spinnerOn = false;
