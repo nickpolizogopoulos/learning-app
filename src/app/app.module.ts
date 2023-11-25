@@ -9,6 +9,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { IfForDirectivesComponent } from './if-for-directives/if-for-directives.component';
 import { IfElseDirectiveComponent } from './if-else-directive/if-else-directive.component';
 import { NgifComponent } from './ngif/ngif.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NgifComponent } from './ngif/ngif.component';
     EventBindingComponent,
     IfForDirectivesComponent,
     IfElseDirectiveComponent,
-    NgifComponent
+    NgifComponent,
+    NgStyleComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,

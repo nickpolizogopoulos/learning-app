@@ -1,5 +1,5 @@
 
-<h4>5. The *ngFor Directive.</h4>
+<h4>6. The *ngFor Directive.</h4>
 
 
 <div class="pt-3 pb-2">
@@ -7,9 +7,9 @@
     <button *ngIf="isVisible" (click)="buttonVisibility()" class="btn btn-sm rounded-1 btn-secondary">Hide instructions</button>
 </div>
 
-<div  *ngIf="isVisible" class="lead">
-    <p>Type a message and the number* of times you want it to be displayed.</p>
-    <span class="veryverysmall">*careful with the number.</span>    
+<div  *ngIf="isVisible">
+    <p class="lead">Type a message and the number* of times you want it to be displayed.</p>
+    <small>*careful with the number.</small>
 </div>
 
 <hr class="mb-4">

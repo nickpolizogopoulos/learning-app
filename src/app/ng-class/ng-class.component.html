@@ -1,0 +1,57 @@
+
+<h4>8. The [ngClass] Directive.</h4>
+
+<p
+  class="lead">
+  Choose the way the text should appear.
+</p>
+
+
+<div class="mt-4 d-flex justify-content-center">
+    <p class="d-inline-flex gap-1">
+        <button
+            (click)="onLeftSelect()"
+            [ngClass]="{active: leftActive}"
+            class="btn rounded-1 me-3" data-bs-toggle="button" type="button" style="padding: 5px 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-align-start" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5"/>
+                <path d="M3 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+            </svg>
+        </button>
+
+        <button
+            (click)="onMidSelect()"
+            [ngClass]="{active: midActive}"
+            class="btn rounded-1 me-3" data-bs-toggle="button" type="button" style="padding: 0px 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-align-center" viewBox="0 0 16 16">
+                <path d="M8 1a.5.5 0 0 1 .5.5V6h-1V1.5A.5.5 0 0 1 8 1m0 14a.5.5 0 0 1-.5-.5V10h1v4.5a.5.5 0 0 1-.5.5M2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+            </svg>
+        </button>
+
+        <button 
+            (click)="onRightSelect()"
+            [ngClass]="{active: rightActive}"
+            class="btn rounded-1 me-3" data-bs-toggle="button" type="button" style="padding: 0px 20px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-align-end" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5"/>
+                <path d="M13 7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1z"/>
+            </svg>
+        </button>
+    </p>
+</div>
+
+
+
+
+<div class="mt-3">
+    <h5>Text box:</h5>
+    
+    <p
+    [ngClass]="{
+        'text-start': leftActive,
+        'text-center': midActive,
+        'text-end': rightActive,
+    }"
+    class="align-middle ngClassBox mt-3"
+    >hi mom!</p>
+</div>
