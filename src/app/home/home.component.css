@@ -3,10 +3,11 @@
 .homecard {
   filter: grayscale(100%);
   -webkit-filter: grayscale(70%);
-  background-color: transparent;
   box-shadow: 0 4px 7px 0 rgba(0,0,0, 0.1);
   transition: 0.3s;
   height: 100%;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.736);
 }
 
 .homecard:hover {

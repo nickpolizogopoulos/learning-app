@@ -1,19 +1,10 @@
 
+body {
+  background-image: url('../src/assets/images/background-image.png');
+  background-attachment:fixed;
+}
+
 .niceblue { color: rgb(36, 54, 99); }
-
-
-/* *---------------NAVBAR  */
-.navbar-custom-colour {
-  background-color: rgb(231, 231, 231);
-  padding-top: 15px;
-  padding-bottom: 13px;
-}
-
-.section-link:hover{
-  background-color: rgb(231, 231, 231);
-}
-/* *-----------NAVBAR END  */
-
 
 .headtitle {
   padding: 40px 40px 0px 40px;

@@ -9,14 +9,12 @@ export class HomeComponent {
 
   cards = [
     {id: '1', name: 'The Basics', link: '',
-    description: `Coponents, Databinding, Property Binding, 
+    description: `Databinding, Property Binding, 
     Event Binding, Passing & Using Data, Directives, ngIf, 
     ngFor, ngStyle, ngClass.` },
 
     {id: '2', name: 'Components & Databinding', link: '',
-    description: `Coponents, Databinding, Property Binding, 
-    Event Binding, Passing & Using Data, Directives, ngIf, 
-    ngFor, ngStyle, ngClass.` },
+    description: `Here goes the second section description` },
 
     
 
