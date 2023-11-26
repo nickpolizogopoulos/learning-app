@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./one-data-binding.component.css']
 })
 export class OneDataBindingComponent {
-  data = '';
+  data = 'hello!';
 }

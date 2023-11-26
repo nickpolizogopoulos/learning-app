@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ThreeEventBindingComponent {
   
-  data = 'hello';
+  data = 'hello!';
 
   onInput( event: Event ) {
     this.data = (<HTMLInputElement>event.target).value;
