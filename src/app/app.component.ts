@@ -7,10 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  lessonSections = [
+  navLinks = [
     {name: 'Home', link: ''},
     {name: 'About', link: ''},
-    {name: 'Basics', link: ''},
+    {name: 'GitHub', link: ''},
+  ]
+
+  AngularSections = [
+    {name: 'The Basics', link: ''},
     {name: 'Components & Databinding', link: ''},
   ]
+
+
 }

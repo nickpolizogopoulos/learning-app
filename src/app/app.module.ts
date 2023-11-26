@@ -18,6 +18,7 @@ import { NineThankYouComponent } from './the-basics/nine-thank-you/nine-thank-yo
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
+import { ComponentsDatabindingComponent } from './components-databinding/components-databinding.component';
 
 
 
@@ -36,7 +37,8 @@ import { ErrorComponent } from './error/error.component';
     NineThankYouComponent,
     AboutComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ComponentsDatabindingComponent
   ],
   imports: [
     BrowserModule,
