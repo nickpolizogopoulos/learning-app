@@ -9,14 +9,14 @@ export class NavbarComponent {
     
   // NAVBAR LINKS 
   navLinks = [
-    {name: 'Home', link: ''},
-    {name: 'About', link: ''},
+    {name: 'Home', link: '/'},
+    {name: 'About', link: '/about'},
   ]
   
   // NAVBAR DROPDOWN LINK
   AngularSections = [
-    {id: 1, name: 'The Basics', link: ''},
-    {id: 2, name: 'Components & Databinding', link: ''},
+    {id: 1, name: 'The Basics', link: '/the-basics'},
+    {id: 2, name: 'Components & Databinding', link: '/components-databinding'},
   ]
   
 }

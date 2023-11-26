@@ -20,7 +20,18 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { ComponentsDatabindingComponent } from './components-databinding/components-databinding.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'the-basics', component: TheBasicsComponent },
+  { path: 'components-databinding', component: ComponentsDatabindingComponent },
+
+  
+  { path: '**', component: ErrorComponent },
+];
 
 
 @NgModule({
@@ -44,7 +55,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

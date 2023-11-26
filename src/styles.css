@@ -4,6 +4,20 @@ body {
   background-attachment:fixed;
 }
 
+.lessonbox {
+  color: rgb(36, 54, 99);
+  margin: 30px;
+  padding: 40px;
+  max-width: 450px;
+  box-shadow: 4px 4px 10px #cbcbcb;
+  border: 1px solid rgb(225, 225, 225);
+  transition: transform 0.3s;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+.lessonbox:hover {
+  transform: translate(0px, -3px);
+}
+
 .niceblue { color: rgb(36, 54, 99); }
 
 .headtitle {
