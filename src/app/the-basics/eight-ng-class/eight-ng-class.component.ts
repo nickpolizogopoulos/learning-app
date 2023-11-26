@@ -16,13 +16,11 @@ export class EightNgClassComponent {
     this.midActive = false;
     this.rightActive = false;
   }
-
   onMidSelect(){
     this.leftActive = false;
     this.midActive = true;
     this.rightActive = false;
   }
-
   onRightSelect(){
     this.leftActive = false;
     this.midActive = false;

@@ -1,0 +1,22 @@
+
+
+.homecard {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(70%);
+  background-color: transparent;
+  box-shadow: 0 4px 7px 0 rgba(0,0,0, 0.1);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.homecard:hover {
+  transform: translate(0px, -7px);
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
+
+.cardimage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}

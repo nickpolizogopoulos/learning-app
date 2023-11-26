@@ -8,11 +8,18 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   cards = [
-    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
-    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
-    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
-    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
-    {name: 'The Basics', link: '', description: 'dsadasjdbhsadhsadsadasdsadsadsadhsadhsadsadasdasdasdasbdsads' },
+    {id: '1', name: 'The Basics', link: '',
+    description: `Coponents, Databinding, Property Binding, 
+    Event Binding, Passing & Using Data, Directives, ngIf, 
+    ngFor, ngStyle, ngClass.` },
+
+    {id: '2', name: 'Components & Databinding', link: '',
+    description: `Coponents, Databinding, Property Binding, 
+    Event Binding, Passing & Using Data, Directives, ngIf, 
+    ngFor, ngStyle, ngClass.` },
+
+    
+
   ]
 
 }

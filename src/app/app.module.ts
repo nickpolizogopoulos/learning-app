@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+
 import { TheBasicsComponent } from './the-basics/the-basics.component';
 import { OneDataBindingComponent } from './the-basics/one-data-binding/one-data-binding.component';
 import { TwoPropertyBindingComponent } from './the-basics/two-property-binding/two-property-binding.component';
@@ -16,6 +17,9 @@ import { EightNgClassComponent } from './the-basics/eight-ng-class/eight-ng-clas
 import { NineThankYouComponent } from './the-basics/nine-thank-you/nine-thank-you.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     EightNgClassComponent,
     NineThankYouComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

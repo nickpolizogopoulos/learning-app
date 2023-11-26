@@ -11,5 +11,6 @@ export class AppComponent {
     {name: 'Home', link: ''},
     {name: 'About', link: ''},
     {name: 'Basics', link: ''},
+    {name: 'Components & Databinding', link: ''},
   ]
 }

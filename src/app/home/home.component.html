@@ -1,8 +1,25 @@
 
 
-<div class="headtitle">
+<div class="headtitle niceblue">
     <h2>Welcome to my Angular Playground!</h2>    
     <p class="lead">Here you can find my solutions on exercise ideas I came up with during my Angular course!</p>
 </div>
 
 
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <div *ngFor="let card of cards" class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6 mb-3">
+            <div class="homecard">
+                <a href="{{ card.link }}"><img class="cardimage" src="../../assets/images/angular-card-banner.jpg" alt="Angular banner"></a>
+
+                <div class="p-3 niceblue">
+                    <a class="cardlink nodecor" href="{{ card.link }}"><h4>{{ card.id }}. {{ card.name }}</h4></a>
+                    <p>{{card.description}}</p>
+                </div>
+                
+            </div>   
+        </div>
+
+    </div>
+</div>
