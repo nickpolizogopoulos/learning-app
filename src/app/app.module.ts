@@ -19,6 +19,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { ComponentsDatabindingComponent } from './components-databinding/components-databinding.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -38,7 +39,8 @@ import { ComponentsDatabindingComponent } from './components-databinding/compone
     AboutComponent,
     HomeComponent,
     ErrorComponent,
-    ComponentsDatabindingComponent
+    ComponentsDatabindingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
