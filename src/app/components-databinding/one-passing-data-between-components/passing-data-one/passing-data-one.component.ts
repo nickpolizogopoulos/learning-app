@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
 
-
-
 @Component({
   selector: 'app-passing-data-one',
   templateUrl: './passing-data-one.component.html',
@@ -11,7 +9,8 @@ import { Component } from '@angular/core';
 export class PassingDataOneComponent {
   
   name:string = '';
-  quantity:number = 0;
+  quantity!:number;
+  price!:number;
   
 
   onAdd() {

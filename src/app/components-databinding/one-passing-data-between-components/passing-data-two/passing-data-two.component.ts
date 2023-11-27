@@ -3,6 +3,7 @@ import { Component, Input, Output } from '@angular/core';
 export interface ShoppingListProps {
   name: string;
   quantity: number;
+  price: number;
 }
 
 @Component({

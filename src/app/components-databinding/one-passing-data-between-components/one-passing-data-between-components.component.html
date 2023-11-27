@@ -7,6 +7,8 @@
         <app-passing-data-one class="lessonbox"></app-passing-data-one>
         <!-- <app-passing-data-two class="lessonbox"></app-passing-data-two> -->
 
+
+        <!-- SECOND CHILD -->
         <section class="lessonbox">
             <h4>1. Passing Data Between Components</h4>
             <p class="lead"> <u>Component #2</u> </p>
@@ -15,19 +17,31 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Item</th>
                     <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 
                 <tbody>
 
                     <tr *ngFor="let item of shoppingList">
-                        <th scope="row">1</th>
                         <td>{{item.name}}</td>
                         <td>{{item.quantity}}</td>
-                      </tr>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button
+                                style="
+                                    color: red;
+                                    background-color: white;
+                                    border: 1px solid red;
+                                    padding: 2px 10px;
+                                    border-radius: 4px;
+                                    ">delete
+                            </button>
+                        </td>
+                      </tr> 
                     
                 </tbody>
             </table>

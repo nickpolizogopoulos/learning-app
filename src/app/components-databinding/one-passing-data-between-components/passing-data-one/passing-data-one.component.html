@@ -13,7 +13,7 @@
 <input
   class="form-control rounded-0 shadow-none mb-2"
   type="text"
-  placeholder="Grocery name"
+  placeholder="Item name..."
   [(ngModel)]="name"
 >    
 <input
@@ -21,6 +21,13 @@
   type="number"
   placeholder="Quantity..."
   [(ngModel)]="quantity"
+>   
+
+<input
+  class="form-control rounded-0 shadow-none mb-3"
+  type="number"
+  placeholder="Price..."
+  [(ngModel)]="price"
 >    
 
 <button (click)="onAdd()" class="btn btn-primary rounded-2 me-3">Add to list</button>

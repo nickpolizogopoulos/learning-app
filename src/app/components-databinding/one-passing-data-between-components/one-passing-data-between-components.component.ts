@@ -11,8 +11,8 @@ import { Component, Input, Output, ViewChild } from '@angular/core';
 })
 export class OnePassingDataBetweenComponentsComponent {
 
-  @Input() shoppingList = [
-    { name: 'Test item', quantity: 5 }
+  shoppingList = [
+    { name: 'Test item', quantity: 5, price: 10 },
   ];
 
 }
