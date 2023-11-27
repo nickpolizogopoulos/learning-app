@@ -1,0 +1,28 @@
+
+
+
+<h4>1. Passing Data Between Components</h4>
+
+<p class="lead"> <u>Component #1</u> </p>
+
+<p
+  class="lead">
+  Insert data and see it rendered in the component #2.
+</p>
+
+<input
+  class="form-control rounded-0 shadow-none mb-2"
+  type="text"
+  placeholder="Grocery name"
+  [(ngModel)]="name"
+>    
+<input
+  class="form-control rounded-0 shadow-none mb-3"
+  type="number"
+  placeholder="Quantity..."
+  [(ngModel)]="quantity"
+>    
+
+<button (click)="onAdd()" class="btn btn-primary rounded-2 me-3">Add to list</button>
+<button (click)="onClear()" class="btn btn-warning rounded-2 me-3">Clear List</button>
+

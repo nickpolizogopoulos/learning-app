@@ -21,6 +21,9 @@ import { ErrorComponent } from './error/error.component';
 import { ComponentsDatabindingComponent } from './components-databinding/components-databinding.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { OnePassingDataBetweenComponentsComponent } from './components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
+import { PassingDataOneComponent } from './components-databinding/one-passing-data-between-components/passing-data-one/passing-data-one.component';
+import { PassingDataTwoComponent } from './components-databinding/one-passing-data-between-components/passing-data-two/passing-data-two.component';
 
 
 const appRoutes: Routes = [
@@ -51,7 +54,10 @@ const appRoutes: Routes = [
     HomeComponent,
     ErrorComponent,
     ComponentsDatabindingComponent,
-    NavbarComponent
+    NavbarComponent,
+    OnePassingDataBetweenComponentsComponent,
+    PassingDataOneComponent,
+    PassingDataTwoComponent
   ],
   imports: [
     BrowserModule,
