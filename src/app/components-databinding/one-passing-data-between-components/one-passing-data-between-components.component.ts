@@ -1,8 +1,9 @@
-import { Component, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
-
-// *************************PARENT COMPONENT
-
+export interface ItemProps {
+  name: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-one-passing-data-between-components',
@@ -11,8 +12,13 @@ import { Component, Input, Output, ViewChild } from '@angular/core';
 })
 export class OnePassingDataBetweenComponentsComponent {
 
-  shoppingList = [
-    { name: 'Test item', quantity: 5, price: 10 },
-  ];
+  wishList:ItemProps[] = [];
+
+  onItemAdded( itemData:ItemProps ) {
+    this.wishList.push({
+      name: itemData.name,
+      description: itemData.description
+    })
+  }
 
 }

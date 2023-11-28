@@ -22,8 +22,8 @@ import { ComponentsDatabindingComponent } from './components-databinding/compone
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { OnePassingDataBetweenComponentsComponent } from './components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
-import { PassingDataOneComponent } from './components-databinding/one-passing-data-between-components/passing-data-one/passing-data-one.component';
-import { PassingDataTwoComponent } from './components-databinding/one-passing-data-between-components/passing-data-two/passing-data-two.component';
+import { FormComponent } from './components-databinding/one-passing-data-between-components/form/form.component';
+import { ListComponent } from './components-databinding/one-passing-data-between-components/list/list.component';
 
 
 const appRoutes: Routes = [
@@ -56,8 +56,8 @@ const appRoutes: Routes = [
     ComponentsDatabindingComponent,
     NavbarComponent,
     OnePassingDataBetweenComponentsComponent,
-    PassingDataOneComponent,
-    PassingDataTwoComponent
+    FormComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

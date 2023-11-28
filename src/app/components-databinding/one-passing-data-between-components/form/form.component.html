@@ -1,0 +1,38 @@
+
+
+<h4>1. Passing Data Between Components</h4>
+
+<p class="lead"> <u>Component #1</u> </p>
+
+<p
+  class="lead">
+  Make your own wish list!
+</p>
+
+<div class="mb-3">
+  <input
+  class="form-control rounded-0 shadow-none"
+  type="text"
+  placeholder="Item name..."
+  [(ngModel)]="newItemName"
+  >    
+  <!-- <small *ngIf="nameMissing" class="text-danger">Please fill this field.</small> -->
+</div>
+
+<div class="mb-3">
+<input
+  class="form-control rounded-0 shadow-none"
+  type="text"
+  placeholder="Description..."
+  [(ngModel)]="newItemDescription"
+>
+<!-- <small *ngIf="descMissing" class="text-danger">Please fill this field.</small> -->
+</div>
+
+<div *ngIf="infoMissing" class="alert alert-danger fade show" role="alert">
+  Please fill both fields.
+</div>
+
+<button (click)="onAdd()" class="btn btn-primary rounded-2 me-3">Add Item</button>
+<!-- <button (click)="onClear()" class="btn btn-warning rounded-2 me-3">Clear List</button> -->
+

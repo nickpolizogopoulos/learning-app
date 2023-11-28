@@ -4,6 +4,14 @@ body {
   background-attachment:fixed;
 }
 
+.wishBox {
+  padding: 3px 0px 3px 15px;
+  margin-bottom: 14px;
+  border: 2px solid rgb(100, 100, 100);
+  border-radius: 3px;
+  box-shadow: 4px 4px 7px #d8d8d8;
+}
+
 .lessonbox {
   color: rgb(36, 54, 99);
   margin: 30px;

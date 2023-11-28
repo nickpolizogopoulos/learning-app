@@ -2,54 +2,28 @@
 
 
 <div class="container-fluid">
-    <div class="row m-3 mt-5">
+    <div class="row">
         
-        <app-passing-data-one class="lessonbox"></app-passing-data-one>
-        <!-- <app-passing-data-two class="lessonbox"></app-passing-data-two> -->
-
+        <!-- FIRST CHILD -->
+        <app-form
+            (itemAdded)="onItemAdded($event)"
+            class="lessonbox"
+        ></app-form>
 
         <!-- SECOND CHILD -->
         <section class="lessonbox">
             <h4>1. Passing Data Between Components</h4>
             <p class="lead"> <u>Component #2</u> </p>
-            <p class="lead"> Fill the list using the component #1. </p>
+            <p class="lead"> Favorite items: </p>
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                
-                <tbody>
+            <app-list
+                *ngFor="let item of wishList"
+                [element]="item"
+            ></app-list>
 
-                    <tr *ngFor="let item of shoppingList">
-                        <td>{{item.name}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td>{{item.price}}</td>
-                        <td>
-                            <button
-                                style="
-                                    color: red;
-                                    background-color: white;
-                                    border: 1px solid red;
-                                    padding: 2px 10px;
-                                    border-radius: 4px;
-                                    ">delete
-                            </button>
-                        </td>
-                      </tr> 
-                    
-                </tbody>
-            </table>
         </section>
 
-    </div>
-</div>
-
+           
 
 
 
