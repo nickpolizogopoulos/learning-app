@@ -15,8 +15,8 @@ export class NavbarComponent {
   
   // NAVBAR DROPDOWN LINK
   AngularSections = [
-    {id: 1, name: 'The Basics', link: '/the-basics'},
-    {id: 2, name: 'Components & Databinding', link: '/components-databinding'},
+    { name: 'The Basics', link: '/the-basics' },
+    { name: 'Components & Databinding', link: '/components-databinding' },
   ]
   
 }

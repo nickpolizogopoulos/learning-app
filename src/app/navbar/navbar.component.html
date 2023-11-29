@@ -21,7 +21,11 @@
                         Angular Sections
                     </a>
                     <ul class="dropdown-menu">
-                        <li *ngFor="let section of AngularSections"><a class="dropdown-item section-link" routerLink="{{section.link}}">{{section.id}}. {{section.name}}</a></li>
+                        <li *ngFor="let section of AngularSections let i = index">
+                            <a class="dropdown-item section-link"
+                            routerLink="{{section.link}}">{{ i + 1 }}. {{section.name}}
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
