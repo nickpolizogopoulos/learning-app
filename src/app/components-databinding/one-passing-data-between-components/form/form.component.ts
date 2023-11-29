@@ -12,10 +12,9 @@ export class FormComponent {
 
   newItemName:string = '';
   newItemDescription:string = '';
-
- infoMissing = false;
+  infoMissing:boolean = false;
   
-  onAdd() {
+  onAdd():void {
     if (this.newItemName === '' ||
       this.newItemDescription === '') {
       this.infoMissing = true;
