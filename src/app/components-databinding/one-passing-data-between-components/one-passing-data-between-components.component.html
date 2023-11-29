@@ -2,16 +2,16 @@
 
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row d-flex justify-content-start">
         
         <!-- FIRST CHILD -->
         <app-form
             (itemAdded)="onItemAdded($event)"
-            class="lessonbox"
+            class="lessonbox me-5 col-md-6 col-lg-5 col-xxl-3"
         ></app-form>
 
         <!-- SECOND CHILD -->
-        <section class="lessonbox">
+        <section class="lessonbox me-1 col-md-6 col-lg-5 col-xxl-3">
             <h4>1. Passing Data Between Components</h4>
             <p class="lead"> <u>Child Component #2</u> </p>
             <p class="lead"> Favorite items: </p>

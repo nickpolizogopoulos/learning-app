@@ -14,9 +14,9 @@ body {
 
 .lessonbox {
   color: rgb(36, 54, 99);
-  margin: 30px;
   padding: 40px;
-  width: 30%;
+  margin-bottom: 60px;
+  width: 550px;
   box-shadow: 4px 4px 10px #cbcbcb;
   border: 1px solid rgb(225, 225, 225);
   transition: transform 0.3s;
