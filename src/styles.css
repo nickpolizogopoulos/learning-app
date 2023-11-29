@@ -4,6 +4,17 @@ body {
   background-attachment:fixed;
 }
 
+.headingbg {
+  background-color: white;
+  padding: 2px 0px;
+}
+
+.paragraphbg {
+  background-color: white;
+  padding: 5px 0px;
+}
+
+
 .wishBox {
   padding: 3px 0px 3px 15px;
   margin-bottom: 14px;
@@ -34,8 +45,10 @@ body {
 
 .nodecor {
   text-decoration: none;
-  color: inherit;
   cursor: pointer;
+}
+.inherit {
+  color: inherit;
 }
 .box {
   color: rgb(36, 54, 99);

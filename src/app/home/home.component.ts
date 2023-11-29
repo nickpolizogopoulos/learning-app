@@ -13,11 +13,13 @@ export class HomeComponent {
     img: '../../assets/images/angular-banner-image.jpg',
     description: `Databinding, Property Binding, 
     Event Binding, Passing & Using Data, Directives, ngIf, 
-    ngFor, ngStyle, ngClass.` },
+    ngFor, ngStyle & ngClass!` },
 
     {id: '2', name: 'Components & Databinding', link: '/components-databinding',
     img: '../../assets/images/angular-banner-image.jpg',
-    description: `Here goes the second section description` },
+    description: `Here goes the second section description.` },
+
+    
 
   ]
 

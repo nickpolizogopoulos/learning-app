@@ -1,24 +1,41 @@
 
 
-<div class="headtitle niceblue">
-    <h2>Welcome to my Angular Playground!</h2>    
-    <p class="lead">Here you can find my solutions on exercise ideas I came up with during my Angular course!</p>
-</div>
+<section class="headtitle niceblue">
+    <h2 class="headingbg">Welcome to my Angular Playground!</h2>    
+    <p class="lead paragraphbg">Here you can find my solutions on exercise ideas I came 
+        up with during my Angular course!</p>
+</section>
 
-<div class="container mt-5 mb-5">
+<section class="container mt-5 mb-5">
     <div class="row">
 
-        <div *ngFor="let card of cards" class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6 mb-3">
-            <div class="homecard">
-                <a routerLink="{{ card.link }}"><img class="cardimage" src="{{card.img}}" alt="Angular banner"></a>
+        <div *ngFor="let card of cards" 
+        class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
+            <div style="border-radius: 0px 30px 0px 0px;" class="homecard">
 
-                <div class="p-3 niceblue">
-                    <a class="cardlink nodecor" routerLink="{{ card.link }}"><h4>{{ card.id }}. {{ card.name }}</h4></a>
-                    <p class="ms-2">{{card.description}}</p>
+                <a routerLink="{{ card.link }}"
+                    class="stretched-link">
+                    <img class="cardimage" src="{{card.img}}" alt="Angular banner">
+                </a>
+
+                <div class="p-3 pb-0 niceblue">
+                    <div class="row">
+                        <div class="col-1">
+                            <h4>{{ card.id }}.</h4>
+                        </div>
+                        <div class="col justify-content-start">
+                            <div>
+                                <h4>{{ card.name }}</h4>
+                            </div>
+                            <div>
+                                <p>{{card.description}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
             </div>   
         </div>
 
     </div>
-</div>
+</section>
