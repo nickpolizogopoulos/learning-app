@@ -10,7 +10,7 @@
 
         <div *ngFor="let card of cards" class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6 mb-3">
             <div class="homecard">
-                <a routerLink="{{ card.link }}"><img class="cardimage" src="../../assets/images/angular-card-banner.jpg" alt="Angular banner"></a>
+                <a routerLink="{{ card.link }}"><img class="cardimage" src="{{card.img}}" alt="Angular banner"></a>
 
                 <div class="p-3 niceblue">
                     <a class="cardlink nodecor" routerLink="{{ card.link }}"><h4>{{ card.id }}. {{ card.name }}</h4></a>
