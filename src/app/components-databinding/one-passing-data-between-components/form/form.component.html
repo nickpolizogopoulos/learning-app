@@ -16,7 +16,7 @@
   placeholder="Item name..."
   [(ngModel)]="newItemName"
   >    
-  <!-- <small *ngIf="nameMissing" class="text-danger">Please fill this field.</small> -->
+  <small *ngIf="nameMissing" class="text-danger">Please fill this field.</small>
 </div>
 
 <div class="mb-3">
@@ -26,10 +26,10 @@
   placeholder="Description..."
   [(ngModel)]="newItemDescription"
 >
-<!-- <small *ngIf="descMissing" class="text-danger">Please fill this field.</small> -->
+<small *ngIf="descMissing" class="text-danger">Please fill this field.</small>
 </div>
 
-<div *ngIf="infoMissing" class="alert alert-danger fade show" role="alert">
+<div *ngIf="infoMissing" class="alert alert-danger rounded-1 p-2 fade show" role="alert">
   Please fill both fields.
 </div>
 

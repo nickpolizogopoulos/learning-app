@@ -13,6 +13,8 @@ export class FormComponent {
   newItemName:string = '';
   newItemDescription:string = '';
   infoMissing:boolean = false;
+  nameMissing:boolean = false;
+  descMissing:boolean = false;
   
   onAdd():void {
     if (this.newItemName === '' ||
@@ -20,10 +22,15 @@ export class FormComponent {
       this.infoMissing = true;
       return
     }
+
+    // need to check this.nameMissing and this.descMissing
+
     this.itemAdded.emit({
       name: this.newItemName,
       description: this.newItemDescription
     })
+    this.infoMissing = false;
+    this.nameMissing = false;
     this.infoMissing = false;
     this.newItemName = '';
     this.newItemDescription = '';
