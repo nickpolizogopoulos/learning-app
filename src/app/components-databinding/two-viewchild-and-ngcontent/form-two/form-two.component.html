@@ -1,0 +1,30 @@
+
+<p class="lead">
+    Add your items to the coresponding list:
+</p>
+<div class="mb-3">
+    <input
+        class="form-control rounded-0 shadow-none"
+        type="text"
+        placeholder="Item name..."
+        #itemName
+    >    
+</div>
+<div class="mb-3">
+    <input
+        #itemDescription
+        class="form-control rounded-0 shadow-none"
+        type="text"
+        placeholder="Description..."
+    >
+</div>
+
+
+<div *ngIf="infoMissingError" class="alert alert-danger rounded-1 p-2">
+    Please fill both fields!
+</div>
+  
+<button (click)="onAddImportant(itemName, itemDescription)" class="btn btn-primary rounded-2 me-3 mb-3">Important</button>
+<button (click)="onAddUnimportant(itemName, itemDescription)" class="btn btn-secondary rounded-2 me-3 mb-3">Unimportant</button>
+<button (click)="onClearBoth()" class="btn btn-success rounded-2 me-3 mb-3">Clear both Lists</button>
+

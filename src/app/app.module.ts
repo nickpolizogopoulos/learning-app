@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
-
 import { TheBasicsComponent } from './the-basics/the-basics.component';
 import { OneDataBindingComponent } from './the-basics/one-data-binding/one-data-binding.component';
 import { TwoPropertyBindingComponent } from './the-basics/two-property-binding/two-property-binding.component';
@@ -25,18 +24,17 @@ import { OnePassingDataBetweenComponentsComponent } from './components-databindi
 import { FormComponent } from './components-databinding/one-passing-data-between-components/form/form.component';
 import { ListComponent } from './components-databinding/one-passing-data-between-components/list/list.component';
 import { TwoViewchildAndNgcontentComponent } from './components-databinding/two-viewchild-and-ngcontent/two-viewchild-and-ngcontent.component';
-
+import { ImportantComponent } from './components-databinding/two-viewchild-and-ngcontent/important/important.component';
+import { FormTwoComponent } from './components-databinding/two-viewchild-and-ngcontent/form-two/form-two.component';
+import { UnimportantComponent } from './components-databinding/two-viewchild-and-ngcontent/unimportant/unimportant.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'the-basics', component: TheBasicsComponent },
   { path: 'components-databinding', component: ComponentsDatabindingComponent },
-
-  
   { path: '**', component: ErrorComponent },
 ];
-
 
 @NgModule({
   declarations: [
@@ -60,6 +58,9 @@ const appRoutes: Routes = [
     FormComponent,
     ListComponent,
     TwoViewchildAndNgcontentComponent,
+    ImportantComponent,
+    UnimportantComponent,
+    FormTwoComponent
   ],
   imports: [
     BrowserModule,
