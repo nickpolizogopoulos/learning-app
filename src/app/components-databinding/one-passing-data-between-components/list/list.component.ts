@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ItemProps } from '../one-passing-data-between-components.component';
 
 
@@ -9,13 +9,15 @@ import { ItemProps } from '../one-passing-data-between-components.component';
 })
 export class ListComponent {
 
-
-
-  // THIS USES 'Definite Assignment Assertion' => !
+  // element has the 'Definite Assignment Assertion' => !
   // to tell typescript that this variable will have
-  // a value at runtime as follows:
-   @Input() element!:ItemProps;
+  // a value at runtime.
+  @Input() element!:ItemProps;
+  @Output() onDeleteItem = new EventEmitter<Function>()
 
-
-  
+  deleteItem():void {
+    this.onDeleteItem.emit(
+      () => {}
+    ) 
+  }  
 }

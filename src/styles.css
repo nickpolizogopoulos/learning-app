@@ -8,6 +8,12 @@ mark {
   color: rgb(36, 54, 99);
   background-color: white;
 }
+
+/* for testing */
+.bgred { background-color: red; } 
+.bggreen { background-color: green; }
+/* for testing */
+
 .lessonbox {
   color: rgb(36, 54, 99);
   padding: 40px;

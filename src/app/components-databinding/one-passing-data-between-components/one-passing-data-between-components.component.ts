@@ -12,13 +12,21 @@ export interface ItemProps {
 })
 export class OnePassingDataBetweenComponentsComponent {
 
-  wishList:ItemProps[] = [];
-
-  onItemAdded( itemData:ItemProps ) {
+  wishList:ItemProps[] = [
+    { name: 'Backpack', description: 'For carrying my laptop.' },
+  ];
+  
+  onItemAdded(itemData:ItemProps):void {
     this.wishList.push({
       name: itemData.name,
       description: itemData.description
     })
+  }
+  onClearList():void {
+    this.wishList.length = 0;
+  }
+  onDeleteItem( i:number ):void {
+    this.wishList.splice( i, 1 )
   }
 
 }

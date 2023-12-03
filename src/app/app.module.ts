@@ -24,6 +24,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OnePassingDataBetweenComponentsComponent } from './components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
 import { FormComponent } from './components-databinding/one-passing-data-between-components/form/form.component';
 import { ListComponent } from './components-databinding/one-passing-data-between-components/list/list.component';
+import { TwoViewchildAndNgcontentComponent } from './components-databinding/two-viewchild-and-ngcontent/two-viewchild-and-ngcontent.component';
 
 
 const appRoutes: Routes = [
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     OnePassingDataBetweenComponentsComponent,
     FormComponent,
     ListComponent,
+    TwoViewchildAndNgcontentComponent,
   ],
   imports: [
     BrowserModule,

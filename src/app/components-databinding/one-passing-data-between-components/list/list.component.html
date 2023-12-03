@@ -1,19 +1,18 @@
 
 
 
-<div class="wishBox alert alert-dismissible">
-        <div class="row">
-            <h5>{{element.name}}</h5>
-        </div>
-        <div class="row">
-            <span><em>{{element.description}}</em></span>
-        </div>
+<div class="wishBox alert alert-dismissible align-items-center">
+    <h5>{{element.name}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+        </svg>
+        <em class="lead"> {{element.description}}</em>
+    </h5> 
 
     <button
+        (click)="deleteItem()"
         type="button"
         class="btn-close shadow-none"
-        data-bs-dismiss="alert"
         aria-label="Close"
     ></button>
-
 </div>
