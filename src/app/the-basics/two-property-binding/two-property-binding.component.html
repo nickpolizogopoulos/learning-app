@@ -1,16 +1,11 @@
-
 <h4>2. Property Binding</h4>
 
-<p class="lead">
-  Add your own items to the grocery list.
-</p>
-
+<p class="lead">Add your own items to the grocery list.</p>
 <input
   class="form-control rounded-0 shadow-none"
   type="text"
   placeholder="Type here..."
-  [(ngModel)]="data"
->
+  [(ngModel)]="data">
 
 <div class="pt-3">
   <button
@@ -20,7 +15,6 @@
     >
     Add item
   </button>  
-
   <button
     (click)="removeData()"
     [disabled]="isDisabled"
@@ -28,7 +22,6 @@
     >
     Remove last
   </button>  
-
   <button
     (click)="clearArray()"
     [disabled]="isDisabled"
@@ -36,13 +29,11 @@
   >
   Clear list
   </button>  
-
 </div>
 
 <h5 class="pt-4">Grocery list:</h5>
 <small>{{ dataArray.length === 0 ? '[empty]' : '' }}</small>
 <div *ngFor="let item of dataArray">
   <input class="form-check-input checkborder rounded-0 shadow-none" type="checkbox">
-  {{ item }}</div>
-
-
+  {{ item }}
+</div>

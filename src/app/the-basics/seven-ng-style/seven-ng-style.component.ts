@@ -15,14 +15,14 @@ export class SevenNgStyleComponent {
     this.spinnerOn = true;
     setTimeout(() => {
       this.spinnerOn = false;
-    }, 1000);
+    }, 700);
     
     this.result = Math.random() > 0.5 ? 'Tails' : 'Heads';
 
     this.showResult = false;
     setTimeout(() => {
       this.showResult = true;
-    }, 1000);
+    }, 700);
   }
 
   getResult() {

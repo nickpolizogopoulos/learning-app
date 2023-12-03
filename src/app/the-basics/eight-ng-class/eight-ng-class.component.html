@@ -1,11 +1,5 @@
-
 <h4>8. The [ngClass] Directive</h4>
-
-<p
-  class="lead">
-  Choose the way the text should appear.
-</p>
-
+<p class="lead">Choose the way the text should appear.</p>
 
 <div class="mt-4 d-flex justify-content-center">
     <p class="d-inline-flex gap-1">
@@ -18,7 +12,6 @@
                 <path d="M3 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
             </svg>
         </button>
-
         <button
             (click)="onMidSelect()"
             [ngClass]="{active: midActive}"
@@ -27,7 +20,6 @@
                 <path d="M8 1a.5.5 0 0 1 .5.5V6h-1V1.5A.5.5 0 0 1 8 1m0 14a.5.5 0 0 1-.5-.5V10h1v4.5a.5.5 0 0 1-.5.5M2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
             </svg>
         </button>
-
         <button 
             (click)="onRightSelect()"
             [ngClass]="{active: rightActive}"
@@ -39,10 +31,8 @@
         </button>
     </p>
 </div>
-
 <div class="mt-3">
     <h5>Text box:</h5>
-    
     <p
     [ngClass]="{
         'text-start': leftActive,

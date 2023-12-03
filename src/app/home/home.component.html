@@ -1,23 +1,17 @@
-
-
 <section class="headtitle">
     <h2 class="niceblue"><mark>Welcome to my Angular Playground!</mark></h2>    
     <p class="lead"><mark>Here you can find my solutions on exercise ideas I came 
         up with during my Angular course!</mark></p>
 </section>
-
 <section class="container mt-5 mb-5">
     <div class="row">
-
-        <div *ngFor="let card of cards let i = index" 
-        class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
+        <div *ngFor="let card of homeCards let i = index" 
+            class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
             <div style="border-radius: 0px 30px 0px 0px;" class="homecard">
-
                 <a routerLink="{{ card.link }}"
                     class="stretched-link">
                     <img class="cardimage" src="{{card.img}}" alt="Angular banner">
                 </a>
-
                 <div class="p-3 pb-0 niceblue">
                     <div class="row">
                         <div class="col-1">
@@ -33,9 +27,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>   
         </div>
-
     </div>
 </section>

@@ -11,7 +11,6 @@ export class TwoPropertyBindingComponent {
   dataArray: string[] = [];
   data = '';
 
-
   addData() {
     this.dataArray.push(this.data);
     this.data = '';

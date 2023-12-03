@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  cards = [
+  homeCards = [
     
     { name: 'The Basics', link: '/the-basics',
     img: '../../assets/images/angular-banner-image.jpg',
