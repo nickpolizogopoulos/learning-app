@@ -10,8 +10,9 @@ export class ImportantComponent {
 
   @Output() clearImportantList = new EventEmitter<Function>();
   @Output() deleteImportantItem = new EventEmitter<Function>();
+  @Output() moveImportantItem = new EventEmitter<Function>();
 
-  @Input() importantItem!:ItemProps;
+  @Input() importantListItem!:ItemProps;
 
   onClearImportantList() {
     this.clearImportantList.emit(
@@ -20,6 +21,11 @@ export class ImportantComponent {
   }
   onDeleteImportantItem() {
     this.deleteImportantItem.emit(
+      () => {}
+    )
+  }
+  onMoveToUnimportant() {
+    this.moveImportantItem.emit(
       () => {}
     )
   }

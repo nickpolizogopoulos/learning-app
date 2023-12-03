@@ -3,13 +3,7 @@ import { Component } from '@angular/core';
 export interface ItemProps {
   name:string;
   description:string;
-  type: 'important' | 'unimportant'
 }
-
-// export interface FormItemProps {
-//   name:string;
-//   description:string;
-// }
 
 @Component({
   selector: 'app-two-viewchild-and-ngcontent',
@@ -18,27 +12,71 @@ export interface ItemProps {
 })
 export class TwoViewchildAndNgcontentComponent {
 
+  addTwoImportantItemsButton = true;
+  addTwoUnimportantItemsButton = true;
+
   importantList:ItemProps[] = [
-    {name: 'Important Item', description: 'Description if the item', type: 'important'}
+    {name: 'Laptop', description: 'For working remotely'},
+    {name: 'Blanket', description: 'For the winter'},
   ];
   unimportantList:ItemProps[] = [
-    {name: 'Unimportant Item', description: 'Description if the item', type: 'unimportant'}
+    {name: 'Boots', description: 'For hiking'},
+    {name: 'Gloves', description: 'For climbing'},
   ];
 
-  importantAdded() {
+  onImportantAdded(importantItem:ItemProps) {
     this.importantList.push({
-      name: '',
-      description: '',
-      type: 'important'
+      name: importantItem.name,
+      description: importantItem.description,
     })
   }
+  onImportantDeleted( index:number ) {
+    this.importantList.splice(index, 1);
+    console.log('item', index, 'deleted');
+  }
 
-  unimportantAdded() {
+  onUnimportantAdded(unimportantItem:ItemProps) {
     this.unimportantList.push({
-      name: '',
-      description: '',
-      type: 'unimportant'
+      name: unimportantItem.name,
+      description: unimportantItem.description,
     })
+  }
+  onUnimportantDeleted( index:number ) {
+    this.unimportantList.splice(index, 1);
+    console.log('item', index, 'deleted');
+  }
+
+  onClearLists() {
+    this.importantList.length = 0;
+    this.unimportantList.length = 0;
+  }
+  clearImportant() {
+    this.importantList.length = 0;
+  }
+  clearUnimportant() {
+    this.unimportantList.length = 0;
+  }
+  onImportantMoved( index:number, item:ItemProps ) {
+    this.importantList.splice(index, 1)
+    this.unimportantList.push(item)
+  }
+  onUnimportantMoved( index:number, item:ItemProps ) {
+    this.unimportantList.splice(index, 1)
+    this.importantList.push(item)
+  }
+  onAddTwoUnimportant() {
+    this.addTwoUnimportantItemsButton = false;
+    this.unimportantList.push(
+      {name: 'Mousepad', description: 'Gaming accessory'},
+      {name: 'USB Hub', description: 'Ports!'},
+    )
+  }
+  onAddTwoImportant() {
+    this.addTwoImportantItemsButton = false;
+    this.importantList.push(
+      {name: 'Sunglasses', description: 'Eye protection'},
+      {name: 'Vinyl Records', description: 'I love vinyl'},
+    )
   }
 
 }

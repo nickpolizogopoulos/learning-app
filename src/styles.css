@@ -27,6 +27,7 @@ mark {
 .lessonbox:hover {
   transform: translate(0px, -3px);
 }
+
 .niceblue {
   color: rgb(36, 54, 99);
 }
