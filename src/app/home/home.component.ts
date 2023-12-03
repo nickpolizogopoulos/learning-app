@@ -17,7 +17,8 @@ export class HomeComponent {
 
     { name: 'Components & Databinding', link: '/components-databinding',
     img: '../../assets/images/angular-banner-image.jpg',
-    description: `Here goes the second section description.` },
+    description: `Passing data between components, @Input, @Output,
+    @ViewChild & Lifecycle Hooks!` },
 
     
 

@@ -1,28 +1,23 @@
 
-
-
 <div class="container-fluid">
     <div class="row d-flex justify-content-start">
-        
         <!-- FIRST CHILD -->
         <app-form
+            class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5"
             (itemAdded)="onItemAdded($event)"
-            class="lessonbox me-5 col-md-6 col-lg-5 col-xxl-3"
         ></app-form>
-
         <!-- SECOND CHILD -->
-        <section class="lessonbox me-1 col-md-6 col-lg-5 col-xxl-3">
+        <section class="lessonbox col-md-6 col-lg-5 col-xxl-3">
             <h4>1. Passing Data Between Components</h4>
             <p class="lead"> <u>Child Component #2</u> </p>
             <p class="lead"> Favorite items: </p>
-
             <app-list
                 *ngFor="let item of wishList"
                 [element]="item"
             ></app-list>
-
         </section>
-
+    </div>
+</div>
            
 
 

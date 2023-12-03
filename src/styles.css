@@ -3,20 +3,10 @@ body {
   background-image: url('../src/assets/images/background-image.png');
   background-attachment:fixed;
 }
-.headingbg {
+mark {
+  padding: 6px;
+  color: rgb(36, 54, 99);
   background-color: white;
-  padding: 2px 0px;
-}
-.paragraphbg {
-  background-color: white;
-  padding: 5px 0px;
-}
-.wishBox {
-  padding: 3px 0px 3px 15px;
-  margin-bottom: 14px;
-  border: 1px solid rgb(100, 100, 100);
-  border-radius: 3px;
-  box-shadow: 4px 4px 7px #d8d8d8;
 }
 .lessonbox {
   color: rgb(36, 54, 99);
@@ -44,19 +34,6 @@ body {
 .inherit {
   color: inherit;
 }
-.box {
-  color: rgb(36, 54, 99);
-  margin: 30px;
-  padding: 40px;
-  max-width: 450px;
-  box-shadow: 4px 4px 10px #cbcbcb;
-  border: 1px solid rgb(225, 225, 225);
-  transition: transform 0.3s;
-}
-.box:hover {
-  transform: translate(0px, -3px);
-}
-
 ::-moz-selection { 
   color: inherit;
   background: #dcdcdc;
@@ -65,4 +42,3 @@ body {
   color: inherit;
   background: #dcdcdc;
 }
-
