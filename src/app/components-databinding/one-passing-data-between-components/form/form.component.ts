@@ -19,6 +19,9 @@ export class FormComponent {
     if (this.newItemName === '' ||
       this.newItemDescription === '') {
       this.infoMissing = true;
+      setTimeout(() => {
+        this.infoMissing = false;
+      }, 2000)
       return
     }
     this.itemAdded.emit({

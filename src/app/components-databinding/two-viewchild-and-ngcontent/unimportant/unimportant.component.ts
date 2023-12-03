@@ -11,7 +11,6 @@ export class UnimportantComponent {
   @Input() unimportantListItem!:ItemProps;
   @Output() deleteUnimportantItem = new EventEmitter<Function>()
   @Output() moveUnimportantItem = new EventEmitter<Function>()
-  // @Output() addTwoUnimportantItems = new EventEmitter<Function>()
 
 
   onDeleteUnimportantItem() {
@@ -23,15 +22,5 @@ export class UnimportantComponent {
     this.moveUnimportantItem.emit(
       () => {}
     )
-  }
-  // onAddTwoUnimportantItems() {
-  //   this.addTwoUnimportantItems.emit(
-  //     () => {} 
-  //   )
-  // }
-  
-
-
-
-  
+  }  
 }
