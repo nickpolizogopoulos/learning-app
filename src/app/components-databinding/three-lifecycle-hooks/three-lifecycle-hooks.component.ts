@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-three-lifecycle-hooks',
   templateUrl: './three-lifecycle-hooks.component.html',
   styleUrls: ['./three-lifecycle-hooks.component.css']
 })
-export class ThreeLifecycleHooksComponent implements OnInit {
+export class ThreeLifecycleHooksComponent implements 
+  OnInit,
+  OnChanges {
 
   constructor() {
     this.stateConstructor = true;
   }
-  OnInit(): void {
+  ngOnInit() {
+
+  }
+  ngOnChanges () {
+
   }
 
  

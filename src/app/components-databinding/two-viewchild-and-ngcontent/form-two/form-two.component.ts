@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { ItemProps } from '../two-viewchild-and-ngcontent.component';
 
 @Component({
@@ -11,11 +11,13 @@ export class FormTwoComponent {
   @Output() importantItem = new EventEmitter<ItemProps>();
   @Output() unimportantItem = new EventEmitter<ItemProps>();
   @Output() clearBothLists = new EventEmitter<Function>();
+  @ViewChild('itemDescription', {static:true}) itemDescription?:ElementRef;
 
   infoMissingError:boolean = false;
   
-  onAddImportant(nameInput:HTMLInputElement, descriptionInput:HTMLInputElement) {
-    if (nameInput.value === '' || descriptionInput.value === ''){
+  onAddImportant(nameInput:HTMLInputElement) {
+    if (nameInput.value === '' || 
+      this.itemDescription?.nativeElement.value === '') {
       this.infoMissingError = true;
       setTimeout(() => {
         this.infoMissingError = false;
@@ -25,14 +27,15 @@ export class FormTwoComponent {
     this.infoMissingError = false;
     this.importantItem.emit({
       name: nameInput.value,
-      description: descriptionInput.value,
+      description: this.itemDescription?.nativeElement.value,
     })
-    //These reset the form when adding an item.
+    //To reset the form when adding an item.
     nameInput.value = '';
-    descriptionInput.value = '';
+    this.itemDescription!.nativeElement.value = '';
   }
-  onAddUnimportant(nameInput:HTMLInputElement, descriptionInput:HTMLInputElement) {
-    if (nameInput.value === '' || descriptionInput.value === ''){
+  onAddUnimportant(nameInput:HTMLInputElement) {
+    if (nameInput.value === '' || 
+      this.itemDescription?.nativeElement.value === '') {
       this.infoMissingError = true;
       setTimeout(() => {
         this.infoMissingError = false;
@@ -42,11 +45,11 @@ export class FormTwoComponent {
     this.infoMissingError = false;
     this.unimportantItem.emit({
       name: nameInput.value,
-      description: descriptionInput.value,
+      description: this.itemDescription?.nativeElement.value,
     })
-    //These reset the form when adding an item.
+    //To reset the form when adding an item.
     nameInput.value = '';
-    descriptionInput.value = '';
+    this.itemDescription!.nativeElement.value = '';
   }
   onClearBoth():void {
     this.clearBothLists.emit(
