@@ -5,14 +5,12 @@ import { Component, OnChanges, OnInit } from '@angular/core';
   templateUrl: './three-lifecycle-hooks.component.html',
   styleUrls: ['./three-lifecycle-hooks.component.css']
 })
-export class ThreeLifecycleHooksComponent implements 
-  OnInit,
-  OnChanges {
+export class ThreeLifecycleHooksComponent {
 
   constructor() {}
-  ngOnInit() {}
-  ngOnChanges () {}
-  ngDoCheck() {}
+  // ngOnInit() {}
+  // ngOnChanges () {}
+  // ngDoCheck() {}
 
  
   stateConstructor:boolean = false;

@@ -28,12 +28,14 @@ import { ImportantComponent } from './components-databinding/two-viewchild-and-n
 import { FormTwoComponent } from './components-databinding/two-viewchild-and-ngcontent/form-two/form-two.component';
 import { UnimportantComponent } from './components-databinding/two-viewchild-and-ngcontent/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'the-basics', component: TheBasicsComponent },
   { path: 'components-databinding', component: ComponentsDatabindingComponent },
+  { path: 'directives', component: DirectivesComponent },
   { path: '**', component: ErrorComponent },
 ];
 
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     ImportantComponent,
     UnimportantComponent,
     FormTwoComponent,
-    ThreeLifecycleHooksComponent
+    ThreeLifecycleHooksComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
