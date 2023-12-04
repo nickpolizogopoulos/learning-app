@@ -18,7 +18,7 @@ export class HomeComponent {
     { name: 'Components & Databinding', link: '/components-databinding',
     img: '../../assets/images/angular-banner-image.jpg',
     description: `Passing data between components, @Input, @Output, local references,
-    @ViewChild, ng-content & Lifecycle Hooks!` },
+    @ViewChild & <ng-content> !` },
 
     { name: 'Directives', link: '/components-databinding',
     img: '../../assets/images/angular-banner-image.jpg',

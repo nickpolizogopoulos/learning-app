@@ -9,15 +9,10 @@ export class ThreeLifecycleHooksComponent implements
   OnInit,
   OnChanges {
 
-  constructor() {
-    this.stateConstructor = true;
-  }
-  ngOnInit() {
-
-  }
-  ngOnChanges () {
-
-  }
+  constructor() {}
+  ngOnInit() {}
+  ngOnChanges () {}
+  ngDoCheck() {}
 
  
   stateConstructor:boolean = false;
@@ -42,15 +37,6 @@ export class ThreeLifecycleHooksComponent implements
       this.reloadSpinner = false;
     }, 2000)
   }
-
-
-
-
-
-
-
-
-
 
   // FOR TEST 
   allToTrue(){
