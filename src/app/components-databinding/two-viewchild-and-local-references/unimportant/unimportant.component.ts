@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ItemProps } from '../two-viewchild-and-ngcontent.component';
+import { ItemProps } from '../two-viewchild-and-local-references.component';
 
 @Component({
   selector: 'app-unimportant',

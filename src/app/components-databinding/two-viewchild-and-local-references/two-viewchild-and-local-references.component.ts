@@ -6,11 +6,11 @@ export interface ItemProps {
 }
 
 @Component({
-  selector: 'app-two-viewchild-and-ngcontent',
-  templateUrl: './two-viewchild-and-ngcontent.component.html',
-  styleUrls: ['./two-viewchild-and-ngcontent.component.css']
+  selector: 'app-two-viewchild-and-local-references',
+  templateUrl: './two-viewchild-and-local-references.component.html',
+  styleUrls: ['./two-viewchild-and-local-references.component.css']
 })
-export class TwoViewchildAndNgcontentComponent {
+export class TwoViewchildAndLocalReferencesComponent {
 
   addTwoImportantItemsButton = true;
   addTwoUnimportantItemsButton = true;

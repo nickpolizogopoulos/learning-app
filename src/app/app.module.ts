@@ -23,10 +23,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { OnePassingDataBetweenComponentsComponent } from './components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
 import { FormComponent } from './components-databinding/one-passing-data-between-components/form/form.component';
 import { ListComponent } from './components-databinding/one-passing-data-between-components/list/list.component';
-import { TwoViewchildAndNgcontentComponent } from './components-databinding/two-viewchild-and-ngcontent/two-viewchild-and-ngcontent.component';
-import { ImportantComponent } from './components-databinding/two-viewchild-and-ngcontent/important/important.component';
-import { FormTwoComponent } from './components-databinding/two-viewchild-and-ngcontent/form-two/form-two.component';
-import { UnimportantComponent } from './components-databinding/two-viewchild-and-ngcontent/unimportant/unimportant.component';
+import { TwoViewchildAndLocalReferencesComponent } from './components-databinding/two-viewchild-and-local-references/two-viewchild-and-local-references.component';
+import { ImportantComponent } from './components-databinding/two-viewchild-and-local-references/important/important.component';
+import { FormTwoComponent } from './components-databinding/two-viewchild-and-local-references/form-two/form-two.component';
+import { UnimportantComponent } from './components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
 import { DirectivesComponent } from './directives/directives.component';
 
@@ -60,7 +60,7 @@ const appRoutes: Routes = [
     OnePassingDataBetweenComponentsComponent,
     FormComponent,
     ListComponent,
-    TwoViewchildAndNgcontentComponent,
+    TwoViewchildAndLocalReferencesComponent,
     ImportantComponent,
     UnimportantComponent,
     FormTwoComponent,
