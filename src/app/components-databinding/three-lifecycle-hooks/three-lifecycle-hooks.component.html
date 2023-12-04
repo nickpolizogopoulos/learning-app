@@ -3,15 +3,12 @@
 
             <!-- FIRST CHILD -->
             <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
-                <div *ngIf="reloadSpinner" class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+                <div *ngIf="reloadSpinner" class="spinner-border" style="width: 40px; height: 40px;"></div>
                 <div *ngIf="componentContent">
-                        <span class="visually-hidden">Loading...</span>
-                  
-
-                    <h4>3. Lifecycle Hooks</h4>
-                    <hr>
-                    <span class="lead">Play with this box and watch how the lifecycle hooks trigger.</span>
-                    <button (click)="reloadComponent()" class="btn btn-sm btn-outline-success me-2 p-1">reload component</button>
+                        <h4>3. Lifecycle Hooks</h4>
+                        <hr>
+                        <span class="lead">Play with this box and watch how the lifecycle hooks trigger.</span>
+                        <button (click)="reloadComponent()" class="btn btn-sm btn-outline-success me-2 p-1">reload component</button>
                 </div>
             </div>
             <!-- SECOND CHILD -->
