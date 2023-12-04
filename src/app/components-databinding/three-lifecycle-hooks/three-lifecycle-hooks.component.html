@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-start">
+
+            <!-- FIRST CHILD -->
+            <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
+                <div *ngIf="reloadSpinner" class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+                <div *ngIf="componentContent">
+                        <span class="visually-hidden">Loading...</span>
+                  
+
+                    <h4>3. Lifecycle Hooks</h4>
+                    <hr>
+                    <span class="lead">Play with this box and watch how the lifecycle hooks trigger.</span>
+                    <button (click)="reloadComponent()" class="btn btn-sm btn-outline-success me-2 p-1">reload component</button>
+                </div>
+            </div>
+            <!-- SECOND CHILD -->
+            <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
+                <h4>3. Lifecycle Hooks</h4>
+                <hr>
+                <!-- <span class="lead"> <u>Child Component #2</u> </span> -->
+                
+
+                <h5 class="mb-3">ngOnInit ( )<span *ngIf="stateNgOnInit" class="ms-3 lead text-success">ngOnInit Triggered!</span> </h5>
+                <button class="btn btn-sm btn-outline-success mt-4 me-2" (click)="allToTrue()">All true.</button>
+                <button class="btn btn-sm btn-outline-danger mt-4" (click)="allToFalse()">All false.</button>
+
+            </div>
+
+    </div>
+</div>
