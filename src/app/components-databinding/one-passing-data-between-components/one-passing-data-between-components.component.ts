@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export interface ItemProps {
   name: string;
   description: string;
+  type: 'immediate' | 'future'
 }
 
 @Component({
@@ -13,15 +14,26 @@ export interface ItemProps {
 export class OnePassingDataBetweenComponentsComponent {
 
   wishList:ItemProps[] = [
-    { name: 'Backpack', description: 'For carrying my laptop.' },
+    { name: 'Backpack', description: 'For carrying important files.', type: 'immediate' },
+    { name: 'Sleeping bag', description: 'For the winter.', type: 'future' },
   ];
   
-  onItemAdded(itemData:ItemProps):void {
+  onImmediateAdded(itemData:ItemProps):void {
     this.wishList.push({
       name: itemData.name,
-      description: itemData.description
+      description: itemData.description,
+      type: itemData.type 
     })
   }
+  
+  onFutureAdded(itemData:ItemProps):void {
+    this.wishList.push({
+      name: itemData.name,
+      description: itemData.description,
+      type: itemData.type 
+    })
+  }
+  
   onClearList():void {
     this.wishList.length = 0;
   }

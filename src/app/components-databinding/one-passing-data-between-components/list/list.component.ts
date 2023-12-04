@@ -12,7 +12,7 @@ export class ListComponent {
   // element has the 'Definite Assignment Assertion' => !
   // to tell typescript that this variable will have
   // a value at runtime.
-  @Input() element!:ItemProps;
+  @Input() listItem!:ItemProps;
   @Output() onDeleteItem = new EventEmitter<Function>()
 
   deleteItem():void {

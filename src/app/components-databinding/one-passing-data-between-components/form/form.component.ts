@@ -8,14 +8,15 @@ import { ItemProps } from '../one-passing-data-between-components.component';
 })
 export class FormComponent {
 
-  @Output() itemAdded = new EventEmitter<ItemProps>()
+  @Output() immediateItemAdded = new EventEmitter<ItemProps>()
+  @Output() futureItemAdded = new EventEmitter<ItemProps>()
   @Output() listCleared = new EventEmitter<Function>()
 
   newItemName:string = '';
   newItemDescription:string = '';
   infoMissing:boolean = false;
   
-  onAdd():void {
+  onImmediateAdd():void {
     if (this.newItemName === '' ||
       this.newItemDescription === '') {
       this.infoMissing = true;
@@ -24,14 +25,35 @@ export class FormComponent {
       }, 2000)
       return
     }
-    this.itemAdded.emit({
+    this.immediateItemAdded.emit({
       name: this.newItemName,
-      description: this.newItemDescription
+      description: this.newItemDescription,
+      type: 'immediate'
     })
     this.infoMissing = false;
     this.newItemName = '';
     this.newItemDescription = '';
   }
+  
+  onFutureAdd():void {
+    if (this.newItemName === '' ||
+      this.newItemDescription === '') {
+      this.infoMissing = true;
+      setTimeout(() => {
+        this.infoMissing = false;
+      }, 2000)
+      return
+    }
+    this.futureItemAdded.emit({
+      name: this.newItemName,
+      description: this.newItemDescription,
+      type: 'future'
+    })
+    this.infoMissing = false;
+    this.newItemName = '';
+    this.newItemDescription = '';
+  }
+
   onClear() {
     this.listCleared.emit(
       () => {}

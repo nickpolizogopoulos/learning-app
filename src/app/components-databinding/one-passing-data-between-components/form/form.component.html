@@ -1,14 +1,9 @@
 
-
-<h4>1. Passing Data Between Components</h4>
-
+<h4>1. Passing Data Between Components & <br> ng-content</h4>
 <p class="lead"> <u>Child Component #1</u> </p>
-
-<p
-  class="lead">
-  Make your own wish list!
+<p class="lead">
+  Create a wish list with items for immediate purchases and future purchases.
 </p>
-
 <div class="mb-3">
   <input
   class="form-control rounded-0 shadow-none"
@@ -17,7 +12,6 @@
   [(ngModel)]="newItemName"
   >    
 </div>
-
 <div class="mb-3">
 <input
   class="form-control rounded-0 shadow-none"
@@ -26,11 +20,10 @@
   [(ngModel)]="newItemDescription"
 >
 </div>
-
 <div *ngIf="infoMissing" class="alert alert-danger rounded-1 p-2 fade show" role="alert">
   Please fill both fields.
 </div>
-
-<button (click)="onAdd()" class="btn btn-primary rounded-2 me-3 mb-3">Add Item</button>
-<button (click)="onClear()" class="btn btn-success rounded-2 me-3 mb-3">Clear List</button>
+<button (click)="onImmediateAdd()" class="btn btn-primary rounded-1 me-3 mb-3">Immediate</button>
+<button (click)="onFutureAdd()" class="btn btn-warning rounded-1 me-3 mb-3">Future</button>
+<button (click)="onClear()" class="btn btn-success rounded-1 me-3 mb-3">Clear List</button>
 
