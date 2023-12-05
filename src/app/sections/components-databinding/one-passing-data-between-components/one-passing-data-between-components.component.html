@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+        <!-- FIRST CHILD -->
+        <app-form
+            class="lessonbox col-md-6 col-lg-5 col-xxl-3"
+            (immediateItemAdded)="onImmediateAdded($event)"
+            (futureItemAdded)="onImmediateAdded($event)"
+            (listCleared)="onClearList()"
+        ></app-form>
+
+        <!-- SECOND CHILD -->
+        <section class="lessonbox col-md-6 col-lg-5 col-xxl-3">
+            <h4>1. Passing Data Between Components, Input, Output & ng-content</h4>
+            <p class="lead"> <u>Child Component #2</u> </p>
+            <p class="lead">Your List: (Immediate Purchases will be <u class="text-primary">highlighted</u>)</p>
+
+            <app-list
+                *ngFor="let item of wishList let i = index"
+                [listItem]="item"
+                (onDeleteItem)="onDeleteItem(i)"
+            >
+                <div *ngIf="item.type === 'immediate'">
+                    <h5><u class="text-primary">{{item.name}}</u>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                        </svg>
+                    <em class="lead">{{item.description}}</em>
+                    </h5> 
+                </div>
+        
+                <div *ngIf="item.type === 'future'">
+                    <h5>{{item.name}}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                        </svg>
+                        <em class="lead">{{item.description}}</em>
+                    </h5> 
+                </div>
+
+            </app-list>
+        </section>
+        <div style="height: auto;" class="col-md-6 col-lg-5 col-xxl-3 me-5"></div>
+    </div>
+</div>

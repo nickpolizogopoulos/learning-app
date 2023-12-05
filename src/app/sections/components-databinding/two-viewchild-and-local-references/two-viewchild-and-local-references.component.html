@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+        <!-- FIRST CHILD -->
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
+            <h4>2. ViewChild & Local References</h4>
+            <p class="lead"> <u>Child Component #1</u></p>
+            <app-form-two
+            (importantItem)="onImportantAdded($event)"
+            (unimportantItem)="onUnimportantAdded($event)"
+            (clearBothLists)="onClearLists()"
+            ></app-form-two>
+        </div>
+        <!-- SECOND CHILD -->
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
+
+            <h4>2. ViewChild & Local References</h4>
+            <span class="lead"> <u>Child Component #2</u> </span>
+            <small *ngIf="addTwoImportantItemsButton" (click)="onAddTwoImportant()" class="addTwo ms-3">[ +2 items ]</small>
+            <h5 class="mt-3 mb-4">List of <span class="text-primary">important</span> items:</h5>
+            <app-important
+            *ngFor="let importantItem of importantList let importantIndex = index"
+            [importantListItem]="importantItem"
+            (deleteImportantItem)="onImportantDeleted(importantIndex)"
+            (moveImportantItem)="onImportantMoved(importantIndex, importantItem)"
+            ></app-important>
+            <button
+                *ngIf="importantList.length !== 0"
+                (click)="clearImportant()"
+                class="btn btn-sm btn-secondary"
+                >Clear List
+            </button>
+        </div>
+        <!-- THIRD CHILD -->
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
+            
+            <h4>2. ViewChild & Local References</h4>
+            <span class="lead"><u>Child Component #3</u></span>
+            <small *ngIf="addTwoUnimportantItemsButton" (click)="onAddTwoUnimportant()" class="addTwo ms-3">[ +2 items ]</small>
+            <h5 class="mt-3 mb-4">List of <span class="text-warning">unimportant</span> items:</h5>
+
+            <app-unimportant
+            *ngFor="let unimportantItem of unimportantList let unimportantIndex = index"
+            [unimportantListItem]="unimportantItem"
+            (deleteUnimportantItem)="onUnimportantDeleted(unimportantIndex)"
+            (moveUnimportantItem)="onUnimportantMoved(unimportantIndex, unimportantItem)"
+            ></app-unimportant>
+            <button
+                *ngIf="unimportantList.length !== 0"
+                (click)="clearUnimportant()"
+                class="btn btn-sm btn-secondary"
+                >Clear List
+            </button>
+        </div>
+    </div>
+</div>
