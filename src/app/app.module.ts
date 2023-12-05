@@ -29,6 +29,9 @@ import { FormTwoComponent } from './components-databinding/two-viewchild-and-loc
 import { UnimportantComponent } from './components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { FirstBasicCustomDirectiveComponent } from './directives/first-basic-custom-directive/first-basic-custom-directive.component';
+import { BgHighlightDirectiveDirective } from './directives/first-basic-custom-directive/bg-highlight-directive.directive';
+import { BgHighlightDirectiveTwoDirective } from './directives/first-basic-custom-directive/bg-highlight-directive-two.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -65,7 +68,10 @@ const appRoutes: Routes = [
     UnimportantComponent,
     FormTwoComponent,
     ThreeLifecycleHooksComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    FirstBasicCustomDirectiveComponent,
+    BgHighlightDirectiveDirective,
+    BgHighlightDirectiveTwoDirective
   ],
   imports: [
     BrowserModule,
