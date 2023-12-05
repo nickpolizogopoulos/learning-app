@@ -29,9 +29,13 @@ import { FormTwoComponent } from './components-databinding/two-viewchild-and-loc
 import { UnimportantComponent } from './components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
 import { DirectivesComponent } from './directives/directives.component';
-import { FirstBasicCustomDirectiveComponent } from './directives/first-basic-custom-directive/first-basic-custom-directive.component';
-import { BgHighlightDirectiveDirective } from './directives/first-basic-custom-directive/bg-highlight-directive.directive';
-import { BgHighlightDirectiveTwoDirective } from './directives/first-basic-custom-directive/bg-highlight-directive-two.directive';
+import { OneBasicCustomDirectiveComponent } from './directives/one-basic-custom-directive/one-basic-custom-directive.component';
+import { BlueBgDirective } from './directives/one-basic-custom-directive/blue-bg.directive';
+import { BordeauxBgDirective } from './directives/one-basic-custom-directive/bordeaux-bg.directive';
+import { TwoRendererDirectiveComponent } from './directives/two-renderer-directive/two-renderer-directive.component';
+import { SmSizeDirective } from './directives/two-renderer-directive/sm-size.directive';
+import { MdSizeDirective } from './directives/two-renderer-directive/md-size.directive';
+import { XlSizeDirective } from './directives/two-renderer-directive/xl-size.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -69,9 +73,13 @@ const appRoutes: Routes = [
     FormTwoComponent,
     ThreeLifecycleHooksComponent,
     DirectivesComponent,
-    FirstBasicCustomDirectiveComponent,
-    BgHighlightDirectiveDirective,
-    BgHighlightDirectiveTwoDirective
+    OneBasicCustomDirectiveComponent,
+    BlueBgDirective,
+    BordeauxBgDirective,
+    TwoRendererDirectiveComponent,
+    SmSizeDirective,
+    MdSizeDirective,
+    XlSizeDirective
   ],
   imports: [
     BrowserModule,

@@ -2,9 +2,9 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 
 //bordeaux
 @Directive({
-  selector: '[appBgHighlightDirectiveTwo]'
+  selector: '[appBordeauxBg]'
 })
-export class BgHighlightDirectiveTwoDirective implements OnInit {
+export class BordeauxBgDirective implements OnInit {
 
   constructor(private elementRef:ElementRef ) { }
 

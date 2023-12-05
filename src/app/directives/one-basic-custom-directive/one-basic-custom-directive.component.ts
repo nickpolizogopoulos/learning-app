@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-first-basic-custom-directive',
-  templateUrl: './first-basic-custom-directive.component.html',
-  styleUrls: ['./first-basic-custom-directive.component.css']
+  selector: 'app-one-basic-custom-directive',
+  templateUrl: './one-basic-custom-directive.component.html',
+  styleUrls: ['./one-basic-custom-directive.component.css']
 })
-export class FirstBasicCustomDirectiveComponent {
+export class OneBasicCustomDirectiveComponent {
 
   blueBg:boolean = false;
   bordeauxBg:boolean = false;

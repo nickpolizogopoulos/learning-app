@@ -2,9 +2,9 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 
 //blue
 @Directive({
-  selector: '[appBgHighlightDirective]'
+  selector: '[appBlueBg]'
 })
-export class BgHighlightDirectiveDirective implements OnInit {
+export class BlueBgDirective implements OnInit {
 
   constructor(private elementRef:ElementRef ) { }
 

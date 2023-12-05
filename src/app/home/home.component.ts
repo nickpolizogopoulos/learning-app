@@ -20,9 +20,9 @@ export class HomeComponent {
     description: `Passing data between components, @Input, @Output, local references,
     @ViewChild & <ng-content>!</ng-content>` },
 
-    { name: 'Directives', link: '/directives',
+    { name: 'Directives Deep Dive', link: '/directives',
     img: '../../assets/images/angular-banner-image.jpg',
-    description: `The section description will be here.` },
+    description: `Basic custom attribute directives,` },
 
     
 
