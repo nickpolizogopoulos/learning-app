@@ -3,7 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-five-ng-if-else',
   templateUrl: './five-ng-if-else.component.html',
-  styleUrls: ['./five-ng-if-else.component.css']
+  styles: [`
+  
+  .emojiImg {
+    height: 45px;
+    width: 45px;
+  }
+  `]
 })
 export class FiveNgIfElseComponent {
   

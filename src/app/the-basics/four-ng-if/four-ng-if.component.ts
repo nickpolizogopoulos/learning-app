@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-four-ng-if',
   templateUrl: './four-ng-if.component.html',
-  styleUrls: ['./four-ng-if.component.css']
+  styles: [``]
 })
 export class FourNgIfComponent {
   

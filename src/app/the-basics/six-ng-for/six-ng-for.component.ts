@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-six-ng-for',
   templateUrl: './six-ng-for.component.html',
-  styleUrls: ['./six-ng-for.component.css']
+  styles: [``]
 })
 export class SixNgForComponent {
 

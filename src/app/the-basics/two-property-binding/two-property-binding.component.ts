@@ -3,7 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-two-property-binding',
   templateUrl: './two-property-binding.component.html',
-  styleUrls: ['./two-property-binding.component.css']
+  styles: [`
+  
+  .checkborder {
+    border-color: rgb(176, 176, 176);
+  }
+  
+  `]
 })
 export class TwoPropertyBindingComponent {
 

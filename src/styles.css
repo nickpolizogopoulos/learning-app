@@ -11,21 +11,13 @@ mark {
 h2 {
   line-height: 140%;
 }
-
-/* for testing */
-.bgred { background-color: red; } 
-.bggreen { background-color: green; }
-/* for testing */
-
 .divline {
   background-color: rgb(154, 154, 154);
   height: 2px;
 }
-
 .cursor-pointer {
   cursor: pointer;
 }
-
 .lessonbox {
   color: rgb(36, 54, 99);
   padding: 40px;
@@ -39,12 +31,8 @@ h2 {
 .lessonbox:hover {
   transform: translate(0px, -3px);
 }
-
 .niceblue {
   color: rgb(36, 54, 99);
-}
-.headtitle {
-  padding: 40px 40px 0px 40px;
 }
 .nodecor {
   text-decoration: none;

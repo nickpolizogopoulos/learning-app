@@ -3,7 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-eight-ng-class',
   templateUrl: './eight-ng-class.component.html',
-  styleUrls: ['./eight-ng-class.component.css']
+  styles: [`
+
+  .ngClassBox {
+    padding: 20px 14px;
+    background-color: rgb(243, 255, 243);
+    border: 3px dashed rgb(36, 54, 99);
+  }
+  `]
 })
 export class EightNgClassComponent {
 

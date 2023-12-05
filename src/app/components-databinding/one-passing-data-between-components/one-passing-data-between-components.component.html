@@ -1,13 +1,13 @@
-
 <div class="container-fluid">
-    <div class="row d-flex justify-content-start">
+    <div class="row d-flex justify-content-around">
         <!-- FIRST CHILD -->
         <app-form
-            class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5"
+            class="lessonbox col-md-6 col-lg-5 col-xxl-3"
             (immediateItemAdded)="onImmediateAdded($event)"
             (futureItemAdded)="onImmediateAdded($event)"
             (listCleared)="onClearList()"
         ></app-form>
+
         <!-- SECOND CHILD -->
         <section class="lessonbox col-md-6 col-lg-5 col-xxl-3">
             <h4>1. Passing Data Between Components, Input, Output & ng-content</h4>
@@ -39,9 +39,6 @@
 
             </app-list>
         </section>
+        <div style="height: auto;" class="col-md-6 col-lg-5 col-xxl-3 me-5"></div>
     </div>
 </div>
-           
-
-
-

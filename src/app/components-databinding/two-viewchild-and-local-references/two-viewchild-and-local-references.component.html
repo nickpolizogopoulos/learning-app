@@ -1,9 +1,7 @@
 <div class="container-fluid">
-    <div class="row d-flex justify-content-start">
-
+    <div class="row d-flex justify-content-around">
         <!-- FIRST CHILD -->
-        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
-
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
             <h4>2. ViewChild & Local References</h4>
             <p class="lead"> <u>Child Component #1</u></p>
             <app-form-two
@@ -11,11 +9,9 @@
             (unimportantItem)="onUnimportantAdded($event)"
             (clearBothLists)="onClearLists()"
             ></app-form-two>
-
         </div>
-
         <!-- SECOND CHILD -->
-        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
 
             <h4>2. ViewChild & Local References</h4>
             <span class="lead"> <u>Child Component #2</u> </span>
@@ -27,7 +23,6 @@
             (deleteImportantItem)="onImportantDeleted(importantIndex)"
             (moveImportantItem)="onImportantMoved(importantIndex, importantItem)"
             ></app-important>
-
             <button
                 *ngIf="importantList.length !== 0"
                 (click)="clearImportant()"
@@ -35,9 +30,8 @@
                 >Clear List
             </button>
         </div>
-
         <!-- THIRD CHILD -->
-        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3 me-5">
+        <div class="lessonbox col-md-6 col-lg-5 col-xxl-3">
             
             <h4>2. ViewChild & Local References</h4>
             <span class="lead"><u>Child Component #3</u></span>
@@ -50,14 +44,12 @@
             (deleteUnimportantItem)="onUnimportantDeleted(unimportantIndex)"
             (moveUnimportantItem)="onUnimportantMoved(unimportantIndex, unimportantItem)"
             ></app-unimportant>
-
             <button
                 *ngIf="unimportantList.length !== 0"
                 (click)="clearUnimportant()"
                 class="btn btn-sm btn-secondary"
                 >Clear List
             </button>
-
         </div>
     </div>
 </div>

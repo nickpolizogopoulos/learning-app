@@ -4,7 +4,7 @@ import { ItemProps } from '../one-passing-data-between-components.component';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styles: [``]
 })
 export class FormComponent {
 

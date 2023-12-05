@@ -25,7 +25,6 @@ export class HomeComponent {
     description: `Basic custom attribute directives, Renderer2, HostListener` },
 
     
-
   ]
 
 }

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-seven-ng-style',
   templateUrl: './seven-ng-style.component.html',
-  styleUrls: ['./seven-ng-style.component.css']
+  styles: [``]
 })
 export class SevenNgStyleComponent {
 
