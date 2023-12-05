@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class FirstBasicCustomDirectiveComponent {
 
   blueBg:boolean = false;
-  bordeauxBg:boolean = true;
+  bordeauxBg:boolean = false;
 
   onBlueClick() {
     this.blueBg = true;
