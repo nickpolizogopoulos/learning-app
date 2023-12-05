@@ -4,9 +4,12 @@ body {
   background-attachment:fixed;
 }
 mark {
-  padding: 6px;
   color: rgb(36, 54, 99);
   background-color: white;
+}
+
+h2 {
+  line-height: 140%;
 }
 
 /* for testing */
