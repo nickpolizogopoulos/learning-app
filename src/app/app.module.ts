@@ -36,6 +36,9 @@ import { TwoRendererDirectiveComponent } from './directives/two-renderer-directi
 import { SmSizeDirective } from './directives/two-renderer-directive/sm-size.directive';
 import { MdSizeDirective } from './directives/two-renderer-directive/md-size.directive';
 import { XlSizeDirective } from './directives/two-renderer-directive/xl-size.directive';
+import { ThreeHostlistenerComponent } from './directives/three-hostlistener/three-hostlistener.component';
+import { GreenFilterDirective } from './directives/three-hostlistener/green-filter.directive';
+import { YellowFilterDirective } from './directives/three-hostlistener/yellow-filter.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -79,7 +82,10 @@ const appRoutes: Routes = [
     TwoRendererDirectiveComponent,
     SmSizeDirective,
     MdSizeDirective,
-    XlSizeDirective
+    XlSizeDirective,
+    ThreeHostlistenerComponent,
+    GreenFilterDirective,
+    YellowFilterDirective
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
 
 <button (click)="onBlueClick()" class="btn btn-blueBg rounded-1 me-3 mb-3">Blue</button>
 <button (click)="onBordeauxClick()" class="btn btn-bordeauxBg rounded-1 me-3 mb-3">Bordeaux</button>
-<button (click)="onResetColor()" class="btn btn-light rounded-1 me-3 mb-3">Reset</button>
+<button *ngIf="blueBg || bordeauxBg" (click)="onResetColor()" class="btn btn-light rounded-1 me-3 mb-3">Reset</button>
 
 <div class="row mt-4">
     <div class="col-9">
