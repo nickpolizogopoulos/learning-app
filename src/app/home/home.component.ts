@@ -22,7 +22,7 @@ export class HomeComponent {
 
     { name: 'Directives Deep Dive', link: '/directives',
     img: '../../assets/images/angular-banner-image.jpg',
-    description: `Basic custom attribute directives,` },
+    description: `Basic custom attribute directives, Renderer2,` },
 
     
 
