@@ -1,0 +1,30 @@
+<h4>4. Using HostBinding to Bind to Host Properties</h4>
+<p *ngIf="btnDisabled" class="lead">Find  
+    <span (click)="onEnable()" appSecretButton>a way</span>
+    to press the button...
+</p>
+<div class="mt-4">
+    <div *ngIf="!buttonClicked else caseTwo" class="col d-flex justify-content-center">
+        <button (click)="onClick()"
+            [ngClass]="btnDisabled ? 'btn-outline-success' : 'btn-success'" 
+            class="btn rounded-1" [disabled]="btnDisabled">{{ btnDisabled ? 'button' : 'Click me!' }}
+        </button>
+    </div>
+    <ng-template #caseTwo>
+        <div class="col d-flex justify-content-center mt-3">
+            <p class="lead">You won!</p>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <svg *ngIf="heartVisible" (click)="onHeartClick()" xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" class="bi bi-heart heartColor cursor-pointer" viewBox="0 0 16 16">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+            </svg>
+            <img *ngIf="smileOne" class="cursor-pointer" (click)="onSmileOneClick()" 
+                src="../../../assets/images/slightly-smiling-face_1f642.png">
+            <div *ngIf="smileThree" class="cursor-pointer" (click)="onReset()">
+                <img class="me-2" src="../../../assets/images/slightly-smiling-face_1f642.png">
+                <img src="../../../assets/images/slightly-smiling-face_1f642.png">
+                <img class="ms-2" src="../../../assets/images/slightly-smiling-face_1f642.png">
+            </div>
+        </div>
+    </ng-template>
+</div>

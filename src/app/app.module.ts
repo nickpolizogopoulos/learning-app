@@ -39,6 +39,10 @@ import { XlSizeDirective } from './three-directives/two-renderer-directive/xl-si
 import { ThreeHostlistenerComponent } from './three-directives/three-hostlistener/three-hostlistener.component';
 import { GreenFilterDirective } from './three-directives/three-hostlistener/green-filter.directive';
 import { YellowFilterDirective } from './three-directives/three-hostlistener/yellow-filter.directive';
+import { FourHostbindingComponent } from './three-directives/four-hostbinding/four-hostbinding.component';
+import { SecretButtonDirective } from './three-directives/four-hostbinding/secret-button.directive';
+import { FiveBindingToDirectivePropertiesComponent } from './three-directives/five-binding-to-directive-properties/five-binding-to-directive-properties.component';
+import { ColoursDirective } from './three-directives/five-binding-to-directive-properties/colours.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -85,7 +89,11 @@ const appRoutes: Routes = [
     XlSizeDirective,
     ThreeHostlistenerComponent,
     GreenFilterDirective,
-    YellowFilterDirective
+    YellowFilterDirective,
+    FourHostbindingComponent,
+    SecretButtonDirective,
+    FiveBindingToDirectivePropertiesComponent,
+    ColoursDirective,
   ],
   imports: [
     BrowserModule,
