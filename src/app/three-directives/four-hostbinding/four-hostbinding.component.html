@@ -1,8 +1,9 @@
 <h4>4. Using HostBinding to Bind to Host Properties</h4>
 <p *ngIf="btnDisabled" class="lead">Find  
     <span (click)="onEnable()" appSecretButton>a way</span>
-    to press the button...
+    to click the button...
 </p>
+<div *ngIf="!btnDisabled" style="height: 30px;"></div>
 <div class="mt-4">
     <div *ngIf="!buttonClicked else caseTwo" class="col d-flex justify-content-center">
         <button (click)="onClick()"
@@ -11,7 +12,7 @@
         </button>
     </div>
     <ng-template #caseTwo>
-        <div class="col d-flex justify-content-center mt-3">
+        <div class="col d-flex justify-content-center">
             <p class="lead">You won!</p>
         </div>
         <div class="col d-flex justify-content-center">

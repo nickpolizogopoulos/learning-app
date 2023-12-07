@@ -1,24 +1,19 @@
 <h4>5. Binding to Directive Properties</h4>
-<p class="lead">Choose your favorite colours to style the icon!</p>
-
+<p class="lead">Choose your favorite colour and click the icon to pass the style!</p>
 <div class="row">
     <div class="col">
         <select class="form-select shadow-none rounded-1" aria-label="Default select example">
-            <option selected>Main colour</option>
-            <option value="1">Amaranth</option>
-            <option value="2">Glaucous</option>
-            <option value="3">Celadon</option>
+            <option (click)="onFillClick()" selected>Fill colour</option>
+            <option (click)="onSelectAmaranth()">Amaranth</option>
+            <option (click)="onSelectGlaucous()">Glaucous</option>
+            <option (click)="onSelectCeladon()">Celadon</option>
         </select>
-    </div>
-    
-    <div class="col">
-        <select class="form-select shadow-none rounded-1" aria-label="Default select example">
-            <option selected>Border colour</option>
-            <option value="1">Viridian</option>
-            <option value="2">Merlot</option>
-            <option value="3">Daffodil</option>
-        </select>
-    </div>
+    </div>  
 </div>
-
-
+<p *ngIf="extraInstructions" class="lead mt-2">Now click on the icon!</p>
+<p *ngIf="response" class="lead mt-2">It looks great!</p>
+<div (click)="onIconClick()" class="row mt-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+        <path appColours [fillColor]="fillColour" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+    </svg>
+</div>

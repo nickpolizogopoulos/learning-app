@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './four-hostbinding.component.html',
   styles: [`
   
+  // *CSS
   .highLighter {
     background-color: #e4f2c7;
   }
