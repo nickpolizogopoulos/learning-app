@@ -11,9 +11,9 @@
     </div>  
 </div>
 <p *ngIf="extraInstructions" class="lead mt-2">Now click on the icon!</p>
-<p *ngIf="response" class="lead mt-2">It looks great!</p>
-<div (click)="onIconClick()" class="row mt-4">
+<p *ngIf="response" class="lead mt-2">{{responseText}}</p>
+<div class="row mt-4">
     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-        <path appColours [fillColor]="fillColour" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+        <path (click)="onIconClick()" appColours [fillColor]="fillColour" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
     </svg>
 </div>
