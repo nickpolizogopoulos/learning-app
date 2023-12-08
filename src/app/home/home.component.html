@@ -6,7 +6,7 @@
     <div class="row">
         <div *ngFor="let card of homeCards let i = index" 
             class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
-            <div style="border-radius: 0px 30px 0px 0px;" class="homecard">
+            <div class="homecard">
                 <a routerLink="{{ card.link }}" class="stretched-link">
                     <img class="cardimage" src="{{card.img}}" alt="Angular banner">
                 </a>
@@ -21,6 +21,34 @@
                             </div>
                             <div>
                                 <p class="mb-4">{{card.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+<hr class="pb-5">
+
+    <div class="row">
+        <div *ngFor="let project of projectCards let i = index" 
+            class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
+            <div class="projectcard">
+                <a routerLink="{{ project.link }}" class="stretched-link">
+                    <img class="projectimage" src="{{project.img}}" alt="Angular Project banner">
+                </a>
+                <div class="p-3 pb-0 niceblue">
+                    <div class="row">
+                        <div class="col-1">
+                            <h4>{{ i + 1 }}.</h4>
+                        </div>
+                        <div class="col justify-content-start">
+                            <div>
+                                <h4>{{ project.name }}</h4>
+                            </div>
+                            <div>
+                                <p class="mb-4">{{project.description}}</p>
                             </div>
                         </div>
                     </div>

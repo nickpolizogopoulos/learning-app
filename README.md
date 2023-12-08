@@ -1,7 +1,7 @@
 # Project: Learning Angular
 
 I started this project as a playground to practice Angular.
-This is now an Angular Web App with sections, exercises and solutions.
+This is now an Angular Web App with sections, exercises with solutions and many projects!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
