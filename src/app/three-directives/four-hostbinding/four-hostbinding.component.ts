@@ -5,9 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './four-hostbinding.component.html',
   styles: [`
   
-  // *CSS
   .heartColor {
     color: #ff2164;
+  }
+  .hint {
+    font-size: 10px;
+    color: #bababa;
+    cursor: pointer;
+    margin-left: 7px;
   }
   img {
     height: 50px;
@@ -23,6 +28,7 @@ export class FourHostbindingComponent {
   smileOne:boolean = false;
   smileThree:boolean = false;
   heartVisible:boolean = false;
+  hint:boolean = false;
   
   onEnable() {
     this.btnDisabled = false;
@@ -43,5 +49,8 @@ export class FourHostbindingComponent {
     this.smileThree = false;
     this.buttonClicked = false;
     this.btnDisabled = true;
+  }
+  onTipClick() {
+    this.hint = !this.hint;
   }
 }

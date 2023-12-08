@@ -46,5 +46,9 @@ export class SixCustomStructuralDirectiveComponent {
     this.btnOne = true;
     this.btnTwo = true;
   }
+  onReset() {
+    this.firstResponse = false;
+    this.secondResponse = false;
+  }
 
 }

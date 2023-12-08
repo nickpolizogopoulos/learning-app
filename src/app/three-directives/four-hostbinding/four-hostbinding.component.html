@@ -1,6 +1,9 @@
-<h4>4. Using HostBinding to Bind to Host Properties</h4>
-<p *ngIf="btnDisabled" class="lead">Find  
-    <span (click)="onEnable()" appSecretButton>a way</span>
+<h4>4. Using HostBinding to Bind to Host Properties
+    <span (click)="onTipClick()" class="hint">[ hint ]</span>
+    <span *ngIf="hint" class="hint">press the "way" word below.</span>
+</h4>
+<p *ngIf="btnDisabled" class="lead">Find a  
+    <span (click)="onEnable()" appSecretButton>way</span>
     to click the button...
 </p>
 <div *ngIf="!btnDisabled" style="height: 30px;"></div>

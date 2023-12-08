@@ -45,6 +45,7 @@ import { FiveBindingToDirectivePropertiesComponent } from './three-directives/fi
 import { ColoursDirective } from './three-directives/five-binding-to-directive-properties/colours.directive';
 import { SixCustomStructuralDirectiveComponent } from './three-directives/six-custom-structural-directive/six-custom-structural-directive.component';
 import { UnlessDirective } from './three-directives/six-custom-structural-directive/unless.directive';
+import { SevenNgswitchComponent } from './three-directives/seven-ngswitch/seven-ngswitch.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -98,6 +99,7 @@ const appRoutes: Routes = [
     ColoursDirective,
     SixCustomStructuralDirectiveComponent,
     UnlessDirective,
+    SevenNgswitchComponent,
   ],
   imports: [
     BrowserModule,
