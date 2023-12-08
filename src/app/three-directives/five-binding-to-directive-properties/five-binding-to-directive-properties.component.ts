@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-five-binding-to-directive-properties',
   templateUrl: './five-binding-to-directive-properties.component.html',
-  styleUrls: ['./five-binding-to-directive-properties.component.css']
+  styles: [``]
 })
 export class FiveBindingToDirectivePropertiesComponent {
 
@@ -48,7 +48,7 @@ export class FiveBindingToDirectivePropertiesComponent {
     : this.fillColour === '#6082b6'
     ? this.responseText = 'Glaucous (from Ancient Greek γλαυκός (glaukós) is used to describe the pale grey or bluish-green appearance.'
     : this.fillColour === '#ace1af'
-    ? this.responseText = 'Celadon is a term for pottery denoting both wares glazed in the jade green celadon color originated in China.'
+    ? this.responseText = 'Celadon is a term for pottery, denoting wares glazed in the jade green celadon color originated in China.'
     : ''
   }
 

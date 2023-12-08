@@ -43,6 +43,8 @@ import { FourHostbindingComponent } from './three-directives/four-hostbinding/fo
 import { SecretButtonDirective } from './three-directives/four-hostbinding/secret-button.directive';
 import { FiveBindingToDirectivePropertiesComponent } from './three-directives/five-binding-to-directive-properties/five-binding-to-directive-properties.component';
 import { ColoursDirective } from './three-directives/five-binding-to-directive-properties/colours.directive';
+import { SixCustomStructuralDirectiveComponent } from './three-directives/six-custom-structural-directive/six-custom-structural-directive.component';
+import { UnlessDirective } from './three-directives/six-custom-structural-directive/unless.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -94,6 +96,8 @@ const appRoutes: Routes = [
     SecretButtonDirective,
     FiveBindingToDirectivePropertiesComponent,
     ColoursDirective,
+    SixCustomStructuralDirectiveComponent,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,
