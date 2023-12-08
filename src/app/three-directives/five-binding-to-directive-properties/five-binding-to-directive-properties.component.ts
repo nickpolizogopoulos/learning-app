@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 })
 export class FiveBindingToDirectivePropertiesComponent {
 
-  fillColour:string = '';
+  defaultColour:string = '#6c757d';
+  fillColour?:string;
   amaranth:string = '#e52b50';
   glaucous:string = '#6082b6';
   celadon:string = '#ace1af';
   extraInstructions:boolean = false;
-  response:boolean = false;
+  response?:boolean;
   responseText?:string;
 
   onSelectAmaranth():void {
@@ -33,13 +34,12 @@ export class FiveBindingToDirectivePropertiesComponent {
   onIconClick():void {
     this.extraInstructions = false;
     this.responseMessage()
-    this.fillColour = '';
-    
   }
   onFillClick():void {
-    this.fillColour = '';
+    this.fillColour = '#6c757d';
     this.extraInstructions = false;
     this.response = false;
+    this.responseText = '';
   }
   responseMessage():string {
     this.response = true;

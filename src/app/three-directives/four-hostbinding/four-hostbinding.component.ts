@@ -6,9 +6,6 @@ import { Component } from '@angular/core';
   styles: [`
   
   // *CSS
-  .highLighter {
-    background-color: #e4f2c7;
-  }
   .heartColor {
     color: #ff2164;
   }
