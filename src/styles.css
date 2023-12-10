@@ -18,6 +18,11 @@ h2 {
 .cursor-pointer {
   cursor: pointer;
 }
+.addToTestText {
+  font-size: 14px;
+  color: rgb(185, 185, 185);
+  cursor: pointer;
+}
 .lessonbox {
   color: rgb(36, 54, 99);
   padding: 40px;
@@ -40,6 +45,16 @@ h2 {
 }
 .inherit {
   color: inherit;
+}
+
+/* **PROJECTS**  */
+.project-container {
+  padding: 50px 30px;
+  margin-bottom: 50px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.245);
+  background-color: rgba(214, 214, 214, 0.197);
+  border: 1px solid rgba(178, 178, 178, 0.384);
+  backdrop-filter: blur(5px);
 }
 ::-moz-selection { 
   color: inherit;

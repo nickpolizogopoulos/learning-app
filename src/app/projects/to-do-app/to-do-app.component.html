@@ -1,1 +1,77 @@
-<p>to-do-app works!</p>
+<section class="container project-container">
+    <section class="container-fluid">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="niceblue">[Project - 01]: <u>My Weekly To Do List Application</u></h1>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col d-flex justify-content-end">
+                <button (click)="onHideOrShowForm()" *ngIf="formVisible" class="btn btn-sm btn-secondary rounded-1">Hide form</button>
+                <button (click)="onHideOrShowForm()" *ngIf="!formVisible" class="btn btn-sm btn-secondary rounded-1">Show form</button>
+            </div>
+        </div>
+        <div *ngIf="formVisible" class="row mt-2">
+            <div class="col lead">
+                <div class="row mb-3 lead"> 
+                    <div class="col">
+                        <label for="toDoItemTitle" class="form-label">Title</label>
+                        <input [(ngModel)]="toDoTitle" type="text" class="form-control rounded-1 shadow-none" id="toDoItemTitle">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label">Day</label>
+                        <select [(ngModel)]="toDoDay" class="form-select rounded-1 shadow-none">
+                            <option selected>-</option>
+                            <option *ngFor="let day of weekDays">{{day}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="toDoItemComment" class="form-label">Comment</label>
+                    <input [(ngModel)]="toDoComment" type="text" class="form-control shadow-none" id="toDoItemComment">
+                </div>
+                <div class="form-check mb-4">
+                    <input [checked]="toDoImportant" (change)="toDoImportant = !toDoImportant" class="form-check-input" type="checkbox" value="" id="importantItem">
+                    <label class="form-check-label" for="importantItem">
+                        This is important
+                    </label>
+                </div>
+                <button (click)="onAddToDoItem()" class="btn btn-primary rounded-1">Add To Do</button>
+            </div>
+        </div>
+        <hr class="mt-5 mb-4">
+    </section>
+    <section class="container-fluid">
+        <h2 class="niceblue mb-4">My Todos:
+            <span (click)="addFourToDoItems()" class="addToTestText">[ add 4 dummy items ]</span>
+        </h2>
+        <div *ngIf="toDoList.length > 1" class="dropdown mb-5">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                filter the list
+            </button>
+            <ul class="dropdown-menu">
+                <li><button (click)="onImportantClick()" class="dropdown-item">Important</button></li>
+                <li><button (click)="onNonImportantClick()" class="dropdown-item">Unimportant</button></li>
+                <li><button (click)="onResetListClick()" class="dropdown-item">Reset to default</button></li>
+            </ul>
+        </div>
+        <div *ngFor="let todo of toDoList let i = index" class="container-fluid mb-4">
+            <div class="row">
+                <div class="col-10">
+                    <h4 *ngIf="todo.important" class="niceblue">{{i + 1}}. <u class="text-success">{{todo.title}}</u>
+                        <span class="lead ms-2">on {{todo.day}}</span>
+                    </h4>
+                    <h4 *ngIf="!todo.important" class="niceblue">{{i + 1}}. {{todo.title}}
+                        <span class="lead ms-2">on {{todo.day}}</span>
+                    </h4>
+                    <span class="lead niceblue">{{todo.comment}}</span>
+                </div>
+                <div class="col">                    
+                    <button (click)="onDeleteTodo(i)" class="btn btn-sm btn-outline-danger rounded-1 mt-3 mb-3">delete</button>
+                </div>
+            </div>
+            <hr *ngIf="toDoList.length > 1" class="mb-5">
+        </div>
+        <button *ngIf="toDoList.length > 1" (click)="onClearList()" class="btn btn-secondary rounded-1">Clear list</button>
+    </section>
+</section>

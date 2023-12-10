@@ -49,6 +49,7 @@ import { SevenNgswitchComponent } from './three-directives/seven-ngswitch/seven-
 import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
 import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
 import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
+import { CalculatorComponent } from './projects/calculator/calculator.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +57,12 @@ const appRoutes: Routes = [
   { path: 'the-basics', component: OneTheBasicsComponent },
   { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
   { path: 'directives', component: ThreeDirectivesComponent },
+
+  { path: 'project-to-do-application', component: ToDoAppComponent },
+  { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
+  { path: 'project-shopping-list', component: MyShoppingListComponent },
+  { path: 'project-calculator', component: CalculatorComponent },
+  
   { path: '**', component: ErrorComponent },
 ];
 
@@ -106,6 +113,7 @@ const appRoutes: Routes = [
     ToDoAppComponent,
     SuperSignatureMakerComponent,
     MyShoppingListComponent,
+    CalculatorComponent,
   ],
   imports: [
     BrowserModule,

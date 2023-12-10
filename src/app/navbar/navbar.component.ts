@@ -11,7 +11,6 @@ export class NavbarComponent {
   navLinks = [
     {name: 'Home', link: '/'},
     {name: 'About', link: '/about'},
-    // {name: '404', link: '/non-existing-path'},
   ]
   
   // NAVBAR DROPDOWN SECTIONS
@@ -22,9 +21,10 @@ export class NavbarComponent {
   ]
   // NAVBAR DROPDOWN PROJECTS
   AngularProjects = [
-    { name: 'Super Signature Maker', link: '/' },
-    { name: 'To Do Application', link: '/' },
-    { name: 'My Shopping List', link: '/' },
+    { name: 'To Do Application', link: '/project-to-do-application' },
+    { name: 'Super Signature Maker', link: '/project-super-signature-maker' },
+    { name: 'My Shopping List', link: '/project-shopping-list' },
+    { name: 'Calculator', link: '/project-calculator' },
   ]
   
 }

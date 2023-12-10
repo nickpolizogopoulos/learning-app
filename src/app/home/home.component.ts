@@ -36,23 +36,19 @@ export class HomeComponent {
 
   projectCards:HomeCardProps[] = [
 
-    { name: 'My personal Website', link: '/projectone',
-    img: '../../assets/images/project-banner-image.jpg',
-    description: `Such personal, much wow!` },
-   
-    { name: 'To Do Application', link: '/projectone',
+    { name: 'To Do Application', link: '/project-to-do-application',
     img: '../../assets/images/project-banner-image.jpg',
     description: `Keep your important things organised with this To Do application!` },
 
-    { name: 'Super Signature Maker', link: '/projectone',
+    { name: 'Super Signature Maker', link: '/project-super-signature-maker',
     img: '../../assets/images/project-banner-image.jpg',
     description: `Make an email signature super fast and easy!` },
 
-    { name: 'My Shopping List', link: '/projectone',
+    { name: 'My Shopping List', link: '/project-shopping-list',
     img: '../../assets/images/project-banner-image.jpg',
     description: `Who doesn't like shopping? Make a shopping list of your favorite products!` },
 
-    { name: 'Calculator', link: '/projectone',
+    { name: 'Calculator', link: '/project-calculator',
     img: '../../assets/images/project-banner-image.jpg',
     description: `Here is a calculator that nobody will use for more than a minute. But I've made it!` },
 
