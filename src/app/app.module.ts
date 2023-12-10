@@ -46,6 +46,9 @@ import { ColoursDirective } from './three-directives/five-binding-to-directive-p
 import { SixCustomStructuralDirectiveComponent } from './three-directives/six-custom-structural-directive/six-custom-structural-directive.component';
 import { UnlessDirective } from './three-directives/six-custom-structural-directive/unless.directive';
 import { SevenNgswitchComponent } from './three-directives/seven-ngswitch/seven-ngswitch.component';
+import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
+import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
+import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -100,6 +103,9 @@ const appRoutes: Routes = [
     SixCustomStructuralDirectiveComponent,
     UnlessDirective,
     SevenNgswitchComponent,
+    ToDoAppComponent,
+    SuperSignatureMakerComponent,
+    MyShoppingListComponent,
   ],
   imports: [
     BrowserModule,
