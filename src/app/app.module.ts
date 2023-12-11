@@ -50,6 +50,9 @@ import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
 import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
 import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
 import { CalculatorComponent } from './projects/calculator/calculator.component';
+import { ProjectFormComponent } from './projects/my-shopping-list/project-form/project-form.component';
+import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
+import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -114,6 +117,9 @@ const appRoutes: Routes = [
     SuperSignatureMakerComponent,
     MyShoppingListComponent,
     CalculatorComponent,
+    ProjectFormComponent,
+    ProjectFoodListComponent,
+    ProjectHomeListComponent,
   ],
   imports: [
     BrowserModule,

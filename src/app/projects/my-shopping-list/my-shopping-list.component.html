@@ -1,8 +1,65 @@
 <section class="container project-container">
     <section class="container-fluid">
         <div class="row mb-4">
-            <div class="col">
-                <h1 class="niceblue">[Project]: <u>My Shopping List Application</u></h1>
+            <h1 class="niceblue">[Project - 03]: <u>My Shopping List Application</u></h1>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-5 mb-5">
+        <div class="row mb-4 niceblue">
+            <app-project-form
+                (foodItem)="onFoodItemAdded($event)"
+                (homeItem)="onHomeItemAdded($event)"
+                (clearLists)="onListsClear()"
+            ></app-project-form>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-4">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between mb-4 niceblue">
+
+                
+                <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
+                    <h3 class="mb-4">Food List: <span class="ms-2 lead">{{foodLengthMessage()}}.</span>
+                        <span (click)="addTwoFood()" class="addToTestText ms-3">[ +2 items ]</span>
+                    </h3>
+                    <app-project-food-list
+                        *ngFor="let item of foodList let i = index"
+                        [foodItem]="item"
+                        (deleteFoodItem)="onDeleteFoodItem(i)"
+                        (moveFoodItem)="onMoveFoodItem(i, item)"
+                    ></app-project-food-list>
+                    <div *ngIf="foodList.length !== 0" class="row">
+                        <div class="col">
+                            <button (click)="onClearFoodList()" class="btn btn-sm btn-secondary rounded-1 me-2">Clear list</button>
+                        </div>
+                        <div class="col">
+                            <span class="ms-2 lead"><u>Total Quantity: {{foodTotalQuantity()}}</u></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
+                    <h3 class="mb-4">Home List<span class="ms-2 lead">{{homeLengthMessage()}}.</span>
+                        <span (click)="addTwoHome()" class="addToTestText ms-3">[ +2 items ]</span>
+                    </h3>
+                    <app-project-home-list
+                        *ngFor="let item of homeList let i = index"
+                        [homeItem]="item"
+                        (deleteHomeItem)="onDeleteHomeItem(i)"
+                        (moveHomeItem)="onMoveHomeItem(i, item)"
+                    ></app-project-home-list>
+                    <div *ngIf="homeList.length !== 0" class="row">
+                        <div class="col">
+                            <button (click)="onClearHomeList()" class="btn btn-sm btn-secondary rounded-1 me-2">Clear list</button>
+                        </div>
+                        <div class="col">
+                            <span class="ms-2 lead"><u>Total Quantity: {{homeTotalQuantity()}}</u></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

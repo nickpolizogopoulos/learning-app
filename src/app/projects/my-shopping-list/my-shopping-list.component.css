@@ -1,0 +1,8 @@
+.shopping-list-card {
+    height: 100%;
+    width: 600px;
+    padding: 20px 25px;
+    background-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.245);
+    border: 1px solid rgba(178, 178, 178, 0.384);
+}
