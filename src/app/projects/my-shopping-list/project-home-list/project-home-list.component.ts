@@ -12,12 +12,12 @@ export class ProjectHomeListComponent {
   @Output() deleteHomeItem = new EventEmitter<Function>()
   @Output() moveHomeItem = new EventEmitter<Function>()
 
-  onDeleteItem() {
+  onDeleteItem():void {
     this.deleteHomeItem.emit(
       () => {}
     )
   }
-  onMoveItem() {
+  onMoveItem():void {
     this.moveHomeItem.emit(
       () => {}
     )

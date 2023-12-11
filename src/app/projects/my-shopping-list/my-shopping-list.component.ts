@@ -69,11 +69,11 @@ export class MyShoppingListComponent {
   onDeleteHomeItem(index:number):void {
     this.homeList.splice(index, 1)
   }
-  onMoveFoodItem(index:number, item:ShoppingItemProps) {
+  onMoveFoodItem(index:number, item:ShoppingItemProps):void {
     this.foodList.splice(index, 1)
     this.homeList.push(item)
   }
-  onMoveHomeItem(index:number, item:ShoppingItemProps) {
+  onMoveHomeItem(index:number, item:ShoppingItemProps):void {
     this.homeList.splice(index, 1)
     this.foodList.push(item)
   }
@@ -107,13 +107,13 @@ export class MyShoppingListComponent {
   onClearHomeList():void {
     this.homeList.length = 0;
   }
-  removeLastFoodList() {
+  removeLastFoodList():void {
     this.foodList.pop()
   }
-  removeLastHomeList() {
+  removeLastHomeList():void {
     this.homeList.pop()
   }
-  addTwoFood() {
+  addTwoFood():void {
     this.foodList.push(
       {
         name: 'Carrots',
@@ -129,7 +129,7 @@ export class MyShoppingListComponent {
       }
     )
   }
-  addTwoHome() {
+  addTwoHome():void {
     this.homeList.push(
       {
         name: 'Carpet',

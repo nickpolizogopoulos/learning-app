@@ -18,7 +18,7 @@ export class ProjectFormComponent {
     name:HTMLInputElement,
     quantity:HTMLInputElement, 
     comment:HTMLInputElement
-    )
+    ):void
   {
     if (
       name.value === '' || 
@@ -44,7 +44,7 @@ export class ProjectFormComponent {
     name:HTMLInputElement, 
     quantity:HTMLInputElement, 
     comment:HTMLInputElement
-    )
+    ):void
   {
     if (
       name.value === '' || 
@@ -65,10 +65,10 @@ export class ProjectFormComponent {
     quantity.value = '';
     comment.value = '';
   }
-  onCloseAlert() {
+  onCloseAlert():void {
     this.alertMessage = false;
   }
-  onClearLists() {
+  onClearLists():void {
     this.clearLists.emit(
       () => {}
     )
