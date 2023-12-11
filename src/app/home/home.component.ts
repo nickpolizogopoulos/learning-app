@@ -31,6 +31,10 @@ export class HomeComponent {
     img: '../../assets/images/angular-banner-image.jpg',
     description: `Basic custom attribute directives, Renderer2, HostListener, HostBinding, 
     Structural Directives and ngSwitch!` },
+
+    { name: 'Services & Dependency Injection', link: '/services',
+    img: '../../assets/images/angular-banner-image.jpg',
+    description: `This is the Section description` },
     
   ]
 

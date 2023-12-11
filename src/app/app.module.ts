@@ -53,6 +53,7 @@ import { CalculatorComponent } from './projects/calculator/calculator.component'
 import { ProjectFormComponent } from './projects/my-shopping-list/project-form/project-form.component';
 import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
 import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
+import { FourServicesDependencyInjectionComponent } from './four-services-dependency-injection/four-services-dependency-injection.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
   { path: 'the-basics', component: OneTheBasicsComponent },
   { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
   { path: 'directives', component: ThreeDirectivesComponent },
+  { path: 'services', component: FourServicesDependencyInjectionComponent },
 
   { path: 'project-to-do-application', component: ToDoAppComponent },
   { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
@@ -120,6 +122,7 @@ const appRoutes: Routes = [
     ProjectFormComponent,
     ProjectFoodListComponent,
     ProjectHomeListComponent,
+    FourServicesDependencyInjectionComponent,
   ],
   imports: [
     BrowserModule,

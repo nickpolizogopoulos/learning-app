@@ -18,6 +18,7 @@ export class NavbarComponent {
     { name: 'The Basics', link: '/the-basics' },
     { name: 'Components & Databinding', link: '/components-databinding' },
     { name: 'Directives', link: '/directives' },
+    { name: 'Services & Dependency Injection', link: '/services'}
   ]
   // NAVBAR DROPDOWN PROJECTS
   AngularProjects = [
