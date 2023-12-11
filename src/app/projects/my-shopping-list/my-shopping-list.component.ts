@@ -107,6 +107,12 @@ export class MyShoppingListComponent {
   onClearHomeList():void {
     this.homeList.length = 0;
   }
+  removeLastFoodList() {
+    this.foodList.pop()
+  }
+  removeLastHomeList() {
+    this.homeList.pop()
+  }
   addTwoFood() {
     this.foodList.push(
       {

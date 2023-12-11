@@ -33,6 +33,7 @@
                     <div *ngIf="foodList.length !== 0" class="row">
                         <div class="col">
                             <button (click)="onClearFoodList()" class="btn btn-sm btn-secondary rounded-1 me-2">Clear list</button>
+                            <button (click)="removeLastFoodList()" class="btn btn-sm btn-warning rounded-1 me-2">Remove Last</button>
                         </div>
                         <div class="col">
                             <span class="ms-2 lead"><u>Total Quantity: {{foodTotalQuantity()}}</u></span>
@@ -54,6 +55,8 @@
                     <div *ngIf="homeList.length !== 0" class="row">
                         <div class="col">
                             <button (click)="onClearHomeList()" class="btn btn-sm btn-secondary rounded-1 me-2">Clear list</button>
+                            <button (click)="removeLastHomeList()" class="btn btn-sm btn-warning rounded-1 me-2">Remove Last</button>
+
                         </div>
                         <div class="col">
                             <span class="ms-2 lead"><u>Total Quantity: {{homeTotalQuantity()}}</u></span>
