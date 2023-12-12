@@ -4,7 +4,7 @@ import { ItemProps } from '../two-viewchild-and-local-references.component';
 @Component({
   selector: 'app-form-two',
   templateUrl: './form-two.component.html',
-  styleUrls: ['./form-two.component.css']
+  styles: [``]
 })
 export class FormTwoComponent {
   

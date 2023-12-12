@@ -3,7 +3,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 @Component({
   selector: 'app-three-lifecycle-hooks',
   templateUrl: './three-lifecycle-hooks.component.html',
-  styleUrls: ['./three-lifecycle-hooks.component.css']
+  styles: [``]
 })
 export class ThreeLifecycleHooksComponent {
 
