@@ -58,6 +58,9 @@ import { OneLoggingServiceComponent } from './four-services-dependency-injection
 import { OneServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/one-service-button/one-service-button.component';
 import { TwoServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/two-service-button/two-service-button.component';
 import { ThreeServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/three-service-button/three-service-button.component';
+import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
+import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
+import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -131,6 +134,9 @@ const appRoutes: Routes = [
     OneServiceButtonComponent,
     TwoServiceButtonComponent,
     ThreeServiceButtonComponent,
+    TwoDataServiceComponent,
+    FormDataServiceComponent,
+    ListDataServiceComponent,
   ],
   imports: [
     BrowserModule,
