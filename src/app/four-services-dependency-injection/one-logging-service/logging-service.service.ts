@@ -9,8 +9,9 @@ export class LoggingServiceService {
     
   }
 
-  logMessage(buttonColor:string) {
-    console.log(`The <${buttonColor}> button is triggered`)
+  logMessage(buttonColor:string):string {
+    console.log(`The ${buttonColor} button is clicked!`)
+    return `The ${buttonColor} button is clicked!`
   }
 
 }

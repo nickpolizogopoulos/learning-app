@@ -22,10 +22,15 @@ export class OneServiceButtonComponent {
 
   }
 
-  blueColor:string = 'Blue';
+  @Output() blueClick = new EventEmitter<Function>();
+
+  // blueColor:string = 'Blue';
 
   onBlueButtonClick():void {
-    this.LoggingService.logMessage(this.blueColor);
+    // this.LoggingService.logMessage(this.blueColor);
+    this.blueClick.emit(
+      () => {}
+      )
   }
 
 }

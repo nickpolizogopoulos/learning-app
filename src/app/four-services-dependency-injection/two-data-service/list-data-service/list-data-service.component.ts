@@ -15,6 +15,7 @@ import { UserProps } from '../two-data-service.component';
 export class ListDataServiceComponent {
 
   @Input() newUser!:UserProps;
+  @Input() usersArrayLength!:number;
   @Output() deleteUser = new EventEmitter<Function>();
   
 

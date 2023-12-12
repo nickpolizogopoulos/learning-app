@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LoggingServiceService } from '../logging-service.service';
 
 @Component({
@@ -22,10 +22,14 @@ export class ThreeServiceButtonComponent {
   constructor ( private loggingService:LoggingServiceService ) {
 
   }
+  @Output() greenClick = new EventEmitter<Function>();
 
-  greenColor:string = 'Green';
+  // greenColor:string = 'Green';
 
   onGreenButtonClick() {
-    this.loggingService.logMessage(this.greenColor)
+    // this.loggingService.logMessage(this.greenColor);
+    this.greenClick.emit(
+      () => {}
+      )
   }
 }
