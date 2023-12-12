@@ -1,19 +1,13 @@
 <h4>2. Creating a Data Service</h4>
-<p class="lead mb-3">Add new users in the list or remove any existing ones.</p>
-
+<p class="lead mb-3">Add new users in the list or remove any existing ones. The list is provided by a service.</p>
 <app-form-data-service
     [userCount]="usersNumber()"
     (newUser)="onNewUserAdded($event)"
 ></app-form-data-service>
-
 <hr>
-  
 <app-list-data-service
     *ngFor="let user of usersList let i = index"
     [newUser]="user"
     [usersArrayLength]="usersList.length"
     (deleteUser)="deleteUser(i)"
 ></app-list-data-service>
-      
-
-
