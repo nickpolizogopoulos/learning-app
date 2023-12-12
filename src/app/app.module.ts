@@ -54,6 +54,10 @@ import { ProjectFormComponent } from './projects/my-shopping-list/project-form/p
 import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
 import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
 import { FourServicesDependencyInjectionComponent } from './four-services-dependency-injection/four-services-dependency-injection.component';
+import { OneLoggingServiceComponent } from './four-services-dependency-injection/one-logging-service/one-logging-service.component';
+import { OneServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/one-service-button/one-service-button.component';
+import { TwoServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/two-service-button/two-service-button.component';
+import { ThreeServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/three-service-button/three-service-button.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -123,6 +127,10 @@ const appRoutes: Routes = [
     ProjectFoodListComponent,
     ProjectHomeListComponent,
     FourServicesDependencyInjectionComponent,
+    OneLoggingServiceComponent,
+    OneServiceButtonComponent,
+    TwoServiceButtonComponent,
+    ThreeServiceButtonComponent,
   ],
   imports: [
     BrowserModule,
