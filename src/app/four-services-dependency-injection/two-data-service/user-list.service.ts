@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 export interface UserProps {
   name:string;
@@ -12,7 +12,6 @@ export interface UserProps {
 })
 export class UserListService {
 
-  constructor() {}
 
   usersList:UserProps[] = [
     {
@@ -29,6 +28,8 @@ export class UserListService {
     },
 
   ]
+
+  userDeleted = new EventEmitter<string>();
 
   addUser(
     name:string,
@@ -52,7 +53,9 @@ export class UserListService {
   }
 
   removeUser( index:number ):void {
-    this.usersList.splice(index, 1);
+    this.usersList.splice(index, 1); 
   }
+
+
 
 }

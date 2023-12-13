@@ -33,6 +33,10 @@ import { UserListService, UserProps } from '../user-list.service';
 })
 export class ListDataServiceComponent {
 
+  constructor (private userListService:UserListService) {
+
+  }
+
   @Input() newUser!:UserProps;
   @Input() usersArrayLength!:number;
   @Output() deleteUser = new EventEmitter<Function>()
@@ -41,5 +45,6 @@ export class ListDataServiceComponent {
     this.deleteUser.emit(
       () => {}
     )
+    this.userListService.userDeleted.emit(this.newUser.name)
   }
 }

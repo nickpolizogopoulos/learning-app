@@ -16,10 +16,14 @@ import { UserListService, UserProps } from './user-list.service';
 <app-list-data-service 
   *ngFor="let user of users let i = index"
   [newUser]="user" 
-  (deleteUser)="onUserDelete(i)"
+  (deleteUser)="onUserDelete(i, user.name)"
   >
 </app-list-data-service>
-<button (click)="onListClear()" *ngIf="users.length > 1" class="btn btn-sm btn-secondary rounded-1 mt-2">Clear</button>
+<button (click)="onListClear()" *ngIf="users.length > 1" class="btn btn-sm btn-secondary rounded-1 mt-2 mb-3">Clear</button>
+<div *ngIf="messageState" class="alert alert-warning ps-3 p-2" role="alert">
+  {{removalMessage}}
+</div>
+
 
   `,
   styles: [``],
@@ -28,16 +32,23 @@ import { UserListService, UserProps } from './user-list.service';
 export class TwoDataServiceComponent implements OnInit {
   
   users:UserProps[] = [];
+  removalMessage:string = '';
+  messageState:boolean = false;
 
   constructor(private userListService:UserListService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit():void {
     this.users = this.userListService.usersList;
   }
 
-  onUserDelete( index:number ):void {
+  onUserDelete( index:number, name:string ):void {
     this.userListService.removeUser(index)
+    this.messageState = true;
+    this.removalMessage = `${name} has been removed from the list.`
+    setTimeout(() => {
+      this.messageState = false;
+    }, 2000);
   }
 
   onAddFourUsers():void {

@@ -11,6 +11,9 @@ import { UserListService } from '../user-list.service';
 export class FormDataServiceComponent {
 
   constructor(private userListService:UserListService) {
+    userListService.userDeleted.subscribe(
+      (name:string) => alert(`${name} has been removed from the list!`)
+    )
   }
 
   userCount:number = this.userListService.usersNumber()
