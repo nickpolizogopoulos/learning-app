@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 export interface ShoppingItemProps {
   name:string;

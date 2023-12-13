@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UserProps } from '../two-data-service.component';
+import { Component, Input } from '@angular/core';
+import { UserListService, UserProps } from '../user-list.service';
 
 @Component({
   selector: 'app-list-data-service',
@@ -11,19 +11,14 @@ import { UserProps } from '../two-data-service.component';
   }
   
   `],
+
+  providers: []
 })
 export class ListDataServiceComponent {
 
   @Input() newUser!:UserProps;
   @Input() usersArrayLength!:number;
-  @Output() deleteUser = new EventEmitter<Function>();
-  
 
-  onDeleteUser():void {
-    this.deleteUser.emit(
-      () => {}
-    );
-    console.log(`User "${this.newUser.name}" from ${this.newUser.city}, deleted`);
-  }
+
 
 }

@@ -1,17 +1,24 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UserProps } from '../two-data-service.component';
+import { Component } from '@angular/core';
+
+import { UserListService } from '../user-list.service';
 
 @Component({
   selector: 'app-form-data-service',
   templateUrl: './form-data-service.component.html',
-  styles: [``]
+  styles: [``],
+  providers: []
 })
 export class FormDataServiceComponent {
 
-  @Input() userCount!:number;
-  @Output() newUser = new EventEmitter<UserProps>();
+  constructor(private userListService:UserListService) {
+  }
 
-  userAddedMessage:boolean = false;
+  userCount:number = this.userListService.usersNumber()
+  listNumber():number {
+    return this.userListService.usersNumber()
+  }
+
+
   errorMessage:boolean = false;
 
   onAddNewUser(
@@ -31,18 +38,9 @@ export class FormDataServiceComponent {
         return
       }
     this.errorMessage = false;
-    this.userAddedMessage = true;
-    setTimeout(() => {
-      this.userAddedMessage = false;
-    }, 1500) 
-    this.newUser.emit(
-      {
-        name: name.value,
-        city: city.value,
-        gender: gender.value,
-        language: language.value
-      }
-    )
+
+    this.userListService.addAccount(name.value, city.value, gender.value, language.value); 
+
     name.value = '';
     city.value = '';
   }

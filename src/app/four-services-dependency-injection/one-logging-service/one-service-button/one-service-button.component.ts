@@ -18,9 +18,9 @@ import { LoggingServiceService } from '../logging-service.service';
 })
 export class OneServiceButtonComponent {
 
-  constructor( private LoggingService:LoggingServiceService) {
+  // constructor( private LoggingService:LoggingServiceService) {
 
-  }
+  // }
 
   @Output() blueClick = new EventEmitter<Function>();
 

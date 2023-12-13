@@ -1,44 +1,23 @@
-import { Component, Output } from '@angular/core';
-
-export interface UserProps {
-  name:string;
-  city:string;
-  gender:string;
-  language:string;
-}
+import { Component, OnInit } from '@angular/core';
+import { UserListService, UserProps } from './user-list.service';
 
 @Component({
   selector: 'app-two-data-service',
   templateUrl: './two-data-service.component.html',
-  styleUrls: ['./two-data-service.component.css']
+  styles: [``],
+  providers: [UserListService]
 })
-export class TwoDataServiceComponent {
+export class TwoDataServiceComponent implements OnInit {
+  
+  users:UserProps[] = [];
 
+  constructor(private userListService:UserListService) {
+  }
+
+  ngOnInit(): void {
+    this.users = this.userListService.usersList;
+  }
   
 
-  usersList:UserProps[] = [
-    {name: 'Nick', city: 'Patras', gender: 'Male', language: 'Greek'},
-    {name: 'Jelly', city: 'Athens', gender: 'Female', language: 'English'},
-
-  ]
-  
-  onNewUserAdded( user:UserProps ):void {
-    this.usersList.push(
-      {
-        name: user.name,
-        city: user.city,
-        gender: user.gender,
-        language: user.language
-      }
-    )
-  }
-
-  usersNumber():number {
-    return this.usersList.length;
-  }
-
-  deleteUser(index:number):void {
-    this.usersList.splice(index, 1)
-  }
 }
 

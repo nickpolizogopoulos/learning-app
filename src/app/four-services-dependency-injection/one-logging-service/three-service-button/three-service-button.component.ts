@@ -19,9 +19,10 @@ import { LoggingServiceService } from '../logging-service.service';
 })
 export class ThreeServiceButtonComponent {
 
-  constructor ( private loggingService:LoggingServiceService ) {
+  // constructor ( private loggingService:LoggingServiceService ) {
 
-  }
+  // }
+
   @Output() greenClick = new EventEmitter<Function>();
 
   // greenColor:string = 'Green';
