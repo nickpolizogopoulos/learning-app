@@ -30,12 +30,12 @@ export class UserListService {
 
   ]
 
-  addAccount(
+  addUser(
     name:string,
     city:string,
     gender:string,
     language:string
-    ) {
+    ):void {
       this.usersList.push(
         {
           name: name,
@@ -44,10 +44,15 @@ export class UserListService {
           language: language
         }
       )
+    console.log(`User "${name}" has been added to the list`)
   }
 
   usersNumber():number {
     return this.usersList.length;
+  }
+
+  removeUser( index:number ):void {
+    this.usersList.splice(index, 1);
   }
 
 }

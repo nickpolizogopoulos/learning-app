@@ -39,7 +39,7 @@ export class FormDataServiceComponent {
       }
     this.errorMessage = false;
 
-    this.userListService.addAccount(name.value, city.value, gender.value, language.value); 
+    this.userListService.addUser(name.value, city.value, gender.value, language.value); 
 
     name.value = '';
     city.value = '';
