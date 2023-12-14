@@ -11,7 +11,7 @@ interface ToDoItemProps {
 @Component({
   selector: 'app-to-do-app',
   templateUrl: './to-do-app.component.html',
-  styleUrls: ['./to-do-app.component.css']
+  styles: [``]
 })
 export class ToDoAppComponent {
 
