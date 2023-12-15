@@ -8,8 +8,8 @@
     <small>*careful with the number.</small>
 </div>
 <hr class="mb-4">
-<input [(ngModel)]="message" class="form-control rounded-0 shadow-none mb-2" placeholder="Type a message...">
-<input [(ngModel)]="userInput" class="form-control rounded-0 shadow-none" placeholder="Insert the number...">
+<input [(ngModel)]="message" class="form-control rounded-1 shadow-none mb-2" placeholder="Type a message...">
+<input [(ngModel)]="userInput" class="form-control rounded-1 shadow-none" placeholder="Insert the number...">
 <div class="mt-3 mb-3">
     <button [disabled]="message === ''" (click)="start()" class="btn btn-outline-success rounded-1 me-2">Play!</button>
     <button [disabled]="message === '' && userInput === 0" (click)="reset()" class="btn btn-outline-success rounded-1">Reset</button>

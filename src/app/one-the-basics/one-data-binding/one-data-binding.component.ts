@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   <h4>1. Two - way Data Binding with ngModel</h4>
 <p class="lead">Insert data and see it rendered below.</p>
 <input
-  class="form-control rounded-0 shadow-none"
+  class="form-control rounded-1 shadow-none"
   type="text"
   placeholder="Type here..."
   [(ngModel)]="data">
