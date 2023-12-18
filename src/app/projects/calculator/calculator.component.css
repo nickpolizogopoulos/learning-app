@@ -8,10 +8,12 @@
 .calculator {
     width: 300px;
     border-radius: 8px 8px 0px 0px;
-    background-color: rgb(33, 43, 64);
+    /* background-color: rgb(33, 43, 64); */
+    background-color: rgb(35, 37, 51);
 }
 .window-bar {
-    background-color: rgb(217, 217, 217);
+    /* background-color: rgb(217, 217, 217); */
+    background-color: rgba(20, 21, 25, 0.7);
     border-radius: 7px 7px 0px 0px;
 }
 .close-icon {
@@ -24,8 +26,8 @@
 }
 .screenline {
     margin-top: 10px;
-    background-color: rgb(193, 193, 193);
-    height: 0.5px;
+    background-color: rgb(95, 95, 95);
+    height: 1px;
 }
 .result {
     font-size: 49px;
