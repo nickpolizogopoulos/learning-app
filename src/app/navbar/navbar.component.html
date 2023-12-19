@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid navbar-custom-colour">
         <a class="navbar-brand ms-5 me-5" routerLink="/">
-            <!-- <h2 class="niceblue">Learning Angular 2+</h2> -->
             <img width="150px" src="../../assets/images/learning-angular-logo.png" alt="logo">
         </a>
         <!-- MOBILE BUTTON -->
@@ -17,7 +16,7 @@
                         Angular Sections
                     </a>
                     <ul class="dropdown-menu">
-                        <li *ngFor="let section of AngularSections let i = index">
+                        <li *ngFor="let section of angularSections let i = index">
                             <a class="dropdown-item section-link"
                             routerLink="{{section.link}}">{{ i + 1 }}. {{section.name}}
                             </a>
@@ -30,34 +29,19 @@
                         Projects
                     </a>
                     <ul class="dropdown-menu">
-                        <li *ngFor="let project of AngularProjects let i = index">
+                        <li *ngFor="let project of angularProjects let i = index">
                             <a class="dropdown-item section-link"
                             routerLink="{{project.link}}">{{ i + 1 }}. {{project.name}}
                             </a>
                         </li>
                     </ul>
                 </li>
-                <!-- OTHER NAV LINKS -->
                 <li *ngFor="let link of navLinks" class="me-4 nav-item lead">
-                    <a class="nav-link active" aria-current="page" routerLink="{{link.link}}">{{link.name}}</a>
+                    <a class="nav-link active" routerLink="{{link.link}}">{{link.name}}</a>
                 </li>
-                <!-- LINKEDIN -->
-                <li class="me-4 nav-item lead">
-                    <a class="nav-link active"
-                        aria-current="page"
-                        href="https://www.linkedin.com/in/nickpolizogopoulos/"
-                        target="_blank">LinkedIn
-                    </a>
+                <li *ngFor="let link of externalLinks" class="me-4 nav-item lead">
+                    <a class="nav-link active" href="{{link.link}}" target="_blank">{{link.name}}</a>
                 </li>
-                <!-- GITHUB -->
-                <li class="me-4 nav-item lead">
-                    <a class="nav-link active"
-                        aria-current="page"
-                        href="https://github.com/nickpolizogopoulos"
-                        target="_blank">GitHub
-                    </a>
-                </li>
-                
             </ul>
         </div>
     </div>
