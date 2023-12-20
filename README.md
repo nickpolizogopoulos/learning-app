@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instructions
 
-Clone or download the repository to your local machine, `cd` in the folder and run `npm install` (you need Node.js `https://nodejs.org` ).
+Clone or download the repository to your local machine, `cd learning-app` => `npm install` ( you need Node.js `https://nodejs.org` ).
 
 ## To launch the application
 
