@@ -61,23 +61,24 @@ import { ThreeServiceButtonComponent } from './four-services-dependency-injectio
 import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'the-basics', component: OneTheBasicsComponent },
-  { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
-  { path: 'directives', component: ThreeDirectivesComponent },
-  { path: 'services', component: FourServicesDependencyInjectionComponent },
+// const appRoutes: Routes = [
+//   { path: '', component: HomeComponent },
+//   { path: 'about', component: AboutComponent },
+//   { path: 'the-basics', component: OneTheBasicsComponent },
+//   { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
+//   { path: 'directives', component: ThreeDirectivesComponent },
+//   { path: 'services', component: FourServicesDependencyInjectionComponent },
 
-  { path: 'project-to-do-application', component: ToDoAppComponent },
-  { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
-  { path: 'project-shopping-list', component: MyShoppingListComponent },
-  { path: 'project-calculator', component: CalculatorComponent },
+//   { path: 'project-to-do-application', component: ToDoAppComponent },
+//   { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
+//   { path: 'project-shopping-list', component: MyShoppingListComponent },
+//   { path: 'project-calculator', component: CalculatorComponent },
   
-  { path: '**', redirectTo: '404'},
-  { path: '404', component: PageNotFoundComponent },
-];
+//   { path: '**', redirectTo: '404'},
+//   { path: '404', component: PageNotFoundComponent },
+// ];
 
 @NgModule({
   declarations: [
@@ -142,7 +143,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
