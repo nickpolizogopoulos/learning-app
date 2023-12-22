@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-error',
+  selector: 'app-page-not-found',
   template: `
   
   <section class="headtitle niceblue ">
@@ -60,6 +60,6 @@ import { Component } from '@angular/core';
 
   `]
 })
-export class ErrorComponent {
+export class PageNotFoundComponent {
 
 }

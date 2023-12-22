@@ -16,7 +16,7 @@ import { EightNgClassComponent } from './one-the-basics/eight-ng-class/eight-ng-
 import { NineThankYouComponent } from './one-the-basics/nine-thank-you/nine-thank-you.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { ErrorComponent } from './error/error.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TwoComponentsDatabindingComponent } from './two-components-databinding/two-components-databinding.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -75,7 +75,8 @@ const appRoutes: Routes = [
   { path: 'project-shopping-list', component: MyShoppingListComponent },
   { path: 'project-calculator', component: CalculatorComponent },
   
-  { path: '**', component: ErrorComponent },
+  { path: '**', redirectTo: '404'},
+  { path: '404', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -93,7 +94,7 @@ const appRoutes: Routes = [
     NineThankYouComponent,
     AboutComponent,
     HomeComponent,
-    ErrorComponent,
+    PageNotFoundComponent,
     TwoComponentsDatabindingComponent,
     NavbarComponent,
     OnePassingDataBetweenComponentsComponent,
