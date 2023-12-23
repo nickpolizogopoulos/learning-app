@@ -4,6 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import { OneTheBasicsComponent } from './one-the-basics/one-the-basics.component';
 import { OneDataBindingComponent } from './one-the-basics/one-data-binding/one-data-binding.component';
 import { TwoPropertyBindingComponent } from './one-the-basics/two-property-binding/two-property-binding.component';
@@ -14,12 +20,7 @@ import { SixNgForComponent } from './one-the-basics/six-ng-for/six-ng-for.compon
 import { SevenNgStyleComponent } from './one-the-basics/seven-ng-style/seven-ng-style.component';
 import { EightNgClassComponent } from './one-the-basics/eight-ng-class/eight-ng-class.component';
 import { NineThankYouComponent } from './one-the-basics/nine-thank-you/nine-thank-you.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TwoComponentsDatabindingComponent } from './two-components-databinding/two-components-databinding.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { RouterModule, Routes } from '@angular/router';
 import { OnePassingDataBetweenComponentsComponent } from './two-components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
 import { FormComponent } from './two-components-databinding/one-passing-data-between-components/form/form.component';
 import { ListComponent } from './two-components-databinding/one-passing-data-between-components/list/list.component';
@@ -61,24 +62,7 @@ import { ThreeServiceButtonComponent } from './four-services-dependency-injectio
 import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
-import { AppRoutingModule } from './app-routing.module';
 
-// const appRoutes: Routes = [
-//   { path: '', component: HomeComponent },
-//   { path: 'about', component: AboutComponent },
-//   { path: 'the-basics', component: OneTheBasicsComponent },
-//   { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
-//   { path: 'directives', component: ThreeDirectivesComponent },
-//   { path: 'services', component: FourServicesDependencyInjectionComponent },
-
-//   { path: 'project-to-do-application', component: ToDoAppComponent },
-//   { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
-//   { path: 'project-shopping-list', component: MyShoppingListComponent },
-//   { path: 'project-calculator', component: CalculatorComponent },
-  
-//   { path: '**', redirectTo: '404'},
-//   { path: '404', component: PageNotFoundComponent },
-// ];
 
 @NgModule({
   declarations: [
