@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { Subscription, interval } from 'rxjs';
   templateUrl: './one-basic-observable.component.html',
   styles: [``]
 })
-export class OneBasicObservableComponent {
+export class OneBasicObservableComponent implements OnDestroy {
 
   gameMode:number = 200;
   modeLevel:string = 'Easy';
@@ -16,36 +16,39 @@ export class OneBasicObservableComponent {
   timer?:Subscription;
   winningPrize:boolean = false;
 
-  start() {
-    this.timer = interval(this.gameMode).subscribe( count => {
-      this.timerIsRunning = true;
+  start():void {
+    this.timer = interval(this.gameMode)
+    .subscribe( count => {
       this.seconds = count;
+      this.timerIsRunning = true;
       this.winningPrize = false;
       this.startPressed = true;
+      console.log(count);
+      
     })
   }
 
-  stop() {
+  stop():void {
     this.timer?.unsubscribe()
     this.timerIsRunning = false;
     this.startPressed = false;
   }
 
-  reset() {
+  reset():void {
     this.seconds = 0;
     this.winningPrize = false;
   }
 
-  winOnClick() {
+  winOnClick():void {
     this.winningPrize = !this.winningPrize;
   }
 
-  onEasyClick() {
+  onEasyClick():void {
     this.gameMode = 200;
     this.modeLevel = 'Easy';
   }
 
-  onHardClick() {
+  onHardClick():void {
     this.gameMode = 100;
     this.modeLevel = 'Hard';
   }
@@ -55,9 +58,14 @@ export class OneBasicObservableComponent {
     this.modeLevel = 'Ninja';
   }
 
-  onMasterClick() {
+  onMasterClick():void {
     this.gameMode = 10;
     this.modeLevel = `I AM DOING IT`;
+  }
+
+  ngOnDestroy():void {
+    //in case they leave without stopping it first.
+    this.timer?.unsubscribe()
   }
 
 }
