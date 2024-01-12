@@ -1,0 +1,36 @@
+<h4>1. A Basic Observable</h4>
+<p class="lead">Stop the counter exactly at 49 to win the game!</p>
+
+<div class="dropdown">
+    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Choose a mode
+    </button> Mode: {{ modeLevel }}
+    <ul class="dropdown-menu">
+      <li><a (click)="onEasyClick()" class="dropdown-item cursor-pointer">Easy Mode</a></li>
+      <li><a (click)="onHardClick()" class="dropdown-item cursor-pointer">Hard Mode</a></li>
+      <li><a (click)="onNinjaClick()" class="dropdown-item cursor-pointer">I am a Ninja!</a></li>
+      <li><a (click)="onMasterClick()" class="dropdown-item cursor-pointer">Master Clicker of the land</a></li>
+    </ul>
+</div>
+  <hr>
+
+<div class="row">
+    <div class="col-7">
+        <button (click)="start()" [ngClass]="{'disabled': startPressed}" class="btn btn-primary rounded-1 me-2">start</button>
+        <button (click)="stop()" class="btn btn-danger rounded-1 me-2">stop</button>
+        <button (click)="reset()" [ngClass]="{'disabled': timerIsRunning}" class="btn btn-secondary rounded-1 me-3">reset</button>
+    </div>
+    <div class="col">
+        <h4>Counter: {{ seconds }}</h4>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <button *ngIf="seconds === 49" (click)="winOnClick()" class="btn btn-sm btn-success rounded-1 mt-4">You won!</button>
+    </div>
+</div>
+
+<svg *ngIf="winningPrize" xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+    <path style="color: #ff2164;" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg>

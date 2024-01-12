@@ -63,6 +63,7 @@ import { TwoDataServiceComponent } from './four-services-dependency-injection/tw
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
 import { FiveObservablesComponent } from './five-observables/five-observables.component';
+import { OneBasicObservableComponent } from './five-observables/one-basic-observable/one-basic-observable.component';
 
 
 @NgModule({
@@ -125,6 +126,7 @@ import { FiveObservablesComponent } from './five-observables/five-observables.co
     FormDataServiceComponent,
     ListDataServiceComponent,
     FiveObservablesComponent,
+    OneBasicObservableComponent,
   ],
   imports: [
     BrowserModule,
