@@ -62,6 +62,7 @@ import { ThreeServiceButtonComponent } from './four-services-dependency-injectio
 import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
+import { FiveObservablesComponent } from './five-observables/five-observables.component';
 
 
 @NgModule({
@@ -123,6 +124,7 @@ import { ListDataServiceComponent } from './four-services-dependency-injection/t
     TwoDataServiceComponent,
     FormDataServiceComponent,
     ListDataServiceComponent,
+    FiveObservablesComponent,
   ],
   imports: [
     BrowserModule,

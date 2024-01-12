@@ -53,7 +53,14 @@ export class SectionsAndProjectsService {
       link: '/services',
       img: '../../assets/images/angular-banner-image.jpg',
       description: `Using custom services to share data 
-      between components, cross-component communication`
+      between components, cross-component communication!`
+    },
+    {
+      name: 'Observables',
+      link: '/observables',
+      img: '../../assets/images/angular-banner-image.jpg',
+      description: `RxJS, Built-in and Custom Observables, 
+      Errors & Completion, Operators, Subjects!`
     },
 
     
