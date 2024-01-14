@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ThreeErrorsCompletionComponent {
 
+  euro:number = 0;
+  cents:number = 0;
+
+  startIncome() {
+
+  }
 }
