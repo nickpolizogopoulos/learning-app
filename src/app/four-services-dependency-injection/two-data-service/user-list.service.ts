@@ -24,7 +24,7 @@ export class UserListService {
       name: 'Jelly',
       city: 'Athens',
       gender: 'Female',
-      language: 'English'
+      language: 'Greek'
     },
 
   ]

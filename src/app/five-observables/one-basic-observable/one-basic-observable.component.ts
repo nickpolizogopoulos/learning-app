@@ -8,34 +8,35 @@ import { Subscription, interval } from 'rxjs';
 })
 export class OneBasicObservableComponent implements OnDestroy {
 
-  gameMode:number = 200;
+  gameModeSpeed:number = 200;
   modeLevel:string = 'Easy';
-  seconds:number = 0;
-  timerIsRunning:boolean = false;
+  runner:number = 0;
+  gameIsRunning:boolean = false;
   startPressed:boolean = false;
   timer?:Subscription;
   winningPrize:boolean = false;
 
   start():void {
-    this.timer = interval(this.gameMode)
+    this.timer = interval(this.gameModeSpeed)
     .subscribe( count => {
-      this.seconds = count;
-      this.timerIsRunning = true;
+      this.runner = count;
+      // console.log(count);
+      
+      this.gameIsRunning = true;
       this.winningPrize = false;
       this.startPressed = true;
-      console.log(count);
       
     })
   }
 
   stop():void {
     this.timer?.unsubscribe()
-    this.timerIsRunning = false;
+    this.gameIsRunning = false;
     this.startPressed = false;
   }
 
   reset():void {
-    this.seconds = 0;
+    this.runner = 0;
     this.winningPrize = false;
   }
 
@@ -44,22 +45,22 @@ export class OneBasicObservableComponent implements OnDestroy {
   }
 
   onEasyClick():void {
-    this.gameMode = 200;
+    this.gameModeSpeed = 200;
     this.modeLevel = 'Easy';
   }
 
   onHardClick():void {
-    this.gameMode = 100;
+    this.gameModeSpeed = 100;
     this.modeLevel = 'Hard';
   }
 
   onNinjaClick() {
-    this.gameMode = 50;
+    this.gameModeSpeed = 50;
     this.modeLevel = 'Ninja';
   }
 
   onMasterClick():void {
-    this.gameMode = 10;
+    this.gameModeSpeed = 10;
     this.modeLevel = `I AM DOING IT`;
   }
 

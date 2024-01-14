@@ -17,10 +17,10 @@ export class FormDataServiceComponent {
   }
 
   userCount:number = this.userListService.usersNumber()
+
   listNumber():number {
     return this.userListService.usersNumber()
   }
-
 
   errorMessage:boolean = false;
 

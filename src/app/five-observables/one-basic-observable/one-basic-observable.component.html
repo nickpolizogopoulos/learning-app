@@ -15,16 +15,16 @@
 <div class="row">
     <div class="col-7">
         <button (click)="start()" [ngClass]="{'disabled': startPressed}" class="btn btn-primary rounded-1 me-2">start</button>
-        <button (click)="stop()"  [ngClass]="{'disabled' : seconds === 0}" class="btn btn-danger rounded-1 me-2">stop</button>
-        <button (click)="reset()" [ngClass]="{'disabled': timerIsRunning || seconds === 0}" class="btn btn-secondary rounded-1 me-3">reset</button>
+        <button (click)="stop()"  [ngClass]="{'disabled' : runner === 0}" class="btn btn-danger rounded-1 me-2">stop</button>
+        <button (click)="reset()" [ngClass]="{'disabled': gameIsRunning || runner === 0}" class="btn btn-secondary rounded-1 me-3">reset</button>
     </div>
     <div class="col">
-        <h4>Counter: {{ seconds }}</h4>
+        <h4>Counter: {{ runner }}</h4>
     </div>
 </div>
 <div class="row mb-3">
     <div class="col">
-        <button *ngIf="seconds === 49" (click)="winOnClick()" class="btn btn-sm btn-success rounded-1 mt-4">You won!</button>
+        <button *ngIf="runner === 49" (click)="winOnClick()" class="btn btn-sm btn-success rounded-1 mt-4">You won!</button>
     </div>
 </div>
 <svg *ngIf="winningPrize" xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

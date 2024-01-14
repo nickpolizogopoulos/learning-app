@@ -35,8 +35,9 @@ export class TwoDataServiceComponent implements OnInit {
   removalMessage:string = '';
   messageState:boolean = false;
 
-  constructor(private userListService:UserListService) {
-  }
+  constructor(
+    private userListService:UserListService
+    ) {}
 
   ngOnInit():void {
     this.users = this.userListService.usersList;
@@ -52,10 +53,10 @@ export class TwoDataServiceComponent implements OnInit {
   }
 
   onAddFourUsers():void {
-    this.userListService.addUser('Stacy','Athens','Female','Greek',)
-    this.userListService.addUser('Mary','Patras','Female','Greek',)
-    this.userListService.addUser('Christine','Athens','Female','Greek',)
-    this.userListService.addUser('Fay','Nafpaktos','Female','Greek',)
+    this.userListService.addUser('Josh','New York','Male','English',)
+    this.userListService.addUser('Margo','New York','Female','English',)
+    this.userListService.addUser('Quentin','New York','Male','English',)
+    this.userListService.addUser('Alice','Modesto','Female','English',)
 
     }
 

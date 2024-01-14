@@ -33,9 +33,9 @@ import { UserListService, UserProps } from '../user-list.service';
 })
 export class ListDataServiceComponent {
 
-  constructor (private userListService:UserListService) {
-
-  }
+  // constructor (
+  //   private userListService:UserListService
+  //   ) {}
 
   @Input() newUser!:UserProps;
   @Input() usersArrayLength!:number;
@@ -45,6 +45,6 @@ export class ListDataServiceComponent {
     this.deleteUser.emit(
       () => {}
     )
-    this.userListService.userDeleted.emit(this.newUser.name)
+    // this.userListService.userDeleted.emit(this.newUser.name)
   }
 }
