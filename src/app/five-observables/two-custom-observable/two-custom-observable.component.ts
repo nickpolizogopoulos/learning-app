@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -41,7 +41,8 @@ import { Observable, Subscription } from 'rxjs';
     .redBg {background-color: rgb(255, 146, 146);}
   `]
 })
-export class TwoCustomObservableComponent {
+export class TwoCustomObservableComponent implements OnDestroy {
+
 
   playing:boolean = false;
   counter:number = 0;
@@ -63,6 +64,10 @@ export class TwoCustomObservableComponent {
 
   stop():void {
     this.playing = false;
-    this.subscription!.unsubscribe()
+    this.subscription?.unsubscribe()
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe()
   }
 }
