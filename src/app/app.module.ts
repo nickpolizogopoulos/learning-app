@@ -65,6 +65,7 @@ import { ListDataServiceComponent } from './four-services-dependency-injection/t
 import { FiveObservablesComponent } from './five-observables/five-observables.component';
 import { OneBasicObservableComponent } from './five-observables/one-basic-observable/one-basic-observable.component';
 import { TwoCustomObservableComponent } from './five-observables/two-custom-observable/two-custom-observable.component';
+import { ThreeErrorsCompletionComponent } from './five-observables/three-errors-completion/three-errors-completion.component';
 
 
 @NgModule({
@@ -129,6 +130,7 @@ import { TwoCustomObservableComponent } from './five-observables/two-custom-obse
     FiveObservablesComponent,
     OneBasicObservableComponent,
     TwoCustomObservableComponent,
+    ThreeErrorsCompletionComponent,
   ],
   imports: [
     BrowserModule,
