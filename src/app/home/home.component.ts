@@ -8,9 +8,9 @@ import { SectionsAndProjectsProps, SectionsAndProjectsService } from '../shared/
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private sections:SectionsAndProjectsService) {
-    
-  }
+  constructor(
+    private sections:SectionsAndProjectsService
+    ) {}
 
   ngOnInit():void {
     this.homeCards = this.sections.angularSections;
@@ -21,5 +21,5 @@ export class HomeComponent implements OnInit {
   projectCards:SectionsAndProjectsProps[] = [];
 
 
-
+  
 }

@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Observable, Subscription, interval, timer } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-two-custom-observable',
@@ -16,28 +16,36 @@ export class TwoCustomObservableComponent implements OnDestroy {
 
   onStart():void {
     this.counterPlaying = true;
+
     const kmObservable = Observable.create( (observer:any) => {
       let count:number = 0;
       setInterval( () => {
         observer.next(count);
         count++
       }, 123)
-    })
+    });
+
+    const secObservable = Observable.create( (observer:any) => {
+      let count:number = 0;
+      setInterval( () => {
+        observer.next(count);
+        count++
+      }, 1000)
+    });
 
     this.kmSubscription = kmObservable.subscribe(
       (data:number) => this.kilometers = data
-    )
+    );
 
-    const timer = interval(1000)
-    this.secSubscription = timer.subscribe(
-      count => this.seconds = count
-   )
+    this.secSubscription = secObservable.subscribe(
+      (data:number) => this.seconds = data
+    );
   }
 
   onStop():void {
     this.counterPlaying = false;
-    this.kmSubscription?.unsubscribe()
-    this.secSubscription?.unsubscribe()
+    this.kmSubscription?.unsubscribe();
+    this.secSubscription?.unsubscribe();
   }
 
   onReset():void {
@@ -46,8 +54,8 @@ export class TwoCustomObservableComponent implements OnDestroy {
   }
 
   ngOnDestroy():void {
-    this.kmSubscription?.unsubscribe()
-    this.secSubscription?.unsubscribe()
+    this.kmSubscription?.unsubscribe();
+    this.secSubscription?.unsubscribe();
   }
 }
    
