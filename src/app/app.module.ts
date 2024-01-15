@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -64,8 +64,9 @@ import { FormDataServiceComponent } from './four-services-dependency-injection/t
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
 import { FiveObservablesComponent } from './five-observables/five-observables.component';
 import { OneBasicObservableComponent } from './five-observables/one-basic-observable/one-basic-observable.component';
+import { ThreeObservableErrorsComponent } from './five-observables/three-observable-errors/three-observable-errors.component';
 import { TwoCustomObservableComponent } from './five-observables/two-custom-observable/two-custom-observable.component';
-import { ThreeErrorsCompletionComponent } from './five-observables/three-errors-completion/three-errors-completion.component';
+import { FourObservableCompletionComponent } from './five-observables/four-observable-completion/four-observable-completion.component';
 
 
 @NgModule({
@@ -129,8 +130,9 @@ import { ThreeErrorsCompletionComponent } from './five-observables/three-errors-
     ListDataServiceComponent,
     FiveObservablesComponent,
     OneBasicObservableComponent,
+    ThreeObservableErrorsComponent,
     TwoCustomObservableComponent,
-    ThreeErrorsCompletionComponent,
+    FourObservableCompletionComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,6 +140,7 @@ import { ThreeErrorsCompletionComponent } from './five-observables/three-errors-
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

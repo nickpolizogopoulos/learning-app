@@ -1,0 +1,9 @@
+<h4>2. A Custom Observable</h4>
+<p class="lead">The orbital speed of the International Space Station is 28.000 kilometers per hour.</p>
+<p>Click the button to simulate the distance coverage per second.</p>
+<button *ngIf="!counterPlaying" (click)="onStart()" class="btn btn-sm btn-primary rounded-1 mb-3 me-2">Start</button>
+<button *ngIf="counterPlaying" (click)="onStop()" class="btn btn-sm btn-danger rounded-1 mb-3 me-2">Stop</button>
+<button [ngClass]="{'disabled' : counterPlaying}" *ngIf="counterPlaying || kilometers >= 1" (click)="onReset()" class="btn btn-sm btn-secondary rounded-1 mb-3">Reset</button>
+<p *ngIf="kilometers > 0" class="lead">Distance covered by the ISS:</p>
+<span *ngIf="kilometers > 0" class="lead">Distance: {{ kilometers }} kilometers</span>
+<p *ngIf="kilometers > 0" class="lead">Time: {{ seconds }} seconds.</p>

@@ -14,9 +14,9 @@
 <hr>
 <div class="row">
     <div class="col-7">
-        <button (click)="start()" [ngClass]="{'disabled': startPressed}" class="btn btn-primary rounded-1 me-2">start</button>
-        <button (click)="stop()"  [ngClass]="{'disabled' : runner === 0}" class="btn btn-danger rounded-1 me-2">stop</button>
-        <button (click)="reset()" [ngClass]="{'disabled': gameIsRunning || runner === 0}" class="btn btn-secondary rounded-1 me-3">reset</button>
+        <button (click)="start()" [ngClass]="{'disabled': startPressed}" class="btn btn-primary rounded-1 me-2 mb-2">start</button>
+        <button (click)="stop()"  [ngClass]="{'disabled' : runner === 0}" class="btn btn-danger rounded-1 me-2 mb-2">stop</button>
+        <button (click)="reset()" [ngClass]="{'disabled': gameIsRunning || runner === 0}" class="btn btn-secondary rounded-1 me-3 mb-2">reset</button>
     </div>
     <div class="col">
         <h4>Counter: {{ runner }}</h4>
