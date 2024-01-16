@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Observer, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-two-custom-observable',
@@ -17,7 +17,8 @@ export class TwoCustomObservableComponent implements OnDestroy {
   onStart():void {
     this.counterPlaying = true;
 
-    const kmObservable = Observable.create( (observer:any) => {
+    const kmObservable = Observable.create(
+      (observer:Observer<number>) => {
       let count:number = 0;
       setInterval( () => {
         observer.next(count);
@@ -25,7 +26,8 @@ export class TwoCustomObservableComponent implements OnDestroy {
       }, 123)
     });
 
-    const secObservable = Observable.create( (observer:any) => {
+    const secObservable = Observable.create(
+      (observer:Observer<number>) => {
       let count:number = 0;
       setInterval( () => {
         observer.next(count);

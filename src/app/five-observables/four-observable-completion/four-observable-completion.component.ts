@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, Observable, timer } from 'rxjs';
+import { Subscription, Observable, timer, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-four-observable-completion',
@@ -33,7 +33,7 @@ export class FourObservableCompletionComponent implements OnDestroy {
     this.timerStarted = true;
 
     const observable = Observable.create(
-      (observer:any) => {
+      (observer:Observer<number>) => {
         let count = 0;
         setInterval( () => {
           observer.next(count);

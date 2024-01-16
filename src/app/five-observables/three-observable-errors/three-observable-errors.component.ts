@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Observer, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-three-observable-errors',
@@ -49,7 +49,8 @@ export class ThreeObservableErrorsComponent implements OnDestroy {
 
   play():void {
     this.playing = true;
-     const customObservable = Observable.create( (observer:any) => {
+     const customObservable = Observable.create(
+      (observer:Observer<number>) => {
       let count = 0;
       setInterval( () => {
         observer.next(count);
