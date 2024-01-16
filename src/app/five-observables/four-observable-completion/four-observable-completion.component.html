@@ -12,7 +12,7 @@
 <button
   (click)="onStart()"
   [ngClass]="{'disabled' : timerStarted}"
-  class="btn btn-sm btn-primary rounded-1 mb-2"
+  class="btn btn-sm btn-success rounded-1 mb-2"
   [disabled]="seconds === 0">Start the clock</button>
 <p *ngIf="timerStarted" class="lead">Time left: {{ timeLeft }}</p>
 <span *ngIf="timerEnded" (click)="reload()" class="reloadBtn">[ reload ]</span>
