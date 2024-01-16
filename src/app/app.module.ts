@@ -67,7 +67,8 @@ import { OneBasicObservableComponent } from './five-observables/one-basic-observ
 import { ThreeObservableErrorsComponent } from './five-observables/three-observable-errors/three-observable-errors.component';
 import { TwoCustomObservableComponent } from './five-observables/two-custom-observable/two-custom-observable.component';
 import { FourObservableCompletionComponent } from './five-observables/four-observable-completion/four-observable-completion.component';
-import { FiveOperatorsComponent } from './five-observables/five-operators/five-operators.component';
+import { FiveMapOperatorComponent } from './five-observables/five-map-operator/five-map-operator.component';
+import { SixFilterOperatorComponent } from './five-observables/six-filter-operator/six-filter-operator.component';
 
 
 @NgModule({
@@ -134,7 +135,8 @@ import { FiveOperatorsComponent } from './five-observables/five-operators/five-o
     ThreeObservableErrorsComponent,
     TwoCustomObservableComponent,
     FourObservableCompletionComponent,
-    FiveOperatorsComponent,
+    FiveMapOperatorComponent,
+    SixFilterOperatorComponent,
   ],
   imports: [
     BrowserModule,

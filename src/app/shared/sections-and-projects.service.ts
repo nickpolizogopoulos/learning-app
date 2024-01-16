@@ -41,7 +41,7 @@ export class SectionsAndProjectsService {
     },
 
     {
-      name: 'Directives Deep Dive',
+      name: 'Directives',
       link: '/directives',
       img: '../../assets/images/angular-banner-image.jpg',
       description: `Basic custom attribute directives, Renderer2, 
@@ -60,7 +60,8 @@ export class SectionsAndProjectsService {
       link: '/observables',
       img: '../../assets/images/angular-banner-image.jpg',
       description: `RxJS, Built-in and Custom Observables, 
-      Errors & Completion, Operators, Subjects!`
+      Errors & Completion, Operators, map( ), filter( ) and 
+      Subjects!`
     },
 
     
