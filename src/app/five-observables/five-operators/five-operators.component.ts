@@ -1,40 +1,65 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Observer, Subscription } from 'rxjs';
+import { Observer, Subscription, map } from 'rxjs';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-five-operators',
-  templateUrl: './five-operators.component.html',
-  styleUrls: ['./five-operators.component.css']
+  template: `
+
+  <h4>5. The .map( ) Operator</h4>
+  <p class="lead">Game: Hide and Seek.</p>
+  <button *ngIf="!counting" (click)="start()" class="btn btn-sm btn-primary rounded-1 me-2 mb-3">Start!</button>
+  <button *ngIf="counting" class="btn btn-sm btn-primary rounded-1 mb-3" type="button" disabled>
+    <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+    <span role="status">Counting...</span>
+  </button>
+  <p *ngIf="count > 0" class="lead">{{ count }}<span *ngIf="count === 100" class="lead">!</span></p>
+  <p *ngIf="counting">* hiders gonna hide *</p>
+  <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
+  `,
+  styles: [``]
 })
 export class FiveOperatorsComponent implements OnDestroy {
 
   count:number = 0;
   subscription?:Subscription;
+  ready:boolean = false;
+  counting:boolean = false;
 
   start():void {
+    this.ready = false;
+
+    //observable
     const timer = Observable.create( (observer:Observer<number>) => {
       let count = 0;
       setInterval( () => {
         observer.next(count);
-        // if (count === 20) 
+        if (count === 20) observer.complete();
         count++;
-      } ,50);
+      } ,600);
     })
 
+    //Operator
+    const addition:number = 5;
+    const operator = timer.pipe(
+      map( (data:number) => data * addition )
+    );
 
-    this.subscription = timer.subscribe(
-      (data:number) => this.count = data,
+    //Operator subscription
+    this.subscription = operator.subscribe(
+      (data:number) => {
+        this.count = data;
+        this.counting = true;
+      },
       (error:string) => console.log(error),
-      () => {}
+      () => { 
+        this.ready = true;
+        this.counting = false;
+      }
     );
   }
 
-  stop():void {
-    this.subscription?.unsubscribe()
-  }
-  
   ngOnDestroy():void {
-    this.subscription?.unsubscribe()
+    this.subscription?.unsubscribe();
   }
 }
