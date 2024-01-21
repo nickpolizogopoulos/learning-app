@@ -9,7 +9,7 @@ export interface ItemProps {
 @Component({
   selector: 'app-one-passing-data-between-components',
   templateUrl: './one-passing-data-between-components.component.html',
-  styleUrls: ['./one-passing-data-between-components.component.css']
+  styles: [``]
 })
 export class OnePassingDataBetweenComponentsComponent {
 

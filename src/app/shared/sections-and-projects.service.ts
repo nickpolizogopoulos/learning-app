@@ -21,8 +21,10 @@ export class SectionsAndProjectsService {
     
   }
 
-  angularSections:SectionsAndProjectsProps[] = [
+  // footerDate:number = new Date().getFullYear();
 
+  //ANGULAR LESSON SECTIONS
+  angularSections:SectionsAndProjectsProps[] = [
     { 
       name: 'The Basics', 
       link: '/the-basics',
@@ -31,7 +33,6 @@ export class SectionsAndProjectsService {
         Event Binding, Passing & Using Data, Directives, ngIf, 
         ngFor, ngStyle and ngClass!`
     },
-
     {
       name: 'Components & Databinding',
       link: '/components-databinding',
@@ -39,7 +40,6 @@ export class SectionsAndProjectsService {
       description: `Passing data between components, @Input, 
       @Output, local references, @ViewChild and <ng-content>!`
     },
-
     {
       name: 'Directives',
       link: '/directives',
@@ -47,7 +47,6 @@ export class SectionsAndProjectsService {
       description: `Basic custom attribute directives, Renderer2, 
       HostListener, HostBinding, Structural Directives and ngSwitch!`
     },
-
     {
       name: 'Services & Dependency Injection',
       link: '/services',
@@ -63,12 +62,19 @@ export class SectionsAndProjectsService {
       Errors & Completion, Operators, map( ), filter( ) and 
       Subjects!`
     },
+    {
+      name: 'Forms',
+      link: '/forms',
+      img: '../../assets/images/angular-banner-image.jpg',
+      description: `Handling forms in Angular Apps and more 
+      and more and more!`
+    },
 
     
   ]
 
+  //ANGULAR PROJECTS
   angularProjects:SectionsAndProjectsProps[] = [
-
     {
       name: 'To Do Application',
       link: '/project-to-do-application',
@@ -76,14 +82,12 @@ export class SectionsAndProjectsService {
       description: `Keep your important things organised 
       with this To Do application!`
     },
-
     {
       name: 'Super Signature Maker',
       link: '/project-super-signature-maker',
       img: '../../assets/images/project-banner-image.jpg',
       description: `Make an email signature super fast and easy!`
     },
-
     {
       name: 'My Shopping List',
       link: '/project-shopping-list',
@@ -91,7 +95,6 @@ export class SectionsAndProjectsService {
       description: `Who doesn't like shopping? Make a shopping 
       list of your favorite products!`
     },
-
     {
       name: 'Calculator',
       link: '/project-calculator',
@@ -100,20 +103,18 @@ export class SectionsAndProjectsService {
       use for more than a minute. But I've made it!`
     },
 
-
   ]
 
+  //MENU BAR LINKS
   externalNavLinks:ExternalLinkProps[] = [
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/nickpolizogopoulos'
     },
-    
     {
       name: 'GitHub',
       link: 'https://github.com/nickpolizogopoulos'
     },
   ]
-
 
 }

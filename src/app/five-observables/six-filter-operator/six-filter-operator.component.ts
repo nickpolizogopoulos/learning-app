@@ -3,8 +3,21 @@ import { Observable, Observer, Subscription, filter } from 'rxjs';
 
 @Component({
   selector: 'app-six-filter-operator',
-  templateUrl: './six-filter-operator.component.html',
-  styleUrls: ['./six-filter-operator.component.css']
+  template: `
+  
+  <h4>6. The .filter( ) Operator</h4>
+  <p class="lead">Set a range of numbers and generate all the FizzBuzz numbers in that range.
+      <a class="nodecor addToTestText" href="https://en.wikipedia.org/wiki/Fizz_buzz" target="_blank">[ FizzBuzz info ]</a>
+  </p>
+  <span class="lead">Range: {{ pick.value }}</span>
+  <input type="range" class="form-range" #pick (input)="pick.value" id="chosenNumber" min="0" max="1000" [(ngModel)]="userInput" [disabled]="gameIsRunning">
+  <button (click)="onStart()" class="btn btn-sm btn-primary me-3 mb-3" [disabled]="userInput === undefined || gameIsRunning">Start</button>
+  <button (click)="onStop()" class="btn btn-sm btn-danger me-3 mb-3" [disabled]="userInput === undefined || !gameIsRunning">Stop</button>
+  <button (click)="onReset()" class="btn btn-sm btn-secondary me-3 mb-3" [disabled]="gameIsRunning">Reset</button>
+  <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">results:number[ ] = [ {{fizBuzzNumbers.join(', ')}} ];</p>
+  
+  `,
+  styles: [``]
 })
 export class SixFilterOperatorComponent implements OnDestroy, OnInit {
 

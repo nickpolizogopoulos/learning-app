@@ -4,12 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+//SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//PROJECTS
+import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
+import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
+import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
+import { ProjectFormComponent } from './projects/my-shopping-list/project-form/project-form.component';
+import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
+import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
+import { CalculatorComponent } from './projects/calculator/calculator.component';
+
+//SECTION The Basics
 import { OneTheBasicsComponent } from './one-the-basics/one-the-basics.component';
 import { OneDataBindingComponent } from './one-the-basics/one-data-binding/one-data-binding.component';
 import { TwoPropertyBindingComponent } from './one-the-basics/two-property-binding/two-property-binding.component';
@@ -20,6 +31,8 @@ import { SixNgForComponent } from './one-the-basics/six-ng-for/six-ng-for.compon
 import { SevenNgStyleComponent } from './one-the-basics/seven-ng-style/seven-ng-style.component';
 import { EightNgClassComponent } from './one-the-basics/eight-ng-class/eight-ng-class.component';
 import { NineThankYouComponent } from './one-the-basics/nine-thank-you/nine-thank-you.component';
+
+//SECTION Components & Databinding
 import { TwoComponentsDatabindingComponent } from './two-components-databinding/two-components-databinding.component';
 import { OnePassingDataBetweenComponentsComponent } from './two-components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
 import { FormComponent } from './two-components-databinding/one-passing-data-between-components/form/form.component';
@@ -29,6 +42,8 @@ import { ImportantComponent } from './two-components-databinding/two-viewchild-a
 import { FormTwoComponent } from './two-components-databinding/two-viewchild-and-local-references/form-two/form-two.component';
 import { UnimportantComponent } from './two-components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './two-components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
+
+//SECTION Directives
 import { ThreeDirectivesComponent } from './three-directives/three-directives.component';
 import { OneBasicCustomDirectiveComponent } from './three-directives/one-basic-custom-directive/one-basic-custom-directive.component';
 import { BlueBgDirective } from './three-directives/one-basic-custom-directive/blue-bg.directive';
@@ -47,13 +62,8 @@ import { ColoursDirective } from './three-directives/five-binding-to-directive-p
 import { SixCustomStructuralDirectiveComponent } from './three-directives/six-custom-structural-directive/six-custom-structural-directive.component';
 import { UnlessDirective } from './three-directives/six-custom-structural-directive/unless.directive';
 import { SevenNgswitchComponent } from './three-directives/seven-ngswitch/seven-ngswitch.component';
-import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
-import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
-import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
-import { CalculatorComponent } from './projects/calculator/calculator.component';
-import { ProjectFormComponent } from './projects/my-shopping-list/project-form/project-form.component';
-import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
-import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
+
+//SECTION Services & Dependency Injection
 import { FourServicesDependencyInjectionComponent } from './four-services-dependency-injection/four-services-dependency-injection.component';
 import { OneLoggingServiceComponent } from './four-services-dependency-injection/one-logging-service/one-logging-service.component';
 import { OneServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/one-service-button/one-service-button.component';
@@ -62,14 +72,21 @@ import { ThreeServiceButtonComponent } from './four-services-dependency-injectio
 import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
+
+//SECTION Observables
 import { FiveObservablesComponent } from './five-observables/five-observables.component';
 import { OneBasicObservableComponent } from './five-observables/one-basic-observable/one-basic-observable.component';
-import { ThreeObservableErrorsComponent } from './five-observables/three-observable-errors/three-observable-errors.component';
 import { TwoCustomObservableComponent } from './five-observables/two-custom-observable/two-custom-observable.component';
+import { ThreeObservableErrorsComponent } from './five-observables/three-observable-errors/three-observable-errors.component';
 import { FourObservableCompletionComponent } from './five-observables/four-observable-completion/four-observable-completion.component';
 import { FiveMapOperatorComponent } from './five-observables/five-map-operator/five-map-operator.component';
 import { SixFilterOperatorComponent } from './five-observables/six-filter-operator/six-filter-operator.component';
+import { SevenSubjectsComponent } from './five-observables/seven-subjects/seven-subjects.component';
+import { FirstSubjectsComponent } from './five-observables/seven-subjects/first-subjects/first-subjects.component';
+import { SecondSubjectsComponent } from './five-observables/seven-subjects/second-subjects/second-subjects.component';
 
+//SECTION Forms
+import { SixFormsComponent } from './six-forms/six-forms.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +154,10 @@ import { SixFilterOperatorComponent } from './five-observables/six-filter-operat
     FourObservableCompletionComponent,
     FiveMapOperatorComponent,
     SixFilterOperatorComponent,
+    SixFormsComponent,
+    SevenSubjectsComponent,
+    FirstSubjectsComponent,
+    SecondSubjectsComponent,
   ],
   imports: [
     BrowserModule,

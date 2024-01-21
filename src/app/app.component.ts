@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  footerDate():number {
-    return new Date().getFullYear();
-  }
 }
