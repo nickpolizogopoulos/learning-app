@@ -68,8 +68,8 @@ import { FourServicesDependencyInjectionComponent } from './four-services-depend
 import { OneLoggingServiceComponent } from './four-services-dependency-injection/one-logging-service/one-logging-service.component';
 import { OneServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/one-service-button/one-service-button.component';
 import { TwoServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/two-service-button/two-service-button.component';
-import { ThreeServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/three-service-button/three-service-button.component';
 import { TwoDataServiceComponent } from './four-services-dependency-injection/two-data-service/two-data-service.component';
+import { ThreeServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/three-service-button/three-service-button.component';
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
 
@@ -87,6 +87,7 @@ import { SecondSubjectsComponent } from './five-observables/seven-subjects/secon
 
 //SECTION Forms
 import { SixFormsComponent } from './six-forms/six-forms.component';
+import { OneTemplateDrivenComponent } from './six-forms/one-template-driven/one-template-driven.component';
 
 @NgModule({
   declarations: [
@@ -158,6 +159,7 @@ import { SixFormsComponent } from './six-forms/six-forms.component';
     SevenSubjectsComponent,
     FirstSubjectsComponent,
     SecondSubjectsComponent,
+    OneTemplateDrivenComponent,
   ],
   imports: [
     BrowserModule,
