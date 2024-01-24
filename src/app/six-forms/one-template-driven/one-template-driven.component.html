@@ -1,4 +1,5 @@
 <h4>1. Template Driven Form</h4>
+<p class="lead">Submit the form and scroll down for the result. <span (click)="fillTheForm()" class="addToTestText">[ test info ]</span></p>
 <hr class="mb-4">
 <form (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="mb-3">
@@ -11,33 +12,34 @@
         <input type="email" class="form-control rounded-1" id="exampleFormControlInput1" name="email" ngModel required email #email="ngModel" >
         <div *ngIf="!email.valid && email.touched" class="form-text text-danger">Please provide a valid email.</div>
     </div>
-
     <div class="mb-3">
         <label for="gender" class="form-label">Select your gender <span class="text-danger">*</span></label>
         <select class="form-select" id="gender" aria-label="Default select example" name="gender" ngModel required #gender="ngModel">
-            <option value="" disabled selected>-</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select>
         <div *ngIf="!gender.valid && gender.touched" class="form-text text-danger">Please select your gender.</div>
     </div>
-    
     <div class="mb-3">
         <label for="message" class="form-label">Message <span class="form-text">(optional)</span></label>
-        <textarea class="form-control rounded-1" id="message" rows="3" name="message" ngModel></textarea>
+        <textarea class="form-control rounded-1 mb-2" id="message" rows="3" name="message" ngModel></textarea>
+        <button (click)="putRandomMessage()" class="btn btn-sm btn-light rounded-1" type="button">Put a random message for me</button>
     </div>
-
     <div class="form-check mb-3">
         <label class="form-check-label" for="check">I consent to provide my personal information.</label>
         <input class="form-check-input" type="checkbox" value="" id="check" name="check" ngModel required #check>
     </div>
-      
     <button class="btn btn-primary rounded-1" type="submit" [disabled]="!form.valid">Submit</button>
 </form>
-
-<!-- <div class="alert alert-danger mt-3 p-3" role="alert">
-    One or more fields have an error. Please try again.
-</div> -->
 <div *ngIf="alertSuccess" class="alert alert-success mt-3 p-3" role="alert">
     Thank you for your message. It has been sent.
+</div>
+<div *ngIf="mailResults" class="alert alert-light alert-dismissible mt-5 p-3 rounded-1" role="alert">
+    <h4>Your email information:</h4>
+    <hr>
+    <p>Name: {{emailData.name}}</p>
+    <p>Email: {{emailData.email}}</p>
+    <p>Gender: {{emailData.gender}}</p>
+    <p>Message: <em>{{emailData.message}}</em></p>
+    <button (click)="onCloseInfo()" type="button" class="btn-close"></button>
 </div>
