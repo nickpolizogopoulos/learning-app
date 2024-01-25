@@ -87,7 +87,8 @@ import { SecondSubjectsComponent } from './five-observables/seven-subjects/secon
 
 //SECTION Forms
 import { SixFormsComponent } from './six-forms/six-forms.component';
-import { OneTemplateDrivenComponent } from './six-forms/one-template-driven/one-template-driven.component';
+import { OneTemplateDrivenFormComponent } from './six-forms/one-template-driven-form/one-template-driven-form.component';
+import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -159,7 +160,8 @@ import { OneTemplateDrivenComponent } from './six-forms/one-template-driven/one-
     SevenSubjectsComponent,
     FirstSubjectsComponent,
     SecondSubjectsComponent,
-    OneTemplateDrivenComponent,
+    OneTemplateDrivenFormComponent,
+    TwoReactiveFormComponent,
   ],
   imports: [
     BrowserModule,

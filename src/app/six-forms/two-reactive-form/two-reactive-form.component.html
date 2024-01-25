@@ -1,0 +1,70 @@
+<h4>2. Reactive Form</h4>
+<p class="lead">Submit the form and scroll down for the result. <span (click)="fillTheForm()" class="addToTestText">[ test info ]</span></p>
+<hr class="mb-4">
+<form>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="namereactive" class="form-label">Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="namereactive">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="surname" class="form-label">Surname <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="surname">
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="emailreactive" class="form-label">Email address <span class="form-text">(optional - for tracking number)</span></label>
+      <input type="email" class="form-control rounded-1" id="emailreactive">
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+        <input type="text" class="form-control rounded-1" id="phone">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="city">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="region" class="form-label">Region <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="region">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-3">
+            <label for="street" class="form-label">Street <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="street">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="number" class="form-label">Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="number">
+        </div>
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="checkreactive">
+      <label class="form-check-label" for="checkreactive">I will pay on delivery (COD)</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary rounded-1">Submit</button>
+</form>
+
+<div class="alert alert-success mt-3 p-3" role="alert">
+    Thank you for your order! See the order information below.
+</div>
+<div *ngIf="orderDetails" class="alert alert-light alert-dismissible mt-5 p-3 rounded-1" role="alert">
+    <h4>Order Details:</h4>
+    <hr>
+    <p>Receiver: </p>
+    <p>Email: </p>
+    <p>Phone: </p>
+    <p>Location: </p>
+    <p>Payment type: </p>
+
+    <button (click)="onCloseDetails()" type="button" class="btn-close"></button>
+</div>

@@ -2,11 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-one-template-driven',
-  templateUrl: './one-template-driven.component.html',
-  styleUrls: ['./one-template-driven.component.css']
+  selector: 'app-one-template-driven-form',
+  templateUrl: './one-template-driven-form.component.html',
+  styleUrls: ['./one-template-driven-form.component.css']
 })
-export class OneTemplateDrivenComponent {
+export class OneTemplateDrivenFormComponent {
 
   @ViewChild('form') form?:NgForm;
   alertSuccess:boolean = false;
