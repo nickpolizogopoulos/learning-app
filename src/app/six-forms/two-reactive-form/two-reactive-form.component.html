@@ -1,60 +1,74 @@
 <h4>2. Reactive Form</h4>
-<p class="lead">Submit the form and scroll down for the result. <span (click)="fillTheForm()" class="addToTestText">[ test info ]</span></p>
+<p class="lead">Where should we send your new order? <span (click)="fillTheForm()" class="addToTestText">[ test info ]</span><br>
+    <span class="addToTestText no-pointer inherit">(please, do not use zero or a negative number for the street number.)</span>
+</p>
 <hr class="mb-4">
-<form>
-
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
     <div class="row">
         <div class="col-md-6 mb-3">
             <label for="namereactive" class="form-label">Name <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="namereactive">
+            <input type="text" class="form-control" id="namereactive" formControlName="nameReactive">
+            <small *ngIf="!orderForm.get('nameReactive')?.valid && orderForm.get('nameReactive')?.touched" class="text-danger">{{ requiredField }} / invalid.</small>
         </div>
         <div class="col-md-6 mb-3">
             <label for="surname" class="form-label">Surname <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="surname">
+            <input type="text" class="form-control" id="surname" formControlName="surname">
+            <small *ngIf="!orderForm.get('surname')?.valid && orderForm.get('surname')?.touched" class="text-danger">{{ requiredField }}.</small>
         </div>
     </div>
-
     <div class="mb-3">
-      <label for="emailreactive" class="form-label">Email address <span class="form-text">(optional - for tracking number)</span></label>
-      <input type="email" class="form-control rounded-1" id="emailreactive">
+      <label for="emailreactive" class="form-label">Email address <span class="text-danger">*</span></label>
+      <input type="email" class="form-control rounded-1" id="emailreactive" formControlName="emailReactive">
+      <small *ngIf="!orderForm.get('emailReactive')?.valid && orderForm.get('emailReactive')?.touched" class="text-danger">Please provide a valid email.</small>
     </div>
-
     <div class="mb-3">
         <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-        <input type="text" class="form-control rounded-1" id="phone">
+        <input type="number" class="form-control rounded-1" id="phone" formControlName="phone">
+        <small *ngIf="!orderForm.get('phone')?.valid && orderForm.get('phone')?.touched" class="text-danger">{{ requiredField }}.</small>
     </div>
-
     <div class="row">
         <div class="col-md-6 mb-3">
             <label for="city" class="form-label">City <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="city">
+            <input type="text" class="form-control" id="city" formControlName="city">
+            <small *ngIf="!orderForm.get('city')?.valid && orderForm.get('city')?.touched" class="text-danger">{{ requiredField }}.</small>
         </div>
         <div class="col-md-6 mb-3">
             <label for="region" class="form-label">Region <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="region">
+            <input type="text" class="form-control" id="region" formControlName="region">
+            <small *ngIf="!orderForm.get('region')?.valid && orderForm.get('region')?.touched" class="text-danger">{{ requiredField }}.</small>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-8 mb-3">
             <label for="street" class="form-label">Street <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="street">
+            <input type="text" class="form-control" id="street" formControlName="street">
+            <small *ngIf="!orderForm.get('street')?.valid && orderForm.get('street')?.touched" class="text-danger">{{ requiredField }}</small>
         </div>
         <div class="col-md-4 mb-3">
             <label for="number" class="form-label">Number <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="number">
+            <input type="number" class="form-control" id="number" formControlName="number">
+            <small *ngIf="!orderForm.get('number')?.valid && orderForm.get('number')?.touched" class="text-danger">Required / invalid.</small>
         </div>
     </div>
-
+    <div class="mb-3" formArrayName="notes">
+        <button (click)="onAddNote()" class="btn btn-sm btn-outline-primary rounded-1 mb-2" type="button">Leave a note</button>
+        <div class="input-group mb-2" *ngFor="let noteControl of getControls() let i = index">
+            <input type="text" class="form-control rounded-1" placeholder="your note..." [formControlName]="i">
+            <span (click)="onDeleteNote(i)" class="input-group-text cursor-pointer text-danger" id="basic-addon1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+            </span>
+        </div>
+    </div>
     <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="checkreactive">
+      <input type="checkbox" class="form-check-input" id="checkreactive" formControlName="checkReactive">
       <label class="form-check-label" for="checkreactive">I will pay on delivery (COD)</label>
     </div>
-
     <button type="submit" class="btn btn-primary rounded-1">Submit</button>
 </form>
-
-<div class="alert alert-success mt-3 p-3" role="alert">
+<div *ngIf="alertSuccess" class="alert alert-success mt-3 p-3" role="alert">
     Thank you for your order! See the order information below.
 </div>
 <div *ngIf="orderDetails" class="alert alert-light alert-dismissible mt-5 p-3 rounded-1" role="alert">
@@ -65,6 +79,5 @@
     <p>Phone: </p>
     <p>Location: </p>
     <p>Payment type: </p>
-
     <button (click)="onCloseDetails()" type="button" class="btn-close"></button>
 </div>
