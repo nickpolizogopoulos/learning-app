@@ -4,6 +4,7 @@ import {
   FormControl, 
   FormGroup, 
   Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 type ValidatorReturnType = { [key:string]:boolean };
 
@@ -19,11 +20,13 @@ type ValidatorReturnType = { [key:string]:boolean };
 })
 export class TwoReactiveFormComponent implements OnInit {
 
+  orderForm!:FormGroup;
   orderDetails:boolean = false;
   alertSuccess:boolean = false;
-  requiredField:string = 'This field is required';
-  orderForm!:FormGroup;
-  forbiddenNames:string[] = ['name'];
+  requiredField:string = 'This field is required!';
+  InvalidField:string = 'Invalid input!'
+  InvalidEmail:string = 'Please provide a valid email!'
+  forbiddenNames:string[] = ['name', 'Name', 'asdf', 'test', 'Test'];
   forbiddenNumbers:number[] = [0];
 
   ngOnInit():void {
@@ -32,7 +35,9 @@ export class TwoReactiveFormComponent implements OnInit {
     this.orderForm = new FormGroup({
       'nameReactive': new FormControl(null, [ req, this.forbiddenNamesValidator.bind(this) ]),
       'surname': new FormControl(null, req),
-      'emailReactive': new FormControl(null, [req, Validators.email]),
+      // * line 39 breaks the alert "thank you" message 
+      'emailReactive': new FormControl(null, [req, Validators.email], this.forbiddenEmails as any),
+      // 'emailReactive': new FormControl(null, [req, Validators.email]),
       'phone': new FormControl(null, req),
       'city': new FormControl(null, req),
       'region': new FormControl(null, req),
@@ -45,6 +50,13 @@ export class TwoReactiveFormComponent implements OnInit {
       'checkReactive': new FormControl(null),
       'notes': new FormArray([])
     })
+
+    // this.orderForm.valueChanges.subscribe(
+    //   (value) => {console.log(value)}
+    // );
+    this.orderForm.statusChanges.subscribe(
+      (status) => {console.log(status)}
+    );
   }
 
   onSubmit():void {
@@ -54,12 +66,33 @@ export class TwoReactiveFormComponent implements OnInit {
         this.alertSuccess = false;
       }, 1600)
     }
+    this.orderForm.reset()
+
+    // SEE THE ORDER DERAILS BELOW THE FORM 
+    // WHEN I SUBMIT IT LIKE THE FIRST FORM
+
+
+    //FIX THE SUBMIT BUTTON TO BE DISABLED
+    //IF THE FORM IS INVALID
     
-    console.log(this.orderForm.value);
-    console.log('Valid: ' + this.orderForm.valid);
+    console.log(this.orderForm);
+    // console.log(this.orderForm.value);
+    // console.log('Valid: ' + this.orderForm.valid);
   }
   
   fillTheForm():void {
+    this.orderForm.setValue({
+      'nameReactive': 'Nick',
+      'surname': 'Polizogopoulos',
+      'emailReactive': 'nick.polizogopoulos@domain.com',
+      'phone': 6900000000,
+      'city': 'Patras',
+      'region': 'Peloponnese',
+      'street': 'Somewhere',
+      'number': 49,
+      'checkReactive': true,
+      'notes': []
+    })
   }
 
   getControls() {
@@ -102,5 +135,18 @@ export class TwoReactiveFormComponent implements OnInit {
     if (Number(control.value) < 0)
       return {nonZero: true};
     return null as any;
+  }
+
+  forbiddenEmails(control:FormControl): Promise<any> | Observable<any> {
+    const promise = new Promise( (resolve, reject) => {
+      // We add setTimeout to simulate the time it takes to resolve
+      // in a case of a server response but it breaks the alert message.
+      // setTimeout(() => {
+        if (control.value === 'test@test.com')
+          resolve({ 'emailIsForbidden': true });
+        resolve(null);
+      // },1500);
+    });
+    return promise;
   }
 }

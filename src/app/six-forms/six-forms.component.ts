@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
     </mark></h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
-          <!-- <app-one-template-driven-form class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-template-driven-form> -->
+          <app-one-template-driven-form class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-template-driven-form>
           <app-two-reactive-form class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-two-reactive-form>
       </div>
     </section>
