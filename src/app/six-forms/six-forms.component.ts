@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-six-forms',
-  // templateUrl: './six-forms.component.html',
   template: `
   
     <h2><mark>Forms - 2 Lessons.

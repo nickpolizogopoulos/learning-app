@@ -6,7 +6,9 @@ import {
   Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-type ValidatorReturnType = { [key:string]:boolean };
+type ValidatorReturnType = { 
+  [key:string]:boolean;
+};
 
 @Component({
   selector: 'app-two-reactive-form',
@@ -28,6 +30,20 @@ export class TwoReactiveFormComponent implements OnInit {
   InvalidEmail:string = 'Please provide a valid email!'
   forbiddenNames:string[] = ['name', 'Name', 'asdf', 'test', 'Test'];
   forbiddenNumbers:number[] = [0];
+  
+  detailsData = 
+  {
+    name: '',
+    surname: '',
+    email: '',
+    phone: '',
+    city: '',
+    region: '',
+    street: '',
+    number: 0,
+    payment: false,
+    notes: []
+  }
 
   ngOnInit():void {
     const req = Validators.required;
@@ -35,9 +51,7 @@ export class TwoReactiveFormComponent implements OnInit {
     this.orderForm = new FormGroup({
       'nameReactive': new FormControl(null, [ req, this.forbiddenNamesValidator.bind(this) ]),
       'surname': new FormControl(null, req),
-      // * line 39 breaks the alert "thank you" message 
       'emailReactive': new FormControl(null, [req, Validators.email], this.forbiddenEmails as any),
-      // 'emailReactive': new FormControl(null, [req, Validators.email]),
       'phone': new FormControl(null, req),
       'city': new FormControl(null, req),
       'region': new FormControl(null, req),
@@ -51,33 +65,40 @@ export class TwoReactiveFormComponent implements OnInit {
       'notes': new FormArray([])
     })
 
+    //Subscriptions to changes in value and status
+    //with valueChanges and statusChanges
+
     // this.orderForm.valueChanges.subscribe(
-    //   (value) => {console.log(value)}
+    //   (value) => console.log(value)
     // );
-    this.orderForm.statusChanges.subscribe(
-      (status) => {console.log(status)}
-    );
+
+    // this.orderForm.statusChanges.subscribe(
+    //   (status) => console.log(status)
+    // );
   }
 
   onSubmit():void {
+    this.orderDetails = true;
+
     if (this.orderForm.valid) {
       this.alertSuccess = true;
       setTimeout(() => {
         this.alertSuccess = false;
       }, 1600)
     }
-    this.orderForm.reset()
-
-    // SEE THE ORDER DERAILS BELOW THE FORM 
-    // WHEN I SUBMIT IT LIKE THE FIRST FORM
-
-
-    //FIX THE SUBMIT BUTTON TO BE DISABLED
-    //IF THE FORM IS INVALID
     
-    console.log(this.orderForm);
-    // console.log(this.orderForm.value);
-    // console.log('Valid: ' + this.orderForm.valid);
+    this.detailsData.name = this.orderForm.get('nameReactive')?.value
+    this.detailsData.surname = this.orderForm.get('surname')?.value
+    this.detailsData.email = this.orderForm.get('emailReactive')?.value
+    this.detailsData.phone = this.orderForm.get('phone')?.value
+    this.detailsData.city = this.orderForm.get('city')?.value
+    this.detailsData.region = this.orderForm.get('region')?.value
+    this.detailsData.street = this.orderForm.get('street')?.value
+    this.detailsData.number = this.orderForm.get('number')?.value
+    this.detailsData.payment = this.orderForm.get('checkReactive')?.value
+    // CBA notes now, ill do it later
+
+    this.orderForm.reset()
   }
   
   fillTheForm():void {
@@ -88,7 +109,7 @@ export class TwoReactiveFormComponent implements OnInit {
       'phone': 6900000000,
       'city': 'Patras',
       'region': 'Peloponnese',
-      'street': 'Somewhere',
+      'street': 'Olinthou',
       'number': 49,
       'checkReactive': true,
       'notes': []
@@ -111,15 +132,11 @@ export class TwoReactiveFormComponent implements OnInit {
     form.removeAt(index);
   }
 
-  onCloseDetails():void {
-    this.orderDetails = false;
-  }
-
   //-----------------CUSTOM VALIDATORS
   forbiddenNamesValidator(control:FormControl): ValidatorReturnType {
     if (this.forbiddenNames.indexOf(control.value) !== -1)
     return {'nameIsForbidden': true};
-    //in case our type doesnt have the null option.
+    //in case the type doesnt have the null option.
     return null as any;
     //We can also use this:
     // return null!; 
@@ -139,7 +156,7 @@ export class TwoReactiveFormComponent implements OnInit {
 
   forbiddenEmails(control:FormControl): Promise<any> | Observable<any> {
     const promise = new Promise( (resolve, reject) => {
-      // We add setTimeout to simulate the time it takes to resolve
+      // We add setTimeout to simulate the time it takes to resolve.
       // in a case of a server response but it breaks the alert message.
       // setTimeout(() => {
         if (control.value === 'test@test.com')
@@ -148,5 +165,9 @@ export class TwoReactiveFormComponent implements OnInit {
       // },1500);
     });
     return promise;
+  }
+
+  onCloseDetails():void {
+    this.orderDetails = false;
   }
 }

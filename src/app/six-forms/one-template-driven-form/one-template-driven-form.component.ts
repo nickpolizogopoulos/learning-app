@@ -4,7 +4,8 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-one-template-driven-form',
   templateUrl: './one-template-driven-form.component.html',
-  styleUrls: ['./one-template-driven-form.component.css']
+  // styleUrls: ['./one-template-driven-form.component.css']
+  styles: [``]
 })
 export class OneTemplateDrivenFormComponent {
 
