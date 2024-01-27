@@ -4,7 +4,25 @@ import { ExternalLinkProps, SectionsAndProjectsProps, SectionsAndProjectsService
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styles: [`
+  
+    .navbar-custom-colour {
+      background-color: rgb(231, 231, 231);
+      padding: 15px 30px;
+    }
+    .section-link {
+      font-size: 17px;
+      padding: 10px 20px;
+      
+    }
+    .section-link:hover {
+      background-color: rgb(231, 231, 231);
+    }
+    .section-link:focus {
+      color: rgb(36, 54, 99);
+    }
+    
+  `]
 })
 export class NavbarComponent implements OnInit {
  

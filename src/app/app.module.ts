@@ -90,6 +90,8 @@ import { SixFormsComponent } from './six-forms/six-forms.component';
 import { OneTemplateDrivenFormComponent } from './six-forms/one-template-driven-form/one-template-driven-form.component';
 import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reactive-form.component';
 
+//SECTION Data Transformation with Pipes
+
 @NgModule({
   declarations: [
     AppComponent,

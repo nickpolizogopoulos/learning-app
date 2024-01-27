@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <section class="ps-4 pe-4 mt-5 mb-5 niceblue">
             <p class="lead"><mark>This project started as an Angular playground for practice.</mark></p>
             <p class="lead"><mark>I decided to make it a mini Web App with exercises 
-                for every lesson, then I added the sections.</mark>
+                for every lesson, then I added the sections and a separate projects section.</mark>
             </p>
             <p class="lead"><mark>The idea came after I started 
             <a
