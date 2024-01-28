@@ -1,13 +1,11 @@
 <h4>3. Using HostListener to listen to events</h4>
 <p class="lead">Mouse over the left and right side of the image.</p>
-
 <div *ngIf="!greenFilter && !yellowFilter else noFilter" class="container-fluid imgRow mb-2">
     <div class="row">
         <div class="col imgCol" appGreenFilter></div>
         <div class="col imgCol" appYellowFilter></div>
     </div>
 </div>
-
 <ng-template #noFilter>
     <div class="container-fluid imgRow mb-2">
         <div class="row" [ngClass]="[yellowFilter ? 'yellowFilter' : '',  greenFilter ? 'greenFilter' : '']">
@@ -16,7 +14,6 @@
         </div>
     </div>
 </ng-template>
-
 <p class="lead">Which colour filter you prefer?</p>
 <button (click)="onGreenSelect()" class="btn btn-success rounded-1 me-3 mb-2">Green</button>
 <button (click)="onYellowSelect()" class="btn btn-warning rounded-1 me-3 mb-2">Yellow</button>

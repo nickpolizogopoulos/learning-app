@@ -2,8 +2,41 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-two-renderer-directive',
-  templateUrl: './two-renderer-directive.component.html',
-  styleUrls: ['./two-renderer-directive.component.css']
+  template: `
+  
+    <h4>2. Custom Attribute Directives using Renderer</h4>
+    <p class="lead mb-4">Choose the size of the text.</p>
+    <div class="mb-4 mt-3 headingbox row align-items-center shadows">
+        <p *ngIf="smText" appSmSize>I am learning Angular!</p>
+        <p *ngIf="mdText" appMdSize>I am learning Angular!</p>
+        <p *ngIf="xlText" appXlSize>I am learning Angular!</p>
+    </div>
+    <div class="btn-group" role="group">
+        <button (click)="onSmallClick()" [ngClass]="{'selected': smText}" class="btn">Small</button>
+        <button (click)="onNormalClick()" [ngClass]="{'selected': mdText}" class="btn">Normal</button>
+        <button (click)="onBigClick()" [ngClass]="{'selected': xlText}" class="btn">Big</button>
+    </div>
+  
+  `,
+  styles: [`
+  
+    .btn {
+      color: rgb(79, 79, 79);
+      width: 100px;
+      border: 1px solid rgb(79, 79, 79);
+    }
+    .btn-group {
+        border: 1px solid rgb(161, 161, 161);
+    }
+    .selected {
+        color: white;
+        background-color: #3656bf;
+    }
+    .headingbox {
+        height: 70px;
+    }
+  
+  `]
 })
 export class TwoRendererDirectiveComponent implements OnInit {
 

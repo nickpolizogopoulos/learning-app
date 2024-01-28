@@ -5,14 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './six-custom-structural-directive.component.html',
   styles: [`
   
-  code {
-    color: inherit;
-    font-size: 17px;
-  }
-  .emojiImg {
-    height: 30px;
-    width: auto;
-  }
+    code {
+      color: inherit;
+      font-size: 17px;
+    }
+    .emojiImg {
+      height: 30px;
+      width: auto;
+    }
 
   `]
 })

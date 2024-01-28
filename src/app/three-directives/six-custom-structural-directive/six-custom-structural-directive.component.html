@@ -3,7 +3,6 @@
 <button *appUnless="!btnOne" (click)="onYes()" [ngClass]="lieDetector ? 'disabled' : ''" class="btn btn-primary rounded-1 me-3 mb-3">Of course!</button>
 <button *appUnless="!btnTwo" (click)="onNo()" class="btn btn-danger rounded-1 me-3 mb-3">Not really</button>
 <button *ngIf="firstResponse || secondResponse" (click)="onReset()" class="btn btn-light rounded-1 me-3 mb-3">Reset</button>
-
 <div *ngIf="firstResponse">
     <p class="lead mt-4">Thank you so much !
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-heart text-danger" viewBox="0 0 16 16">

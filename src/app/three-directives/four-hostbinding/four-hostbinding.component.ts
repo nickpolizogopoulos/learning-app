@@ -5,19 +5,19 @@ import { Component } from '@angular/core';
   templateUrl: './four-hostbinding.component.html',
   styles: [`
   
-  .heartColor {
-    color: #ff2164;
-  }
-  .hint {
-    font-size: 10px;
-    color: #bababa;
-    cursor: pointer;
-    margin-left: 7px;
-  }
-  img {
-    height: 50px;
-    width: auto;
-  }
+    .heartColor {
+      color: #ff2164;
+    }
+    .hint {
+      font-size: 10px;
+      color: #bababa;
+      cursor: pointer;
+      margin-left: 7px;
+    }
+    img {
+      height: 50px;
+      width: auto;
+    }
   
   `]
 })

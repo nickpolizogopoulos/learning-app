@@ -1,25 +1,20 @@
 <h4>1. Basic Custom Attribute Directive</h4>
 <p class="lead">Give the paragraph below a background colour.</p>
-
 <button (click)="onBlueClick()" class="btn btn-blueBg rounded-1 me-3 mb-3">Blue</button>
 <button (click)="onBordeauxClick()" class="btn btn-bordeauxBg rounded-1 me-3 mb-3">Bordeaux</button>
 <button *ngIf="blueBg || bordeauxBg" (click)="onResetColor()" class="btn btn-light rounded-1 me-3 mb-3">Reset</button>
-
 <div class="row mt-4">
     <div class="col-9">
-        <p
-            *ngIf="!blueBg && !bordeauxBg"
+        <p *ngIf="!blueBg && !bordeauxBg"
             class="p-3 text"
             >Style me with coloured background!
         </p>
-        <p
-            *ngIf="blueBg"
+        <p *ngIf="blueBg"
             class="p-3 text"
             appBlueBg
             >Blue background looks nice!
         </p>
-        <p
-            *ngIf="bordeauxBg"
+        <p *ngIf="bordeauxBg"
             class="p-3 text"
             appBordeauxBg
             >Good

@@ -12,7 +12,6 @@
 </div>
 <p *ngIf="extraInstructions" class="lead mt-2">2. Click the icon to add the colour and learn more information!</p>
 <p *ngIf="response" class="lead mt-2">{{responseText}}</p>
-
 <div class="cursor-pointer col-sm-6 mx-auto mt-4" style="max-width: 57px;" (click)="onIconClick()" appColours [fillColor]="fillColour">
     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-window-plus" viewBox="0 0 16 16">
         <path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M4 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
