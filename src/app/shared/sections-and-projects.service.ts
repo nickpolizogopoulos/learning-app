@@ -66,8 +66,14 @@ export class SectionsAndProjectsService {
       name: 'Forms',
       link: '/forms',
       img: '../../assets/images/angular-banner-image.jpg',
-      description: `Handling forms in Angular Apps and more 
-      and more and more!`
+      description: `Handling forms in Angular. Template Driven 
+      Form Approach, Reactive Form Approach!`
+    },
+    {
+      name: 'Data Transformation with Pipes',
+      link: '/pipes',
+      img: '../../assets/images/angular-banner-image.jpg',
+      description: `Pipes text`
     },
 
     

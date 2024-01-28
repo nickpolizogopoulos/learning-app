@@ -91,6 +91,7 @@ import { OneTemplateDrivenFormComponent } from './six-forms/one-template-driven-
 import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reactive-form.component';
 
 //SECTION Data Transformation with Pipes
+import { SevenPipesComponent } from './seven-pipes/seven-pipes.component';
 
 @NgModule({
   declarations: [
@@ -164,6 +165,7 @@ import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reac
     SecondSubjectsComponent,
     OneTemplateDrivenFormComponent,
     TwoReactiveFormComponent,
+    SevenPipesComponent,
   ],
   imports: [
     BrowserModule,
