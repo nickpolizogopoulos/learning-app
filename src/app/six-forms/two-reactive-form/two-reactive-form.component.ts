@@ -6,10 +6,6 @@ import {
   Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-type ValidatorReturnType = { 
-  [key:string]:boolean;
-};
-
 @Component({
   selector: 'app-two-reactive-form',
   templateUrl: './two-reactive-form.component.html',
@@ -22,9 +18,9 @@ export class TwoReactiveFormComponent implements OnInit {
   alertSuccess:boolean = false;
   requiredField:string = 'This field is required!';
   InvalidField:string = 'Invalid input!'
-  InvalidEmail:string = 'Please provide a valid email!'
+  invalidEmail:string = `You can't use test@test.com / gr as email.`
   forbiddenNames:string[] = ['name', 'Name', 'asdf', 'test', 'Test'];
-  forbiddenNumbers:number[] = [0];
+  // forbiddenNumbers:number[] = [0];
   
   detailsData = 
   {
@@ -46,19 +42,24 @@ export class TwoReactiveFormComponent implements OnInit {
     this.orderForm = new FormGroup({
       'nameReactive': new FormControl(null, [ req, this.forbiddenNamesValidator.bind(this) ]),
       'surname': new FormControl(null, req),
-      'emailReactive': new FormControl(null, [req, Validators.email], this.forbiddenEmails as any),
+      'emailReactive': new FormControl(null, [
+        req,
+        Validators.email,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$'),
+      ], this.forbiddenEmails as any),
+      
       'phone': new FormControl(null, req),
       'city': new FormControl(null, req),
       'region': new FormControl(null, req),
       'street': new FormControl(null, req),
       'number': new FormControl(null, [
         req, 
-        this.forbiddenNumbersValidator.bind(this), 
+        // this.forbiddenNumbersValidator.bind(this), 
         Validators.pattern( /^[1-9]+[0-9]*$/ ),
       ]),
       'checkReactive': new FormControl(null),
       'notes': new FormArray([])
-    })
+    });
 
     //Subscriptions to changes in value and status
     //with valueChanges and statusChanges
@@ -100,10 +101,10 @@ export class TwoReactiveFormComponent implements OnInit {
     this.orderForm.setValue({
       'nameReactive': 'Nick',
       'surname': 'Polizogopoulos',
-      'emailReactive': 'nick.polizogopoulos@domain.com',
+      'emailReactive': 'nick@learning-angular.com',
       'phone': 6900000000,
       'city': 'Patras',
-      'region': 'Peloponnese',
+      'region': 'Western Greece',
       'street': 'Olinthou',
       'number': 49,
       'checkReactive': true,
@@ -128,7 +129,7 @@ export class TwoReactiveFormComponent implements OnInit {
   }
 
   //-----------------CUSTOM VALIDATORS
-  forbiddenNamesValidator(control:FormControl): ValidatorReturnType {
+  forbiddenNamesValidator(control:FormControl): {[key:string]:boolean} {
     if (this.forbiddenNames.indexOf(control.value) !== -1)
     return {'nameIsForbidden': true};
     //in case the type doesnt have the null option.
@@ -137,21 +138,20 @@ export class TwoReactiveFormComponent implements OnInit {
     // return null!; 
   }
 
-  forbiddenNumbersValidator(control:FormControl): ValidatorReturnType | null {
-    if (this.forbiddenNumbers.indexOf(control.value) !== -1){
-      return {'numberIsForbidden': true};}
-    return null;
-  }
+  // forbiddenNumbersValidator(control:FormControl): {[key:string]:boolean} {
+  //   if (this.forbiddenNumbers.indexOf(control.value) !== -1){
+  //     return {'numberIsForbidden': true};}
+  //   return null as any;
+  // }
 
   forbiddenEmails(control:FormControl): Promise<any> | Observable<any> {
     const promise = new Promise( (resolve, reject) => {
-      // We add setTimeout to simulate the time it takes to resolve.
-      // in a case of a server response but it breaks the alert message.
-      setTimeout(() => {
-        if (control.value === 'test@test.com')
+      // The setTimeout is to simulate the time it takes to resolve.
+      // setTimeout(() => {
+        if (control.value === 'test@test.com' || control.value === 'test@test.gr')
           resolve({ 'emailIsForbidden': true });
         resolve(null);
-      },1500);
+      // },1500);
     });
     return promise;
   }

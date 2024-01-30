@@ -20,9 +20,13 @@
         </div>
     </div>
     <div class="mb-3">
-      <label for="emailreactive" class="form-label">Email address <span class="text-danger">*</span></label>
-      <input type="email" class="form-control rounded-1" id="emailreactive" formControlName="emailReactive">
-      <small *ngIf="!orderForm.get('emailReactive')?.valid && orderForm.get('emailReactive')?.touched" class="text-danger">Please provide a valid email.</small>
+        <label for="emailreactive" class="form-label">Email address <span class="text-danger">*</span></label>
+        <input type="email" class="form-control rounded-1" id="emailreactive" formControlName="emailReactive">
+        <small *ngIf="!orderForm.get('emailReactive')?.valid && orderForm.get('emailReactive')?.touched" class="text-danger">
+            <span *ngIf="orderForm.get('emailReactive')?.errors!['required']" class="text-danger"> {{ requiredField }} </span>
+            <span *ngIf="orderForm.get('emailReactive')?.errors!['pattern']" class="text-danger">Email is invalid.</span>
+            <span *ngIf="orderForm.get('emailReactive')?.errors!['emailIsForbidden']" class="text-danger"> {{invalidEmail}} </span>
+        </small>
     </div>
     <div class="mb-3">
         <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
@@ -51,7 +55,7 @@
             <label for="number" class="form-label">Number <span class="text-danger">*</span></label>
             <input type="number" class="form-control" id="number" formControlName="number">
             <small *ngIf="!orderForm.get('number')?.valid && orderForm.get('number')?.touched" class="text-danger">
-                <span *ngIf="orderForm.get('number')?.errors!['numberIsForbidden']">{{ InvalidField }}</span>
+                <span *ngIf="orderForm.get('number')?.errors!['pattern']">{{ InvalidField }}</span>
                 <span *ngIf="orderForm.get('number')?.errors!['required']">{{ requiredField }}</span>
             </small>
         </div>
@@ -83,7 +87,7 @@
     <p>Receiver: {{ detailsData.name }} {{ detailsData.surname }}</p>
     <p>Email: {{ detailsData.email }}</p>
     <p>Phone: {{ detailsData.phone }}</p>
-    <p>Location: {{ detailsData.street }} {{ detailsData.number }}, {{ detailsData.city }}</p>
+    <p>Location: {{ detailsData.street }} {{ detailsData.number }}, {{ detailsData.city }}, {{ detailsData.region }}</p>
     <p>Payment type: {{ detailsData.payment ? 'Cash On Delivery (COD)' : 'Bank Transfer' }}</p>
     <!-- CBA notes now, ill do it later  -->
     <button (click)="onCloseDetails()" type="button" class="btn-close"></button>
