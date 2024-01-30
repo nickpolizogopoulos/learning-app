@@ -13,12 +13,7 @@ type ValidatorReturnType = {
 @Component({
   selector: 'app-two-reactive-form',
   templateUrl: './two-reactive-form.component.html',
-  styles: [`
-
-    .no-pointer {
-      cursor: default;
-    }
-  `]
+  styles: [``]
 })
 export class TwoReactiveFormComponent implements OnInit {
 
@@ -59,7 +54,7 @@ export class TwoReactiveFormComponent implements OnInit {
       'number': new FormControl(null, [
         req, 
         this.forbiddenNumbersValidator.bind(this), 
-        this.nonNegative.bind(this) 
+        Validators.pattern( /^[1-9]+[0-9]*$/ ),
       ]),
       'checkReactive': new FormControl(null),
       'notes': new FormArray([])
@@ -113,11 +108,11 @@ export class TwoReactiveFormComponent implements OnInit {
       'number': 49,
       'checkReactive': true,
       'notes': []
-    })
+    });
   }
 
   getControls() {
-    const form = (<FormArray>this.orderForm.get('notes'))
+    const form = (<FormArray>this.orderForm.get('notes'));
     return form.controls;
   }
 
@@ -128,7 +123,7 @@ export class TwoReactiveFormComponent implements OnInit {
   }
 
   onDeleteNote(index:number):void {
-    const form = (<FormArray>this.orderForm.get('notes'))
+    const form = (<FormArray>this.orderForm.get('notes'));
     form.removeAt(index);
   }
 
@@ -142,27 +137,21 @@ export class TwoReactiveFormComponent implements OnInit {
     // return null!; 
   }
 
-  forbiddenNumbersValidator(control:FormControl): ValidatorReturnType {
-    if (this.forbiddenNumbers.indexOf(control.value) !== -1)
-      return {'numberIsForbidden': true};
-    return null as any;
-  }
-
-  nonNegative(control:FormControl): ValidatorReturnType {
-    if (Number(control.value) < 0)
-      return {nonZero: true};
-    return null as any;
+  forbiddenNumbersValidator(control:FormControl): ValidatorReturnType | null {
+    if (this.forbiddenNumbers.indexOf(control.value) !== -1){
+      return {'numberIsForbidden': true};}
+    return null;
   }
 
   forbiddenEmails(control:FormControl): Promise<any> | Observable<any> {
     const promise = new Promise( (resolve, reject) => {
       // We add setTimeout to simulate the time it takes to resolve.
       // in a case of a server response but it breaks the alert message.
-      // setTimeout(() => {
+      setTimeout(() => {
         if (control.value === 'test@test.com')
           resolve({ 'emailIsForbidden': true });
         resolve(null);
-      // },1500);
+      },1500);
     });
     return promise;
   }

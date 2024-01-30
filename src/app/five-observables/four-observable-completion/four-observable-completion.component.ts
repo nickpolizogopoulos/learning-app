@@ -4,14 +4,29 @@ import { Subscription, Observable, timer, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-four-observable-completion',
-  templateUrl: './four-observable-completion.component.html',
-  styles: [`
-    .reloadBtn {
-      font-size: 14px;
-      color: rgb(161, 161, 161);
-      cursor: pointer;
-    }
-  `]
+  template: `
+  
+    <h4>4. Observable Completion</h4>
+    <div class="row">
+      <div class="col-7"><p class="lead">You can take a quick power nap for:</p></div>
+      <div class="col-4">
+        <select class="form-select" [disabled]="timerStarted">
+          <option (click)="onReset()" selected>Select</option>
+          <option (click)="onFiveSelect()">5 Seconds</option>
+          <option (click)="onTenSelect()">10 Seconds</option>
+        </select>
+      </div>
+    </div>
+    <button
+      (click)="onStart()"
+      [ngClass]="{'disabled' : timerStarted}"
+      class="btn btn-sm btn-success rounded-1 mb-2"
+      [disabled]="seconds === 0">Start the clock</button>
+    <p *ngIf="timerStarted" class="lead">Time left: {{ timeLeft }}</p>
+    <span *ngIf="timerEnded" (click)="reload()" class="addToTestText cursor-pointer">[ reload ]</span>
+
+  `,
+  styles: [``]
 })
 export class FourObservableCompletionComponent implements OnDestroy {
 
@@ -58,11 +73,12 @@ export class FourObservableCompletionComponent implements OnDestroy {
     this.timerStarted = false;
   }
 
+  reload():void {
+    window.location.reload();
+  }
+
   ngOnDestroy():void {
     this.subscription?.unsubscribe()
   }
 
-  reload():void {
-    window.location.reload();
-  }
 }

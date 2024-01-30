@@ -1,28 +1,18 @@
 <section class="container project-container">
-    <section class="container-fluid">
-        <div class="row mb-4">
-            <h1 class="niceblue">[Project - 03]: <u>My Shopping List Application</u></h1>
-        </div>
-    </section>
-
-    <section class="container-fluid mt-5 mb-5">
-        <div class="row mb-4 niceblue">
-            <app-project-form
-                (foodItem)="onFoodItemAdded($event)"
-                (homeItem)="onHomeItemAdded($event)"
-                (clearLists)="onListsClear()"
-            ></app-project-form>
-        </div>
-    </section>
-
+    <div class="container-fluid">
+        <h1 class="niceblue mb-5">[Project - 03]: <u>My Shopping List Application</u></h1>
+        <app-project-form
+            (foodItem)="onFoodItemAdded($event)"
+            (homeItem)="onHomeItemAdded($event)"
+            (clearLists)="onListsClear()"
+        ></app-project-form>
+    </div>
     <section class="container-fluid mt-4">
         <div class="container-fluid">
-            <div class="row d-flex justify-content-between mb-4 niceblue">
-
-                
+            <div class="row d-flex justify-content-between mb-4 niceblue">                
                 <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
                     <h3 class="mb-4">Food List: <span class="ms-2 lead">{{foodLengthMessage()}}.</span>
-                        <span (click)="addTwoFood()" class="addToTestText ms-3">[ +2 items ]</span>
+                        <span (click)="addTwoFood()" class="addToTestText cursor-pointer ms-3">[ +2 items ]</span>
                     </h3>
                     <app-project-food-list
                         *ngFor="let item of foodList let i = index"
@@ -40,11 +30,9 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
                     <h3 class="mb-4">Home List<span class="ms-2 lead">{{homeLengthMessage()}}.</span>
-                        <span (click)="addTwoHome()" class="addToTestText ms-3">[ +2 items ]</span>
+                        <span (click)="addTwoHome()" class="addToTestText cursor-pointer ms-3">[ +2 items ]</span>
                     </h3>
                     <app-project-home-list
                         *ngFor="let item of homeList let i = index"
@@ -56,7 +44,6 @@
                         <div class="col">
                             <button (click)="onClearHomeList()" class="btn btn-sm btn-secondary rounded-1 me-2">Clear list</button>
                             <button (click)="removeLastHomeList()" class="btn btn-sm btn-warning rounded-1 me-2">Remove Last</button>
-
                         </div>
                         <div class="col">
                             <span class="ms-2 lead"><u>Total Quantity: {{homeTotalQuantity()}}</u></span>

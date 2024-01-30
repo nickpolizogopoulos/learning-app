@@ -18,10 +18,12 @@ h2 {
 .cursor-pointer {
   cursor: pointer;
 }
+.cursor-default {
+  cursor: default;
+}
 .addToTestText {
   font-size: 14px;
   color: rgb(185, 185, 185);
-  cursor: pointer;
 }
 .lessonbox {
   color: rgb(36, 54, 99);

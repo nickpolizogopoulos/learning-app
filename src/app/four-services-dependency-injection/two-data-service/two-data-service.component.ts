@@ -7,7 +7,7 @@ import { UserListService, UserProps } from './user-list.service';
     
 <h4>2. Creating a Data Service</h4>
 <p class="lead mb-3">Add new users in the list or remove any existing ones. The list is provided by a service.
-  <span class="addToTestText" (click)="onAddFourUsers()">[ +4 dummy users ]</span>
+  <span class="addToTestText cursor-pointer" (click)="onAddFourUsers()">[ +4 dummy users ]</span>
 </p>
 <app-form-data-service></app-form-data-service>
 

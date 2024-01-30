@@ -8,7 +8,7 @@ export interface ItemProps {
 @Component({
   selector: 'app-two-viewchild-and-local-references',
   templateUrl: './two-viewchild-and-local-references.component.html',
-  styleUrls: ['./two-viewchild-and-local-references.component.css']
+  styles: [``]
 })
 export class TwoViewchildAndLocalReferencesComponent {
 

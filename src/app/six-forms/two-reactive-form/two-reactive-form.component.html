@@ -1,6 +1,6 @@
 <h4>2. Reactive Form</h4>
-<p class="lead">Where should we send your new order? <span (click)="fillTheForm()" class="addToTestText">[ test info ]</span><br>
-    <span class="addToTestText no-pointer inherit">(Please do not put zero or negative numbers in the street number field!)</span>
+<p class="lead">Where should we send your new order? <span (click)="fillTheForm()" class="addToTestText cursor-pointer">[ test info ]</span><br>
+    <span class="addToTestText cursor-default inherit">(Please do not put zero or negative numbers in the street number field!)</span>
 </p>
 <hr class="mb-4">
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
