@@ -73,7 +73,8 @@ export class SectionsAndProjectsService {
       name: 'Data Transformation with Pipes',
       link: '/pipes',
       img: '../../assets/images/angular-banner-image.jpg',
-      description: `Pipes text`
+      description: `Simple Transformations with Pipes, Custom Pipe,
+      Parametrizations, {.....}`
     },
 
     

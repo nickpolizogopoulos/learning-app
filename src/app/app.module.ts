@@ -93,6 +93,7 @@ import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reac
 //SECTION Data Transformation with Pipes
 import { SevenPipesComponent } from './seven-pipes/seven-pipes.component';
 import { OneSimpleTransformationComponent } from './seven-pipes/one-simple-transformation/one-simple-transformation.component';
+import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom-pipe.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +169,7 @@ import { OneSimpleTransformationComponent } from './seven-pipes/one-simple-trans
     TwoReactiveFormComponent,
     SevenPipesComponent,
     OneSimpleTransformationComponent,
+    TwoCustomPipeComponent,
   ],
   imports: [
     BrowserModule,
