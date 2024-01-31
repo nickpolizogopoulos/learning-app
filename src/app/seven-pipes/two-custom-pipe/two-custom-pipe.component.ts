@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   
     <h4>2. A Custom Pipe</h4>
     <p class="lead">Specify the length of the paragraph below.</p>
-    <input type="number" class="form-control rounded-1 shadow-none mb-2" 
-        [(ngModel)]="textLength" placeholder="Type a number..." 
-        [disabled]="!isExpanded">
+    
+    <label [ngClass]="{'linethrough' : !isExpanded }">Characters: {{ pick.value }}</label>
+    <input type="range" class="form-range" 
+      #pick (input)="pick.value" 
+      min="0" max="330" 
+      [(ngModel)]="textLength" 
+      [disabled]="!isExpanded">
+
     <p *ngIf="isExpanded" class="lead">{{ text | shorten: textLength }}
         <span *ngIf="text.length > textLength">
             <span *ngIf="isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read more ]</span>
@@ -26,7 +31,7 @@ import { Component } from '@angular/core';
 export class TwoCustomPipeComponent {
 
   isExpanded:boolean = true;
-  textLength:number = 147;
+  textLength:number = 137;
 
   text:string = `The Soyuz spacecraft is a Russian space vehicle 
   designed for human spaceflight. It has been in use since the 1960s and 

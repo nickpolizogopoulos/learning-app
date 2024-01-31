@@ -47,6 +47,9 @@ h2 {
   text-decoration: none;
   cursor: pointer;
 }
+.linethrough {
+  text-decoration: line-through;
+}
 .inherit {
   color: inherit;
 }
