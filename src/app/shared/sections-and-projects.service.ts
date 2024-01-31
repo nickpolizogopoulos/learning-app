@@ -74,7 +74,7 @@ export class SectionsAndProjectsService {
       link: '/pipes',
       img: '../../assets/images/angular-banner-image.jpg',
       description: `Simple Transformations with Pipes, Custom Pipe,
-      Parametrizations, {.....}`
+      Parametrizations, Filtering data!`
     },
 
     

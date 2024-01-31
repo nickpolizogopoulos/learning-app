@@ -57,6 +57,13 @@ h2 {
   font-size: 15px;
   color: rgb(95, 95, 95);
 }
+.filter-btn {
+  background-color: rgb(229, 229, 229);
+  padding: 4px;
+  border-radius: 15px;
+  padding-right:7px;
+  border: 1px solid rgb(36, 54, 99);
+}
 
 /* **PROJECTS**  */
 .project-container {
