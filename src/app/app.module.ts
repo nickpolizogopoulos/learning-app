@@ -95,6 +95,7 @@ import { SevenPipesComponent } from './seven-pipes/seven-pipes.component';
 import { OneSimpleTransformationComponent } from './seven-pipes/one-simple-transformation/one-simple-transformation.component';
 import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom-pipe.component';
 import { ShortenPipe } from './seven-pipes/two-custom-pipe/shorten.pipe';
+import { FilterPipeComponent } from './seven-pipes/filter-pipe/filter-pipe.component';
 
 @NgModule({
   declarations: [
@@ -172,6 +173,7 @@ import { ShortenPipe } from './seven-pipes/two-custom-pipe/shorten.pipe';
     OneSimpleTransformationComponent,
     TwoCustomPipeComponent,
     ShortenPipe,
+    FilterPipeComponent,
   ],
   imports: [
     BrowserModule,

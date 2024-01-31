@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
 export class TwoCustomPipeComponent {
 
   isExpanded:boolean = true;
-  textLength:number = 137;
+  textLength:number = 117;
 
   text:string = `The Soyuz spacecraft is a Russian space vehicle 
   designed for human spaceflight. It has been in use since the 1960s and 
