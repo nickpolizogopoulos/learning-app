@@ -12,7 +12,7 @@ interface Guests {
   selector: 'app-three-filter-pipe',
   template: `
   
-    <h4>3. A filter Pipe</h4>
+    <h4>3. A Filter Pipe</h4>
     <p class="lead">Filter the list of our party guests.</p><hr>
     <div class="dropdown mb-3">
         <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,9 +21,6 @@ interface Guests {
         <ul class="dropdown-menu cursor-pointer">
           <li><a (click)="onMarriedSelect()" class="dropdown-item">Show Married</a></li>
           <li><a (click)="onSingleSelect()" class="dropdown-item">Show Single</a></li>
-          <!-- <li><a class="dropdown-item">Age Ascending</a></li> -->
-          <!-- <li><a class="dropdown-item">Age Descending</a></li> -->
-          <!-- <li><a (click)="onReset()" class="dropdown-item">Reset</a></li> -->
         </ul> 
         <span *ngIf="filterBtn" class="filter-btn ms-3">
           {{ selection === 'Married' ? 'Married guests' : selection === 'Single' ? 'Single guests' : '' }}
