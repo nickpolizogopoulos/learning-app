@@ -94,6 +94,7 @@ import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reac
 import { SevenPipesComponent } from './seven-pipes/seven-pipes.component';
 import { OneSimpleTransformationComponent } from './seven-pipes/one-simple-transformation/one-simple-transformation.component';
 import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom-pipe.component';
+import { ShortenPipe } from './seven-pipes/two-custom-pipe/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -170,6 +171,7 @@ import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom
     SevenPipesComponent,
     OneSimpleTransformationComponent,
     TwoCustomPipeComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,
