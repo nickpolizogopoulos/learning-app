@@ -76,6 +76,13 @@ export class SectionsAndProjectsService {
       description: `Simple Transformations with Pipes, Custom Pipe,
       Parametrizations, Filtering data!`
     },
+    {
+      name: 'Http Requests',
+      link: '/http-requests',
+      img: '../../assets/images/angular-banner-image.jpg',
+      description: `Http description text. Http description text. 
+      Http description text. Http description text. `
+    },
 
     
   ]

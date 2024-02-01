@@ -14,6 +14,7 @@ import { FourServicesDependencyInjectionComponent } from "./four-services-depend
 import { FiveObservablesComponent } from "./five-observables/five-observables.component";
 import { SixFormsComponent } from "./six-forms/six-forms.component";
 import { SevenPipesComponent } from "./seven-pipes/seven-pipes.component";
+import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-requests.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     { path: 'observables', component: FiveObservablesComponent },
     { path: 'forms', component: SixFormsComponent },
     { path: 'pipes', component: SevenPipesComponent },
+    { path: 'http-requests', component: EightHttpRequestsComponent },
   
     { path: 'project-to-do-application', component: ToDoAppComponent },
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },

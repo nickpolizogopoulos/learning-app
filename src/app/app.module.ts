@@ -98,6 +98,9 @@ import { ShortenPipe } from './seven-pipes/two-custom-pipe/shorten.pipe';
 import { ThreeFilterPipeComponent } from './seven-pipes/three-filter-pipe/three-filter-pipe.component';
 import { StatusFilterPipe } from './seven-pipes/three-filter-pipe/status-filter.pipe';
 
+//SECTION Http Requests
+import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-requests.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -176,6 +179,7 @@ import { StatusFilterPipe } from './seven-pipes/three-filter-pipe/status-filter.
     ShortenPipe,
     ThreeFilterPipeComponent,
     StatusFilterPipe,
+    EightHttpRequestsComponent,
   ],
   imports: [
     BrowserModule,
