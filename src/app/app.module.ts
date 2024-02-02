@@ -97,6 +97,8 @@ import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom
 import { ShortenPipe } from './seven-pipes/two-custom-pipe/shorten.pipe';
 import { ThreeFilterPipeComponent } from './seven-pipes/three-filter-pipe/three-filter-pipe.component';
 import { StatusFilterPipe } from './seven-pipes/three-filter-pipe/status-filter.pipe';
+import { FourSlugGeneratorComponent } from './seven-pipes/four-slug-generator/four-slug-generator.component';
+import { SymbolsToHyphensPipe } from './seven-pipes/four-slug-generator/symbols-to-hyphens.pipe';
 
 //SECTION Http Requests
 import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-requests.component';
@@ -180,6 +182,8 @@ import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-req
     ThreeFilterPipeComponent,
     StatusFilterPipe,
     EightHttpRequestsComponent,
+    FourSlugGeneratorComponent,
+    SymbolsToHyphensPipe,
   ],
   imports: [
     BrowserModule,
