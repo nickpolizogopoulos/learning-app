@@ -7,9 +7,8 @@
                 <p class="lead">Once I finished the design I realised that I have to make every colleague's signature
                     by hardcoding every single piece of information again and again and again. Is there a more dynamic way?
                 </p>
-                <p class="lead">This is a little different than the original implementation since I can't leak the company's information
-                    but I find this project interesting enough to be included here. I am pretty proud of my idea, plus they liked it. 
-                </p>
+                <p class="lead">This is a little different than the original implementation since I can't leak the company's information.</p>
+                <p class="lead">I find this project interesting enough to be included here even though it isn't something that special in Angular. I am pretty proud of my idea, plus they liked it.</p>
                 <hr class="mt-5">
             </section>
         </div>
@@ -17,92 +16,83 @@
     <section class="container-fluid">
         <div class="row mb-4">
             <div class="col niceblue">
-                <h4 class="mb-3">Fill the form to make your signature</h4>
-                <input [(ngModel)]="name" type="text" 
-                    class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Name">
-                <input [(ngModel)]="surname" type="text" 
-                    class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Surname">
-                <input [(ngModel)]="title" type="text" 
-                    class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Position">
-                <input [(ngModel)]="phone" type="text" 
-                    class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Phone">
-                <input [(ngModel)]="email" type="text" 
-                    class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Email">
-                <button (click)="onSubmit()" class="btn btn-outline-success rounded-1 mt-3 me-3">Submit</button>
-                <button (click)="onResetAll()" class="btn btn-outline-secondary rounded-1 mt-3 me-3">Reset All</button>
+                <h4 class="mb-3">Use this form to make your signature</h4>
+                <input type="text" class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Name" (input)="onNameUpdate($event)">
+                <input type="text" class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Surname" (input)="onSurnameUpdate($event)">
+                <input type="text" class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Position" (input)="onPositionUpdate($event)">
+                <input type="text" class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Phone" (input)="onPhoneUpdate($event)">
+                <input type="text" class="shadow-none fw-light form-control mb-2 rounded-1" placeholder="Email" (input)="onEmailUpdate($event)">
             </div>
             <div class="col align-self-center niceblue signature-card">
-                <div style="background-color: white;">
-                    <div class="col mb-5">
-                        <table cellspacing="0" cellpadding="4" style="font-family: 'Montserrat', sans-serif; line-height: 1.3; background-color: white;">
-                            <tbody>
-                                <!-- *FIRST ROW, [LOGO] [EMPTY] [NAME] --> 
-                                <tr style="background-color: white">
-                                    <td style="vertical-align: top;"><a routerLink="/"><img width="140" height="auto" src="../../../assets/images/learning-angular-logo.png" alt="logo"></a></td>
-                                    <td></td> 
-                                    <td>
-                                        <table cellspacing="0" cellpadding="2" style="color: rgb(36, 54, 99);">
-                                            <tbody>
-                                                <tr><td style="font-size: 17px;">{{signature.name}} {{signature.surname}}</td></tr>
-                                                <tr><td style="font-size: 12px;">{{signature.title}}</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <!-- *THIRD ROW, [EMPTY] [EMPTY] [INFO] -->
-                                <tr style="background-color: white"> 
-                                    <td></td>
-                                    <td></td> 
-                                    <td>
-                                        <table cellspacing="0" cellpadding="2" style="font-size: 12px;">
-                                            <tbody>
-                                                <tr><td><span style="color: rgb(36, 54, 99);"><strong>Tel.: </strong></span><span style="text-decoration:none; color: black;">{{signature.phone}}</span></td></tr>
-                                                <tr><td><span style="color: rgb(36, 54, 99);"><strong>Email: </strong></span><a style="text-decoration:none; color: black;" href = "mailto:{{signature.email}}@domain.gr">{{signature.email}}{{'@domain.gr'}}</a></td></tr>
-                                                <tr><td>City, Country</td></tr>
-                                                <tr><td>Street, Number, Postal Code</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <!-- *FOURTH ROW, [EMPTY] [EMPTY] [TABLE OF SOCIAL] -->
-                                <tr style="background-color: white">
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <table>
-                                            <tbody>
-                                                <tr >
-                                                    <td>
-                                                        <a routerLink="/" style="color: inherit;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
-                                                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472M3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
-                                                            </svg>
-                                                        </a>
-                                                    </td>
-                                                    <td width="7"></td> 
-                                                    <td>
-                                                        <a routerLink="/" style="color: inherit;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
-                                                            </svg>
-                                                        </a>
-                                                    </td>
-                                                    <td width="7"></td>
-                                                    <td>
-                                                        <a routerLink="/" style="color: inherit;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                                                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                                                            </svg>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="col mb-5">
+                    <table cellspacing="0" cellpadding="4" style="font-family: 'Montserrat', sans-serif; line-height: 1.3; background-color: white;">
+                        <tbody>
+                            <!-- *FIRST ROW, [LOGO] [EMPTY] [NAME] --> 
+                            <tr style="background-color: white">
+                                <td style="vertical-align: top;"><a routerLink="/"><img width="140" height="auto" src="../../../assets/images/learning-angular-logo.png" alt="logo"></a></td>
+                                <td></td> 
+                                <td>
+                                    <table cellspacing="0" cellpadding="2" style="color: rgb(36, 54, 99);">
+                                        <tbody>
+                                            <tr><td style="font-size: 17px;">{{name}} {{surname}}</td></tr>
+                                            <tr><td style="font-size: 12px;">{{title}}</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- *THIRD ROW, [EMPTY] [EMPTY] [INFO] -->
+                            <tr style="background-color: white"> 
+                                <td></td>
+                                <td></td> 
+                                <td>
+                                    <table cellspacing="0" cellpadding="2" style="font-size: 12px;">
+                                        <tbody>
+                                            <tr><td><span style="color: rgb(36, 54, 99);"><strong>Tel.: </strong></span><span style="text-decoration:none; color: black;">{{phone}}</span></td></tr>
+                                            <tr><td><span style="color: rgb(36, 54, 99);"><strong>Email: </strong></span><a style="text-decoration:none; color: black;" href = "mailto:{{email}}@domain.gr">{{email}}{{'@domain.gr'}}</a></td></tr>
+                                            <tr><td>City, Country</td></tr>
+                                            <tr><td>Street, Number, Postal Code</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- *FOURTH ROW, [EMPTY] [EMPTY] [TABLE OF SOCIAL] -->
+                            <tr style="background-color: white">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr >
+                                                <td>
+                                                    <a routerLink="/" style="color: inherit;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                                                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472M3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                                <td width="7"></td> 
+                                                <td>
+                                                    <a routerLink="/" style="color: inherit;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                                <td width="7"></td>
+                                                <td>
+                                                    <a routerLink="/" style="color: inherit;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
