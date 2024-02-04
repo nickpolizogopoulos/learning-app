@@ -21,6 +21,7 @@ import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
 import { SuperSignatureMakerComponent } from "./projects/super-signature-maker/super-signature-maker.component";
 import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping-list.component";
 import { CalculatorComponent } from "./projects/calculator/calculator.component";
+import { GreekSouvlakiPosComponent } from "./projects/greek-souvlaki-pos/greek-souvlaki-pos.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
     { path: 'project-shopping-list', component: MyShoppingListComponent },
     { path: 'project-calculator', component: CalculatorComponent },
+    { path: 'project-pos', component: GreekSouvlakiPosComponent },
     
     { path: '**', redirectTo: '404'},
     { path: '404', component: PageNotFoundComponent },

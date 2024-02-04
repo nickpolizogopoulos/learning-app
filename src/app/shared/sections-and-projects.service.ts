@@ -116,6 +116,13 @@ export class SectionsAndProjectsService {
       description: `Here is a calculator that nobody will 
       use for more than a minute. But I've made it!`
     },
+    {
+      name: 'Greek Souvlaki POS',
+      link: '/project-pos',
+      img: '../../assets/images/project-banner-image.jpg',
+      description: `Your family wants to order greek souvlaki 
+      today. This app will make it easy for you. Let's go!`
+    },
 
   ]
 
