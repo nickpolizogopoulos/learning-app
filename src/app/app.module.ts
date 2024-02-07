@@ -20,7 +20,7 @@ import { ProjectFormComponent } from './projects/my-shopping-list/project-form/p
 import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
 import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
 import { CalculatorComponent } from './projects/calculator/calculator.component';
-import { GreekSouvlakiPosComponent } from './projects/greek-souvlaki-pos/greek-souvlaki-pos.component';
+import { GreekGyroPitaOrderMakerComponent } from './projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component';
 
 //SECTION The Basics
 import { OneTheBasicsComponent } from './one-the-basics/one-the-basics.component';
@@ -186,7 +186,7 @@ import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-req
     EightHttpRequestsComponent,
     FourSlugGeneratorComponent,
     SymbolsToHyphensPipe,
-    GreekSouvlakiPosComponent,
+    GreekGyroPitaOrderMakerComponent,
   ],
   imports: [
     BrowserModule,

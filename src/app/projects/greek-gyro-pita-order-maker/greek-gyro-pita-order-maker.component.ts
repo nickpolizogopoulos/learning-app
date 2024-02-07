@@ -5,14 +5,14 @@ import { Pita } from './pita.,model';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-greek-souvlaki-pos',
-  templateUrl: './greek-souvlaki-pos.component.html',
-  styleUrls: ['./greek-souvlaki-pos.component.css']
+  selector: 'app-greek-gyro-pita-order-maker',
+  templateUrl: './greek-gyro-pita-order-maker.component.html',
+  styles: [``]
 })
-export class GreekSouvlakiPosComponent implements OnInit {
+export class GreekGyroPitaOrderMakerComponent implements OnInit {
 
 
-  explanation:boolean = false;
+  termsVisible:boolean = false;
   orderMakerSection:boolean = false;
   requiredMessage:string = 'This field is required';
   @ViewChild('foodForm') form?:NgForm;
@@ -20,6 +20,31 @@ export class GreekSouvlakiPosComponent implements OnInit {
   isFetchingOrder:boolean = false;
   loadedPites:Pita[] = [];
   formVisible:boolean = true;
+
+  mainAdditionals = [
+    {
+      name: 'potatoes',
+      text: 'Potakoes'
+    },
+    {
+      name: 'tomatoes',
+      text: 'Tomatoes'
+    },
+    {
+      name: 'onion', 
+      text: 'Onion'
+    },
+    {
+      name: 'tzatziki', 
+      text: 'Tzatziki'
+    },
+  ];
+
+  quantities = [
+    {value: '1'},{value: '2'},{value: '3'},
+    {value: '4'},{value: '5'},{value: '6'},
+    {value: '7'},{value: '8'},{value: '9'},{value: '10'},
+  ];
 
   constructor(
     private http:HttpClient
@@ -30,12 +55,12 @@ export class GreekSouvlakiPosComponent implements OnInit {
   }
 
   onAgreeClick():void {
-    this.explanation = !this.explanation;
+    this.termsVisible = !this.termsVisible;
     this.orderMakerSection = true;
   }
 
   onStepOneClick():void {
-    this.explanation = !this.explanation;
+    this.termsVisible = !this.termsVisible;
     this.orderMakerSection = false;
   }
 

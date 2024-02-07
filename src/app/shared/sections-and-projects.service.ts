@@ -114,13 +114,13 @@ export class SectionsAndProjectsService {
       link: '/project-calculator',
       img: '../../assets/images/project-banner-image.jpg',
       description: `Here is a calculator that nobody will 
-      use for more than a minute. But I've made it!`
+      use for any reason. But I've made it!`
     },
     {
-      name: 'Greek Souvlaki POS',
-      link: '/project-pos',
+      name: 'Greek Gyro Pita - Order Maker',
+      link: '/project-pita-gyro',
       img: '../../assets/images/project-banner-image.jpg',
-      description: `Your family wants to order greek souvlaki 
+      description: `Your family wants to order Greek Pita Gyro 
       today. This app will make it easy for you. Let's go!`
     },
 
