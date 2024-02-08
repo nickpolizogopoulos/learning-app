@@ -93,20 +93,30 @@
                     <button (click)="onClearList()" class="btn btn-danger rounded-1 mb-3 me-3">Clear Order</button>
                     <button (click)="onShowHideForm()" class="btn btn-warning rounded-1 mb-3 me-3">{{ formVisible ? 'Hide form' : 'Show form' }}</button>
                     <div class="mt-4">
+                        <!-- * TEXT & TITLE -->
                         <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">No order available!</p>
-                        <h2 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mt-5">Your order:</h2>
+                        <h2 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mt-5">Your order: 
+                            <span class="lead">(<span class="text-success">Green</span>: <u>only</u> these ingredients, 
+                            <span class="text-primary">Blue</span>: <u>ap'ola</u>)</span>
+                        </h2>
+                        <!-- * LIST OF PITES -->
                         <ul class="list-group rounded-0" *ngIf="loadedPites.length >= 1 && !isFetchingPites">
                             <li *ngFor="let pita of loadedPites" class="list-group-item niceblue ps-4 pt-4 pb-4">
                                 <h3>{{ pita.name }}</h3>
                                 <span class="lead"><u><strong>{{ pita.quantity + 'x '}}</strong></u>&nbsp;&nbsp;{{ pita.mainIngredient + ' -&nbsp; '}}</span>
-                                <span class="lead">{{ pita.potatoes ? 'Potakoes ' : '' }}</span>
-                                <span class="lead">{{ pita.tomatoes ? 'Tomatoes ' : '' }}</span>
-                                <span class="lead">{{ pita.onion ? 'Onion ' : '' }}</span>
-                                <span class="lead">{{ pita.tzatziki ? 'Tzatziki ' : '' }}</span>
+                                <span [ngClass]="{
+                                    'text-primary' : pita.potatoes && pita.tomatoes && pita.onion && pita.tzatziki, 
+                                    'text-success' : !pita.potatoes || !pita.tomatoes || !pita.onion || !pita.tzatziki}">
+                                    <span class="lead">{{ pita.potatoes ? 'Potakoes ' : '' }}</span>
+                                    <span class="lead">{{ pita.tomatoes ? 'Tomatoes ' : '' }}</span>
+                                    <span class="lead">{{ pita.onion ? 'Onion ' : '' }}</span>
+                                    <span class="lead">{{ pita.tzatziki ? 'Tzatziki ' : '' }}</span>
+                                </span>
                                 <div *ngIf="pita.sauce !== undefined"><span class="lead">{{ '~ Sauce: ' + pita.sauce }}</span></div>
                                 <div *ngIf="pita.extras !== undefined"><span class="lead">{{ '- Extras: ' + pita.extras }}</span></div>
                             </li>
                         </ul>
+                        <!-- * LOADING SPINNER -->
                         <div *ngIf="isFetchingPites" class="spinner-border" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
