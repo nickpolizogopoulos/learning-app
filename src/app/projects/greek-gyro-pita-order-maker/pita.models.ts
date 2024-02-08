@@ -1,5 +1,3 @@
-
-
 export interface Pita {
     name:string;
     quantity:number;
@@ -11,4 +9,13 @@ export interface Pita {
     sauce?:string;
     extras?:string;
     id?:string;
+}
+
+export interface Additionals {
+    name:string;
+    text:string;
+}
+
+export interface Quantities {
+    value:string;
 }
