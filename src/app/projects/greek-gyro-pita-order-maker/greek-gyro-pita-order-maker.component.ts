@@ -6,7 +6,7 @@ import { PitesService } from './pites.service';
 @Component({
   selector: 'app-greek-gyro-pita-order-maker',
   templateUrl: './greek-gyro-pita-order-maker.component.html',
-  styles: [``]
+  styles: [` .btn-close { padding: 32px; }`]
 })
 export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
 
@@ -26,13 +26,11 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
   ) { }
   
   //* Clears Firebase on Component Init
-  //* and also adds two default orders.
   ngOnInit():void {
     this.onClearList()
-    this.pitesService.addDefaultPites()
-
     this.mainAdditionals = this.pitesService.additionals;
     this.pitaQuantity = this.pitesService.quantity;
+    this.pitesService.addDummyPites()
     }
     
   onAgreeClick():void {
@@ -45,34 +43,36 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
     this.termsVisible = !this.termsVisible;
     this.orderMakerSection = false;
 
-    //* This refetches the list.
-    //* This is in ngOnInit by default.
-    this.onFetchPites()
+    //* Fetches the list.
+    this.fetchPitesList()
   }
 
   onAddPites( pita:Pita ):void {
-    this.pitesService.createandStorePita(pita)
-      .subscribe( responseData => {
-        console.log(responseData)
-        this.onFetchPites();
+    this.pitesService.createAndStorePita(pita)
+      .subscribe( () => {
+        this.fetchPitesList();
       })
-
     this.form?.reset()
   }
 
   onClearList():void {
-    this.pitesService.deletePites()
+    this.pitesService.deletePitesList()
       .subscribe(
         () => {
           this.loadedPites = [];
         })
   }
 
-  onDeletePita() {
-    //delete a single pita from the database  
+  onDeletePita( id:Pita['id'] ) { 
+    this.pitesService.onDeleteSinglePita(id as any)
+      .subscribe(() => {
+        this.loadedPites.splice(1, id as any)
+        this.fetchPitesList()
+      }
+    )
   }
 
-  onFetchPites():void {
+  fetchPitesList():void {
     this.isFetchingPites = true;
     this.pitesService.fetchPites().subscribe(
       pites => {

@@ -8,7 +8,11 @@ import { Observable, map } from 'rxjs';
 })
 export class PitesService {
 
-  url:string = 'https://pites-project-default-rtdb.firebaseio.com/pites.json'
+  database:string = 'https://pites-project-default-rtdb.firebaseio.com';
+  folder:string = '/pites'
+  json:string = '.json';
+
+  url:string = this.database + this.folder + this.json;
   
   additionals:Additionals[] = [
     {
@@ -41,14 +45,19 @@ export class PitesService {
     private http:HttpClient
   ) { }
 
-  createandStorePita( pita:Pita ) {
+  createAndStorePita( pita:Pita ) {
     return this.http
       .post <{ [key:string]:Pita }> (this.url, pita)
   }
 
-  deletePites() {
+  deletePitesList() {
     return this.http
       .delete(this.url)
+  }
+
+  onDeleteSinglePita( id:Pita ) {
+    return this.http
+      .delete( this.database + this.folder + '/' + id + this.json);
   }
 
   fetchPites(): Observable<Pita[]> {
@@ -66,8 +75,7 @@ export class PitesService {
       )
   }
 
-
-  addDefaultPites():void {
+  addDummyPites():void {
     this.http
       .post <{ [key:string]:Pita }> (this.url, 
         {
@@ -81,8 +89,7 @@ export class PitesService {
           sauce: 'Yellow sauce (Mustard - Mayonnaise mix)',
           extras: 'Paprika'
         }
-        ).subscribe(
-          response => console.log(response));
+        ).subscribe();
 
     this.http
     .post <{ [key:string]:Pita }> (this.url, 
@@ -96,8 +103,22 @@ export class PitesService {
         tzatziki: false,
         sauce: 'Red sauce (Ketchup - Mayonnaise mix)',
       }
-      ).subscribe(
-        response => console.log(response));
+      ).subscribe();
+
+    this.http
+    .post <{ [key:string]:Pita }> (this.url, 
+      {
+        name: 'Margo',
+        quantity: 1,
+        mainIngredient:'Gyro Pork',
+        potatoes: true,
+        tomatoes: true,
+        onion: false,
+        tzatziki: false,
+        sauce: 'Mustard - Ketchup mix',
+        extras: 'Fillorian seasonings'
+      }
+      ).subscribe();
   }
 
 }

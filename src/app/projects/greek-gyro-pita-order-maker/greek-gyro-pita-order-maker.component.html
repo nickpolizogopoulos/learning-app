@@ -1,127 +1,123 @@
 <section class="container project-container">
-    <section class="container-fluid">
-        <div class="row mb-4">
-            <section class="col niceblue">
-                <h1>[Project - 05]: <u>Greek Gyro Pita - Order Maker</u></h1>
-                <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">(penAndPaper):boring => please.noMore(&nbsp;)</span></p>
-                <p class="lead mt-4">This is how I'll prepare big family Gyro Pita orders from now on. 
-                    <span *ngIf="stepOneVisible" (click)="onStepOneClick()" type="button" class="cursor-pointer ms-4 user-select-none">
-                        <svg *ngIf="!termsVisible" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" 
-                            class="bi bi-plus-circle-dotted ms-2 mb-1 cursor-pointer me-2" viewBox="0 0 16 16">
-                        <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                    </svg>
-                    <svg *ngIf="termsVisible"
-                            xmlns="http://www.w3.org/2000/svg" 
-                            width="16" height="16" fill="currentColor" 
-                            class="bi bi-dash-circle-dotted ms-2 mb-1 cursor-pointer me-2" viewBox="0 0 16 16">
-                        <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
-                    </svg>[ Step One ]</span> </p>
-                <div class="lead" *ngIf="termsVisible">
-                    <hr>
-                    <h3 class="mb-3">Terms of Use:</h3>
-                    <p>Souvlaki is <a href="https://images.squarespace-cdn.com/content/v1/5e484ab628c78d6f7e602d73/c828d00f-3184-44d0-9109-eea1b960075d/greek-foods-souvlaki.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - <a href="https://en.wikipedia.org/wiki/Souvlaki" target="_blank" class="nodecor inherit">[ more info ]</a></p>
-                    <p>Pita (gyro or souvlaki) is <a href="https://thetolerantvegan.com/wp-content/uploads/2020/05/gyros-souvlaki-wraps-pita-bread-with-chicken-potatoes-tzatziki-sauce_79830-1784.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - <a href="https://en.wikipedia.org/wiki/Pita" target="_blank" class="nodecor inherit">[ more info ]</a></p>
-                    <p>Kalamaki is <a href="https://choliastos.gr/images/stories/virtuemart/product/twisted03.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - More info <a href="https://www.greekbreakfast.gr/wp-content/uploads/2019/09/frappe-min.jpg" target="_blank" class="nodecor inherit">[ here ]</a> & <a href="https://translate.google.com/?sl=el&tl=en&text=%CE%BA%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BA%CE%B9&op=translate" target="_blank" class="nodecor inherit">[ here ]</a></p>
-                    <p>Alifi is <a href="https://www.google.com/search?client=firefox-b-d&sca_esv=e51918ddf39b0c56&sxsrf=ACQVn08tbdyi7K14nptyJoO0E-jXCz31XQ:1707328990447&q=%CE%B1%CE%BB%CE%BF%CE%B9%CF%86%CE%AE&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjg0fWP6JmEAxWn9gIHHSnHCzMQ0pQJegQICxAB&biw=1920&bih=972&dpr=1" target="_blank" class="nodecor inherit">[ THIS ]</a> - CBA info, alifi is not edible.</p>
-                    <button (click)="onAgreeClick()" type="button" class="btn btn-warning rounded-1 me-3">I AGREE !</button>
-                </div>
-                <hr *ngIf="formVisible" class="mt-5">
-                <!-- * ORDER MAKER ------------------------------------------------------------>
-                <section *ngIf="orderMakerSection" style="max-width: 800px;">
-                    <form *ngIf="formVisible" (ngSubmit)="onAddPites(foodForm.value)" #foodForm="ngForm">
-                        <!-- *** NAME & QTY ------>
-                        <div class="row">
-                            <div class="col-md-8 mb-3">
-                                <label for="who" class="form-label">Who is this for? <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control rounded-1" id="who" name="name" ngModel required #name="ngModel">
-                                <div *ngIf="!name.valid && name.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="quantity" class="form-label">How many? <span class="text-danger">*</span></label>
-                                <select id="quantity" class="form-select rounded-1" name="quantity" ngModel required #quantity="ngModel">
-                                    <option *ngFor="let value of pitaQuantity" value="{{value.value}}">{{value.value}}</option>
-                                </select>
-                                <div *ngIf="!quantity.valid && quantity.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
-                            </div>
+    <div class="row mb-4">
+        <section class="col niceblue">
+            <h1>[Project - 05]: <u>Greek Gyro Pita - Order Maker</u></h1>
+            <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">(penAndPaper):boring => please.noMore(&nbsp;)</span></p>
+            <p class="lead mt-4">This is how I'll prepare big family Gyro Pita orders from now on. 
+                <span *ngIf="stepOneVisible" (click)="onStepOneClick()" type="button" class="cursor-pointer ms-4 user-select-none">
+                    <svg *ngIf="!termsVisible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                        class="bi bi-plus-circle-dotted ms-2 mb-1 cursor-pointer me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>
+                <svg *ngIf="termsVisible"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-dash-circle-dotted ms-2 mb-1 cursor-pointer me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                </svg>[ Start Here! ]</span></p>
+            <div class="lead mt-5" *ngIf="termsVisible">
+                <h3 class="mb-3">Terms of Use:</h3>
+                <p>Souvlaki is <a href="https://images.squarespace-cdn.com/content/v1/5e484ab628c78d6f7e602d73/c828d00f-3184-44d0-9109-eea1b960075d/greek-foods-souvlaki.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - <a href="https://en.wikipedia.org/wiki/Souvlaki" target="_blank" class="nodecor inherit">[ more info ]</a></p>
+                <p>Pita (gyro or souvlaki) is <a href="https://thetolerantvegan.com/wp-content/uploads/2020/05/gyros-souvlaki-wraps-pita-bread-with-chicken-potatoes-tzatziki-sauce_79830-1784.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - <a href="https://en.wikipedia.org/wiki/Pita" target="_blank" class="nodecor inherit">[ more info ]</a></p>
+                <p>Kalamaki is <a href="https://choliastos.gr/images/stories/virtuemart/product/twisted03.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - More info <a href="https://www.greekbreakfast.gr/wp-content/uploads/2019/09/frappe-min.jpg" target="_blank" class="nodecor inherit">[ here ]</a> & <a href="https://translate.google.com/?sl=el&tl=en&text=%CE%BA%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BA%CE%B9&op=translate" target="_blank" class="nodecor inherit">[ here ]</a></p>
+                <p>Alifi is <a href="https://www.google.com/search?client=firefox-b-d&sca_esv=e51918ddf39b0c56&sxsrf=ACQVn08tbdyi7K14nptyJoO0E-jXCz31XQ:1707328990447&q=%CE%B1%CE%BB%CE%BF%CE%B9%CF%86%CE%AE&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjg0fWP6JmEAxWn9gIHHSnHCzMQ0pQJegQICxAB&biw=1920&bih=972&dpr=1" target="_blank" class="nodecor inherit">[ THIS ]</a> - CBA info, alifi is not edible.</p>
+                <button (click)="onAgreeClick()" type="button" class="btn btn-warning rounded-1 me-3">I AGREE !</button>
+            </div>
+            <hr *ngIf="formVisible" class="mt-5 mb-5">
+            <!-- * ORDER MAKER ------------------------------------------------------------>
+            <section *ngIf="orderMakerSection" style="max-width: 800px;">
+                <form *ngIf="formVisible" (ngSubmit)="onAddPites(foodForm.value)" #foodForm="ngForm">
+                    <!-- *** NAME & QTY ------>
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <label for="who" class="form-label">Who is this for? <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control rounded-1" id="who" name="name" ngModel required #name="ngModel">
+                            <div *ngIf="!name.valid && name.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
                         </div>
-                        <!-- *** MAIN INGREDIENT ------>
-                        <div class="mb-3">
-                            <label for="mainIngredient" class="form-label">Select the main ingredient <span class="text-danger">*</span></label>
-                            <select id="mainIngredient" class="form-select rounded-1" name="mainIngredient" ngModel required #mainIngredient="ngModel">
-                                <option value="Gyro Pork">Gyro pork</option>
-                                <option value="Souvlaki Pork">Souvlaki pork</option>
-                                <option value="Gyro Chicken">Gyro chicken</option>
-                                <option value="Souvlaki Chicken">Souvlaki chicken</option>
+                        <div class="col-md-4 mb-3">
+                            <label for="quantity" class="form-label">How many? <span class="text-danger">*</span></label>
+                            <select id="quantity" class="form-select rounded-1" name="quantity" ngModel required #quantity="ngModel">
+                                <option *ngFor="let value of pitaQuantity" value="{{value.value}}">{{value.value}}</option>
                             </select>
-                            <div *ngIf="!mainIngredient.valid && mainIngredient.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
+                            <div *ngIf="!quantity.valid && quantity.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
                         </div>
-                        <!-- *** MAIN ADDITIONALS ------>
-                        <div class="row mb-4">
-                            <div *ngFor="let item of mainAdditionals" class="col">
-                                <div class="col-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="{{item.name}}" name="{{item.name}}" ngModel #{{item.name}}="ngModel">
-                                        <label class="form-check-label" for="{{item.name}}">{{item.text}}</label>
-                                    </div>
+                    </div>
+                    <!-- *** MAIN INGREDIENT ------>
+                    <div class="mb-3">
+                        <label for="mainIngredient" class="form-label">Select the main ingredient <span class="text-danger">*</span></label>
+                        <select id="mainIngredient" class="form-select rounded-1" name="mainIngredient" ngModel required #mainIngredient="ngModel">
+                            <option value="Gyro Pork">Gyro pork</option>
+                            <option value="Souvlaki Pork">Souvlaki pork</option>
+                            <option value="Gyro Chicken">Gyro chicken</option>
+                            <option value="Souvlaki Chicken">Souvlaki chicken</option>
+                            <option value="Without meat">- Without meat -</option>
+                        </select>
+                        <div *ngIf="!mainIngredient.valid && mainIngredient.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
+                    </div>
+                    <!-- *** MAIN ADDITIONALS ------>
+                    <div class="row mb-4">
+                        <div *ngFor="let item of mainAdditionals" class="col">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="{{item.name}}" name="{{item.name}}" ngModel #{{item.name}}="ngModel">
+                                    <label class="form-check-label" for="{{item.name}}">{{item.text}}</label>
                                 </div>
                             </div>
                         </div>
-                        <!-- *** SAUCE ------>
-                        <div class="mb-3">
-                            <label for="sauce" class="form-label">Sauce</label>
-                            <select id="sauce" class="form-select rounded-1" name="sauce" ngModel #sauce="ngModel">
-                                <option value="Ketchup">Ketchup</option>
-                                <option value="Mustard">Mustard</option>
-                                <option value="Red sauce (Ketchup - Mayonnaise mix)">Red sauce (Ketchup - Mayonnaise mix)</option>
-                                <option value="Yellow sauce (Mustard - Mayonnaise mix)">Yellow sauce (Mustard - Mayonnaise mix)</option>
-                                <option value="Mustard - Ketchup mix">Mustard - Ketchup mix</option>
-                                <option value="Fenistil + Voltaren mix">Fenistil + Voltaren mix</option>
-                            </select>
-                        </div>
-                        <!--** EXTRAS  -->
-                        <div class="mb-4">
-                            <label for="extras" class="form-label">Any extra? <span>(optional)</span></label>
-                            <input type="text" class="form-control rounded-1" id="extras" name="extras" ngModel #extras="ngModel">
-                        </div>
-                        <button [ngClass]="{'btn-secondary' : !foodForm.valid}" type="submit" class="btn btn-primary rounded-1" [disabled]="!foodForm.valid">Add to list</button>
-                    </form>
-                    <!-- * RESULTS HERE -->
-                    <hr class="mt-5 mb-5">
-                    <button (click)="onClearList()" class="btn btn-danger rounded-1 mb-3 me-3">Clear list</button>
-                    <button (click)="onShowHideForm()" class="btn btn-warning rounded-1 mb-3 me-3">{{ formVisible ? 'Hide form' : 'Show form' }}</button>
-                    <div class="mt-4">
-                        <!-- * TEXT & TITLE -->
-                        <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">The order list is empty!</p>
-                        <h3 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mb-3">Your order: 
-                            <span class="lead">( <span class="text-success">Green</span>: with <u>only</u> these ingredients, 
-                            <span class="text-primary">Blue</span>: <u>ap'ola</u> )</span>
-                        </h3>
-                        <!-- * LIST OF PITES -->
-                        <ul class="list-group rounded-0" *ngIf="loadedPites.length >= 1 && !isFetchingPites">
-                            <li *ngFor="let pita of loadedPites" class="list-group-item alert-dismissible niceblue ps-4 pt-4 pb-4">
-                                <h4>{{ pita.name }}</h4>
-                                <span class="lead"><u><strong>{{ pita.quantity + 'x '}}</strong></u>&nbsp;&nbsp;{{ pita.mainIngredient + ' -&nbsp; '}}</span>
-                                <span [ngClass]="{
-                                    'text-primary' : pita.potatoes && pita.tomatoes && pita.onion && pita.tzatziki, 
-                                    'text-success' : !pita.potatoes || !pita.tomatoes || !pita.onion || !pita.tzatziki}">
-                                    <span class="lead">{{ pita.potatoes ? 'Potakoes ' : '' }}</span>
-                                    <span class="lead">{{ pita.tomatoes ? 'Tomatoes ' : '' }}</span>
-                                    <span class="lead">{{ pita.onion ? 'Onion ' : '' }}</span>
-                                    <span class="lead">{{ pita.tzatziki ? 'Tzatziki ' : '' }}</span>
-                                </span>
-                                <div *ngIf="pita.sauce !== undefined"><span class="lead">{{ '~ Sauce: ' + pita.sauce }}</span></div>
-                                <div *ngIf="pita.extras !== undefined"><span class="lead">{{ '- Extras: ' + pita.extras }}</span></div>
-                                <!-- **** for deleting a single pita from the database
-                                * *** <button (click)="onDeletePita()" type="button" class="btn-close mt-3 me-2"></button> -->
-                            </li>
-                        </ul>
-                        <!-- * LOADING SPINNER -->
-                        <div *ngIf="isFetchingPites" class="spinner-border" role="status"></div>
                     </div>
-                </section>
+                    <!-- *** SAUCE ------>
+                    <div class="mb-3">
+                        <label for="sauce" class="form-label">Sauce</label>
+                        <select id="sauce" class="form-select rounded-1" name="sauce" ngModel #sauce="ngModel">
+                            <option value="Ketchup">Ketchup</option>
+                            <option value="Mustard">Mustard</option>
+                            <option value="Red sauce (Ketchup - Mayonnaise mix)">Red sauce (Ketchup - Mayonnaise mix)</option>
+                            <option value="Yellow sauce (Mustard - Mayonnaise mix)">Yellow sauce (Mustard - Mayonnaise mix)</option>
+                            <option value="Mustard - Ketchup mix">Mustard - Ketchup mix</option>
+                            <option value="Fenistil + Voltaren mix">Fenistil + Voltaren mix</option>
+                        </select>
+                    </div>
+                    <!--** EXTRAS  -->
+                    <div class="mb-4">
+                        <label for="extras" class="form-label">Any extra? <span>(optional)</span></label>
+                        <input type="text" class="form-control rounded-1" id="extras" name="extras" ngModel #extras="ngModel">
+                    </div>
+                    <button [ngClass]="{'btn-secondary' : !foodForm.valid}" type="submit" class="btn btn-primary rounded-1" [disabled]="!foodForm.valid">Add to list</button>
+                </form>
+                <!-- * RESULTS HERE -->
+                <hr class="mt-5 mb-5">
+                <button (click)="onClearList()" class="btn btn-danger rounded-1 mb-3 me-3" [disabled]="loadedPites.length < 1">Clear list</button>
+                <button (click)="onShowHideForm()" class="btn btn-warning rounded-1 mb-3 me-3">{{ formVisible ? 'Hide form' : 'Show form' }}</button>
+                <div class="mt-4">
+                    <!-- * TEXT & TITLE -->
+                    <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">The order list is empty!</p>
+                    <h3 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mb-3">Your order: 
+                        <span class="lead">( <span class="text-success">Green</span>: with <u>only</u> these ingredients, 
+                        <span class="text-primary">Blue</span>: <u>ap'ola</u> )</span>
+                    </h3>
+                    <!-- * LIST OF PITES -->
+                    <ul class="list-group rounded-0" *ngIf="loadedPites.length >= 1 && !isFetchingPites">
+                        <li *ngFor="let pita of loadedPites" class="list-group-item alert-dismissible niceblue ps-4 pt-4 pb-4">
+                            <h4>{{ pita.name }}</h4>
+                            <span class="lead"><u><strong>{{ pita.quantity + 'x'}}</strong></u>&nbsp;&nbsp;{{ pita.mainIngredient + ' -&nbsp; '}}</span>
+                            <span [ngClass]="{
+                                'text-primary' : pita.potatoes && pita.tomatoes && pita.onion && pita.tzatziki, 
+                                'text-success' : !pita.potatoes || !pita.tomatoes || !pita.onion || !pita.tzatziki}">
+                                <span class="lead">{{ pita.potatoes ? 'Potakoes ' : '' }}</span>
+                                <span class="lead">{{ pita.tomatoes ? 'Tomatoes ' : '' }}</span>
+                                <span class="lead">{{ pita.onion ? 'Onion ' : '' }}</span>
+                                <span class="lead">{{ pita.tzatziki ? 'Tzatziki ' : '' }}</span>
+                            </span>
+                            <div *ngIf="pita.sauce !== undefined"><span class="lead">{{ '~ Sauce: ' + pita.sauce }}</span></div>
+                            <div *ngIf="pita.extras !== undefined"><span class="lead">{{ '- Extras: ' + pita.extras }}</span></div>
+                            <!-- **** for deleting a single pita from the database ---->
+                            <button (click)="onDeletePita(pita.id!)" type="button" class="btn-close"></button>
+                        </li>
+                    </ul>
+                    <!-- * LOADING SPINNER -->
+                    <div *ngIf="isFetchingPites" class="spinner-border" role="status"></div>
+                </div>
             </section>
-        </div>          
-    </section>
+        </section>
+    </div>          
 </section>
