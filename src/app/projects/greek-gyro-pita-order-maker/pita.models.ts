@@ -16,6 +16,6 @@ export interface Additionals {
     text:string;
 }
 
-export interface Quantities {
+export interface Quantity {
     value:string;
 }
