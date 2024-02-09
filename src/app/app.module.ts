@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 //SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
+import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -187,6 +188,7 @@ import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-req
     FourSlugGeneratorComponent,
     SymbolsToHyphensPipe,
     GreekGyroPitaOrderMakerComponent,
+    HomeCarouselComponent,
   ],
   imports: [
     BrowserModule,
