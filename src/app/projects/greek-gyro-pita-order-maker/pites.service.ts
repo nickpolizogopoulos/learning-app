@@ -13,7 +13,7 @@ export class PitesService {
   json:string = '.json';
 
   url:string = this.database + this.folder + this.json;
-  
+
   additionals:Additionals[] = [
     {
       name: 'potatoes',
@@ -87,7 +87,7 @@ export class PitesService {
           onion: false,
           tzatziki: false,
           sauce: 'Yellow sauce (Mustard - Mayonnaise mix)',
-          extras: 'Paprika'
+          extras: 'Sweet Paprika'
         }
         ).subscribe();
 
@@ -116,7 +116,7 @@ export class PitesService {
         onion: false,
         tzatziki: false,
         sauce: 'Mustard - Ketchup mix',
-        extras: 'Fillorian seasonings'
+        extras: `High King's Fillorian Seasonings`
       }
       ).subscribe();
   }

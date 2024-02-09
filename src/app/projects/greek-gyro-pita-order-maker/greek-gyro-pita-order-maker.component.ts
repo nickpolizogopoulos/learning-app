@@ -32,14 +32,8 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
     this.pitaQuantity = this.pitesService.quantity;
     this.pitesService.addDummyPites()
     }
-    
-  onAgreeClick():void {
-    this.termsVisible = !this.termsVisible;
-    this.orderMakerSection = true;
-    this.stepOneVisible = false;
-  }
 
-  onStepOneClick():void {
+  onStartHere():void {
     this.termsVisible = !this.termsVisible;
     this.orderMakerSection = false;
 
@@ -47,7 +41,17 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
     this.fetchPitesList()
   }
 
-  onAddPites( pita:Pita ):void {
+  onAgree():void {
+    this.termsVisible = !this.termsVisible;
+    this.orderMakerSection = true;
+    this.stepOneVisible = false;
+  }
+
+  onShowHideForm():void {
+    this.formVisible = !this.formVisible;
+  }
+
+  onAddToList( pita:Pita ):void {
     this.pitesService.createAndStorePita(pita)
       .subscribe( () => {
         this.fetchPitesList();
@@ -80,10 +84,6 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
         this.loadedPites = pites;
       }
     )
-  }
-
-  onShowHideForm():void {
-    this.formVisible = !this.formVisible;
   }
 
   //* Clears Firebase on Component Destruction
