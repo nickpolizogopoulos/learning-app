@@ -13,7 +13,7 @@ interface CarouselItems {
   
     <div class="container">
       <!-- WHEN data-bs-ride="carousel", it auto-plays, when data-bs-ride="false" it stops autoplaying -->
-      <div #carousel id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+      <div #carousel id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -23,74 +23,33 @@ interface CarouselItems {
         <div class="carousel-inner">
 
           <div *ngFor="let item of carouselItemsHorizontal" class="carousel-item {{item.activeClass}}" data-bs-interval="3000">
-            <img src="{{item.imageSrc}}" class="d-block w-100" alt="{{item.imageAlt}}">
+            <img src="{{item.imageSrc}}" class="carouselImage d-flex justify-content-center" alt="{{item.imageAlt}}">
               <div class="carousel-caption d-none d-md-block">
                 <button routerLink="about" class="btn">Learn more</button>
               </div>
           </div>
           
         </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
-
+        
         <div class="carouselPlayPause">
-          <svg (click)="playClick()" *ngIf="isPlaying" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle niceblue" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+          <svg (click)="playClick()" *ngIf="isPlaying" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play playPauseColor" viewBox="0 0 16 16">
+            <path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
           </svg>
-          
-          <svg (click)="pauseClick()" *ngIf="!isPlaying" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause-circle niceblue" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-            <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
+
+          <svg (click)="pauseClick()" *ngIf="!isPlaying" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause playPauseColor" viewBox="0 0 16 16">
+            <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/>
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
           </svg>
         </div>
         
       </div>
     </div>
   `,
-  // styleUrls: ['./home-carousel.component.css']
-  styles: [`
-  
-    .container {
-      max-width: 100%;
-    }
+  styleUrls: ['./home-carousel.component.css']
 
-    .carousel-item {
-      height: 750px;
-    }
-
-    .carousel-item-horizontal {
-      
-    }
-
-    .btn {
-      color: rgb(36, 54, 99);
-      border: 2px solid;
-      padding: 7px 60px;
-      margin-bottom: 30px;
-    }
-
-    .btn:hover {
-      background-color: rgba(184, 194, 219, 0.255);
-      border: 2px solid;
-    }
-
-    .carouselPlayPause {
-      margin-left: 97%;
-      position: absolute;
-      bottom: 15px;
-    }
-  
-  `]
 })
 export class HomeCarouselComponent {
-
 
   dataRide:string = 'carousel';
   isPlaying:boolean = false;
@@ -108,16 +67,16 @@ export class HomeCarouselComponent {
   carouselItemsHorizontal:CarouselItems[] = [
 
     {
-      imageSrc: 'https://www.shutterstock.com/image-illustration/3d-render-wallpaper-abstract-color-260nw-2329074805.jpg',
+      imageSrc: '../../assets/images/home-images/carousel/main-artboard.png',
       imageAlt: 'Welcome to "Learning Angular" Application banner.',
       activeClass: 'active'
     },
     {
-      imageSrc: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_640.jpg',
+      imageSrc: '../../assets/images/home-images/carousel/projects-artboard.png',
       imageAlt: 'Learning Angular - Sections banner.',
     },
     {
-      imageSrc: 'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg',
+      imageSrc: '../../assets/images/home-images/carousel/sections-artboard.png',
       imageAlt: 'Learning Angular - Projects banner.',
     },
   ]
