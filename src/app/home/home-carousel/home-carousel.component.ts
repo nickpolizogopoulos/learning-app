@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Carousel } from 'bootstrap';
 
 interface CarouselItems {
   imageSrc:string;
@@ -8,12 +9,10 @@ interface CarouselItems {
 
 @Component({
   selector: 'app-home-carousel',
-  // templateUrl: './home-carousel.component.html',
   template: `
   
     <div class="container">
-      <!-- WHEN data-bs-ride="carousel", it auto-plays, when data-bs-ride="false" it stops autoplaying -->
-      <div #carousel id="carousel" class="carousel slide" [attr.data-bs-ride]="dataRide" data-bs-pause="false">
+      <div #carousel id="carousel" class="carousel slide" data-bs-pause="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -22,7 +21,7 @@ interface CarouselItems {
         
         <div class="carousel-inner">
 
-          <div *ngFor="let item of carouselItemsHorizontal" class="carousel-item {{item.activeClass}}" data-bs-interval="3000">
+          <div *ngFor='let item of carouselItems' class="carousel-item {{item.activeClass}}" data-bs-interval="2300">
             <img src="{{item.imageSrc}}" class="carouselImage d-flex justify-content-center" alt="{{item.imageAlt}}">
               <div class="carousel-caption d-none d-md-block">
                 <button routerLink="about" class="btn">Learn more</button>
@@ -49,22 +48,31 @@ interface CarouselItems {
   styleUrls: ['./home-carousel.component.css']
 
 })
-export class HomeCarouselComponent {
+export class HomeCarouselComponent implements AfterViewInit {
 
-  dataRide:string = 'carousel';
   isPlaying:boolean = false;
 
-  playClick():void {
-    this.dataRide = 'carousel';
-    this.isPlaying = !this.isPlaying;
-  }
+  @ViewChild('carousel') carouselEl!: ElementRef;
+	carousel!: any;
 
-  pauseClick():void {
-    this.dataRide = 'false';
-    this.isPlaying = !this.isPlaying;
-  }
+  ngAfterViewInit() {
+		this.carousel = Carousel.getOrCreateInstance(
+			this.carouselEl.nativeElement
+		);
+    this.carousel.cycle();
+	}
 
-  carouselItemsHorizontal:CarouselItems[] = [
+	playClick(): void {
+		this.carousel.cycle();
+		this.isPlaying = !this.isPlaying;
+	}
+
+	pauseClick(): void {
+		this.carousel.pause();
+		this.isPlaying = !this.isPlaying;
+	}
+
+  carouselItems:CarouselItems[] = [
 
     {
       imageSrc: '../../assets/images/home-images/carousel/main-artboard.png',
