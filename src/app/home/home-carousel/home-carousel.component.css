@@ -4,13 +4,14 @@
 }
 .carouselImage {
     width: 100%;
-    height: auto;
+    /* height: auto; */
+    /* height: 750px; */
 }
 .btn {
     color: rgb(36, 54, 99);
     border: 2px solid;
     padding: 7px 60px;
-    /* margin-bottom: 30px; */
+    margin-bottom: 10px;
     border-radius: 4px;
 }
 .btn:hover {

@@ -105,6 +105,7 @@ import { SymbolsToHyphensPipe } from './seven-pipes/four-slug-generator/symbols-
 
 //SECTION Http Requests
 import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-requests.component';
+import { OneUsersListComponent } from './eight-http-requests/one-users-list/one-users-list.component';
 
 @NgModule({
   declarations: [
@@ -189,6 +190,7 @@ import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-req
     SymbolsToHyphensPipe,
     GreekGyroPitaOrderMakerComponent,
     HomeCarouselComponent,
+    OneUsersListComponent,
   ],
   imports: [
     BrowserModule,

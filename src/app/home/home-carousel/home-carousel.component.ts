@@ -13,7 +13,7 @@ interface CarouselItems {
   
     <div class="container">
       <!-- WHEN data-bs-ride="carousel", it auto-plays, when data-bs-ride="false" it stops autoplaying -->
-      <div #carousel id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+      <div #carousel id="carousel" class="carousel slide" [attr.data-bs-ride]="dataRide" data-bs-pause="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -72,11 +72,11 @@ export class HomeCarouselComponent {
       activeClass: 'active'
     },
     {
-      imageSrc: '../../assets/images/home-images/carousel/projects-artboard.png',
+      imageSrc: '../../assets/images/home-images/carousel/sections-artboard.png',
       imageAlt: 'Learning Angular - Sections banner.',
     },
     {
-      imageSrc: '../../assets/images/home-images/carousel/sections-artboard.png',
+      imageSrc: '../../assets/images/home-images/carousel/projects-artboard.png',
       imageAlt: 'Learning Angular - Projects banner.',
     },
   ]
