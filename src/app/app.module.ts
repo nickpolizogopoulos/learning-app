@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 //SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
-import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
+import { HeroSectionComponent } from './home/hero-section/hero-section.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -189,8 +189,8 @@ import { OneUsersListComponent } from './eight-http-requests/one-users-list/one-
     FourSlugGeneratorComponent,
     SymbolsToHyphensPipe,
     GreekGyroPitaOrderMakerComponent,
-    HomeCarouselComponent,
     OneUsersListComponent,
+    HeroSectionComponent,
   ],
   imports: [
     BrowserModule,

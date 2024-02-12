@@ -1,17 +1,14 @@
-<!-- <h2 class="niceblue"><mark>Welcome to Learning Angular!</mark></h2>    
-<p class="lead"><mark>Here you can find my solutions on exercise ideas I came 
-    up with during my Angular course!</mark>
-</p> -->
-
-<section class="mt-5 mb-5">
-    <app-home-carousel></app-home-carousel>
-</section>
-
+<app-hero-section></app-hero-section>
 
 <section class="container mt-5 mb-5">
+    <h1 class="niceblue"><mark>Welcome to Learning Angular!</mark></h1>    
+    <p class="lead"><mark>Here you can find my solutions on exercise ideas I came 
+        up with during my Angular course!</mark>
+    </p>
+</section>
 
+<section class="container mt-5 mb-5">
     <h1 class="niceblue mb-5"><mark>Angular Sections</mark></h1> 
-
     <div class="row">
         <div *ngFor="let card of homeCards let i = index" 
             class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">

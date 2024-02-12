@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
   angularProjects:SectionsAndProjectsProps[] = [];
   externalLinks:ExternalLinkProps[] = [];
     
-  // NAVBAR LINKS 
+  // * NAVBAR LINKS 
   navLinks = [
 
     {
