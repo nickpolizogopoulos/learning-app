@@ -1,0 +1,18 @@
+<h4>1. Getting data with the .get( ) method.</h4>
+<span class="lead">Top 5 music albums of all times!</span>
+<span class="addToTestText cursor-pointer user-select-none ms-2" (click)="infoExpand()">[info]</span>
+<div>
+  <span *ngIf="infoIsExpanded" class="addToTestText ms-2">According to my Vinyl teacher 
+    <a class="inherit nodecor" href="https://analogacademy.gr/artists/takis-niaros/" target="_blank">[ Takis Niaros ].</a>
+  </span>
+</div>
+<div class="mt-4">
+  <div *ngFor="let album of albums let i = index" class="alert alert-light niceblue rounded-1 p-2 m-2" role="alert">
+    <div class="lead"><strong>{{i+1}}. </strong><u>{{album.name}}</u> - {{album.artist}}</div>
+    <div>Genre: {{album.genre}}, Date: {{album.releaseDate.year}}, 
+      <a class="nodecor inherit" href="{{album.infoLink}}" target="_blank">[more info]</a>
+    </div>
+  </div>
+  <!-- * a button to post the albums -->
+  <!-- * <button class="ms-2" (click)="postAlbums()">post the albums</button> -->
+</div>

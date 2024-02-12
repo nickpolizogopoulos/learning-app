@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
     </h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
-          <app-one-users-list class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-users-list>
+          <app-one-albums-list class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-albums-list>
       </div>
     </section>  
   
