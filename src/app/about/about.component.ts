@@ -25,13 +25,13 @@ import { Component } from '@angular/core';
                 target="_blank"
                 >Mosh</a> ].</mark>
             </p>
-            <p class="lead paragraphbg"><mark>I update this project constantly as I am learning 
+            <p class="lead"><mark>I update this project constantly as I am learning 
                 and as long as it's easy for me to do so.</mark>
             </p>
-            <p class="lead paragraphbg"><mark>With this project I keep myself 
+            <p class="lead"><mark>With this project I keep myself 
                 involved as much as I can as I am trying to make my own exercises.</mark>
             </p>
-            <p class="lead paragraphbg">
+            <p class="lead">
                 <mark>This project is powered by 
                 <a  class="nodecor"
                     href="https://getbootstrap.com/"
@@ -52,21 +52,38 @@ import { Component } from '@angular/core';
                 </a>
                 programming language.</mark>
             </p>
-            <p class="lead paragraphbg"><mark>Although I added some custom CSS (the illness of perfectionism).</mark></p>
-            <p class="mt-5 lead paragraphbg"><mark>Thank you!</mark></p>
-            <p class="mt-3 lead paragraphbg"><mark>Nick</mark></p>
+            <p class="lead"><mark>Although I added some custom CSS (the illness of perfectionism).</mark></p>
+            <div class="explanation">
+                <p ><mark>Please be aware that certain early lessons and projects in this Angular 
+                    application employ different implementation methods, such as form handling.</mark>
+                </p>
+                <p><mark>These instances occurred prior to my exposure to lessons that guide on 
+                    the correct approaches. 
+                    </mark>
+                </p>
+                <p><mark>As a result, there may be inconsistencies 
+                    in the implementation across these phases. 
+                    </mark>
+                </p>
+            </div>
+            <p class="lead"><mark>Thank you!</mark></p>
             <div class="mt-5">
                 <a class="nodecor inherit" routerLink="/">
-                <span class="customButton lead">
-                    Back to home
-                </span>
+                    <span class="customButton lead">Back to home</span>
                 </a>
             </div>
 
     </section>
   
   `,
-  styles: [``]
+  styles: [`
+  
+    .explanation {
+        font-size: 16px;
+        margin: 45px 0px 45px 30px;
+    }
+  
+  `]
 })
 export class AboutComponent {
   
