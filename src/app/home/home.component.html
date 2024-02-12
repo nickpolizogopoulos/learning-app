@@ -1,10 +1,13 @@
 <app-hero-section></app-hero-section>
 
 <section class="container mt-5 mb-5">
-    <h1 class="niceblue"><mark>Welcome to Learning Angular!</mark></h1>    
-    <p class="lead"><mark>Here you can find my solutions on exercise ideas I came 
-        up with during my Angular course!</mark>
+    <h1 class="niceblue mb-4"><mark>Welcome to Learning Angular!</mark></h1>
+
+    <p class="lead"><mark>I started this project along with my Angular course and I update it constantly.</mark></p>
+    <p class="lead mb-4"><mark>Here you can find my solutions on exercise ideas I came up with during the 
+        course plus the projects I've implemented for some of the lessons!</mark>
     </p>
+    <a class="nodecor inherit" routerLink="about"><span class="niceblue customButton lead">Learn more!</span></a>
 </section>
 
 <section class="container mt-5 mb-5">
@@ -41,9 +44,9 @@
     <div class="row">
         <div *ngFor="let project of projectCards let i = index" 
             class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
-            <div class="projectcard">
+            <div class="homecard projectCard">
                 <a routerLink="{{ project.link }}" class="stretched-link">
-                    <img class="projectimage" src="{{project.img}}" alt="Angular Project banner">
+                    <img class="cardimage" src="{{project.img}}" alt="Angular Project banner">
                 </a>
                 <div class="p-3 pb-0 niceblue">
                     <div class="row">

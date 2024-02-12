@@ -10,14 +10,16 @@ import { ExternalLinkProps, SectionsAndProjectsProps, SectionsAndProjectsService
       background-color: rgb(231, 231, 231);
       padding: 15px 30px;
     }
+
     .section-link {
       font-size: 17px;
       padding: 10px 20px;
-      
     }
+
     .section-link:hover {
       background-color: rgb(231, 231, 231);
     }
+    
     .section-link:focus {
       color: rgb(36, 54, 99);
     }

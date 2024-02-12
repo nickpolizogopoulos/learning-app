@@ -57,7 +57,7 @@ import { Component } from '@angular/core';
             <p class="mt-3 lead paragraphbg"><mark>Nick</mark></p>
             <div class="mt-5">
                 <a class="nodecor inherit" routerLink="/">
-                <span class="aboutBtn lead">
+                <span class="customButton lead">
                     Back to home
                 </span>
                 </a>
@@ -66,7 +66,7 @@ import { Component } from '@angular/core';
     </section>
   
   `,
-  styleUrls: ['./about.component.css']
+  styles: [``]
 })
 export class AboutComponent {
   
