@@ -20,11 +20,7 @@ export class SectionsAndProjectsService {
   sectionImage:string = '../../assets/images/home-images/angular-banner-image.jpg';
   projectImage:string = '../../assets/images/home-images/project-banner-image.jpg';
 
-  constructor() {
-    
-  }
-
-  // footerDate:number = new Date().getFullYear();
+  constructor() {}
 
   //ANGULAR LESSON SECTIONS
   angularSections:SectionsAndProjectsProps[] = [

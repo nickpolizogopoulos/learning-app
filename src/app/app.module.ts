@@ -11,6 +11,7 @@ import { HeroSectionComponent } from './home/hero-section/hero-section.component
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FooterComponent } from './shared-components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
 //PROJECTS
@@ -193,6 +194,7 @@ import { TwoPostRequestComponent } from './eight-http-requests/two-post-request/
     OneGetRequestComponent,
     HeroSectionComponent,
     TwoPostRequestComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
