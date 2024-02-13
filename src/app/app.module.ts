@@ -105,7 +105,7 @@ import { SymbolsToHyphensPipe } from './seven-pipes/four-slug-generator/symbols-
 
 //SECTION Http Requests
 import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-requests.component';
-import { OneAlbumsListComponent } from './eight-http-requests/one-albums-list/one-albums-list.component';
+import { OneGetRequestComponent } from './eight-http-requests/one-get-request/one-get-request.component';
 
 @NgModule({
   declarations: [
@@ -189,7 +189,7 @@ import { OneAlbumsListComponent } from './eight-http-requests/one-albums-list/on
     FourSlugGeneratorComponent,
     SymbolsToHyphensPipe,
     GreekGyroPitaOrderMakerComponent,
-    OneAlbumsListComponent,
+    OneGetRequestComponent,
     HeroSectionComponent,
   ],
   imports: [

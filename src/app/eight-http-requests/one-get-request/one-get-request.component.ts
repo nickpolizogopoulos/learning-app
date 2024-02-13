@@ -19,7 +19,7 @@ interface AlbumProps {
 }
 
 @Component({
-  selector: 'app-one-albums-list',
+  selector: 'app-one-get-request',
   // templateUrl: './one-albums-list.component.html',
   template: `
   
@@ -47,7 +47,7 @@ interface AlbumProps {
   `,
   styles: [``]
 })
-export class OneAlbumsListComponent implements OnInit {
+export class OneGetRequestComponent implements OnInit {
 
   infoIsExpanded:boolean = false;
   database:string = 'https://http-music-albums-default-rtdb.firebaseio.com'
@@ -73,10 +73,10 @@ export class OneAlbumsListComponent implements OnInit {
       .get <{ [key:string]:AlbumProps }> (this.url)
       .pipe(
         map( responseData => {
-          const array:AlbumProps[] = [];
+          const array = [];
           for (const key in responseData){
             if (responseData.hasOwnProperty(key))
-            array.push( { ...responseData[key], id:key } )
+            array.push( { ...responseData[key], id: key } )
           }
           return array;
         })
