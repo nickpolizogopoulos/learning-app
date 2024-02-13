@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
   template: `
   
     <h2><mark>Http Requests - X Lessons using 
-      <a href="https://firebase.google.com/" class="inherit " target="_blank">Firebase</a>,
-      <a href="http://jsonplaceholder.typicode.com/" class="inherit " target="_blank">{{'{'}}JSON{{'}'}} Placeholder</a>,
+      <a href="https://firebase.google.com/" class="inherit " target="_blank">Firebase</a>
     </mark>
     </h2>
     <section class="container-fluid">

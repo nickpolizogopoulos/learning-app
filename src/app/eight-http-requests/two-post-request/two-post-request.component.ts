@@ -12,11 +12,16 @@ interface Contact {
 @Component({
   selector: 'app-two-post-request',
   templateUrl: './two-post-request.component.html',
-  styles: [``]
+  styles: [` .tableRow { border-bottom: 1px solid red; }`]
 })
 export class TwoPostRequestComponent implements OnInit {
 
-  url:string = 'https://http-music-albums-default-rtdb.firebaseio.com/contacts.json';
+  databaseLink:string = 'https://http-contacts-default-rtdb.firebaseio.com';
+  folder:string = '/contacts';
+  json:string = '.json';
+  url:string = this.databaseLink + this.folder + this.json;
+  dummyText:boolean = true;
+
   contacts:Contact[] = [];
   successAlert:boolean = false;
   @ViewChild('form') form?:NgForm;
@@ -30,7 +35,7 @@ export class TwoPostRequestComponent implements OnInit {
     this.fetchList()
   }
 
-  onSubmit( postData:Contact ) {
+  onSubmit( postData:Contact ):void {
     this.http
       .post( this.url, postData )
       .subscribe( () => {
@@ -45,7 +50,7 @@ export class TwoPostRequestComponent implements OnInit {
     
   }
 
-  fetchList() {
+  fetchList():void {
     this.spinner = true;
     this.http
       .get <{ [key:string]:Contact }> ( this.url )
@@ -64,13 +69,50 @@ export class TwoPostRequestComponent implements OnInit {
         })
   }
 
-  clearList() {
-    this.spinner = true
+  clearList():void {
+    this.spinner = true;
     this.http
       .delete(this.url)
       .subscribe( () => {
         this.spinner = false;
         this.contacts = []
       });
+  }
+
+  onDeleteContact( id:Contact['id'] ) {
+    this.http
+      .delete(this.databaseLink + this.folder + '/' + id + this.json)
+      .subscribe(() => {
+        this.fetchList()
+    })
+
+  }
+
+  addFourDummyContacts():void {
+    this.dummyText = false;
+    this.http.post(this.url, 
+      {
+        name: 'Nick P.',
+        phone: '+30 6900000007'
+      }
+      ).subscribe( () => this.fetchList())
+    this.http.post(this.url, 
+      {
+        name: 'Jelly M.',
+        phone: '+30 6900000004'
+      }
+      ).subscribe( () => this.fetchList())
+    this.http.post(this.url, 
+      {
+        name: 'Margo H.',
+        phone: '+30 6900000000'
+      }
+      ).subscribe( () => this.fetchList())
+    this.http.post(this.url, 
+      {
+        name: 'Alice Q.',
+        phone: '+30 6900000000'
+      }
+      ).subscribe( () => this.fetchList())
   }
 }

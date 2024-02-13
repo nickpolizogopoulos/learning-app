@@ -1,5 +1,6 @@
-<h4>2. Sending requests with the .post( ) method</h4>
-<p class="lead">Make a simple contact list!</p>
+<h4>2. Sending requests with the .post( ) and .delete( ) methods</h4>
+<p class="lead">Make a simple contact list!
+    <span (click)="addFourDummyContacts()" *ngIf="dummyText" class="addToTestText cursor-pointer">[Add four dummy contacts]</span></p>
 <form class="mb-4" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
     <div class="row mb-3">
         <div class="col">
@@ -19,7 +20,16 @@
 <div class="row">
     <p *ngIf="contacts.length < 1" class="lead">The list is empty, add a new contact!</p>
     <div *ngIf="spinner" class="spinner-border ms-2"></div>
-    <span *ngFor="let contact of contacts let i = index" class="lead">
-        <strong>{{i + 1}}. {{contact.name}}</strong> - <u>{{contact.phone}}</u>
-    </span>
 </div>
+<table>
+    <tr *ngFor="let contact of contacts let i = index" class="lead">
+        <td width="40px">
+            <svg (click)="onDeleteContact(contact.id)" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x text-danger cursor-pointer" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </td>
+        <td><strong>{{i + 1}}.&nbsp;&nbsp;</strong></td>
+        <td><strong>{{contact.name}}</strong></td>
+        <td>&nbsp;&nbsp;&nbsp;<u>{{contact.phone}}</u></td>
+    </tr>
+</table>
