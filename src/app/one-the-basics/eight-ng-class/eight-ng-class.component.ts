@@ -18,17 +18,17 @@ export class EightNgClassComponent {
   midActive = false;
   rightActive = false;
 
-  onLeftSelect(){
+  onLeftSelect():void {
     this.leftActive = true;
     this.midActive = false;
     this.rightActive = false;
   }
-  onMidSelect(){
+  onMidSelect():void {
     this.leftActive = false;
     this.midActive = true;
     this.rightActive = false;
   }
-  onRightSelect(){
+  onRightSelect():void {
     this.leftActive = false;
     this.midActive = false;
     this.rightActive = true;
