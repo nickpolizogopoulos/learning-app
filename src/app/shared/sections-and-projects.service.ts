@@ -83,8 +83,7 @@ export class SectionsAndProjectsService {
       name: 'Http Requests',
       link: '/http-requests',
       img: this.sectionImage,
-      description: `Http description text. Http description text. 
-      Http description text. Http description text. `
+      description: `Posting data, getting data, deleting data, `
     },
 
     

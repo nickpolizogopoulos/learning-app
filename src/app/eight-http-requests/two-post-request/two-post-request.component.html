@@ -1,0 +1,25 @@
+<h4>2. Sending requests with the .post( ) method</h4>
+<p class="lead">Make a simple contact list!</p>
+<form class="mb-4" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control rounded-1 " placeholder="Name" name="name" required #name="ngModel" ngModel>
+            <div *ngIf="!name.valid && name.touched" class="form-text text-danger">The name is required.</div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control rounded-1" placeholder="Phone" name="phone" required #phone="ngModel" ngModel>
+            <div *ngIf="!phone.valid && phone.touched" class="form-text text-danger">The name is required.</div>
+        </div>
+    </div>
+    <div *ngIf="successAlert" class="alert alert-success rounded-1 p-2" role="alert">Your new contact is saved!</div>
+    <button [ngClass]="{'btn-primary' : form.valid, 'btn-secondary' : !form.valid}" type="submit" class="btn btn-primary rounded-1 me-3" [disabled]="!form.valid">Save contact</button>
+    <button (click)="clearList()" type="button" class="btn btn-danger rounded-1">Clear list</button>
+</form>
+<hr>
+<div class="row">
+    <p *ngIf="contacts.length < 1" class="lead">The list is empty, add a new contact!</p>
+    <div *ngIf="spinner" class="spinner-border ms-2"></div>
+    <span *ngFor="let contact of contacts let i = index" class="lead">
+        <strong>{{i + 1}}. {{contact.name}}</strong> - <u>{{contact.phone}}</u>
+    </span>
+</div>
