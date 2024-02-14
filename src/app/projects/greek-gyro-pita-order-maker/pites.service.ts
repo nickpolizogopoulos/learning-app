@@ -97,33 +97,48 @@ export class PitesService {
         ).subscribe();
 
     this.http
-    .post <{ [key:string]:Pita }> (this.url, 
-      {
-        name: 'Jelly',
-        quantity: 1,
-        mainIngredient:'Gyro Chicken',
-        potatoes: true,
-        tomatoes: false,
-        onion: false,
-        tzatziki: false,
-        sauce: 'Red sauce (Ketchup - Mayonnaise mix)',
-      }
-      ).subscribe();
+      .post <{ [key:string]:Pita }> (this.url, 
+        {
+          name: 'Jelly',
+          quantity: 1,
+          mainIngredient:'Gyro Chicken',
+          potatoes: true,
+          tomatoes: false,
+          onion: false,
+          tzatziki: false,
+          sauce: 'Red sauce (Ketchup - Mayonnaise mix)',
+        }
+        ).subscribe();
 
     this.http
-    .post <{ [key:string]:Pita }> (this.url, 
-      {
-        name: 'Margo',
-        quantity: 1,
-        mainIngredient:'Gyro Pork',
-        potatoes: true,
-        tomatoes: true,
-        onion: false,
-        tzatziki: false,
-        sauce: 'Mustard - Ketchup mix',
-        extras: `High King's Fillorian Seasonings`
-      }
-      ).subscribe();
+      .post <{ [key:string]:Pita }> (this.url, 
+        {
+          name: 'Margo',
+          quantity: 1,
+          mainIngredient:'Gyro Pork',
+          potatoes: true,
+          tomatoes: true,
+          onion: false,
+          tzatziki: false,
+          sauce: 'Mustard - Ketchup mix',
+          extras: `High King's Fillorian Seasonings`
+        }
+        ).subscribe();
+
+    this.http
+      .post <{ [key:string]:Pita }> (this.url, 
+        {
+          name: 'Alice',
+          quantity: 1,
+          mainIngredient:'Gyro Chicken',
+          potatoes: true,
+          tomatoes: true,
+          onion: false,
+          tzatziki: false,
+          sauce: 'Mustard - Ketchup mix',
+          extras: `Smoked bacon slices`
+        }
+        ).subscribe();
   }
 
 }

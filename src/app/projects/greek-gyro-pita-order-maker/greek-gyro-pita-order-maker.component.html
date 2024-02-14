@@ -21,6 +21,7 @@
                 <p>Pita (gyro or souvlaki) is <a href="https://thetolerantvegan.com/wp-content/uploads/2020/05/gyros-souvlaki-wraps-pita-bread-with-chicken-potatoes-tzatziki-sauce_79830-1784.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - <a href="https://en.wikipedia.org/wiki/Pita" target="_blank" class="nodecor inherit">[ more info ]</a></p>
                 <p>Kalamaki is <a href="https://choliastos.gr/images/stories/virtuemart/product/twisted03.jpg" target="_blank" class="nodecor inherit">[ THIS ]</a> - More info <a href="https://www.greekbreakfast.gr/wp-content/uploads/2019/09/frappe-min.jpg" target="_blank" class="nodecor inherit">[ here ]</a> & <a href="https://translate.google.com/?sl=el&tl=en&text=%CE%BA%CE%B1%CE%BB%CE%B1%CE%BC%CE%AC%CE%BA%CE%B9&op=translate" target="_blank" class="nodecor inherit">[ here ]</a></p>
                 <p>Alifi is <a href="https://www.google.com/search?client=firefox-b-d&sca_esv=e51918ddf39b0c56&sxsrf=ACQVn08tbdyi7K14nptyJoO0E-jXCz31XQ:1707328990447&q=%CE%B1%CE%BB%CE%BF%CE%B9%CF%86%CE%AE&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjg0fWP6JmEAxWn9gIHHSnHCzMQ0pQJegQICxAB&biw=1920&bih=972&dpr=1" target="_blank" class="nodecor inherit">[ THIS ]</a> - CBA info, alifi is not edible.</p>
+                <div class="mb-4"><span class="readMoreLess">* Important: This project has been programmed to clear the database in ngOnInit and ngOnDestroy hooks.</span></div>
                 <button (click)="onAgree()" type="button" class="btn btn-warning rounded-1 me-3">I AGREE !</button>
             </div>
             <hr *ngIf="formVisible" class="mt-5 mb-5">
@@ -90,7 +91,9 @@
                 <button (click)="onShowHideForm()" class="btn btn-warning rounded-1 mb-3 me-3">{{ formVisible ? 'Hide form' : 'Show form' }}</button>
                 <div class="mt-4">
                     <!-- * TEXT & TITLE -->
-                    <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">The order list is empty!</p>
+                    <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">The order list is empty! 
+                        <span (click)="addFourDummyPites()" class="addToTestText cursor-pointer ms-3">[Add four dummy pites]</span>
+                    </p>
                     <h3 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mb-3">Your order: 
                         <span class="lead">( <span class="text-success">Green</span>: with <u>only</u> these ingredients, 
                         <span class="text-primary">Blue</span>: <u>ap'ola</u> )</span>

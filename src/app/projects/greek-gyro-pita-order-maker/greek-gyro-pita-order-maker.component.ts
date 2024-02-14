@@ -30,15 +30,10 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
     this.onClearList()
     this.mainAdditionals = this.pitesService.additionals;
     this.pitaQuantity = this.pitesService.quantity;
-    this.pitesService.addDummyPites()
     }
 
   onStartHere():void {
     this.termsVisible = !this.termsVisible;
-    this.orderMakerSection = false;
-
-    //* Fetches the list.
-    this.fetchPitesList()
   }
 
   onAgree():void {
@@ -85,6 +80,20 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
       }
     )
   }
+
+  addFourDummyPites() {
+    this.isFetchingPites = true;
+    this.pitesService.addDummyPites()
+
+    //* fetch doesn't work at once, 
+    //* so I leave 1,2 seconds to pass
+    //* with the setTimeout function.
+
+    setTimeout(() => {
+      this.fetchPitesList()
+    }, 1200);
+  }
+
 
   //* Clears Firebase on Component Destruction
   ngOnDestroy():void {
