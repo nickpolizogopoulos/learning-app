@@ -1,0 +1,37 @@
+<h4>3. Error Handling</h4>
+<p class="lead">You <u>are not allowed</u> to add new to-do items.</p>
+<hr>
+<h3>Today:</h3>
+<form class="mb-3 mt-3" (ngSubmit)="onAddTodo(form.value)" #form="ngForm">
+    <div class="mb-3">
+        <label for="description" class="form-label">New to-do:</label>
+        <input [ngClass]="{'is-invalid' : description.invalid && description.touched}" 
+            type="text" class="form-control rounded-1" id="description" placeholder="description..." 
+            name="description" required #description="ngModel" ngModel>
+        <div *ngIf="!description.valid && description.touched" class="form-text text-danger">The description is required.</div>
+    </div>
+    <button [ngClass]="{'btn-secondary' : !form.valid}" [disabled]="!form.valid" type="submit" class="btn btn-sm rounded-1 btn-primary mb-3">Add to list</button>
+</form>
+<div *ngIf="error" class="alert alert-danger rounded-1 p-2 ps-3 pb-3 mb-4" role="alert">
+    <h4>Access Denied!</h4>
+    <p>{{error ? 'You are not allowed to add new to-do items or delete existing ones!' : ''}}</p>
+    <button type="button" (click)="onCloseAlert()" class="btn btn-sm btn-danger">I understand</button>
+</div>
+<h5 class="mb-3">My To-do list:</h5>
+<p *ngIf="todoList.length < 1 && !isFetching" class="lead">The list is empty!</p>
+<div *ngIf="isFetching && !error" class="spinner-border mb-3" role="status"></div>
+<ul class="list-group rounded-1 mb-3">
+    <li *ngFor="let todo of todoList; let i = index" class="list-group-item p-0 ps-2 pe-2">
+        <div class="d-flex justify-content-between">
+            <div class="p-2">{{ i + 1 }} - {{todo.description}}</div>
+            <div (click)="onSingleTodoDelete(todo.id)" class="p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash text-danger cursor-pointer" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+            </div>
+        </div>
+    </li>
+</ul>
+<button *ngIf="todoList.length > 0" type="button" (click)="onClearList()" 
+    class="btn btn-sm rounded-1 btn-secondary">Clear list</button>

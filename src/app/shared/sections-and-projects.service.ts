@@ -79,7 +79,8 @@ export class SectionsAndProjectsService {
       name: 'Http Requests',
       link: '/http-requests',
       img: this.sectionImage,
-      description: `Posting data, getting data, deleting data, `
+      description: `Sending Requests with .post(), .get(), .delete()
+      error handling & Subjects, catchError Operator,  `
     },
 
     

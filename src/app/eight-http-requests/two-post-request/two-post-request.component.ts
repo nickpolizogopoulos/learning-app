@@ -60,7 +60,7 @@ export class TwoPostRequestComponent implements OnInit {
           for (let key in responseData)
             if (responseData.hasOwnProperty(key))
               contacts.push( { ...responseData[key], id:key} )
-            return contacts;
+          return contacts;
         })
       )
       .subscribe( contacts => {
@@ -74,6 +74,7 @@ export class TwoPostRequestComponent implements OnInit {
     this.http
       .delete(this.url)
       .subscribe( () => {
+        this.fetchList();
         this.spinner = false;
         this.contacts = []
       });
@@ -96,18 +97,21 @@ export class TwoPostRequestComponent implements OnInit {
         phone: '+30 6900000007'
       }
       ).subscribe( () => this.fetchList())
+
     this.http.post(this.url, 
       {
         name: 'Jelly M.',
         phone: '+30 6900000004'
       }
       ).subscribe( () => this.fetchList())
+
     this.http.post(this.url, 
       {
         name: 'Margo H.',
         phone: '+30 6900000000'
       }
       ).subscribe( () => this.fetchList())
+
     this.http.post(this.url, 
       {
         name: 'Alice Q.',
