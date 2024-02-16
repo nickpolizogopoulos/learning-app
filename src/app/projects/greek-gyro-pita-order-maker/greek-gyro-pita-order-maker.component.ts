@@ -55,9 +55,11 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
   }
 
   onClearList():void {
+    this.isFetchingPites = true;
     this.pitesService.deletePitesList()
       .subscribe(
         () => {
+          this.isFetchingPites = false;
           this.loadedPites = [];
         })
   }
