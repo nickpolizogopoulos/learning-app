@@ -32,7 +32,7 @@ export class TwoPostRequestComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.fetchList()
+    this.clearList()
   }
 
   onSubmit( postData:Contact ):void {

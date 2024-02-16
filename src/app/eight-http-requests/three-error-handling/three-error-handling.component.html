@@ -8,13 +8,13 @@
         <input [ngClass]="{'is-invalid' : description.invalid && description.touched}" 
             type="text" class="form-control rounded-1" id="description" placeholder="description..." 
             name="description" required #description="ngModel" ngModel>
-        <div *ngIf="!description.valid && description.touched" class="form-text text-danger">The description is required.</div>
+        <div *ngIf="!description.valid && description.touched" class="form-text text-danger">Please write a todo description.</div>
     </div>
     <button [ngClass]="{'btn-secondary' : !form.valid}" [disabled]="!form.valid" type="submit" class="btn btn-sm rounded-1 btn-primary mb-3">Add to list</button>
 </form>
 <div *ngIf="error" class="alert alert-danger rounded-1 p-2 ps-3 pb-3 mb-4" role="alert">
-    <h4>Access Denied!</h4>
-    <p>{{error ? 'You are not allowed to add new to-do items or delete existing ones!' : ''}}</p>
+    <h5>{{ errorTitle }}</h5>
+    <p>{{ error }}</p>
     <button type="button" (click)="onCloseAlert()" class="btn btn-sm btn-danger">I understand</button>
 </div>
 <h5 class="mb-3">My To-do list:</h5>

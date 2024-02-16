@@ -32,12 +32,12 @@
                     <div class="row">
                         <div class="col-md-8 mb-3">
                             <label for="who" class="form-label">Who is this for? <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control rounded-1" id="who" name="name" ngModel required #name="ngModel">
+                            <input [ngClass]="{'is-invalid' : name.invalid && name.touched}" type="text" class="form-control rounded-1" id="who" name="name" ngModel required #name="ngModel">
                             <div *ngIf="!name.valid && name.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="quantity" class="form-label">How many? <span class="text-danger">*</span></label>
-                            <select id="quantity" class="form-select rounded-1" name="quantity" ngModel required #quantity="ngModel">
+                            <select [ngClass]="{'is-invalid' : quantity.invalid && quantity.touched}" id="quantity" class="form-select rounded-1" name="quantity" ngModel required #quantity="ngModel">
                                 <option *ngFor="let value of pitaQuantity" value="{{value.value}}">{{value.value}}</option>
                             </select>
                             <div *ngIf="!quantity.valid && quantity.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
@@ -46,7 +46,7 @@
                     <!-- *** MAIN INGREDIENT ------>
                     <div class="mb-3">
                         <label for="mainIngredient" class="form-label">Select the main ingredient <span class="text-danger">*</span></label>
-                        <select id="mainIngredient" class="form-select rounded-1" name="mainIngredient" ngModel required #mainIngredient="ngModel">
+                        <select [ngClass]="{'is-invalid' : mainIngredient.invalid && mainIngredient.touched}" id="mainIngredient" class="form-select rounded-1" name="mainIngredient" ngModel required #mainIngredient="ngModel">
                             <option value="Gyro Pork">Gyro pork</option>
                             <option value="Souvlaki Pork">Souvlaki pork</option>
                             <option value="Gyro Chicken">Gyro chicken</option>

@@ -29,6 +29,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
 
   spinner:boolean = false;
   isFetching:boolean = false;
+  errorTitle?:string
   error:string | null = null;
   
   ngOnInit():void {
@@ -40,7 +41,10 @@ export class ThreeErrorHandlingComponent implements OnInit {
       .post <{[key:string]:Todo}> (this.url, newItem)
       .subscribe(
         () => this.onFetchTodos(),
-        error => this.error = error.message
+        () => {
+          this.errorTitle = `You have reached the today's limit!`
+          this.error = 'You are not allowed to add new to-do items!'
+        }
       )
     
     this.form!.reset()
@@ -77,9 +81,10 @@ export class ThreeErrorHandlingComponent implements OnInit {
           this.todoList.splice(id as any, 1);
           this.onFetchTodos();
         },
-        error => {
+        () => {
           this.isFetching = false;
-          this.error = error.message;
+          this.errorTitle = `Access denied!`
+          this.error = 'You are not allowed to delete existing todos!'
         }
       )
   }
@@ -94,9 +99,10 @@ export class ThreeErrorHandlingComponent implements OnInit {
           this.todoList = [];
           this.onFetchTodos();
         },
-        error => {
+        () => {
           this.isFetching = false;
-          this.error = error.message
+          this.errorTitle = `Access denied!`
+          this.error = 'You are not allowed to clear the todo list!'
         }
       )
   }
