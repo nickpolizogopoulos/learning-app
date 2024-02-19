@@ -1,0 +1,21 @@
+<h4>4. A basic Interceptor</h4>
+<p class="lead">A small list of vatious software tools. Reload if you like!</p>
+
+<button (click)="fetchTools()" class="btn btn-primary rounded-1" [disabled]="isLoading">
+    <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+    {{ isLoading ? 'Reloading...' : 'Reload tools'}}
+</button>
+<hr>
+<p *ngIf="message" class="menlo">Your request is being processed!</p>
+
+
+<!-- <button (click)="postTools()">push</button> -->
+
+
+<div class="mt-4">
+    <div *ngFor="let tool of toolsList" class="mb-4">
+        <a href="{{tool.info}}" target="_blank"><img height="55px" src="{{tool.logo}}" alt="{{tool.name}} language logo"></a>
+        <span class="h5 ms-3">{{tool.name}}</span>
+        <span class="ms-2">- Designed by {{tool.designer}}, <em>{{tool.year}}</em></span>
+    </div>
+</div>

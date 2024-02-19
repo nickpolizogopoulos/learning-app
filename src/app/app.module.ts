@@ -109,6 +109,7 @@ import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-req
 import { OneGetRequestComponent } from './eight-http-requests/one-get-request/one-get-request.component';
 import { TwoPostRequestComponent } from './eight-http-requests/two-post-request/two-post-request.component';
 import { ThreeErrorHandlingComponent } from './eight-http-requests/three-error-handling/three-error-handling.component';
+import { FourInterceptorComponent } from './eight-http-requests/four-interceptor/four-interceptor.component';
 
 @NgModule({
   declarations: [
@@ -197,6 +198,7 @@ import { ThreeErrorHandlingComponent } from './eight-http-requests/three-error-h
     TwoPostRequestComponent,
     FooterComponent,
     ThreeErrorHandlingComponent,
+    FourInterceptorComponent,
   ],
   imports: [
     BrowserModule,

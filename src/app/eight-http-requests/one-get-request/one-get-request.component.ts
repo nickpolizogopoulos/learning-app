@@ -23,7 +23,7 @@ interface AlbumProps {
   // templateUrl: './one-albums-list.component.html',
   template: `
   
-    <h4>1. Getting data with the .get( ) method.</h4>
+    <h4>1. Requesting data with the .get( ) method.</h4>
     <span class="lead">Top 5 music albums of all times!</span>
     <span class="addToTestText cursor-pointer user-select-none ms-2" (click)="infoExpand()">[info]</span>
     <div>

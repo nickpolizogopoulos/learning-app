@@ -10,6 +10,9 @@ mark {
 h2 {
   line-height: 140%;
 }
+.menlo {
+  font-family: 'Menlo', sans-serif;
+}
 .divline {
   background-color: rgb(154, 154, 154);
   height: 2px;

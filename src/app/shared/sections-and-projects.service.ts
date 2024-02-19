@@ -66,21 +66,22 @@ export class SectionsAndProjectsService {
       link: '/forms',
       img: this.sectionImage,
       description: `Handling forms in Angular. Template Driven 
-      Form Approach, Reactive Form Approach!`
+      Form Approach and Reactive Form Approach!`
     },
     {
       name: 'Data Transformation with Pipes',
       link: '/pipes',
       img: this.sectionImage,
       description: `Simple Transformations with Pipes, Custom Pipe,
-      Parametrizations, Filtering data!`
+      Parametrizations and Filtering data!`
     },
     {
       name: 'Http Requests',
       link: '/http-requests',
       img: this.sectionImage,
-      description: `Sending Requests with .post(), .get(), .delete()
-      error handling & Subjects, catchError Operator,  `
+      description: `Requesting with .post(), .get(), .delete(), 
+      error handling & Subjects, catchError, UX, Headers, Params, 
+      Interceptors and request Manipulation!`
     },
 
     
