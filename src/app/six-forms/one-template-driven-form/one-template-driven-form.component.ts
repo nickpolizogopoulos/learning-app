@@ -44,7 +44,7 @@ export class OneTemplateDrivenFormComponent {
       this.alertSuccess = false;
     }, 1600)
     
-    this.form?.reset()
+    this.form!.reset()
   }
 
   fillTheForm():void {

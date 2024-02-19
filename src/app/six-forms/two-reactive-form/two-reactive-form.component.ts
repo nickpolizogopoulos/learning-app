@@ -131,7 +131,7 @@ export class TwoReactiveFormComponent implements OnInit {
   //-----------------CUSTOM VALIDATORS
   forbiddenNamesValidator(control:FormControl): {[key:string]:boolean} {
     if (this.forbiddenNames.indexOf(control.value) !== -1)
-    return {'nameIsForbidden': true};
+      return {'nameIsForbidden': true};
     //in case the type doesnt have the null option.
     return null as any;
     //We can also use this:
