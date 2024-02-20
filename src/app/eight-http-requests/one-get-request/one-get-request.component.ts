@@ -50,9 +50,9 @@ interface AlbumProps {
 export class OneGetRequestComponent implements OnInit {
 
   infoIsExpanded:boolean = false;
-  database:string = 'https://http-music-albums-default-rtdb.firebaseio.com'
-  folder:string = '/albums'
-  json:string = '.json'
+  database:string = 'https://http-music-albums-default-rtdb.firebaseio.com';
+  folder:string = '/albums';
+  json:string = '.json';
   url:string = this.database + this.folder + this.json;
   albums:AlbumProps[] = [];
 
@@ -61,7 +61,7 @@ export class OneGetRequestComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.fetchAlbums()
+    this.fetchAlbums();
   }
 
   infoExpand():void {
@@ -80,7 +80,7 @@ export class OneGetRequestComponent implements OnInit {
           }
           return array;
         })
-      ).subscribe( posts => this.albums = posts )
+      ).subscribe( posts => this.albums = posts );
   }
 
   // * a method to post the albums
@@ -155,7 +155,5 @@ export class OneGetRequestComponent implements OnInit {
   //       infoLink: 'https://en.wikipedia.org/wiki/The_Best_of_Sade',
   //   },).subscribe()
   // }
-
-  
 
 }

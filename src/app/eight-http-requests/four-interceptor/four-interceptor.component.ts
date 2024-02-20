@@ -1,22 +1,36 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map } from 'rxjs';
-
-interface Tools {
-  name:string;
-  extension:string;
-  year:number;
-  designer:string;
-  logo:string;
-  info:string;
-}
+import { Tools, ToolsService } from './tools.service';
 
 @Component({
   selector: 'app-four-interceptor',
-  templateUrl: './four-interceptor.component.html',
+  // templateUrl: './four-interceptor.component.html',
+  template: `
+  
+    <h4>4. A basic Interceptor</h4>
+    <p class="lead">A list of tools. Reload to trigger the interceptor.</p>
+    <button (click)="fetchTools()" class="btn btn-primary rounded-1" [disabled]="isLoading">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+        {{ isLoading ? 'Loading...' : 'Reload List'}}
+    </button>
+    <hr>
+    <p *ngIf="message" class="menlo">{{message}}</p>
+    <div class="mt-4">
+        <div *ngFor="let tool of toolsList" class="mb-4">
+            <a href="{{tool.info}}" target="_blank"><img src="{{tool.logo}}" alt="{{tool.name}} language logo"></a>
+            <span class="h5 ms-3">{{tool.name}}</span>
+            <span class="ms-2">- Designed by {{tool.designer}}, <em>{{tool.year}}</em></span>
+            <hr>
+        </div>
+    </div>
+    <!-- <button (click)="postTools()" class="me-1">post</button>
+    <button (click)="deleteList()">clear</button> -->
+  
+  `,
   styles: [`
   
   img {
+    width: 60px;
+    height: auto;
     filter: grayscale(100%);
   }
   img:hover {
@@ -25,136 +39,50 @@ interface Tools {
   
   `]
 })
-export class FourInterceptorComponent implements OnInit, OnDestroy {
+export class FourInterceptorComponent implements OnInit {
 
   constructor(
-    private http:HttpClient
+    private toolsService:ToolsService,
   ) { }
 
   isLoading:boolean = false;
-  message:string | null = 'Your request is being processed!';
-  url:string = 'https://http-interceptor-ed4d8-default-rtdb.firebaseio.com/tools.json';
-  toolsList:Tools[] = [
-
-    {
-      name: 'C++',
-      extension: '.cpp',
-      year: 1985,
-      designer: 'Bjarne Stroustrup',
-      logo: '../../../assets/images/tools-languages/cpp-logo.png',
-      info: 'https://en.wikipedia.org/wiki/C%2B%2B'
-    },
-    {
-      name: 'Go',
-      extension: '.go',
-      year: 2009,
-      designer: 'Ken Thompson',
-      logo: '../../../assets/images/tools-languages/gopher.png',
-      info: 'https://en.wikipedia.org/wiki/Go_(programming_language)'
-    },
-    {
-      name: 'TypeScript',
-      extension: '.ts',
-      year: 2012,
-      designer: 'Microsoft',
-      logo: '../../../assets/images/tools-languages/typescript-logo.png',
-      info: 'https://en.wikipedia.org/wiki/TypeScript'
-    },
-    {
-      name: 'Swift',
-      extension: '.swift',
-      year: 2014,
-      designer: 'Apple',
-      logo: '../../../assets/images/tools-languages/swift-logo.jpeg',
-      info: 'https://en.wikipedia.org/wiki/Swift_(programming_language)'
-    }
-
-  ];
-
+  message?:string | null;
+  toolsList:Tools[] = [];
+  time:number = 0;
 
   ngOnInit():void {
     this.fetchTools()
+    this.time = 1500;
   }
 
-  fetchTools():void {
+  fetchTools() {
     this.isLoading = true;
+    this.toolsList = [];
+    console.log(this.toolsService.message);
+    this.message = this.toolsService.message;
 
-    this.http
-      .get(this.url)
-      .pipe(
-        // map()
-      )
-      .subscribe(
-        () => {
-          setTimeout(() => {
+    //* setTimeout simulates 1.5 sec server response time 
+    setTimeout( () => {
+      this.toolsService.fetchTools()
+        .subscribe(
+          tools => {
             this.isLoading = false;
-
-          }, 2500)
-        }
-      )
+            this.toolsList = tools;
+            this.message = null;
+          }
+        )
+    }, this.time )
   }
 
+  //* lesson utilities
+  postTools():void {
+    this.toolsService.postTools()
+  }
   deleteList():void {
-    this.http
-      .delete(this.url)
+    this.toolsService.deleteList()
       .subscribe(
         () => this.toolsList = []
       )
-  }
-
-  postTools():void {
-      this.http
-      .post(this.url, 
-        {
-          name: 'C++',
-          extension: '.cpp',
-          year: 1985,
-          designer: 'Bjarne Stroustrup',
-          logo: '../../../assets/images/tools-languages/cpp-logo.png',
-          info: 'https://en.wikipedia.org/wiki/C%2B%2B'
-        }
-      ).subscribe()
-
-      this.http
-      .post(this.url, 
-        {
-          name: 'Go',
-          extension: '.go',
-          year: 2009,
-          designer: 'Ken Thompson',
-          logo: '../../../assets/images/tools-languages/gopher.png',
-          info: 'https://en.wikipedia.org/wiki/Go_(programming_language)'
-        }
-      ).subscribe()
-
-    this.http
-      .post(this.url, 
-        {
-          name: 'TypeScript',
-          extension: '.ts',
-          year: 2012,
-          designer: 'Brendan Eich',
-          logo: '../../../assets/images/tools-languages/typescript-logo.png',
-          info: 'https://en.wikipedia.org/wiki/TypeScript'
-        }
-      ).subscribe()
-
-      this.http
-      .post(this.url, 
-        {
-          name: 'Swift',
-          extension: '.swift',
-          year: 2014,
-          designer: 'Various Engineers',
-          logo: '../../../assets/images/tools-languages/swift-logo.png',
-          info: 'https://en.wikipedia.org/wiki/Swift_(programming_language)'
-        }
-      ).subscribe()
-
-  }
-
-  ngOnDestroy():void {
-    this.deleteList()
   }
 
 }

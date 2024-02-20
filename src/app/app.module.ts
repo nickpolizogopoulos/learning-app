@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 
@@ -110,6 +110,7 @@ import { OneGetRequestComponent } from './eight-http-requests/one-get-request/on
 import { TwoPostRequestComponent } from './eight-http-requests/two-post-request/two-post-request.component';
 import { ThreeErrorHandlingComponent } from './eight-http-requests/three-error-handling/three-error-handling.component';
 import { FourInterceptorComponent } from './eight-http-requests/four-interceptor/four-interceptor.component';
+import { ToolsInterceptor } from './eight-http-requests/four-interceptor/tools.interceptor';
 
 @NgModule({
   declarations: [
@@ -207,7 +208,9 @@ import { FourInterceptorComponent } from './eight-http-requests/four-interceptor
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass:ToolsInterceptor, multi:true },
+  ],
   bootstrap: [AppComponent],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
