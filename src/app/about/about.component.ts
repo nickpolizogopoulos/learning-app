@@ -55,8 +55,8 @@ import { Component } from '@angular/core';
         </p>
         <p class="lead"><mark>Although I added some custom CSS (the illness of perfectionism).</mark></p>
         <div class="explanation">
-            <div class="pb-1"><mark>Please be aware that certain early lessons and projects in this Angular 
-                application employ different implementation methods.</mark>
+            <div class="pb-1"><mark>Please note that some early lessons and projects in this Angular app use
+                 a little awkward implementation methods for beginners.</mark>
             </div>
             <div class="pb-1"><mark>An example is the way I handled forms before I reach the 6th section, 
                 <a class="inherit" routerLink="/forms">Forms</a>.</mark>
