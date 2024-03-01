@@ -83,6 +83,14 @@ export class SectionsAndProjectsService {
       error handling & Subjects, catchError, UX, Headers, Params, 
       Interceptors and request Manipulation!`
     },
+    {
+      name: 'Authentication & Route Protection',
+      link: '/authentication-route-protection',
+      img: this.sectionImage,
+      description: `User authentication, Login, Signup, Error handling, 
+      UI reflections, Token handling, Interceptor, route protection using 
+      Auth Guard!`
+    },
 
     
   ]

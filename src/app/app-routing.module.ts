@@ -15,6 +15,7 @@ import { FiveObservablesComponent } from "./five-observables/five-observables.co
 import { SixFormsComponent } from "./six-forms/six-forms.component";
 import { SevenPipesComponent } from "./seven-pipes/seven-pipes.component";
 import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-requests.component";
+import { NineAuthenticationRouteProtectionComponent } from "./nine-authentication-route-protection/nine-authentication-route-protection.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     { path: 'forms', component: SixFormsComponent },
     { path: 'pipes', component: SevenPipesComponent },
     { path: 'http-requests', component: EightHttpRequestsComponent },
+    { path: 'authentication-route-protection', component: NineAuthenticationRouteProtectionComponent },
   
     { path: 'project-to-do-application', component: ToDoAppComponent },
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },

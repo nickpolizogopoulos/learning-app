@@ -112,6 +112,9 @@ import { ThreeErrorHandlingComponent } from './eight-http-requests/three-error-h
 import { FourInterceptorComponent } from './eight-http-requests/four-interceptor/four-interceptor.component';
 import { ToolsInterceptor } from './eight-http-requests/four-interceptor/tools.interceptor';
 
+//SECTION Authentication & Route Protection
+import { NineAuthenticationRouteProtectionComponent } from './nine-authentication-route-protection/nine-authentication-route-protection.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -200,6 +203,7 @@ import { ToolsInterceptor } from './eight-http-requests/four-interceptor/tools.i
     FooterComponent,
     ThreeErrorHandlingComponent,
     FourInterceptorComponent,
+    NineAuthenticationRouteProtectionComponent,
   ],
   imports: [
     BrowserModule,
