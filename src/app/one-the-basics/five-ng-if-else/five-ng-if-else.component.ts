@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   
     <h4>5. The *ngIf with an Else Condition</h4>
     <p class="lead">You haven't drink enough water today.</p>
-    <button (click)="onClick()" class="btn rounded-1 btn-success">{{ statement ? 'I did!' : 'Did I?'}}</button>
+    <button (click)="onClick()" class="btn rounded-1 btn-success">{{ statement ? 'Did I?' : 'I did!'}}</button>
     <h5 class="pt-4">Hydration level:</h5>
     <div *ngIf="!statement; else elseCase">
       <p>Not enough</p>
