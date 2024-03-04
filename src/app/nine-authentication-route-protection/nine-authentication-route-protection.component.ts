@@ -15,8 +15,8 @@ import { Component } from '@angular/core';
           project called <strong>"Food Recipes".</strong>
         </p>
         <p class="lead mb-3">
-          I am using Firebase for it and it includes an Authentication page, 
-          Login, Signup, Error handling, UI reflections, Token handling, route protection 
+          It's paired with Firebase and I implemented an Authentication page, 
+          Login and Signup functionality, Error handling, UI reflections, Token handling, route protection 
           using Auth Guard and more!
         </p>
 
