@@ -14,20 +14,59 @@ import { Component } from '@angular/core';
     </button>
     <h5 class="mt-3">Result:</h5>
     <div class="mt-4">
-      <div *ngIf="spinnerOn" class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <a
+
+      <span *ngIf="spinnerOn" class="coin-spinner"></span>
+
+      <span
         [ngStyle]="{ backgroundColor: getResult() }"
         *ngIf="showResult"
         (click)="reset()"
-        class="ngStyleResult nodecor inherit rounded-1 lead p-2 ps-5 pe-5"
+        class="cursor-pointer inherit rounded-1 lead p-2 mt-5 ps-3 pe-3"
         >{{ result }}
-      </a>
+      </span>
     </div>
   
   `,
-  styles: [``]
+  styles: [`
+  
+    .coin-spinner {
+    transform: translateZ(1px);
+    }
+    .coin-spinner:after {
+      content: '$';
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      text-align: center;
+      line-height:40px;
+      font-size: 32px;
+      font-weight: bold;
+      background: #FFD700;
+      color: #DAA520;
+      border: 4px double ;
+      box-sizing: border-box;
+      box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+      animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    @keyframes coin-flip {
+      0%, 100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+      }
+      0% {
+        transform: rotateY(0deg);
+      }
+      50% {
+        transform: rotateY(1800deg);
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+      }
+      100% {
+        transform: rotateY(3600deg);
+      }
+    }
+      
+  
+  `]
 })
 export class SevenNgStyleComponent {
 
@@ -39,17 +78,18 @@ export class SevenNgStyleComponent {
     this.spinnerOn = true;
     setTimeout(() => {
       this.spinnerOn = false;
-    }, 700);
+    }, 1100);
     
     this.result = Math.random() > 0.5 ? 'Tails' : 'Heads';
 
     this.showResult = false;
     setTimeout(() => {
       this.showResult = true;
-    }, 700);
+    }, 1100);
   }
 
   getResult():string {
+    //for coloured bg
     return this.result === 'Tails' ? '#add5ff' : '#ffadad';
   }
   
