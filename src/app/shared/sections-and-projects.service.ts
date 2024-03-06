@@ -22,7 +22,7 @@ export class SectionsAndProjectsService {
 
   constructor() {}
 
-  //ANGULAR LESSON SECTIONS
+  //**ANGULAR LESSON SECTIONS
   angularSections:SectionsAndProjectsProps[] = [
     { 
       name: 'The Basics', 
@@ -91,11 +91,18 @@ export class SectionsAndProjectsService {
       UI reflections, Token handling, Interceptor, route protection using 
       Auth Guard!`
     },
+    {
+      name: 'Dynamic Components',
+      link: '/dynamic-components',
+      img: this.sectionImage,
+      description: `Creating and using a custom dynamic component with
+      both *ngIf and programmatic implementation methods!`
+    },
 
     
   ]
 
-  //ANGULAR PROJECTS
+  //**ANGULAR PROJECTS
   angularProjects:SectionsAndProjectsProps[] = [
     {
       name: 'To Do Application',
@@ -134,7 +141,7 @@ export class SectionsAndProjectsService {
 
   ]
 
-  //MENU BAR LINKS
+  //**MENU BAR LINKS
   externalNavLinks:ExternalLinkProps[] = [
     {
       name: 'LinkedIn',

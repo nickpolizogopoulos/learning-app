@@ -115,6 +115,14 @@ import { ToolsInterceptor } from './eight-http-requests/four-interceptor/tools.i
 //SECTION Authentication & Route Protection
 import { NineAuthenticationRouteProtectionComponent } from './nine-authentication-route-protection/nine-authentication-route-protection.component';
 
+//SECTION Dynamic Components
+import { TenDynamicComponentsComponent } from './ten-dynamic-components/ten-dynamic-components.component';
+import { OneUsingNgifComponent } from './ten-dynamic-components/one-using-ngif/one-using-ngif.component';
+import { TwoProgrammaticallyComponent } from './ten-dynamic-components/two-programmatically/two-programmatically.component';
+import { LoaderSpinnerComponent } from './ten-dynamic-components/one-using-ngif/loader-spinner.component';
+import { CustomAlertComponent } from './ten-dynamic-components/one-using-ngif/custom-alert.component';
+import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/line-loader.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -204,6 +212,12 @@ import { NineAuthenticationRouteProtectionComponent } from './nine-authenticatio
     ThreeErrorHandlingComponent,
     FourInterceptorComponent,
     NineAuthenticationRouteProtectionComponent,
+    TenDynamicComponentsComponent,
+    OneUsingNgifComponent,
+    TwoProgrammaticallyComponent,
+    LoaderSpinnerComponent,
+    CustomAlertComponent,
+    LineLoaderComponent
   ],
   imports: [
     BrowserModule,

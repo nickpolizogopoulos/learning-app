@@ -1,0 +1,24 @@
+<h4>1. Loading a Dynamic Component with *ngIf</h4>
+<p class="lead"><em>"DO NOT PUSH THIS BUTTON!"</em><a class="addToTestText nodecor ms-3" href="https://www.wowhead.com/wotlk/npc=33350/mimiron" target="_blank">[ reference ]</a></p>
+<hr>
+<div *ngIf="!buttonPushed" class="row mt-4">
+    <svg (click)="onRedButtonPush()" xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-bounding-box-circles" viewBox="0 0 16 16">
+        <path class="text-danger cursor-pointer" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <circle class="text-danger cursor-pointer" cx="8" cy="8" r="6"/>
+    </svg> 
+</div>
+<div class="row mt-4">
+    <div class="col-3">
+        <app-loader-spinner *ngIf="announcement"></app-loader-spinner>
+    </div>
+    <div class="col">
+        <code *ngIf="announcement">
+            <em class="lead">
+                {{ announcement }}
+            </em>
+        </code>
+    </div>
+    <code *ngIf="mimironsQuote"><em class="lead">{{ mimironsQuote }}</em></code>
+    <app-line-loader *ngIf="mimironsQuote" ></app-line-loader>
+</div>
+<app-custom-alert *ngIf="alertMessage" (close)="alertClose()" [message]="alertMessage" [quote]="alertQuote"></app-custom-alert>

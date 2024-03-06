@@ -16,6 +16,7 @@ import { SixFormsComponent } from "./six-forms/six-forms.component";
 import { SevenPipesComponent } from "./seven-pipes/seven-pipes.component";
 import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-requests.component";
 import { NineAuthenticationRouteProtectionComponent } from "./nine-authentication-route-protection/nine-authentication-route-protection.component";
+import { TenDynamicComponentsComponent } from "./ten-dynamic-components/ten-dynamic-components.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
     { path: 'pipes', component: SevenPipesComponent },
     { path: 'http-requests', component: EightHttpRequestsComponent },
     { path: 'authentication-route-protection', component: NineAuthenticationRouteProtectionComponent },
+    { path: 'dynamic-components', component: TenDynamicComponentsComponent },
   
     { path: 'project-to-do-application', component: ToDoAppComponent },
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
