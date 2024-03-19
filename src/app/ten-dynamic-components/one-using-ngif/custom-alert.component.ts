@@ -4,28 +4,28 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
     selector: 'app-custom-alert',
     template: `
     
-    <div class="backdrop" (click)="onClose()"></div>
-    <div class="alert-box">
-        <h2 class="text-danger"><em>"{{ message }}"</em></h2>
-        <p class="lead text-danger"><em>"{{ quote }}"</em></p>
-        <div class="alert-box-actions">
-            <a class="text-danger cursor-pointer" (click)="onClose()">close</a>
+        <div class="backdrop" (click)="onClose()"></div>
+        <div class="alert-box">
+            <h2 class="text-danger"><em>"{{ message }}"</em></h2>
+            <p class="lead text-danger"><em>"{{ quote }}"</em></p>
+            <div class="alert-box-actions">
+                <a class="text-danger cursor-pointer" (click)="onClose()">close</a>
+            </div>
         </div>
-    </div>
     
     `,
     styles: [`
     
         .backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: #00000085;
-        z-index: 50;
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #00000085;
+            z-index: 50;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
         .alert-box {
             position: fixed;
@@ -42,7 +42,6 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
         .alert-box-actions {
             text-align: right;
         }
-    
     `]
 })
 export class CustomAlertComponent {
