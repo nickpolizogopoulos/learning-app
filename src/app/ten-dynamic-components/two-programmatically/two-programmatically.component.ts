@@ -1,26 +1,34 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Observer, Subscription } from 'rxjs';
-
+import {ViewContainerRef} from '@angular/core';
+import { ProgAlertComponent } from './prog-alert.component';
+import { PlaceholderDirective } from './placeholder.directive';
 
 @Component({
   selector: 'app-two-programmatically',
   templateUrl: './two-programmatically.component.html',
   styles: [``]
 })
-export class TwoProgrammaticallyComponent {
+export class TwoProgrammaticallyComponent implements OnDestroy {
+
+  constructor(
+    private viewContainerRef: ViewContainerRef
+  ) { }
 
   knifePulledOut:boolean = false;
   formHidden:boolean = false;
   starPlaying?:boolean;
   counter:number = 0;
-  subscription?:Subscription;
+  private runAwaySubscription?:Subscription;
   @ViewChild('form') form?:NgForm;
   runAwayWindow:boolean = false;
-  lastWindow:boolean = false;
   emptyStars:boolean = false;
   runningAway:boolean = false;
   thiefName:string = '';
+  alertMessage:string = 'Guess you dodged a bullet there.'
+  @ViewChild(PlaceholderDirective, {static: false}) alertHost!:PlaceholderDirective; 
+  private alertSubscription?:Subscription;
 
   pullKnife() {
     this.knifePulledOut = true;
@@ -41,14 +49,12 @@ export class TwoProgrammaticallyComponent {
     this.runAwayWindow = false;
     this.runningAway = true;
     this.emptyStars = true;
-    this.subscription?.unsubscribe();
-    setTimeout(
-      () => {
-        this.runningAway = false;
-        this.lastWindow = true;
-        this.emptyStars = false;
-      }, 2000
-    );
+    this.runAwaySubscription?.unsubscribe();
+    setTimeout(() => {
+      this.runningAway = false;
+      this.showAlert(this.alertMessage);
+      this.emptyStars = false;
+    }, 2000);
   }
 
   police():void {
@@ -64,19 +70,29 @@ export class TwoProgrammaticallyComponent {
       }
     )
 
-    this.subscription = observable
-      .subscribe(
-        (data:number) => this.counter = data
-      );
+    this.runAwaySubscription = observable
+      .subscribe(( data:number ) => this.counter = data);
   }
 
-  onCloseLastWindow() {
-    this.lastWindow = false;
-    this.knifePulledOut = false;
+  private showAlert( message:string ) {
+    const component = this.viewContainerRef.createComponent(ProgAlertComponent);
+
+    component.instance.message = message;
+    this.alertSubscription = component.instance.close
+      .subscribe(() => {
+          this.alertSubscription!.unsubscribe();
+          this.viewContainerRef.clear();
+          this.knifePulledOut = false;
+          this.formHidden = false;
+        }
+      )
   }
 
   ngOnDestroy() {
-    this.subscription?.unsubscribe();
+    if (this.runAwaySubscription)
+      this.runAwaySubscription?.unsubscribe();
+    if (this.alertSubscription)
+      this.alertSubscription?.unsubscribe();
   }
 
 }

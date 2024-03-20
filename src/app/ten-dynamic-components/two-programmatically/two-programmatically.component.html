@@ -1,6 +1,6 @@
 <h4>2. Loading a Dynamic Component Programmatically</h4>
 <hr *ngIf="!knifePulledOut">
-<button *ngIf="!knifePulledOut" (click)="pullKnife()" class="btn btn-sm btn-danger mt-3">Pull out the knife</button>
+<button *ngIf="!knifePulledOut" (click)="pullKnife()" class="btn btn-sm btn-danger mt-3 rounded-1">Pull out the knife</button>
 <div *ngIf="knifePulledOut">
     <p *ngIf="!formHidden" class="lead">Is that a knife? - Who are you, what do you want from me???</p>
     <form *ngIf="!formHidden" (ngSubmit)="onSubmit()" #form="ngForm">
@@ -44,15 +44,12 @@
     </div>
     <div *ngIf="runAwayWindow" class="alert alert-danger rounded-1 p-2 ps-3" role="alert">
         <h5>** Calls the Police **</h5>
-        <p>Go away <strong><u>{{form?.name}}</u></strong>! I don't have any money!</p>
+        <p>Go away <strong><u>{{thiefName}}</u></strong>! I don't have any money!</p>
         <button (click)="onRunAway()" class="btn btn-sm btn-danger">run away...</button>
     </div>
     <div *ngIf="runningAway">
         <p class="lead">You run away...</p>
         <div class="spinner-border" role="status"></div>
     </div>
-    <div (click)="onCloseLastWindow()" *ngIf="lastWindow" class="alert alert-primary alert-dismissible rounded-1 ps-3" role="alert">
-        Guess you dodged a bullet there <strong><u>{{thiefName}}</u></strong>, right ?
-        <button type="button" class="btn-close"></button>
-    </div>
 </div>
+<ng-template appPlaceholder></ng-template>

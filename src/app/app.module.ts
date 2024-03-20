@@ -122,6 +122,9 @@ import { TwoProgrammaticallyComponent } from './ten-dynamic-components/two-progr
 import { LoaderSpinnerComponent } from './ten-dynamic-components/one-using-ngif/loader-spinner.component';
 import { CustomAlertComponent } from './ten-dynamic-components/one-using-ngif/custom-alert.component';
 import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/line-loader.component';
+import { ProgAlertComponent } from './ten-dynamic-components/two-programmatically/prog-alert.component';
+import { PlaceholderDirective } from './ten-dynamic-components/two-programmatically/placeholder.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -217,7 +220,9 @@ import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/lin
     TwoProgrammaticallyComponent,
     LoaderSpinnerComponent,
     CustomAlertComponent,
-    LineLoaderComponent
+    LineLoaderComponent,
+    ProgAlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
