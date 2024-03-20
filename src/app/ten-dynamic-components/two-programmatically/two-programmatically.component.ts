@@ -21,7 +21,6 @@ export class TwoProgrammaticallyComponent {
   emptyStars:boolean = false;
   runningAway:boolean = false;
   thiefName:string = '';
-  // thiefInfo:{name:string, } = ''
 
   pullKnife() {
     this.knifePulledOut = true;
@@ -54,7 +53,8 @@ export class TwoProgrammaticallyComponent {
 
   police():void {
     this.starPlaying = true;
-    const observable = Observable.create(
+    
+    const observable = new Observable(
       (observer:Observer<number>) => {
         let count = 0;
         setInterval( () => {
