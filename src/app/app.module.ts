@@ -124,7 +124,9 @@ import { CustomAlertComponent } from './ten-dynamic-components/one-using-ngif/cu
 import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/line-loader.component';
 import { ProgAlertComponent } from './ten-dynamic-components/two-programmatically/prog-alert.component';
 import { PlaceholderDirective } from './ten-dynamic-components/two-programmatically/placeholder.directive';
-import { CommonModule } from '@angular/common';
+
+//SECTION Standalone Components
+import { ElevenStandaloneComponentsComponent } from './eleven-standalone-components/eleven-standalone-components.component';
 
 @NgModule({
   declarations: [
@@ -222,7 +224,8 @@ import { CommonModule } from '@angular/common';
     CustomAlertComponent,
     LineLoaderComponent,
     ProgAlertComponent,
-    PlaceholderDirective
+    PlaceholderDirective,
+    ElevenStandaloneComponentsComponent
   ],
   imports: [
     BrowserModule,

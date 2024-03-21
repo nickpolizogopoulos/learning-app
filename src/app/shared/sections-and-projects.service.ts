@@ -95,8 +95,15 @@ export class SectionsAndProjectsService {
       name: 'Dynamic Components',
       link: '/dynamic-components',
       img: this.sectionImage,
-      description: `Creating and using a custom dynamic component with
+      description: `Creating and using custom dynamic components with
       both *ngIf and programmatic implementation methods!`
+    },
+    {
+      name: 'Standalone Components',
+      link: '/standalone-components',
+      img: this.sectionImage,
+      description: `Deep Dive on how to turn a Component to a Standalone Component,
+      how to integrate Standalone Components into Applications. `
     },
 
     

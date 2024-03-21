@@ -17,6 +17,7 @@ import { SevenPipesComponent } from "./seven-pipes/seven-pipes.component";
 import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-requests.component";
 import { NineAuthenticationRouteProtectionComponent } from "./nine-authentication-route-protection/nine-authentication-route-protection.component";
 import { TenDynamicComponentsComponent } from "./ten-dynamic-components/ten-dynamic-components.component";
+import { ElevenStandaloneComponentsComponent } from "./eleven-standalone-components/eleven-standalone-components.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     { path: 'http-requests', component: EightHttpRequestsComponent },
     { path: 'authentication-route-protection', component: NineAuthenticationRouteProtectionComponent },
     { path: 'dynamic-components', component: TenDynamicComponentsComponent },
+    { path: 'standalone-components', component: ElevenStandaloneComponentsComponent },
   
     { path: 'project-to-do-application', component: ToDoAppComponent },
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
@@ -54,7 +56,9 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'})
     ],
-    exports: [RouterModule]
+    exports: [
+        RouterModule
+    ]
 })
 export class AppRoutingModule {
 

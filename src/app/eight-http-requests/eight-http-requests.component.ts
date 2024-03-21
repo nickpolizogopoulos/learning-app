@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-eight-http-requests',
   template: `
   
-    <h2><mark>Http Requests - X Lessons using 
+    <h2><mark>Http Requests - 4 Lessons using 
       <a href="https://firebase.google.com/" class="inherit " target="_blank">Firebase</a>
     </mark>
     </h2>

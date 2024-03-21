@@ -79,14 +79,6 @@ h2 {
   border: 1px solid rgba(178, 178, 178, 0.384);
   backdrop-filter: blur(5px);
 }
-::-moz-selection { 
-  color: inherit;
-  background: #dcdcdc;
-}
-::selection {
-  color: inherit;
-  background: #dcdcdc;
-}
 
 /* * Development Tools Colours */
 .angular {
@@ -135,4 +127,14 @@ h2 {
   height: 40px;
   transform: rotate(-1deg);
   border-radius: 5px;
+}
+
+/* * Selection Colours */
+::-moz-selection { 
+  color: inherit;
+  background: #dcdcdc;
+}
+::selection {
+  color: inherit;
+  background: #dcdcdc;
 }
