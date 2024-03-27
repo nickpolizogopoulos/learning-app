@@ -67,7 +67,7 @@ import { Component } from '@angular/core';
             <div class="pb-1"><mark>As a result, there may be inconsistencies 
                 in the implementation across these phases. I might do updates in the future.</mark>
             </div>
-            <div class="pb-1"><mark>This app is not fully optimized for mobile screens.</mark>
+            <div class="pb-1"><mark>This app is not fully optimized for smaller screens.</mark>
             </div>
         </div>
         <p class="lead"><mark>Thank you!</mark></p>
