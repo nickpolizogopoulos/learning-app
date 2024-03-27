@@ -21,7 +21,7 @@ import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping
 import { ProjectFormComponent } from './projects/my-shopping-list/project-form/project-form.component';
 import { ProjectFoodListComponent } from './projects/my-shopping-list/project-food-list/project-food-list.component';
 import { ProjectHomeListComponent } from './projects/my-shopping-list/project-home-list/project-home-list.component';
-import { CalculatorComponent } from './projects/calculator/calculator.component';
+import { FizzBuzzComponent } from './projects/fizz-buzz/fizz-buzz.component';
 import { GreekGyroPitaOrderMakerComponent } from './projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component';
 
 //SECTION The Basics
@@ -175,7 +175,6 @@ import { ElevenStandaloneComponentsComponent } from './eleven-standalone-compone
     ToDoAppComponent,
     SuperSignatureMakerComponent,
     MyShoppingListComponent,
-    CalculatorComponent,
     ProjectFormComponent,
     ProjectFoodListComponent,
     ProjectHomeListComponent,
@@ -225,7 +224,8 @@ import { ElevenStandaloneComponentsComponent } from './eleven-standalone-compone
     LineLoaderComponent,
     ProgAlertComponent,
     PlaceholderDirective,
-    ElevenStandaloneComponentsComponent
+    ElevenStandaloneComponentsComponent,
+    FizzBuzzComponent
   ],
   imports: [
     BrowserModule,

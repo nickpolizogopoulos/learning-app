@@ -132,11 +132,11 @@ export class SectionsAndProjectsService {
       list of your favorite products!`
     },
     {
-      name: 'Calculator',
-      link: '/project-calculator',
+      name: 'FizzBuzz',
+      link: '/project-fizzbuzz',
       img: this.projectImage,
-      description: `Here is a calculator that nobody will 
-      use for any reason. But I've made it!`
+      description: `FizzBuzz quickly became my favorite exercise 
+      when I began learning to code. Here it is in Angular!`
     },
     {
       name: 'Greek Gyro Pita - Order Maker',

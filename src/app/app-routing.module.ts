@@ -23,7 +23,7 @@ import { ElevenStandaloneComponentsComponent } from "./eleven-standalone-compone
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
 import { SuperSignatureMakerComponent } from "./projects/super-signature-maker/super-signature-maker.component";
 import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping-list.component";
-import { CalculatorComponent } from "./projects/calculator/calculator.component";
+import { FizzBuzzComponent } from "./projects/fizz-buzz/fizz-buzz.component";
 import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component";
 
 const appRoutes: Routes = [
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
     { path: 'project-to-do-application', component: ToDoAppComponent },
     { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
     { path: 'project-shopping-list', component: MyShoppingListComponent },
-    { path: 'project-calculator', component: CalculatorComponent },
+    { path: 'project-fizzbuzz', component: FizzBuzzComponent },
     { path: 'project-pita-gyro', component: GreekGyroPitaOrderMakerComponent },
     
     { path: '**', redirectTo: '404'},
