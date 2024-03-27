@@ -1,5 +1,5 @@
 <h4>1. Template Driven Form</h4>
-<p class="lead">Submit the form and scroll down for the result. <span (click)="fillTheForm()" class="addToTestText cursor-pointer">[ test info ]</span></p>
+<p class="lead">Send an email to a friend. <span (click)="fillTheForm()" class="addToTestText cursor-pointer">[ test info ]</span></p>
 <hr class="mb-4">
 <form (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="mb-3">
@@ -13,12 +13,12 @@
         <div *ngIf="!email.valid && email.touched" class="form-text text-danger">Please provide a valid email.</div>
     </div>
     <div class="mb-3">
-        <label for="gender" class="form-label">Select your gender <span class="text-danger">*</span></label>
-        <select class="form-select" id="gender" aria-label="Default select example" name="gender" ngModel required #gender="ngModel">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+        <label for="gender" class="form-label">Priority <span class="text-danger">*</span></label>
+        <select class="form-select" id="gender" aria-label="Default select example" name="priority" ngModel required #priority="ngModel">
+            <option value="High">High</option>
+            <option value="Low">Low</option>
         </select>
-        <div *ngIf="!gender.valid && gender.touched" class="form-text text-danger">Please select your gender.</div>
+        <div *ngIf="!priority.valid && priority.touched" class="form-text text-danger">Please select priority.</div>
     </div>
     <div class="mb-3">
         <label for="message" class="form-label">Message <span class="form-text">(optional)</span></label>
@@ -39,7 +39,7 @@
     <hr>
     <p>Name: {{emailData.name}}</p>
     <p>Email: {{emailData.email}}</p>
-    <p>Gender: {{emailData.gender}}</p>
+    <p>Priority: {{emailData.priority}}</p>
     <p>Message: <em>{{emailData.message}}</em></p>
     <button (click)="onCloseInfo()" type="button" class="btn-close"></button>
 </div>

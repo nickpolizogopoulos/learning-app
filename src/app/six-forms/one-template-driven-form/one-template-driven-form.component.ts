@@ -16,7 +16,7 @@ export class OneTemplateDrivenFormComponent {
   emailData = {
     name: '',
     email: '',
-    gender: '',
+    priority: '',
     message: '',
     check: false
   }
@@ -35,7 +35,7 @@ export class OneTemplateDrivenFormComponent {
 
     this.emailData.name = this.form?.value.name;
     this.emailData.email = this.form?.value.email;
-    this.emailData.gender = this.form?.value.gender;
+    this.emailData.priority = this.form?.value.priority;
     this.emailData.message = this.form?.value.message;
     this.emailData.check = this.form?.value.check;
 
@@ -51,7 +51,7 @@ export class OneTemplateDrivenFormComponent {
     this.form?.setValue({
       name: 'Nick Polizogopoulos',
       email: 'test@test.com',
-      gender: 'Male',
+      priority: 'High',
       message: `Hey! Just wanted to check in and make sure you're doing well. Let me know!`,
       check: true
     })
