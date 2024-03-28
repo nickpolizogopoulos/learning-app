@@ -71,6 +71,7 @@ import { Component } from '@angular/core';
             </div>
         </div>
         <p class="lead"><mark>Thank you!</mark></p>
+        <p class="lead"><mark>-Nick Polizogopoulos</mark></p>
         <div class="mt-5">
             <a class="nodecor inherit" routerLink="/">
                 <span class="customButton lead">Back to home</span>
