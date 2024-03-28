@@ -5,24 +5,24 @@ import { UserListService, UserProps } from './user-list.service';
   selector: 'app-two-data-service',
   template: `
     
-<h4>2. Creating a Data Service</h4>
-<p class="lead mb-3">Add new users in the list or remove any existing ones. The list is provided by a service.
-  <span class="addToTestText cursor-pointer" (click)="onAddFourUsers()">[ +4 dummy users ]</span>
-</p>
-<app-form-data-service></app-form-data-service>
+    <h4>2. Creating a Data Service</h4>
+    <p class="lead mb-3">Add new users in the list or remove any existing ones. The list is provided by a service.
+      <span class="addToTestText cursor-pointer" (click)="onAddFourUsers()">[ +4 dummy users ]</span>
+    </p>
+    <app-form-data-service></app-form-data-service>
 
-<hr>
+    <hr>
 
-<app-list-data-service 
-  *ngFor="let user of users let i = index"
-  [newUser]="user" 
-  (deleteUser)="onUserDelete(i, user.name)"
-  >
-</app-list-data-service>
-<button (click)="onListClear()" *ngIf="users.length > 1" class="btn btn-sm btn-secondary rounded-1 mt-2 mb-3">Clear</button>
-<div *ngIf="messageState" class="alert alert-warning ps-3 p-2" role="alert">
-  {{removalMessage}}
-</div>
+    <app-list-data-service 
+      *ngFor="let user of users let i = index"
+      [newUser]="user" 
+      (deleteUser)="onUserDelete(i, user.name)"
+      >
+    </app-list-data-service>
+    <button (click)="onListClear()" *ngIf="users.length > 1" class="btn btn-sm btn-secondary rounded-1 mt-2 mb-3">Clear</button>
+    <div *ngIf="messageState" class="alert alert-warning ps-3 p-2" role="alert">
+      {{removalMessage}}
+    </div>
 
 
   `,

@@ -6,7 +6,6 @@ import { UserListService } from '../user-list.service';
   selector: 'app-form-data-service',
   templateUrl: './form-data-service.component.html',
   styles: [``],
-  providers: []
 })
 export class FormDataServiceComponent {
 
