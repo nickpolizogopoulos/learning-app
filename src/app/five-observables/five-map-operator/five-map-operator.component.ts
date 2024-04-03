@@ -6,17 +6,17 @@ import { Observable } from 'rxjs';
   selector: 'app-five-map-operator',
   template: `
 
-  <h4>5. The .map( ) Operator</h4>
-  <p class="lead">Game: Hide and Seek.</p>
-  <button *ngIf="!counting" (click)="onStart()" class="btn btn-sm btn-primary rounded-1 me-2 mb-3">Start!</button>
-  <button *ngIf="counting" class="btn btn-sm btn-primary rounded-1 mb-3" type="button" disabled>
-    <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
-    <span role="status">Counting...</span>
-  </button>
-  <button (click)="onReset()" *ngIf="count === 100" class="btn btn-sm btn-secondary rounded-1 mb-3">Reset</button>
-  <p *ngIf="count > 0" class="lead">{{ count }}<span *ngIf="count === 100" class="lead">!</span></p>
-  <p *ngIf="counting">* hiders gonna hide *</p>
-  <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
+    <h4>5. The .map( ) Operator</h4>
+    <p class="lead">Game: Hide and Seek.</p>
+    <button *ngIf="!counting" (click)="onStart()" class="btn btn-sm btn-primary rounded-1 me-2 mb-3">Start!</button>
+    <button *ngIf="counting" class="btn btn-sm btn-primary rounded-1 mb-3" type="button" disabled>
+      <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+      <span role="status">Counting...</span>
+    </button>
+    <button (click)="onReset()" *ngIf="count === 100" class="btn btn-sm btn-secondary rounded-1 mb-3">Reset</button>
+    <p *ngIf="count > 0" class="lead">{{ count }}<span *ngIf="count === 100" class="lead">!</span></p>
+    <p *ngIf="counting">* hiders gonna hide *</p>
+    <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
   `,
   styles: [``]
 })

@@ -56,7 +56,7 @@ import { Component } from '@angular/core';
         <p class="lead"><mark>Although I added some custom CSS (the illness of perfectionism).</mark></p>
         <div class="explanation">
             <div class="pb-1"><mark>Please note that some early lessons and projects in this Angular app use
-                 a little awkward implementation methods for beginners.</mark>
+                 a little awkward implementation logic for beginners.</mark>
             </div>
             <div class="pb-1"><mark>An example is the way I handled forms before I reach the 6th section, 
                 <a class="inherit" routerLink="/forms">Forms</a>.</mark>
@@ -65,7 +65,7 @@ import { Component } from '@angular/core';
                 the correct approaches.</mark>
             </div>
             <div class="pb-1"><mark>As a result, there may be inconsistencies 
-                in the implementation across these phases. I might do updates in the future.</mark>
+                in the implementation across these phases. Updates will come in the future.</mark>
             </div>
             <div class="pb-1"><mark>This app is not fully optimized for smaller screens.</mark>
             </div>

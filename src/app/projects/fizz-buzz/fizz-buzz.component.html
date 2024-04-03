@@ -53,7 +53,8 @@
             </div>
         </div>
     
-        <button (click)="onRun()" *ngIf="optionA || optionB || optionC || optionD" class="btn btn-sm btn-primary me-3 rounded-1">Run FizzBuzz!</button>
+        <button (click)="onRun()" *ngIf="optionA || optionB || optionC" class="btn btn-sm btn-primary me-3 rounded-1">Run FizzBuzz!</button>
+        <button [disabled]="!randomNumber" *ngIf="optionD" (click)="onRun()" class="btn btn-sm btn-primary me-3 rounded-1">Run FizzBuzz!</button>
         <button (click)="onReset()" *ngIf="optionA || optionB || optionC || optionD" class="btn btn-sm btn-secondary me-3 rounded-1">Reset</button>
     
         <p *ngIf="result" class="lead mt-4">{{result}}</p>
