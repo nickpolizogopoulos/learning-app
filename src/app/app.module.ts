@@ -125,8 +125,14 @@ import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/lin
 import { ProgAlertComponent } from './ten-dynamic-components/two-programmatically/prog-alert.component';
 import { PlaceholderDirective } from './ten-dynamic-components/two-programmatically/placeholder.directive';
 
-//SECTION Standalone Components
-import { ElevenStandaloneComponentsComponent } from './eleven-standalone-components/eleven-standalone-components.component';
+//SECTION Standalone Components - these are standalone components 
+// import { ElevenStandaloneComponentsComponent } from './eleven-standalone-components/eleven-standalone-components.component';
+// import { OneStandaloneComponent } from './eleven-standalone-components/one-standalone/one-standalone.component';
+// import { TwoStandaloneComponent } from './eleven-standalone-components/two-standalone/two-standalone.component';
+
+//SECTION Signals
+import { TwelveSignalsComponent } from './twelve-signals/twelve-signals.component';
+import { SignalComponent } from './twelve-signals/signal/signal.component';
 
 @NgModule({
   declarations: [
@@ -224,8 +230,13 @@ import { ElevenStandaloneComponentsComponent } from './eleven-standalone-compone
     LineLoaderComponent,
     ProgAlertComponent,
     PlaceholderDirective,
-    ElevenStandaloneComponentsComponent,
-    FizzBuzzComponent
+    FizzBuzzComponent,
+    // *these are standalone components 
+    // ElevenStandaloneComponentsComponent,
+    // OneStandaloneComponent,
+    // TwoStandaloneComponent,
+    TwelveSignalsComponent,
+    SignalComponent,
   ],
   imports: [
     BrowserModule,

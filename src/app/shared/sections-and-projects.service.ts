@@ -102,8 +102,15 @@ export class SectionsAndProjectsService {
       name: 'Standalone Components',
       link: '/standalone-components',
       img: this.sectionImage,
-      description: `Deep Dive on how to turn a Component to a Standalone Component,
-      how to integrate Standalone Components into Applications. `
+      description: `Deep Dive on how to turn Components to Standalone Components
+      and how to integrate Standalone Components into Applications!`
+    },
+    {
+      name: 'Signals',
+      link: '/signals',
+      img: this.sectionImage,
+      description: `Updating Signal Values, Reading & Outputting Signal Values,
+      set(), update()!`
     },
 
     

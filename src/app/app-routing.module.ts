@@ -18,6 +18,7 @@ import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-req
 import { NineAuthenticationRouteProtectionComponent } from "./nine-authentication-route-protection/nine-authentication-route-protection.component";
 import { TenDynamicComponentsComponent } from "./ten-dynamic-components/ten-dynamic-components.component";
 import { ElevenStandaloneComponentsComponent } from "./eleven-standalone-components/eleven-standalone-components.component";
+import { TwelveSignalsComponent } from "./twelve-signals/twelve-signals.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -26,30 +27,48 @@ import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping
 import { FizzBuzzComponent } from "./projects/fizz-buzz/fizz-buzz.component";
 import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component";
 
+const appTitle:string = 'Learning Angular -';
+
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
+    {
+        path: '',
+        title: 'Learning Angular 2+',
+        component: HomeComponent
+    },
+    { 
+        path: 'about', 
+        title: `${appTitle} About`, 
+        component: AboutComponent 
+    },
     
-    { path: 'the-basics', component: OneTheBasicsComponent },
-    { path: 'components-databinding', component: TwoComponentsDatabindingComponent },
-    { path: 'directives', component: ThreeDirectivesComponent },
-    { path: 'services', component: FourServicesDependencyInjectionComponent },
-    { path: 'observables', component: FiveObservablesComponent },
-    { path: 'forms', component: SixFormsComponent },
-    { path: 'pipes', component: SevenPipesComponent },
-    { path: 'http-requests', component: EightHttpRequestsComponent },
-    { path: 'authentication-route-protection', component: NineAuthenticationRouteProtectionComponent },
-    { path: 'dynamic-components', component: TenDynamicComponentsComponent },
-    { path: 'standalone-components', component: ElevenStandaloneComponentsComponent },
+    { path: 'the-basics', title: `${appTitle} The Basics`, component: OneTheBasicsComponent },
+    { path: 'components-databinding', title: `${appTitle} Components & Databinding`, component: TwoComponentsDatabindingComponent },
+    { path: 'directives', title: `${appTitle} Directives`, component: ThreeDirectivesComponent },
+    { path: 'services', title: `${appTitle} Services`, component: FourServicesDependencyInjectionComponent },
+    { path: 'observables', title: `${appTitle} Observables`, component: FiveObservablesComponent },
+    { path: 'forms', title: `${appTitle} Forms`, component: SixFormsComponent },
+    { path: 'pipes', title: `${appTitle} Pipes`, component: SevenPipesComponent },
+    { path: 'http-requests', title: `${appTitle} Http Requests`, component: EightHttpRequestsComponent },
+    { path: 'authentication-route-protection', title: `${appTitle} Authentication`, component: NineAuthenticationRouteProtectionComponent },
+    { path: 'dynamic-components', title: `${appTitle} Dynamic Components`, component: TenDynamicComponentsComponent },
+    { path: 'standalone-components', title: `${appTitle} Standalone Components`, component: ElevenStandaloneComponentsComponent },
+    { path: 'signals', title: `${appTitle} Signals`, component: TwelveSignalsComponent },
   
-    { path: 'project-to-do-application', component: ToDoAppComponent },
-    { path: 'project-super-signature-maker', component: SuperSignatureMakerComponent },
-    { path: 'project-shopping-list', component: MyShoppingListComponent },
-    { path: 'project-fizzbuzz', component: FizzBuzzComponent },
-    { path: 'project-pita-gyro', component: GreekGyroPitaOrderMakerComponent },
+    { path: 'project-to-do-application', title: `${appTitle} To-Do App`, component: ToDoAppComponent },
+    { path: 'project-super-signature-maker', title: `${appTitle} Super Signature Maker`, component: SuperSignatureMakerComponent },
+    { path: 'project-shopping-list', title: `${appTitle} Shopping List App`, component: MyShoppingListComponent },
+    { path: 'project-fizzbuzz', title: `${appTitle} FizzBuzz`, component: FizzBuzzComponent },
+    { path: 'project-pita-gyro', title: `${appTitle} Greek Pita Gyro Order Maker`, component: GreekGyroPitaOrderMakerComponent },
     
-    { path: '**', redirectTo: '404'},
-    { path: '404', component: PageNotFoundComponent },
+    { 
+        path: '**', 
+        redirectTo: '404'
+    },
+    { 
+        path: '404', 
+        title: `${appTitle} Page not found`, 
+        component: PageNotFoundComponent 
+    },
   ];
 
 @NgModule({
