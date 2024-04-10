@@ -19,6 +19,7 @@ import { NineAuthenticationRouteProtectionComponent } from "./nine-authenticatio
 import { TenDynamicComponentsComponent } from "./ten-dynamic-components/ten-dynamic-components.component";
 import { ElevenStandaloneComponentsComponent } from "./eleven-standalone-components/eleven-standalone-components.component";
 import { TwelveSignalsComponent } from "./twelve-signals/twelve-signals.component";
+import { ThirteenNgrxComponent } from "./thirteen-ngrx/thirteen-ngrx.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -30,6 +31,8 @@ import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-ord
 const appTitle:string = 'Learning Angular -';
 
 const appRoutes: Routes = [
+
+    //* SECTIONS -------------------------------
     {
         path: '',
         title: 'Learning Angular 2+',
@@ -41,32 +44,107 @@ const appRoutes: Routes = [
         component: AboutComponent 
     },
     
-    { path: 'the-basics', title: `${appTitle} The Basics`, component: OneTheBasicsComponent },
-    { path: 'components-databinding', title: `${appTitle} Components & Databinding`, component: TwoComponentsDatabindingComponent },
-    { path: 'directives', title: `${appTitle} Directives`, component: ThreeDirectivesComponent },
-    { path: 'services', title: `${appTitle} Services`, component: FourServicesDependencyInjectionComponent },
-    { path: 'observables', title: `${appTitle} Observables`, component: FiveObservablesComponent },
-    { path: 'forms', title: `${appTitle} Forms`, component: SixFormsComponent },
-    { path: 'pipes', title: `${appTitle} Pipes`, component: SevenPipesComponent },
-    { path: 'http-requests', title: `${appTitle} Http Requests`, component: EightHttpRequestsComponent },
-    { path: 'authentication-route-protection', title: `${appTitle} Authentication`, component: NineAuthenticationRouteProtectionComponent },
-    { path: 'dynamic-components', title: `${appTitle} Dynamic Components`, component: TenDynamicComponentsComponent },
-    { path: 'standalone-components', title: `${appTitle} Standalone Components`, component: ElevenStandaloneComponentsComponent },
-    { path: 'signals', title: `${appTitle} Signals`, component: TwelveSignalsComponent },
+    { 
+        path: 'the-basics', 
+        title: `${appTitle} The Basics`, 
+        component: OneTheBasicsComponent 
+    },
+    { 
+        path: 'components-databinding', 
+        title: `${appTitle} Components & Databinding`, 
+        component: TwoComponentsDatabindingComponent 
+    },
+    { 
+        path: 'directives', 
+        title: `${appTitle} Directives`, 
+        component: ThreeDirectivesComponent 
+    },
+    { 
+        path: 'services', 
+        title: `${appTitle} Services`, 
+        component: FourServicesDependencyInjectionComponent 
+    },
+    { 
+        path: 'observables', 
+        title: `${appTitle} Observables`, 
+        component: FiveObservablesComponent 
+    },
+    { 
+        path: 'forms', 
+        title: `${appTitle} Forms`, 
+        component: SixFormsComponent 
+    },
+    { 
+        path: 'pipes', 
+        title: `${appTitle} Pipes`, 
+        component: SevenPipesComponent 
+    },
+    { 
+        path: 'http-requests', 
+        title: `${appTitle} Http Requests`, 
+        component: EightHttpRequestsComponent
+     },
+    { 
+        path: 'authentication-route-protection', 
+        title: `${appTitle} Authentication`, 
+        component: NineAuthenticationRouteProtectionComponent 
+    },
+    { 
+        path: 'dynamic-components', 
+        title: `${appTitle} Dynamic Components`, 
+        component: TenDynamicComponentsComponent 
+    },
+    { 
+        path: 'standalone-components', 
+        title: `${appTitle} Standalone Components`, 
+        component: ElevenStandaloneComponentsComponent 
+    },
+    { 
+        path: 'signals', 
+        title: `${appTitle} Signals`, 
+        component: TwelveSignalsComponent 
+    },
+    { 
+        path: 'ngrx', 
+        title: `${appTitle} NgRx`, 
+        component: ThirteenNgrxComponent 
+    },
   
-    { path: 'project-to-do-application', title: `${appTitle} To-Do App`, component: ToDoAppComponent },
-    { path: 'project-super-signature-maker', title: `${appTitle} Super Signature Maker`, component: SuperSignatureMakerComponent },
-    { path: 'project-shopping-list', title: `${appTitle} Shopping List App`, component: MyShoppingListComponent },
-    { path: 'project-fizzbuzz', title: `${appTitle} FizzBuzz`, component: FizzBuzzComponent },
-    { path: 'project-pita-gyro', title: `${appTitle} Greek Pita Gyro Order Maker`, component: GreekGyroPitaOrderMakerComponent },
+    //* PROJECTS -------------------------------
+    { 
+        path: 'project-to-do-application', 
+        title: `${appTitle} To-Do App`,
+         component: ToDoAppComponent 
+    },
+    { 
+        path: 'project-super-signature-maker', 
+        title: `${appTitle} Super Signature Maker`,
+         component: SuperSignatureMakerComponent 
+    },
+    { 
+        path: 'project-shopping-list',
+         title: `${appTitle} Shopping List App`,
+          component: MyShoppingListComponent
+    },
+    { 
+        path: 'project-fizzbuzz', 
+        title: `${appTitle} FizzBuzz`, 
+        component: FizzBuzzComponent 
+    },
+    { 
+        path: 'project-pita-gyro', 
+        title: `${appTitle} Greek Pita Gyro Order Maker`, 
+        component: GreekGyroPitaOrderMakerComponent 
+    },
     
+    //* 404 -------------------------------
     { 
         path: '**', 
         redirectTo: '404'
     },
     { 
         path: '404', 
-        title: `${appTitle} Page not found`, 
+        title: `${appTitle} 404`, 
         component: PageNotFoundComponent 
     },
   ];

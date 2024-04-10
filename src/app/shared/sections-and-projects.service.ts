@@ -112,6 +112,12 @@ export class SectionsAndProjectsService {
       description: `Updating Signal Values, Reading & Outputting Signal Values,
       set(), update()!`
     },
+    {
+      name: 'NgRx',
+      link: '/ngrx',
+      img: this.sectionImage,
+      description: ``
+    },
 
     
   ]

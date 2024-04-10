@@ -4,7 +4,7 @@ import { ShoppingItemProps } from '../my-shopping-list.component';
 @Component({
   selector: 'app-project-home-list',
   templateUrl: './project-home-list.component.html',
-  styleUrls: ['./project-home-list.component.css']
+  styles: [``]
 })
 export class ProjectHomeListComponent {
 

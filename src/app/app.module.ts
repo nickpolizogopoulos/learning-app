@@ -5,7 +5,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 
-//SHARED COMPONENTS
+//* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './home/hero-section/hero-section.component';
 import { AboutComponent } from './about/about.component';
@@ -14,7 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FooterComponent } from './shared-components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
-//PROJECTS
+//* PROJECTS
 import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
 import { SuperSignatureMakerComponent } from './projects/super-signature-maker/super-signature-maker.component';
 import { MyShoppingListComponent } from './projects/my-shopping-list/my-shopping-list.component';
@@ -24,7 +24,7 @@ import { ProjectHomeListComponent } from './projects/my-shopping-list/project-ho
 import { FizzBuzzComponent } from './projects/fizz-buzz/fizz-buzz.component';
 import { GreekGyroPitaOrderMakerComponent } from './projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component';
 
-//SECTION The Basics
+//* SECTION The Basics
 import { OneTheBasicsComponent } from './one-the-basics/one-the-basics.component';
 import { OneDataBindingComponent } from './one-the-basics/one-data-binding/one-data-binding.component';
 import { TwoPropertyBindingComponent } from './one-the-basics/two-property-binding/two-property-binding.component';
@@ -36,7 +36,7 @@ import { SevenNgStyleComponent } from './one-the-basics/seven-ng-style/seven-ng-
 import { EightNgClassComponent } from './one-the-basics/eight-ng-class/eight-ng-class.component';
 import { NineThankYouComponent } from './one-the-basics/nine-thank-you/nine-thank-you.component';
 
-//SECTION Components & Databinding
+//* SECTION Components & Databinding
 import { TwoComponentsDatabindingComponent } from './two-components-databinding/two-components-databinding.component';
 import { OnePassingDataBetweenComponentsComponent } from './two-components-databinding/one-passing-data-between-components/one-passing-data-between-components.component';
 import { FormComponent } from './two-components-databinding/one-passing-data-between-components/form/form.component';
@@ -47,7 +47,7 @@ import { FormTwoComponent } from './two-components-databinding/two-viewchild-and
 import { UnimportantComponent } from './two-components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
 import { ThreeLifecycleHooksComponent } from './two-components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
 
-//SECTION Directives
+//* SECTION Directives
 import { ThreeDirectivesComponent } from './three-directives/three-directives.component';
 import { OneBasicCustomDirectiveComponent } from './three-directives/one-basic-custom-directive/one-basic-custom-directive.component';
 import { BlueBgDirective } from './three-directives/one-basic-custom-directive/blue-bg.directive';
@@ -67,7 +67,7 @@ import { SixCustomStructuralDirectiveComponent } from './three-directives/six-cu
 import { UnlessDirective } from './three-directives/six-custom-structural-directive/unless.directive';
 import { SevenNgswitchComponent } from './three-directives/seven-ngswitch/seven-ngswitch.component';
 
-//SECTION Services & Dependency Injection
+//* SECTION Services & Dependency Injection
 import { FourServicesDependencyInjectionComponent } from './four-services-dependency-injection/four-services-dependency-injection.component';
 import { OneLoggingServiceComponent } from './four-services-dependency-injection/one-logging-service/one-logging-service.component';
 import { OneServiceButtonComponent } from './four-services-dependency-injection/one-logging-service/one-service-button/one-service-button.component';
@@ -77,7 +77,7 @@ import { ThreeServiceButtonComponent } from './four-services-dependency-injectio
 import { FormDataServiceComponent } from './four-services-dependency-injection/two-data-service/form-data-service/form-data-service.component';
 import { ListDataServiceComponent } from './four-services-dependency-injection/two-data-service/list-data-service/list-data-service.component';
 
-//SECTION Observables
+//* SECTION Observables
 import { FiveObservablesComponent } from './five-observables/five-observables.component';
 import { OneBasicObservableComponent } from './five-observables/one-basic-observable/one-basic-observable.component';
 import { TwoCustomObservableComponent } from './five-observables/two-custom-observable/two-custom-observable.component';
@@ -89,12 +89,12 @@ import { SevenSubjectsComponent } from './five-observables/seven-subjects/seven-
 import { FirstSubjectsComponent } from './five-observables/seven-subjects/first-subjects/first-subjects.component';
 import { SecondSubjectsComponent } from './five-observables/seven-subjects/second-subjects/second-subjects.component';
 
-//SECTION Forms
+//* SECTION Forms
 import { SixFormsComponent } from './six-forms/six-forms.component';
 import { OneTemplateDrivenFormComponent } from './six-forms/one-template-driven-form/one-template-driven-form.component';
 import { TwoReactiveFormComponent } from './six-forms/two-reactive-form/two-reactive-form.component';
 
-//SECTION Data Transformation with Pipes
+//* SECTION Data Transformation with Pipes
 import { SevenPipesComponent } from './seven-pipes/seven-pipes.component';
 import { OneSimpleTransformationComponent } from './seven-pipes/one-simple-transformation/one-simple-transformation.component';
 import { TwoCustomPipeComponent } from './seven-pipes/two-custom-pipe/two-custom-pipe.component';
@@ -104,7 +104,7 @@ import { StatusFilterPipe } from './seven-pipes/three-filter-pipe/status-filter.
 import { FourSlugGeneratorComponent } from './seven-pipes/four-slug-generator/four-slug-generator.component';
 import { SymbolsToHyphensPipe } from './seven-pipes/four-slug-generator/symbols-to-hyphens.pipe';
 
-//SECTION Http Requests
+//* SECTION Http Requests
 import { EightHttpRequestsComponent } from './eight-http-requests/eight-http-requests.component';
 import { OneGetRequestComponent } from './eight-http-requests/one-get-request/one-get-request.component';
 import { TwoPostRequestComponent } from './eight-http-requests/two-post-request/two-post-request.component';
@@ -112,10 +112,10 @@ import { ThreeErrorHandlingComponent } from './eight-http-requests/three-error-h
 import { FourInterceptorComponent } from './eight-http-requests/four-interceptor/four-interceptor.component';
 import { ToolsInterceptor } from './eight-http-requests/four-interceptor/tools.interceptor';
 
-//SECTION Authentication & Route Protection
+//* SECTION Authentication & Route Protection
 import { NineAuthenticationRouteProtectionComponent } from './nine-authentication-route-protection/nine-authentication-route-protection.component';
 
-//SECTION Dynamic Components
+//* SECTION Dynamic Components
 import { TenDynamicComponentsComponent } from './ten-dynamic-components/ten-dynamic-components.component';
 import { OneUsingNgifComponent } from './ten-dynamic-components/one-using-ngif/one-using-ngif.component';
 import { TwoProgrammaticallyComponent } from './ten-dynamic-components/two-programmatically/two-programmatically.component';
@@ -125,14 +125,17 @@ import { LineLoaderComponent } from './ten-dynamic-components/one-using-ngif/lin
 import { ProgAlertComponent } from './ten-dynamic-components/two-programmatically/prog-alert.component';
 import { PlaceholderDirective } from './ten-dynamic-components/two-programmatically/placeholder.directive';
 
-//SECTION Standalone Components - these are standalone components 
+//* SECTION Standalone Components - these are standalone components 
 // import { ElevenStandaloneComponentsComponent } from './eleven-standalone-components/eleven-standalone-components.component';
 // import { OneStandaloneComponent } from './eleven-standalone-components/one-standalone/one-standalone.component';
 // import { TwoStandaloneComponent } from './eleven-standalone-components/two-standalone/two-standalone.component';
 
-//SECTION Signals
+//* SECTION Signals
 import { TwelveSignalsComponent } from './twelve-signals/twelve-signals.component';
 import { SignalComponent } from './twelve-signals/signal/signal.component';
+
+///* SECTION NGRX
+import { ThirteenNgrxComponent } from './thirteen-ngrx/thirteen-ngrx.component';
 
 @NgModule({
   declarations: [
@@ -231,12 +234,13 @@ import { SignalComponent } from './twelve-signals/signal/signal.component';
     ProgAlertComponent,
     PlaceholderDirective,
     FizzBuzzComponent,
-    // *these are standalone components 
+    //* These are standalone components 
     // ElevenStandaloneComponentsComponent,
     // OneStandaloneComponent,
     // TwoStandaloneComponent,
     TwelveSignalsComponent,
     SignalComponent,
+    ThirteenNgrxComponent,
   ],
   imports: [
     BrowserModule,

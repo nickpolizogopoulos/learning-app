@@ -4,7 +4,7 @@ import { ShoppingItemProps } from '../my-shopping-list.component';
 @Component({
   selector: 'app-project-form',
   templateUrl: './project-form.component.html',
-  styleUrls: ['./project-form.component.css']
+  styles: [``]
 })
 export class ProjectFormComponent {
 

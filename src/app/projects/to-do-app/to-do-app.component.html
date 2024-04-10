@@ -28,10 +28,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="toDoItemComment" class="form-label">Comment</label>
-                    <input [(ngModel)]="toDoComment" type="text" class="form-control shadow-none" id="toDoItemComment">
+                    <input [(ngModel)]="toDoComment" type="text" class="form-control shadow-none rounded-1" id="toDoItemComment">
                 </div>
                 <div class="form-check mb-4">
-                    <input [checked]="toDoImportant" (change)="toDoImportant = !toDoImportant" class="form-check-input" type="checkbox" value="" id="importantItem">
+                    <input [checked]="toDoImportant" (change)="toDoImportant = !toDoImportant" class="form-check-input rounded-0" type="checkbox" value="" id="importantItem">
                     <label class="form-check-label" for="importantItem">
                         This is important
                     </label>

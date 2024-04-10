@@ -6,7 +6,7 @@ import { ShoppingItemProps } from '../my-shopping-list.component';
 @Component({
   selector: 'app-project-food-list',
   templateUrl: './project-food-list.component.html',
-  styleUrls: ['./project-food-list.component.css']
+  styles: [``]
 })
 export class ProjectFoodListComponent {
 
