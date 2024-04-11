@@ -20,8 +20,6 @@ export class OneBasicObservableComponent implements OnDestroy {
     this.timer = interval(this.gameModeSpeed)
     .subscribe( count => {
       this.runner = count;
-      // console.log(count);
-      
       this.gameIsRunning = true;
       this.winningPrize = false;
       this.startPressed = true;
@@ -30,7 +28,7 @@ export class OneBasicObservableComponent implements OnDestroy {
   }
 
   stop():void {
-    this.timer?.unsubscribe()
+    this.timer?.unsubscribe();
     this.gameIsRunning = false;
     this.startPressed = false;
   }
@@ -45,28 +43,32 @@ export class OneBasicObservableComponent implements OnDestroy {
   }
 
   onEasyClick():void {
+    this.reset();
     this.gameModeSpeed = 200;
     this.modeLevel = 'Easy';
   }
 
   onHardClick():void {
+    this.reset();
     this.gameModeSpeed = 100;
     this.modeLevel = 'Hard';
   }
 
   onNinjaClick() {
+    this.reset();
     this.gameModeSpeed = 50;
     this.modeLevel = 'Ninja';
   }
 
   onMasterClick():void {
+    this.reset();
     this.gameModeSpeed = 10;
     this.modeLevel = `I AM DOING IT`;
   }
 
   ngOnDestroy():void {
     //in case they leave without stopping it first.
-    this.timer?.unsubscribe()
+    this.timer!.unsubscribe();
   }
 
 }

@@ -2,7 +2,7 @@
     <div class="row mb-4">
         <section class="col niceblue">
             <h1>[Project - 05]: <u>Greek Gyro Pita - Order Maker (using <a href="https://firebase.google.com/" class="inherit " target="_blank">Firebase</a>)</u></h1>
-            <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">(penAndPaper):boring => please.noMore(&nbsp;)</span></p>
+            <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">( penAndPaper:boring ) => please.noMore(&nbsp;)</span></p>
             <p class="lead mt-4">This is how I'll prepare big family Gyro Pita orders from now on. 
                 <span *ngIf="stepOneVisible" (click)="onStartHere()" type="button" class="cursor-pointer ms-4 user-select-none">
                     <svg *ngIf="!termsVisible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
@@ -92,7 +92,7 @@
                 <div class="mt-4">
                     <!-- * TEXT & TITLE -->
                     <p *ngIf="loadedPites.length < 1 && !isFetchingPites" class="lead">The order list is empty! 
-                        <span (click)="addFourDummyPites()" class="addToTestText cursor-pointer ms-3">[Add four dummy pites]</span>
+                        <span (click)="addFourDummyPites()" class="addToTestText cursor-pointer ms-3">[Add four dummy orders]</span>
                     </p>
                     <h3 *ngIf="loadedPites.length >= 1 && !isFetchingPites" class="mb-3">Your order: 
                         <span class="lead">( <span class="text-success">Green</span>: with <u>only</u> these ingredients, 

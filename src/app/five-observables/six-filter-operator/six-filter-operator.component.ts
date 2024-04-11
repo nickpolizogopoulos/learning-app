@@ -23,7 +23,7 @@ import { Observable, Observer, Subscription, filter } from 'rxjs';
   `,
   styles: [``]
 })
-export class SixFilterOperatorComponent implements OnDestroy, OnInit {
+export class SixFilterOperatorComponent implements OnInit, OnDestroy {
 
   userInput?:number;
   fizBuzzNumbers:number[] = [];
@@ -73,14 +73,14 @@ export class SixFilterOperatorComponent implements OnDestroy, OnInit {
   // }
 
   onReset():void {
-    this.subscription?.unsubscribe();
+    this.subscription!.unsubscribe();
     this.gameIsRunning = false;
     this.fizBuzzNumbers.length = 0;
     this.userInput = undefined;
   }
 
   ngOnDestroy():void {
-    this.subscription?.unsubscribe();
+    this.subscription!.unsubscribe();
   }
   
 }
