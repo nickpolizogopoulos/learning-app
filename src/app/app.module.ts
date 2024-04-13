@@ -136,6 +136,9 @@ import { SignalComponent } from './twelve-signals/signal/signal.component';
 
 ///* SECTION NGRX
 import { ThirteenNgrxComponent } from './thirteen-ngrx/thirteen-ngrx.component';
+import { StoreModule } from '@ngrx/store';
+import { OneBasicReducerAndActionComponent } from './thirteen-ngrx/one-basic-reducer-and-action/one-basic-reducer-and-action.component';
+import { counterReducer } from './thirteen-ngrx/one-basic-reducer-and-action/one-counter.reducer';
 
 @NgModule({
   declarations: [
@@ -241,13 +244,17 @@ import { ThirteenNgrxComponent } from './thirteen-ngrx/thirteen-ngrx.component';
     TwelveSignalsComponent,
     SignalComponent,
     ThirteenNgrxComponent,
+    OneBasicReducerAndActionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      oneCounter: counterReducer
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:ToolsInterceptor, multi:true },
