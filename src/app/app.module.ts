@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 //* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './home/hero-section/hero-section.component';
-import { AboutComponent } from './about/about.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FooterComponent } from './shared-components/footer/footer.component';
+import { AboutComponent } from './shared-components/about.component';
+import { NavbarComponent } from './shared-components/navbar.component';
+import { PageNotFoundComponent } from './shared-components/page-not-found.component';
+import { FooterComponent } from './shared-components/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
 //* PROJECTS

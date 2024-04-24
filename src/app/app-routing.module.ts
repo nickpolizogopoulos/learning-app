@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { ExtraOptions, RouterModule, Routes } from "@angular/router";
 
 //APP PAGES
-import { AboutComponent } from "./about/about.component";
+import { AboutComponent } from "./shared-components/about.component";
 import { HomeComponent } from "./home/home.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { PageNotFoundComponent } from "./shared-components/page-not-found.component";
 
 //APP SECTIONS
 import { OneTheBasicsComponent } from "./sections/one-the-basics/one-the-basics.component";
@@ -149,9 +149,13 @@ const appRoutes: Routes = [
     },
   ];
 
+  const extraOptions:ExtraOptions = {
+    scrollPositionRestoration: 'enabled'
+  }
+
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'})
+        RouterModule.forRoot(appRoutes, extraOptions)
     ],
     exports: [
         RouterModule
