@@ -7,19 +7,19 @@ import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 //APP SECTIONS
-import { OneTheBasicsComponent } from "./one-the-basics/one-the-basics.component";
-import { TwoComponentsDatabindingComponent } from "./two-components-databinding/two-components-databinding.component";
-import { ThreeDirectivesComponent } from "./three-directives/three-directives.component";
-import { FourServicesDependencyInjectionComponent } from "./four-services-dependency-injection/four-services-dependency-injection.component";
-import { FiveObservablesComponent } from "./five-observables/five-observables.component";
-import { SixFormsComponent } from "./six-forms/six-forms.component";
-import { SevenPipesComponent } from "./seven-pipes/seven-pipes.component";
-import { EightHttpRequestsComponent } from "./eight-http-requests/eight-http-requests.component";
-import { NineAuthenticationRouteProtectionComponent } from "./nine-authentication-route-protection/nine-authentication-route-protection.component";
-import { TenDynamicComponentsComponent } from "./ten-dynamic-components/ten-dynamic-components.component";
-import { ElevenStandaloneComponentsComponent } from "./eleven-standalone-components/eleven-standalone-components.component";
-import { TwelveSignalsComponent } from "./twelve-signals/twelve-signals.component";
-import { ThirteenNgrxComponent } from "./thirteen-ngrx/thirteen-ngrx.component";
+import { OneTheBasicsComponent } from "./sections/one-the-basics/one-the-basics.component";
+import { TwoComponentsDatabindingComponent } from "./sections/two-components-databinding/two-components-databinding.component";
+import { ThreeDirectivesComponent } from "./sections/three-directives/three-directives.component";
+import { FourServicesDependencyInjectionComponent } from "./sections/four-services-dependency-injection/four-services-dependency-injection.component";
+import { FiveObservablesComponent } from "./sections/five-observables/five-observables.component";
+import { SixFormsComponent } from "./sections/six-forms/six-forms.component";
+import { SevenPipesComponent } from "./sections/seven-pipes/seven-pipes.component";
+import { EightHttpRequestsComponent } from "./sections/eight-http-requests/eight-http-requests.component";
+import { NineAuthenticationRouteProtectionComponent } from "./sections/nine-authentication-route-protection/nine-authentication-route-protection.component";
+import { TenDynamicComponentsComponent } from "./sections/ten-dynamic-components/ten-dynamic-components.component";
+import { ElevenStandaloneComponentsComponent } from "./sections/eleven-standalone-components/eleven-standalone-components.component";
+import { TwelveSignalsComponent } from "./sections/twelve-signals/twelve-signals.component";
+import { ThirteenNgrxComponent } from "./sections/thirteen-ngrx/thirteen-ngrx.component";
 
 //APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
