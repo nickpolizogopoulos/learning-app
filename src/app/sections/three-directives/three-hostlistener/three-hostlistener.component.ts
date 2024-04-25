@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styles: [`
   
     .imgRow {
-      background-image: url(../../../assets/images/Clouds-by-Bing-Hui-Yau.jpg);
+      background-image: url(../../../../assets/images/Clouds-by-Bing-Hui-Yau.jpg);
       background-position: top;
     }
     .imgCol {
