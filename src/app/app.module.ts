@@ -2,8 +2,10 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 //* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
@@ -12,7 +14,6 @@ import { AboutComponent } from './shared-components/about.component';
 import { NavbarComponent } from './shared-components/navbar.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found.component';
 import { FooterComponent } from './shared-components/footer.component';
-import { AppRoutingModule } from './app-routing.module';
 
 //* PROJECTS
 import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
@@ -136,9 +137,10 @@ import { SignalComponent } from './sections/twelve-signals/signal/signal.compone
 
 ///* SECTION NGRX
 import { ThirteenNgrxComponent } from './sections/thirteen-ngrx/thirteen-ngrx.component';
-import { StoreModule } from '@ngrx/store';
 import { OneBasicReducerAndActionComponent } from './sections/thirteen-ngrx/one-basic-reducer-and-action/one-basic-reducer-and-action.component';
 import { counterReducer } from './sections/thirteen-ngrx/one-basic-reducer-and-action/one-counter.reducer';
+import { TwoBasicReducerAndActionOldMethodComponent } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/two-basic-reducer-and-action-old-method.component';
+import { onOffReducer } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/onoff.reducer';
 
 @NgModule({
   declarations: [
@@ -245,15 +247,17 @@ import { counterReducer } from './sections/thirteen-ngrx/one-basic-reducer-and-a
     SignalComponent,
     ThirteenNgrxComponent,
     OneBasicReducerAndActionComponent,
+    TwoBasicReducerAndActionOldMethodComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({
-      oneCounter: counterReducer
+      oneCounter: counterReducer,
+      onOffState: onOffReducer
     })
   ],
   providers: [

@@ -12,6 +12,11 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
     <hr>
     <label for="oneBasicStore">Increase / Decrease by:</label>
     <input class="form-control rounded-1 shadow-none mb-3" type="number" id="oneBasicStore" [(ngModel)]="increaseDecreaseBy">
+
+    <div *ngIf="alert" class="alert alert-danger rounded-1 p-2" role="alert">
+      {{alert}}
+    </div>
+
     <div class="d-flex justify-content-center">
         <h2>{{ count$ | async }}</h2>
     </div>
@@ -37,6 +42,7 @@ export class OneBasicReducerAndActionComponent {
   
   count$:Observable<number>;
   increaseDecreaseBy:number = 1;
+  alert:string | null = '';
 
   constructor(
     private store:Store<{ oneCounter:number }>,
@@ -44,15 +50,32 @@ export class OneBasicReducerAndActionComponent {
     this.count$ = this.store.select('oneCounter')
   }
 
+  private inputCheck():void {
+    this.alert = null;
+    if (typeof this.increaseDecreaseBy !== 'number') {
+      this.alert = 'Only numbers are allowed!';
+      return;
+    }
+    if (this.increaseDecreaseBy === 0) {
+      this.alert = `The number 0 won't increase / decrease the counter.`;
+      return;
+    }
+  }
+
   increment():void {
-    this.store.dispatch(incrementAction( {value: this.increaseDecreaseBy} ))
+    this.inputCheck();
+    this.store.dispatch( incrementAction({value: this.increaseDecreaseBy}) );
   }
 
   decrement():void {
-    this.store.dispatch(decrementAction( {value: this.increaseDecreaseBy} ))
+    this.inputCheck();
+    this.store.dispatch( decrementAction({value: this.increaseDecreaseBy}) );
   }
   
   reset():void {
-    this.store.dispatch(resetAction( {value: 0} ))
+    this.increaseDecreaseBy = 1;
+    this.alert = null;
+    this.store.dispatch( resetAction({value: 0}) );
   }
+
 }
