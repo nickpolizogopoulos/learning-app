@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, count } from 'rxjs';
 import { decrementAction, incrementAction, resetAction } from './one-counter.actions';
 
 @Component({
@@ -11,13 +11,11 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
     <p class="lead">Reducer and Action with <span class="menlo">createReducer()</span> and <span class="menlo">createAction()</span> methods.</p>
     <hr>
     <label for="oneBasicStore">Increase / Decrease by:</label>
-    <input class="form-control rounded-1 shadow-none mb-3" type="number" id="oneBasicStore" [(ngModel)]="increaseDecreaseBy">
+    <input class="form-control rounded-1 shadow-none" type="number" id="oneBasicStore" [(ngModel)]="userInput">
+    <a *ngIf="userInput !== 1" (click)="inputReset()" class="cursor-pointer cursor-pointer nodecor addToTestText">[reset]</a>
+    <div *ngIf="errorAlert" class="mt-3 alert alert-danger rounded-1 p-2" role="alert">{{errorAlert}}</div>
 
-    <div *ngIf="alert" class="alert alert-danger rounded-1 p-2" role="alert">
-      {{alert}}
-    </div>
-
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-3">
         <h2>{{ count$ | async }}</h2>
     </div>
     <div class="d-flex justify-content-center mt-2">
@@ -27,7 +25,7 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
             <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
           </svg>
         </button>
-        <button (click)="reset()" class="btn btn-warning rounded-1 me-2">Reset</button>
+        <button (click)="counterReset()" class="btn btn-warning rounded-1 me-2">Reset</button>
         <button (click)="increment()" class="btn btn-success rounded-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" style="margin-bottom: 2px;">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -35,14 +33,14 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
           </svg>
         </button>
     </div>
-  `,
-  styles: [``]
+
+  `
 })
 export class OneBasicReducerAndActionComponent {
   
   count$:Observable<number>;
-  increaseDecreaseBy:number = 1;
-  alert:string | null = '';
+  userInput:number = 1;
+  errorAlert:string | null = null;
 
   constructor(
     private store:Store<{ oneCounter:number }>,
@@ -50,32 +48,37 @@ export class OneBasicReducerAndActionComponent {
     this.count$ = this.store.select('oneCounter')
   }
 
+  //*Quick check to avoid using template/reactive forms 
   private inputCheck():void {
-    this.alert = null;
-    if (typeof this.increaseDecreaseBy !== 'number') {
-      this.alert = 'Only numbers are allowed!';
+    this.errorAlert = null;
+    if (typeof this.userInput !== 'number') {
+      this.errorAlert = 'Only numbers are allowed!';
       return;
     }
-    if (this.increaseDecreaseBy === 0) {
-      this.alert = `The number 0 won't increase / decrease the counter.`;
+    if (this.userInput === 0) {
+      this.errorAlert = `The number 0 won't increase / decrease the counter.`;
       return;
     }
   }
 
   increment():void {
     this.inputCheck();
-    this.store.dispatch( incrementAction({value: this.increaseDecreaseBy}) );
+    this.store.dispatch( incrementAction( {value:this.userInput} ) );
   }
 
   decrement():void {
     this.inputCheck();
-    this.store.dispatch( decrementAction({value: this.increaseDecreaseBy}) );
+    this.store.dispatch( decrementAction( {value:this.userInput} ) );
   }
   
-  reset():void {
-    this.increaseDecreaseBy = 1;
-    this.alert = null;
-    this.store.dispatch( resetAction({value: 0}) );
+  counterReset():void {
+    this.errorAlert = null;
+    this.store.dispatch( resetAction( {value:0} ) );
+  }
+
+  inputReset():void {
+    this.errorAlert = null;
+    this.userInput = 1;
   }
 
 }
