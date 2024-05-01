@@ -37,8 +37,8 @@ export class FiveMapOperatorComponent implements OnDestroy {
         observer.next(count);
         if (count === 20) observer.complete();
         count++;
-      } ,600);
-    })
+      } ,400);
+    });
 
     //Operator
     const addition:number = 5;
@@ -46,18 +46,18 @@ export class FiveMapOperatorComponent implements OnDestroy {
       map( (data:number) => data * addition )
     );
 
-    //Operator subscription
-    this.subscription = operator.subscribe(
-      (data:number) => {
+    //*Operator subscription
+    this.subscription = operator.subscribe({
+      next: (data:number) => {
         this.count = data;
         this.counting = true;
       },
-      (error:string) => console.log(error),
-      () => { 
+      complete:() => { 
         this.ready = true;
         this.counting = false;
-      }
-    );
+      },
+      error: (error:string) => console.log(error),
+    });
   }
 
   onReset():void {

@@ -33,9 +33,9 @@ export class SecondSubjectsComponent implements OnInit {
   ) {}
 
   ngOnInit():void {
-    this.toggleService.toggleOn.subscribe(
-      isItActive => this.microphoneActive = isItActive
-    )
+    this.toggleService.toggleOn.subscribe({
+      next: isItActive => this.microphoneActive = isItActive
+    });
   }
 
 }

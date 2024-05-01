@@ -53,7 +53,7 @@ export class FourObservableCompletionComponent implements OnDestroy {
         setInterval( () => {
           observer.next(count);
           if (this.timeLeft === 0) {
-            observer.complete()
+            observer.complete();
             this.timerEnded = true;
           }
           count++;
@@ -61,11 +61,11 @@ export class FourObservableCompletionComponent implements OnDestroy {
       }
     );
 
-    this.subscription = observable.subscribe(
-      (data:number) => this.timeLeft = this.seconds - data,
-      (error:string) => console.log(error),
-      () => alert('Wake up!')
-    )
+    this.subscription = observable.subscribe({
+      next: (data:number) => this.timeLeft = this.seconds - data,
+      complete:() => alert('Wake up!'),
+      error: (error:string) => console.log(error)
+    })
   }
 
   onReset():void {
@@ -78,7 +78,7 @@ export class FourObservableCompletionComponent implements OnDestroy {
   }
 
   ngOnDestroy():void {
-    this.subscription?.unsubscribe()
+    this.subscription?.unsubscribe();
   }
 
 }

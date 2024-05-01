@@ -49,33 +49,33 @@ export class ThreeObservableErrorsComponent implements OnDestroy {
 
   play():void {
     this.playing = true;
-     const customObservable = Observable.create(
+    const customObservable = Observable.create(
       (observer:Observer<number>) => {
-      let count = 0;
-      setInterval( () => {
-        observer.next(count);
-        count++;
-        if (count >= 85) observer.error(
-          new Error('You are under arrest!'),
-        )
-      }, 100)
-    })
+        let count = 0;
+        setInterval( () => {
+          observer.next(count);
+          count++;
+          if (count >= 85) observer.error(
+            new Error('You are under arrest!'),
+          )
+        }, 100);
+      });
 
-    this.subscription = customObservable.subscribe(
-      (data:number) => this.counter = data,
-      (error:Error) => {
+    this.subscription = customObservable.subscribe({
+      next: (data:number) => this.counter = data,
+      error: (error:Error) => {
         alert(error.message),
         this.playing = false;
       }
-    )
+    })
   }
 
   stop():void {
     this.playing = false;
-    this.subscription?.unsubscribe()
+    this.subscription!.unsubscribe();
   }
 
   ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
+    this.subscription?.unsubscribe();
   }
 }

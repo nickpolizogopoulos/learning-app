@@ -32,22 +32,22 @@ export class TwoCustomObservableComponent implements OnDestroy {
       setInterval( () => {
         observer.next(count);
         count++
-      }, 1000)
+      }, 1000);
     });
 
-    this.kmSubscription = kmObservable.subscribe(
-      (data:number) => this.kilometers = data
-    );
+    this.kmSubscription = kmObservable.subscribe({
+      next: (data:number) => this.kilometers = data
+    });
 
-    this.secSubscription = secObservable.subscribe(
-      (data:number) => this.seconds = data
-    );
+    this.secSubscription = secObservable.subscribe({
+      next: (data:number) => this.seconds = data
+    });
   }
 
   onStop():void {
     this.counterPlaying = false;
-    this.kmSubscription?.unsubscribe();
-    this.secSubscription?.unsubscribe();
+    this.kmSubscription!.unsubscribe();
+    this.secSubscription!.unsubscribe();
   }
 
   onReset():void {

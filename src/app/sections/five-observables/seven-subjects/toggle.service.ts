@@ -6,5 +6,6 @@ import { Subject } from 'rxjs';
 })
 export class ToggleService {
 
-  toggleOn = new Subject<boolean>()
+  toggleOn = new Subject<boolean>();
+  
 }

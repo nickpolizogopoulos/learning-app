@@ -16,9 +16,8 @@ import { Observable, Observer, Subscription, filter } from 'rxjs';
       [(ngModel)]="userInput" 
       [disabled]="gameIsRunning">
     <button (click)="onStart()" class="btn btn-sm btn-primary me-3 mb-3" [disabled]="userInput === undefined || gameIsRunning">Start</button>
-    <!-- <button (click)="onStop()" class="btn btn-sm btn-danger me-3 mb-3" [disabled]="userInput === undefined || !gameIsRunning">Stop</button> -->
     <button *ngIf="!gameIsRunning" (click)="onReset()" class="btn btn-sm btn-secondary me-3 mb-3">Reset</button>
-    <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">results:number[ ] = [ {{fizBuzzNumbers.join(', ')}} ];</p>
+    <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{fizBuzzNumbers.join(', ')}}</p>
   
   `,
   styles: [``]
@@ -60,17 +59,10 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
       } )
     )
 
-    this.subscription = operator.subscribe(
-      (data:number) => {
-        this.fizBuzzNumbers.push(data);
-      },
-    )
+    this.subscription = operator.subscribe({
+      next: (data:number) => this.fizBuzzNumbers.push(data)
+    })
   }
-
-  // onStop():void {
-  //   this.gameIsRunning = !this.gameIsRunning;
-  //   this.subscription?.unsubscribe();
-  // }
 
   onReset():void {
     this.subscription!.unsubscribe();
