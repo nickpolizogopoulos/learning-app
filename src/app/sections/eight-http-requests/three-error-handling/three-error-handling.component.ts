@@ -27,30 +27,34 @@ export class ThreeErrorHandlingComponent implements OnInit {
   @ViewChild('form') form?:NgForm;
   todoList:Todo[] = [];
 
-  spinner:boolean = false;
   isFetching:boolean = false;
   errorTitle?:string
   error:string | null = null;
   
   ngOnInit():void {
-    this.onFetchTodos();
+    this.fetchTodos();
   }
 
   onAddTodo( newItem:Todo ):void {
+    this.isFetching = true;
     this.http
-      .post <{[key:string]:Todo}> (this.url, newItem)
-      .subscribe(
-        () => this.onFetchTodos(),
-        () => {
-          this.errorTitle = `You have reached the today's limit!`
-          this.error = 'You are not allowed to add new to-do items!'
-        }
-      )
+    .post <{[key:string]:Todo}> (this.url, newItem)
+    .subscribe({
+      next: () => {
+        this.isFetching = false;
+        this.fetchTodos();
+      },
+      error: () => {
+        this.isFetching = false;
+        this.errorTitle = `You have reached the today's limit!`
+        this.error = 'You are not allowed to add new to-do items!'
+      }
+    });
     
-    this.form!.reset()
+    this.form!.reset();
   }
 
-  onFetchTodos():void {
+  fetchTodos():void {
     this.isFetching = true;
     this.http
       .get <{[key:string]:Todo}> (this.url)
@@ -63,48 +67,48 @@ export class ThreeErrorHandlingComponent implements OnInit {
           return todoArray;
         })
       )
-      .subscribe(
-        todos => {
+      .subscribe({
+        next: todos => {
           this.isFetching = false;
           this.todoList = todos;
         }
-      )
+      })
   }
 
   onSingleTodoDelete( id:Todo['id'] ) {
     this.isFetching = true;
     this.http
       .delete(this.database + this.folder + '/' + id + this.json)
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           this.isFetching = false;
           this.todoList.splice(id as any, 1);
-          this.onFetchTodos();
+          this.fetchTodos();
         },
-        () => {
+        error: () => {
           this.isFetching = false;
           this.errorTitle = `Access denied!`
           this.error = 'You are not allowed to delete existing todos!'
         }
-      )
+      })
   }
 
   onClearList():void {
     this.isFetching = true
     this.http
       .delete(this.url)
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           this.isFetching = false;
           this.todoList = [];
-          this.onFetchTodos();
+          this.fetchTodos();
         },
-        () => {
+        error: () => {
           this.isFetching = false;
           this.errorTitle = `Access denied!`
           this.error = 'You are not allowed to clear the todo list!'
         }
-      )
+      })
   }
 
   onCloseAlert():void {
