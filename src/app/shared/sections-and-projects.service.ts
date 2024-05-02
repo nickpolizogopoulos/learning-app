@@ -116,7 +116,8 @@ export class SectionsAndProjectsService {
       name: 'NgRx',
       link: '/ngrx',
       img: this.sectionImage,
-      description: `Creating a Store, Reading & Updating data utilising Reducers, Actions`
+      description: `Creating a Store, Reading & Updating data utilising Reducers, 
+      Actions, Selectors and Effects!`
     },
 
     

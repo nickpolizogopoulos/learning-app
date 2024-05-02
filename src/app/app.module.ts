@@ -141,6 +141,7 @@ import { OneBasicReducerAndActionComponent } from './sections/thirteen-ngrx/one-
 import { counterReducer } from './sections/thirteen-ngrx/one-basic-reducer-and-action/one-counter.reducer';
 import { TwoBasicReducerAndActionOldMethodComponent } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/two-basic-reducer-and-action-old-method.component';
 import { onOffReducer } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/onoff.reducer';
+import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/three-selector.component';
 
 @NgModule({
   declarations: [
@@ -248,6 +249,7 @@ import { onOffReducer } from './sections/thirteen-ngrx/two-basic-reducer-and-act
     ThirteenNgrxComponent,
     OneBasicReducerAndActionComponent,
     TwoBasicReducerAndActionOldMethodComponent,
+    ThreeSelectorComponent,
   ],
   imports: [
     BrowserModule,
