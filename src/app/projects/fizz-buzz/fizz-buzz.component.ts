@@ -118,7 +118,7 @@ export class FizzBuzzComponent {
         setTimeout(() => {
           this.alert = false;
         }, 2600);
-        return
+        return;
       }
       this.fizzBuzzChecker(this.optionAinput);
     }
