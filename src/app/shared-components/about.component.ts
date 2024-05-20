@@ -37,19 +37,23 @@ import { Component } from '@angular/core';
             <a  class="nodecor"
                 href="https://getbootstrap.com/"
                 target="_blank"
-                ><u class="bootstrap nodecor">Bootstrap</u>
+                ><span class="bootstrap nodecor">Bootstrap</span>
             </a>
-            for fast styling as I wanted to focus in 
+            for fast styling and the
+            <a href="https://firebase.google.com/" target="_blank" class="nodecor">
+                <span class="firebase">Firebase</span>
+            </a>
+            API, as I wanted to focus in 
             <a  class="nodecor"
                 href="https://angular.io/"
                 target="_blank"
-                ><u class="angular nodecor">Angular</u>
+                ><span class="angular nodecor">Angular</span>
             </a>
                 and the 
             <a  class="nodecor"
                 href="https://www.typescriptlang.org/"
                 target="_blank"
-                ><u class="typescript nodecor">TypeScript</u>
+                ><span class="typescript nodecor">TypeScript</span>
             </a>
             programming language.</mark>
         </p>

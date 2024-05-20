@@ -88,6 +88,9 @@ h2 {
 .bootstrap {
   color: #8011f5;
 }
+.firebase {
+  color: rgb(255, 144, 1);
+}
 
 /* * Custom button  */
 .customButton{
