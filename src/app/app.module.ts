@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 //* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
-import { HeroSectionComponent } from './home/hero-section/hero-section.component';
+
 import { AboutComponent } from './shared-components/about.component';
 import { NavbarComponent } from './shared-components/navbar.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found.component';
@@ -146,21 +146,24 @@ import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/
 @NgModule({
   declarations: [
     AppComponent,
-    OneTheBasicsComponent,
-    OneDataBindingComponent,
-    TwoPropertyBindingComponent,
-    ThreeEventBindingComponent,
-    FourNgIfComponent,
-    FiveNgIfElseComponent,
-    SixNgForComponent,
-    SevenNgStyleComponent,
-    EightNgClassComponent,
-    NineThankYouComponent,
-    AboutComponent,
     HomeComponent,
-    PageNotFoundComponent,
-    TwoComponentsDatabindingComponent,
+    AboutComponent,
     NavbarComponent,
+    PageNotFoundComponent,
+    FooterComponent,
+
+    OneTheBasicsComponent,
+      OneDataBindingComponent,
+      TwoPropertyBindingComponent,
+      ThreeEventBindingComponent,
+      FourNgIfComponent,
+      FiveNgIfElseComponent,
+      SixNgForComponent,
+      SevenNgStyleComponent,
+      EightNgClassComponent,
+      NineThankYouComponent,
+      
+    TwoComponentsDatabindingComponent,
     OnePassingDataBetweenComponentsComponent,
     FormComponent,
     ListComponent,
@@ -225,9 +228,7 @@ import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/
     SymbolsToHyphensPipe,
     GreekGyroPitaOrderMakerComponent,
     OneGetRequestComponent,
-    HeroSectionComponent,
     TwoPostRequestComponent,
-    FooterComponent,
     ThreeErrorHandlingComponent,
     FourInterceptorComponent,
     NineAuthenticationRouteProtectionComponent,

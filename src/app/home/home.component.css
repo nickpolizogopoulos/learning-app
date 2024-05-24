@@ -23,3 +23,7 @@
   filter: grayscale(100%);
   -webkit-filter: grayscale(40%);
 }
+.hero-img {
+  width: 90%;
+  height: auto;
+}

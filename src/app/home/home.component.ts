@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private sections:SectionsAndProjectsService
-    ) { }
+  ) {}
 
   ngOnInit():void {
     this.homeCards = this.sections.angularSections;
@@ -20,6 +20,4 @@ export class HomeComponent implements OnInit {
   homeCards:SectionsAndProjectsProps[] = [];
   projectCards:SectionsAndProjectsProps[] = [];
 
-
-  
 }

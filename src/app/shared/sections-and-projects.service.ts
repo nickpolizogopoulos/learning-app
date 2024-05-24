@@ -5,12 +5,12 @@ export interface SectionsAndProjectsProps {
   link:string;
   img:string;
   description:string;
-}
+};
 
 export interface ExternalLinkProps {
   name:string;
   link:string;
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class SectionsAndProjectsService {
   angularSections:SectionsAndProjectsProps[] = [
     { 
       name: 'The Basics', 
-      link: '/the-basics',
+      link: 'the-basics',
       img: this.sectionImage,
       description: `Databinding, Property Binding, 
         Event Binding, Passing & Using Data, Directives, ngIf, 
@@ -34,28 +34,28 @@ export class SectionsAndProjectsService {
     },
     {
       name: 'Components & Databinding',
-      link: '/components-databinding',
+      link: 'components-databinding',
       img: this.sectionImage,
       description: `Passing data between components, @Input, 
       @Output, local references, @ViewChild and <ng-content>!`
     },
     {
       name: 'Directives',
-      link: '/directives',
+      link: 'directives',
       img: this.sectionImage,
       description: `Basic custom attribute directives, Renderer2, 
       HostListener, HostBinding, Structural Directives and ngSwitch!`
     },
     {
       name: 'Services & Dependency Injection',
-      link: '/services',
+      link: 'services',
       img: this.sectionImage,
       description: `Using custom services to share data 
       between components, cross-component communication!`
     },
     {
       name: 'Observables',
-      link: '/observables',
+      link: 'observables',
       img: this.sectionImage,
       description: `RxJS, Built-in and Custom Observables, 
       Errors & Completion, Operators, map( ), filter( ) and 
@@ -63,21 +63,21 @@ export class SectionsAndProjectsService {
     },
     {
       name: 'Forms',
-      link: '/forms',
+      link: 'forms',
       img: this.sectionImage,
       description: `Handling forms in Angular. Template Driven 
       Form Approach and Reactive Form Approach!`
     },
     {
       name: 'Data Transformation with Pipes',
-      link: '/pipes',
+      link: 'pipes',
       img: this.sectionImage,
       description: `Simple Transformations with Pipes, Custom Pipe,
       Parametrizations and Filtering data!`
     },
     {
       name: 'Http Requests',
-      link: '/http-requests',
+      link: 'http-requests',
       img: this.sectionImage,
       description: `Requesting with .post(), .get(), .delete(), 
       error handling & Subjects, catchError, UX, Headers, Params, 
@@ -85,7 +85,7 @@ export class SectionsAndProjectsService {
     },
     {
       name: 'Authentication & Route Protection',
-      link: '/authentication-route-protection',
+      link: 'authentication-route-protection',
       img: this.sectionImage,
       description: `User authentication, Login, Signup, Error handling, 
       UI reflections, Token handling, Interceptor, route protection using 
@@ -93,28 +93,28 @@ export class SectionsAndProjectsService {
     },
     {
       name: 'Dynamic Components',
-      link: '/dynamic-components',
+      link: 'dynamic-components',
       img: this.sectionImage,
       description: `Creating and using custom dynamic components with
       both *ngIf and programmatic implementation methods!`
     },
     {
       name: 'Standalone Components',
-      link: '/standalone-components',
+      link: 'standalone-components',
       img: this.sectionImage,
       description: `Deep Dive on how to turn Components to Standalone Components
       and how to integrate Standalone Components into Applications!`
     },
     {
       name: 'Signals',
-      link: '/signals',
+      link: 'signals',
       img: this.sectionImage,
       description: `Updating Signal Values, Reading & Outputting Signal Values,
       set(), update()!`
     },
     {
       name: 'NgRx',
-      link: '/ngrx',
+      link: 'ngrx',
       img: this.sectionImage,
       description: `Creating a Store, Reading & Updating data utilising Reducers, 
       Actions, Selectors and Effects!`

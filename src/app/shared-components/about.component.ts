@@ -62,11 +62,15 @@ import { Component } from '@angular/core';
             <div class="pb-1"><mark>Please note that some early lessons and projects in this Angular app use
                  a little awkward implementation logic for beginners.</mark>
             </div>
+            <div class="pb-1"><mark>
+                <u>YES! I KNOW!</u> There is bad/beginner/junior/newbie code in here, I can see it, I'm glad I can see it,
+                    I started from that kind of level, I love and now I can see my progress at the same time!</mark>
+            </div>
             <div class="pb-1"><mark>An example is the way I handled forms before I reach the 6th section, 
                 <a class="inherit" routerLink="/forms">Forms</a>.</mark>
             </div>
             <div class="pb-1"><mark>These instances occurred prior to my exposure to lessons that guide on 
-                the correct approaches.</mark>
+                the correct approaches, plus I wasn't that familiar with more advanced practices at that point.</mark>
             </div>
             <div class="pb-1"><mark>As a result, there may be inconsistencies 
                 in the implementation across these phases. Updates will come in the future.</mark>
