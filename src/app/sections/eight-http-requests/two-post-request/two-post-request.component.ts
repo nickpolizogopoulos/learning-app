@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
 
@@ -32,7 +32,7 @@ export class TwoPostRequestComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.clearList()
+    this.clearList();
   }
 
   onSubmit( postData:Contact ):void {
@@ -40,13 +40,13 @@ export class TwoPostRequestComponent implements OnInit {
       .post( this.url, postData )
       .subscribe( () => {
         this.fetchList()
-      })
+      });
 
     this.successAlert = true;
     this.form?.reset();
     setTimeout( () => {
       this.successAlert = !this.successAlert
-    }, 2000) 
+    }, 2000);
     
   }
 

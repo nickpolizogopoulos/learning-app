@@ -5,7 +5,6 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { ToolsService } from './tools.service';
-import { FourInterceptorComponent } from './four-interceptor.component';
 
 @Injectable()
 export class ToolsInterceptor implements HttpInterceptor {

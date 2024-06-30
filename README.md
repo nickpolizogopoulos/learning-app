@@ -12,7 +12,3 @@ Clone or download the repository to your local machine, `cd learning-app` => `np
 ## To launch the application
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Content
-
-I am adding content as I am learning!

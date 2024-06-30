@@ -9,28 +9,12 @@ import { Component } from '@angular/core';
     </section>
 
     <section class="ps-4 mt-4 mb-5 niceblue">
-        <p class="lead"><mark>This project started as an Angular playground for practice.</mark></p>
-        <p class="lead"><mark>I decided to make it a mini Web App with exercises 
+        <p class="lead"><mark>I started this project as an Angular playground for practice 
+            and I decided to make it a mini Web App with exercises 
             for every lesson, then I added the sections and a separate projects section.</mark>
         </p>
-        <p class="lead"><mark>The idea came after I started 
-        <a
-            class="inherit"
-            href="https://www.linkedin.com/in/maximilian-schwarzmueller/"
-            target="_blank"
-            >Maximilian's</a>
-            course, Max is a great teacher and my second favourite [ hi 
-        <a
-            class="inherit"
-            href="https://www.linkedin.com/in/mosh-hamedani/"
-            target="_blank"
-            >Mosh</a> ].</mark>
-        </p>
-        <p class="lead"><mark>I update this project constantly as I am learning 
-            and as long as it's easy for me to do so.</mark>
-        </p>
-        <p class="lead"><mark>With this project I keep myself 
-            involved as much as I can as I am trying to make my own exercises.</mark>
+        <p class="lead"><mark>With this project I kept myself 
+            involved as much as I could as I was trying to make my own exercises.</mark>
         </p>
         <p class="lead">
             <mark>This project is powered by 
@@ -39,11 +23,12 @@ import { Component } from '@angular/core';
                 target="_blank"
                 ><span class="bootstrap nodecor">Bootstrap</span>
             </a>
-            for fast styling and the
+            for faster styling and the
             <a href="https://firebase.google.com/" target="_blank" class="nodecor">
                 <span class="firebase">Firebase</span>
             </a>
-            API, as I wanted to focus in 
+            API for the HTTP section and deployment.
+            The main focus was of course on
             <a  class="nodecor"
                 href="https://angular.io/"
                 target="_blank"
@@ -57,14 +42,15 @@ import { Component } from '@angular/core';
             </a>
             programming language.</mark>
         </p>
-        <p class="lead"><mark>Although I added some custom CSS (the illness of perfectionism).</mark></p>
+        <p class="lead"><mark>The project carries a lot of custom CSS though.</mark></p>
+
         <div class="explanation">
             <div class="pb-1"><mark>Please note that some early lessons and projects in this Angular app use
-                 a little awkward implementation logic for beginners.</mark>
+                awkward implementation logic for beginners.</mark>
             </div>
             <div class="pb-1"><mark>
-                <u>YES! I KNOW!</u> There is bad/beginner/junior/newbie code in here, I can see it, I'm glad I can see it,
-                    I started from that kind of level, I love and now I can see my progress at the same time!</mark>
+                I know! There is <u>bad / beginner / junior / newbie</u> code in here, I can see it,  I'm glad I can!
+                I started from that level, and I love seeing the progress I’ve made!</mark>
             </div>
             <div class="pb-1"><mark>An example is the way I handled forms before I reach the 6th section, 
                 <a class="inherit" routerLink="/forms">Forms</a>.</mark>
@@ -73,7 +59,7 @@ import { Component } from '@angular/core';
                 the correct approaches, plus I wasn't that familiar with more advanced practices at that point.</mark>
             </div>
             <div class="pb-1"><mark>As a result, there may be inconsistencies 
-                in the implementation across these phases. Updates will come in the future.</mark>
+                in the implementation across these phases. There might be updates in the future.</mark>
             </div>
             <div class="pb-1"><mark>This app is not fully optimized for smaller screens.</mark>
             </div>

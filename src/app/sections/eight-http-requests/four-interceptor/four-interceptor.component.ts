@@ -75,14 +75,14 @@ export class FourInterceptorComponent implements OnInit {
   }
 
   //* lesson utilities
-  postTools():void {
-    this.toolsService.postTools()
-  }
-  deleteList():void {
-    this.toolsService.deleteList()
-      .subscribe(
-        () => this.toolsList = []
-      )
-  }
+  // postTools():void {
+  //   this.toolsService.postTools()
+  // }
+  // deleteList():void {
+  //   this.toolsService.deleteList()
+  //     .subscribe(
+  //       () => this.toolsList = []
+  //     )
+  // }
 
 }

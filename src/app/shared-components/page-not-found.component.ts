@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-page-not-found',
   template: `
   
-    <div class="headtitle niceblue ">
+    <div class="headtitle niceblue pb-5">
       <h2><mark>Error 404:</mark></h2>    
       <p class="lead"><mark>The page you are looking for doesn't exist.</mark></p>
       <div class="ms-3 mt-5">

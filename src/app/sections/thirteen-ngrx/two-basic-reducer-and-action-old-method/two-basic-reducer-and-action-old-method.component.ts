@@ -8,7 +8,7 @@ import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
   selector: 'app-two-basic-reducer-and-action-old-method',
   template: `
   
-    <h4>2. Basic Store Setup using the old approach.</h4>
+    <h4>2. Basic Store Setup by using the older syntax <span class="text-secondary h6">- boolean type</span></h4>
     <p class="lead">Lights on or off?</p>
     <div class="row mt-5 mb-5">    
         <div class="col d-flex justify-content-center">

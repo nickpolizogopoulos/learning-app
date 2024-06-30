@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
           An 
           <a class="angular nodecor" href="https://angular.io/" target="_blank">Angular</a>
            Application by 
-          <a class="inherit nodecor" href="https://github.com/nickpolizogopoulos" target="_blank">Nick Polizogopoulos</a>.
+          <a class="inherit nodecor" href="https://nick-polizogopoulos.web.app" target="_blank">Nick Polizogopoulos</a>.
       </div>
     </footer>
   

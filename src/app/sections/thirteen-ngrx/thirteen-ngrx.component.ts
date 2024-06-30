@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-thirteen-ngrx',
   template: `
   
-    <h2><mark>NgRx - X Lessons.</mark></h2>
+    <h2><mark>NgRx - X Lessons. 
+      <span class="lead">
+        [ Exercises 1, 2, and 3 will retain their state when a user changes routes 
+        but will lose the state upon reloading the page. ]
+      </span></mark>
+    </h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
           <app-one-basic-reducer-and-action class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-basic-reducer-and-action>

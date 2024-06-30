@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SectionsAndProjectsProps, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
+import { SectionsAndProjects, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.projectCards = this.sections.angularProjects;
   }
 
-  homeCards:SectionsAndProjectsProps[] = [];
-  projectCards:SectionsAndProjectsProps[] = [];
+  homeCards:SectionsAndProjects[] = [];
+  projectCards:SectionsAndProjects[] = [];
 
 }

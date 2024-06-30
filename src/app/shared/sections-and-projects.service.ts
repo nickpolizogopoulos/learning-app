@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-export interface SectionsAndProjectsProps {
+export interface SectionsAndProjects {
   name:string;
   link:string;
   img:string;
   description:string;
 };
 
-export interface ExternalLinkProps {
+export interface ExternalLink {
   name:string;
   link:string;
 };
@@ -20,10 +20,22 @@ export class SectionsAndProjectsService {
   sectionImage:string = '../../assets/images/home-images/angular-banner-image.jpg';
   projectImage:string = '../../assets/images/home-images/project-banner-image.jpg';
 
+  getSections(): SectionsAndProjects[] {
+    return this.angularSections.slice();
+  }
+
+  getProjects(): SectionsAndProjects[] {
+    return this.angularProjects.slice();
+  }
+
+  getLinks(): ExternalLink[] {
+    return this.externalNavLinks.slice();
+  }
+
   constructor() {}
 
   //**ANGULAR LESSON SECTIONS
-  angularSections:SectionsAndProjectsProps[] = [
+  angularSections:SectionsAndProjects[] = [
     { 
       name: 'The Basics', 
       link: 'the-basics',
@@ -124,7 +136,7 @@ export class SectionsAndProjectsService {
   ]
 
   //**ANGULAR PROJECTS
-  angularProjects:SectionsAndProjectsProps[] = [
+  angularProjects:SectionsAndProjects[] = [
     {
       name: 'To Do Application',
       link: '/project-to-do-application',
@@ -163,14 +175,14 @@ export class SectionsAndProjectsService {
   ]
 
   //**MENU BAR LINKS
-  externalNavLinks:ExternalLinkProps[] = [
+  externalNavLinks:ExternalLink[] = [
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/nickpolizogopoulos'
     },
     {
-      name: 'GitHub',
-      link: 'https://github.com/nickpolizogopoulos'
+      name: 'Source Code',
+      link: 'https://github.com/nickpolizogopoulos/learning-app'
     },
   ]
 

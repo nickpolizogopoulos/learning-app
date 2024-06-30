@@ -40,7 +40,7 @@ export class ToolsService {
   }
 
   deleteList() {
-    return this.http.delete(this.url)
+    return this.http.delete(this.url);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExternalLinkProps, SectionsAndProjectsProps, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
+import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
 
 @Component({
   selector: 'app-navbar',
@@ -84,14 +84,14 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.angularSections = this.sections.angularSections;
-    this.angularProjects = this.sections.angularProjects;
-    this.externalLinks = this.sections.externalNavLinks;
+    this.angularSections = this.sections.getSections();
+    this.angularProjects = this.sections.getProjects();
+    this.externalLinks = this.sections.getLinks();
   }
 
-  angularSections:SectionsAndProjectsProps[] = [];
-  angularProjects:SectionsAndProjectsProps[] = [];
-  externalLinks:ExternalLinkProps[] = [];
+  angularSections:SectionsAndProjects[] = [];
+  angularProjects:SectionsAndProjects[] = [];
+  externalLinks:ExternalLink[] = [];
     
   // * NAVBAR LINKS 
   navLinks = [

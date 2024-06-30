@@ -142,6 +142,7 @@ import { counterReducer } from './sections/thirteen-ngrx/one-basic-reducer-and-a
 import { TwoBasicReducerAndActionOldMethodComponent } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/two-basic-reducer-and-action-old-method.component';
 import { onOffReducer } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/onoff.reducer';
 import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/three-selector.component';
+import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWindows.reducer';
 
 @NgModule({
   declarations: [
@@ -260,11 +261,16 @@ import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/
     HttpClientModule,
     StoreModule.forRoot({
       oneCounter: counterReducer,
-      onOffState: onOffReducer
+      onOffState: onOffReducer,
+      macVSwindows: macWindowsReducer
     })
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass:ToolsInterceptor, multi:true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:ToolsInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]

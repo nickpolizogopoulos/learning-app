@@ -20,7 +20,7 @@ export class ToDoAppComponent {
   toDoImportant!:boolean;
   toDoDay:string = '-';
 
-  weekDays = [
+  weekDays:string[] = [
     'Monday',
     'Tuesday',
     'Wednesday',
@@ -28,7 +28,7 @@ export class ToDoAppComponent {
     'Friday',
     'Saturday',
     'Sunday',
-  ]
+  ];
 
   toDoList:ToDoItemProps[] = [
     {
@@ -110,7 +110,7 @@ export class ToDoAppComponent {
         important: false
       },
       {
-        id: this.toDoList.length + 3,
+        id: this.toDoList.length + 4,
         title: 'Meet with Jelly',
         comment: `Finish the project together`,
         day: 'Wednesday',

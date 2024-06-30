@@ -25,12 +25,6 @@ interface AlbumProps {
   
     <h4>1. Requesting data with the .get( ) method.</h4>
     <span class="lead">Top 5 music albums of all times!</span>
-    <!-- <span class="addToTestText cursor-pointer user-select-none ms-2" (click)="infoExpand()">[info]</span>
-    <div>
-      <span *ngIf="infoIsExpanded" class="addToTestText ms-2">According to my Vinyl teacher 
-        <a class="inherit nodecor" href="https://analogacademy.gr/artists/takis-niaros/" target="_blank">[ Takis Niaros ].</a>
-      </span>
-    </div> -->
     <div class="mt-4 m-2">
       <p *ngIf="albums.length < 1" class="lead">Loading albums...</p>
       <div *ngIf="albums.length < 1" class="spinner-border" role="status"></div>
@@ -40,8 +34,8 @@ interface AlbumProps {
           <a class="nodecor inherit" href="{{album.infoLink}}" target="_blank">[more info]</a>
         </div>
       </div>
-      <!-- * a button to post the albums -->
-      <!-- * <button class="ms-2" (click)="postAlbums()">post the albums</button> -->
+      <!-- a button to post the albums
+      <button class="ms-2" (click)="postAlbums()">post the albums</button> -->
     </div>
 
   `,

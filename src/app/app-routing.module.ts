@@ -139,14 +139,14 @@ const appRoutes: Routes = [
     
     //* 404 -------------------------------
     { 
-        path: '**', 
-        redirectTo: '404'
-    },
-    { 
         path: '404', 
         title: `${appTitle} 404`, 
         component: PageNotFoundComponent 
     },
+    { 
+        path: '**', 
+        redirectTo: '404'
+    }
   ];
 
   const extraOptions:ExtraOptions = {
