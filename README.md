@@ -1,5 +1,7 @@
 # Project: Learning Angular
 
+Launch the project [[ Here ]](https://learning-angular-nickp.web.app/)
+
 I started this project as a playground to practice Angular.
 This is now an Angular Web App with sections, exercises with solutions and many projects!
 
