@@ -46,8 +46,8 @@ export class TwoCustomObservableComponent implements OnDestroy {
 
   onStop():void {
     this.counterPlaying = false;
-    this.kmSubscription!.unsubscribe();
-    this.secSubscription!.unsubscribe();
+    this.kmSubscription?.unsubscribe();
+    this.secSubscription?.unsubscribe();
   }
 
   onReset():void {

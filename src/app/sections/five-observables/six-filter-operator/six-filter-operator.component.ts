@@ -17,7 +17,7 @@ import { Observable, Observer, Subscription, filter } from 'rxjs';
       [disabled]="gameIsRunning">
     <button (click)="onStart()" class="btn btn-sm btn-primary me-3 mb-3" [disabled]="userInput === undefined || gameIsRunning">Start</button>
     <button *ngIf="!gameIsRunning" (click)="onReset()" class="btn btn-sm btn-secondary me-3 mb-3">Reset</button>
-    <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{fizBuzzNumbers.join(', ')}}</p>
+    <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{ fizBuzzNumbers.join(', ') }}</p>
   
   `,
   styles: [``]
@@ -51,7 +51,7 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
           count++;
         }, 5);
       }
-    )
+    );
 
     const operator = customObservable.pipe(
       filter( (data:number) => {
@@ -65,14 +65,14 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
   }
 
   onReset():void {
-    this.subscription!.unsubscribe();
+    this.subscription?.unsubscribe();
     this.gameIsRunning = false;
     this.fizBuzzNumbers.length = 0;
     this.userInput = undefined;
   }
 
   ngOnDestroy():void {
-    this.subscription!.unsubscribe();
+    this.subscription?.unsubscribe();
   }
   
 }

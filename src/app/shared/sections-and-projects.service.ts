@@ -66,8 +66,8 @@ export class SectionsAndProjectsService {
       between components, cross-component communication!`
     },
     {
-      name: 'Observables',
-      link: 'observables',
+      name: 'RxJS & Observables',
+      link: 'rxjs-observables',
       img: this.sectionImage,
       description: `RxJS, Built-in and Custom Observables, 
       Errors & Completion, Operators, map( ), filter( ) and 

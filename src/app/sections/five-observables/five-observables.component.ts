@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-five-observables',
   template: `
   
-    <h2><mark>Observables - 7 Lessons.</mark></h2>
+    <h2><mark>RxJS & Observables - 7 Lessons.</mark></h2>
     <section class="container-fluid">
         <div class="row mt-4 pt-4 d-flex justify-content-around">
             <app-one-basic-observable class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-basic-observable>

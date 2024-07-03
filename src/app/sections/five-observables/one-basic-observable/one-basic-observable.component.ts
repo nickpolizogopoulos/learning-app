@@ -37,6 +37,7 @@ export class OneBasicObservableComponent implements OnDestroy {
   reset():void {
     this.runner = 0;
     this.winningPrize = false;
+    this.timer?.unsubscribe();
   }
 
   winOnClick():void {
@@ -69,7 +70,7 @@ export class OneBasicObservableComponent implements OnDestroy {
 
   ngOnDestroy():void {
     //in case they leave without stopping it first.
-    this.timer!.unsubscribe();
+    this.timer?.unsubscribe();
   }
 
 }

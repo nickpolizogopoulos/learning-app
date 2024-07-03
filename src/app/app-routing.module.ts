@@ -65,7 +65,7 @@ const appRoutes: Routes = [
         component: FourServicesDependencyInjectionComponent 
     },
     { 
-        path: 'observables', 
+        path: 'rxjs-observables', 
         title: `${appTitle} Observables`, 
         component: FiveObservablesComponent 
     },

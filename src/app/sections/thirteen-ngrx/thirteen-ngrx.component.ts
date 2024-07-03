@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-thirteen-ngrx',
   template: `
   
-    <h2><mark>NgRx - X Lessons. 
+    <h2><mark>NgRx - 3 Lessons. 
       <span class="lead">
         [ Exercises 1, 2, and 3 will retain their state when a user changes routes 
         but will lose the state upon reloading the page. ]
