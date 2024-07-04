@@ -8,7 +8,7 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
   template: `
   
     <h4>1. Basic Store Setup using createReducer( ) & createAction( ) <span class="text-secondary h6">- number type</span></h4>
-    <p class="lead">According to the ancient scripts, this must be a counter because it looks like a counter...</p>
+    <p class="lead">According to the ancient scripts, this must be an old counter because it looks like an old counter...</p>
     <hr>
     <label for="oneBasicStore">Increase / Decrease by:</label>
     <input class="form-control rounded-1 shadow-none" type="number" id="oneBasicStore" [(ngModel)]="userInput">

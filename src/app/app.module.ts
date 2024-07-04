@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -143,6 +144,8 @@ import { TwoBasicReducerAndActionOldMethodComponent } from './sections/thirteen-
 import { onOffReducer } from './sections/thirteen-ngrx/two-basic-reducer-and-action-old-method/onoff.reducer';
 import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/three-selector.component';
 import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWindows.reducer';
+import { FourEffectComponent } from './sections/thirteen-ngrx/four-effect/four-effect.component';
+import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/four-effect/store-all-in-one';
 
 @NgModule({
   declarations: [
@@ -252,6 +255,7 @@ import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWi
     OneBasicReducerAndActionComponent,
     TwoBasicReducerAndActionOldMethodComponent,
     ThreeSelectorComponent,
+    FourEffectComponent,
   ],
   imports: [
     BrowserModule,
@@ -262,8 +266,12 @@ import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWi
     StoreModule.forRoot({
       oneCounter: counterReducer,
       onOffState: onOffReducer,
-      macVSwindows: macWindowsReducer
-    })
+      macVSwindows: macWindowsReducer,
+      fourCounter: fourCounterReducer,
+    }),
+    EffectsModule.forRoot([
+      CounterEffects
+    ])
   ],
   providers: [
     {
