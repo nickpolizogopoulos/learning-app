@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -146,6 +147,9 @@ import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/
 import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWindows.reducer';
 import { FourEffectComponent } from './sections/thirteen-ngrx/four-effect/four-effect.component';
 import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/four-effect/store-all-in-one';
+import { FourteenAnimationsComponent } from './sections/fourteen-animations/fourteen-animations.component';
+import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-basic-animation/one-basic-animation.component';
+import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
 
 @NgModule({
   declarations: [
@@ -256,6 +260,9 @@ import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/fou
     TwoBasicReducerAndActionOldMethodComponent,
     ThreeSelectorComponent,
     FourEffectComponent,
+    FourteenAnimationsComponent,
+    OneBasicAnimationComponent,
+    TwoVoidStateComponent,
   ],
   imports: [
     BrowserModule,
@@ -271,7 +278,8 @@ import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/fou
     }),
     EffectsModule.forRoot([
       CounterEffects
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [
     {

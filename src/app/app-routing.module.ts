@@ -27,6 +27,7 @@ import { SuperSignatureMakerComponent } from "./projects/super-signature-maker/s
 import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping-list.component";
 import { FizzBuzzComponent } from "./projects/fizz-buzz/fizz-buzz.component";
 import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component";
+import { FourteenAnimationsComponent } from "./sections/fourteen-animations/fourteen-animations.component";
 
 const appTitle:string = 'Learning Angular -';
 
@@ -108,6 +109,11 @@ const appRoutes: Routes = [
         path: 'ngrx', 
         title: `${appTitle} NgRx`, 
         component: ThirteenNgrxComponent 
+    },
+    { 
+        path: 'animations', 
+        title: `${appTitle} Animations`, 
+        component: FourteenAnimationsComponent 
     },
   
     //* PROJECTS -------------------------------

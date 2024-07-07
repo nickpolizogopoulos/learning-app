@@ -131,6 +131,12 @@ export class SectionsAndProjectsService {
       description: `Creating a Store, Reading & Updating data utilising Reducers, 
       Actions, Selectors and Effects!`
     },
+    {
+      name: 'Animations',
+      link: 'animations',
+      img: this.sectionImage,
+      description: `Animations description`
+    },
 
     
   ]
