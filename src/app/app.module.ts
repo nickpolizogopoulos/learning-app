@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 //* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
-
 import { AboutComponent } from './shared-components/about.component';
 import { NavbarComponent } from './shared-components/navbar.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found.component';
@@ -48,7 +47,6 @@ import { TwoViewchildAndLocalReferencesComponent } from './sections/two-componen
 import { ImportantComponent } from './sections/two-components-databinding/two-viewchild-and-local-references/important/important.component';
 import { FormTwoComponent } from './sections/two-components-databinding/two-viewchild-and-local-references/form-two/form-two.component';
 import { UnimportantComponent } from './sections/two-components-databinding/two-viewchild-and-local-references/unimportant/unimportant.component';
-import { ThreeLifecycleHooksComponent } from './sections/two-components-databinding/three-lifecycle-hooks/three-lifecycle-hooks.component';
 
 //* SECTION Directives
 import { ThreeDirectivesComponent } from './sections/three-directives/three-directives.component';
@@ -137,7 +135,7 @@ import { PlaceholderDirective } from './sections/ten-dynamic-components/two-prog
 import { TwelveSignalsComponent } from './sections/twelve-signals/twelve-signals.component';
 import { SignalComponent } from './sections/twelve-signals/signal/signal.component';
 
-///* SECTION NGRX
+//* SECTION NGRX
 import { ThirteenNgrxComponent } from './sections/thirteen-ngrx/thirteen-ngrx.component';
 import { OneBasicReducerAndActionComponent } from './sections/thirteen-ngrx/one-basic-reducer-and-action/one-basic-reducer-and-action.component';
 import { counterReducer } from './sections/thirteen-ngrx/one-basic-reducer-and-action/one-counter.reducer';
@@ -147,19 +145,34 @@ import { ThreeSelectorComponent } from './sections/thirteen-ngrx/three-selector/
 import { macWindowsReducer } from './sections/thirteen-ngrx/three-selector/macWindows.reducer';
 import { FourEffectComponent } from './sections/thirteen-ngrx/four-effect/four-effect.component';
 import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/four-effect/store-all-in-one';
+
+//* SECTION Animations
 import { FourteenAnimationsComponent } from './sections/fourteen-animations/fourteen-animations.component';
 import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-basic-animation/one-basic-animation.component';
 import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
 
 @NgModule({
   declarations: [
+
+    //* SHARED COMPONENTS
     AppComponent,
     HomeComponent,
     AboutComponent,
     NavbarComponent,
     PageNotFoundComponent,
     FooterComponent,
-
+    
+    //* PROJECTS
+    ToDoAppComponent,
+    SuperSignatureMakerComponent,
+    FizzBuzzComponent,
+    MyShoppingListComponent,
+      ProjectFormComponent,
+      ProjectFoodListComponent,
+      ProjectHomeListComponent,
+    GreekGyroPitaOrderMakerComponent,
+    
+    //* SECTION The Basics
     OneTheBasicsComponent,
       OneDataBindingComponent,
       TwoPropertyBindingComponent,
@@ -171,98 +184,114 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
       EightNgClassComponent,
       NineThankYouComponent,
       
+    //* SECTION Components & Databinding
     TwoComponentsDatabindingComponent,
-    OnePassingDataBetweenComponentsComponent,
-    FormComponent,
-    ListComponent,
-    TwoViewchildAndLocalReferencesComponent,
-    ImportantComponent,
-    UnimportantComponent,
-    FormTwoComponent,
-    ThreeLifecycleHooksComponent,
+      OnePassingDataBetweenComponentsComponent,
+      FormComponent,
+      ListComponent,
+      TwoViewchildAndLocalReferencesComponent,
+      ImportantComponent,
+      UnimportantComponent,
+      FormTwoComponent,
+
+    //* SECTION Directives
     ThreeDirectivesComponent,
-    OneBasicCustomDirectiveComponent,
-    BlueBgDirective,
-    BordeauxBgDirective,
-    TwoRendererDirectiveComponent,
-    SmSizeDirective,
-    MdSizeDirective,
-    XlSizeDirective,
-    ThreeHostlistenerComponent,
-    GreenFilterDirective,
-    YellowFilterDirective,
-    FourHostbindingComponent,
-    SecretButtonDirective,
-    FiveBindingToDirectivePropertiesComponent,
-    ColoursDirective,
-    SixCustomStructuralDirectiveComponent,
-    UnlessDirective,
-    SevenNgswitchComponent,
-    ToDoAppComponent,
-    SuperSignatureMakerComponent,
-    MyShoppingListComponent,
-    ProjectFormComponent,
-    ProjectFoodListComponent,
-    ProjectHomeListComponent,
+      OneBasicCustomDirectiveComponent,
+      BlueBgDirective,
+      BordeauxBgDirective,
+      TwoRendererDirectiveComponent,
+      SmSizeDirective,
+      MdSizeDirective,
+      XlSizeDirective,
+      ThreeHostlistenerComponent,
+      GreenFilterDirective,
+      YellowFilterDirective,
+      FourHostbindingComponent,
+      SecretButtonDirective,
+      FiveBindingToDirectivePropertiesComponent,
+      ColoursDirective,
+      SixCustomStructuralDirectiveComponent,
+      UnlessDirective,
+      SevenNgswitchComponent,
+
+    //* SECTION Services & Dependency Injection
     FourServicesDependencyInjectionComponent,
-    OneLoggingServiceComponent,
-    OneServiceButtonComponent,
-    TwoServiceButtonComponent,
-    ThreeServiceButtonComponent,
-    TwoDataServiceComponent,
-    FormDataServiceComponent,
-    ListDataServiceComponent,
+      OneLoggingServiceComponent,
+      OneServiceButtonComponent,
+      TwoServiceButtonComponent,
+      ThreeServiceButtonComponent,
+      TwoDataServiceComponent,
+      FormDataServiceComponent,
+      ListDataServiceComponent,
+
+    //* SECTION Observables
     FiveObservablesComponent,
-    OneBasicObservableComponent,
-    ThreeObservableErrorsComponent,
-    TwoCustomObservableComponent,
-    FourObservableCompletionComponent,
-    FiveMapOperatorComponent,
-    SixFilterOperatorComponent,
+      OneBasicObservableComponent,
+      TwoCustomObservableComponent,
+      ThreeObservableErrorsComponent,
+      FourObservableCompletionComponent,
+      FiveMapOperatorComponent,
+      SixFilterOperatorComponent,
+      SevenSubjectsComponent,
+      FirstSubjectsComponent,
+      SecondSubjectsComponent,
+
+    //* SECTION Forms
     SixFormsComponent,
-    SevenSubjectsComponent,
-    FirstSubjectsComponent,
-    SecondSubjectsComponent,
-    OneTemplateDrivenFormComponent,
-    TwoReactiveFormComponent,
+      OneTemplateDrivenFormComponent,
+      TwoReactiveFormComponent,
+
+    //* SECTION Data Transformation with Pipes
     SevenPipesComponent,
-    OneSimpleTransformationComponent,
-    TwoCustomPipeComponent,
-    ShortenPipe,
-    ThreeFilterPipeComponent,
-    StatusFilterPipe,
+      OneSimpleTransformationComponent,
+      TwoCustomPipeComponent,
+      ShortenPipe,
+      ThreeFilterPipeComponent,
+      StatusFilterPipe,
+      FourSlugGeneratorComponent,
+      SymbolsToHyphensPipe,
+
+    //* SECTION Http Requests
     EightHttpRequestsComponent,
-    FourSlugGeneratorComponent,
-    SymbolsToHyphensPipe,
-    GreekGyroPitaOrderMakerComponent,
     OneGetRequestComponent,
     TwoPostRequestComponent,
     ThreeErrorHandlingComponent,
     FourInterceptorComponent,
+
+    //* SECTION Authentication & Route Protection
     NineAuthenticationRouteProtectionComponent,
+
+    //* SECTION Dynamic Components
     TenDynamicComponentsComponent,
-    OneUsingNgifComponent,
-    TwoProgrammaticallyComponent,
-    LoaderSpinnerComponent,
-    CustomAlertComponent,
-    LineLoaderComponent,
-    ProgAlertComponent,
-    PlaceholderDirective,
-    FizzBuzzComponent,
-    //* These are standalone components 
+      OneUsingNgifComponent,
+      TwoProgrammaticallyComponent,
+      LoaderSpinnerComponent,
+      CustomAlertComponent,
+      LineLoaderComponent,
+      ProgAlertComponent,
+      PlaceholderDirective,
+
+    //* SECTION Standalone Components - these are standalone components 
     // ElevenStandaloneComponentsComponent,
-    // OneStandaloneComponent,
-    // TwoStandaloneComponent,
+      // OneStandaloneComponent,
+      // TwoStandaloneComponent,
+
+    //* SECTION Signals
     TwelveSignalsComponent,
-    SignalComponent,
+      SignalComponent,
+
+    //* SECTION NGRX
     ThirteenNgrxComponent,
-    OneBasicReducerAndActionComponent,
-    TwoBasicReducerAndActionOldMethodComponent,
-    ThreeSelectorComponent,
-    FourEffectComponent,
+      OneBasicReducerAndActionComponent,
+      TwoBasicReducerAndActionOldMethodComponent,
+      ThreeSelectorComponent,
+      FourEffectComponent,
+
+    //* SECTION Animations
     FourteenAnimationsComponent,
-    OneBasicAnimationComponent,
-    TwoVoidStateComponent,
+      OneBasicAnimationComponent,
+      TwoVoidStateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -276,10 +305,10 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
       macVSwindows: macWindowsReducer,
       fourCounter: fourCounterReducer,
     }),
+    BrowserAnimationsModule,
     EffectsModule.forRoot([
       CounterEffects
-    ]),
-    BrowserAnimationsModule
+    ])
   ],
   providers: [
     {
@@ -291,4 +320,4 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
   bootstrap: [AppComponent],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}

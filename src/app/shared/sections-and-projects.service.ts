@@ -135,7 +135,7 @@ export class SectionsAndProjectsService {
       name: 'Animations',
       link: 'animations',
       img: this.sectionImage,
-      description: `Animations description`
+      description: `Basic Animation triggering, state switching, "Void" and "Wildcard" states!`
     },
 
     
