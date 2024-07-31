@@ -18,8 +18,7 @@ export class ToolsInterceptor implements HttpInterceptor {
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
-  )
-  {    
+  ) {    
     this.toolsService.message = this.message;
     return next.handle(request);
   }

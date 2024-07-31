@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { getFirebaseEndpoint } from '../http-utilities';
 
 interface ReleaseDateProps {
   day:number;
@@ -44,10 +45,7 @@ interface AlbumProps {
 export class OneGetRequestComponent implements OnInit {
 
   infoIsExpanded:boolean = false;
-  database:string = 'https://http-music-albums-default-rtdb.firebaseio.com';
-  folder:string = '/albums';
-  json:string = '.json';
-  url:string = this.database + this.folder + this.json;
+  private url:string = getFirebaseEndpoint('albums');
   albums:AlbumProps[] = [];
 
   constructor(

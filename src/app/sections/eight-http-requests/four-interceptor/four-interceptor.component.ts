@@ -51,7 +51,8 @@ export class FourInterceptorComponent implements OnInit {
   time:number = 0;
 
   ngOnInit():void {
-    this.fetchTools()
+    // this.postTools();
+    this.fetchTools();
     this.time = 1500;
   }
 
@@ -76,13 +77,13 @@ export class FourInterceptorComponent implements OnInit {
 
   //* lesson utilities
   // postTools():void {
-  //   this.toolsService.postTools()
+  //   this.toolsService.postTools();
   // }
   // deleteList():void {
   //   this.toolsService.deleteList()
   //     .subscribe(
   //       () => this.toolsList = []
-  //     )
+  //     );
   // }
 
 }

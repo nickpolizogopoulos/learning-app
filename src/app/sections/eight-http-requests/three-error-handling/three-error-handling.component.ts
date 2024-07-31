@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { getFirebaseEndpoint } from '../http-utilities';
 
 interface Todo {
   description:string;
@@ -19,10 +20,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
     private http:HttpClient
   ) { }
 
-  database:string = 'https://error-handling-69430-default-rtdb.firebaseio.com';
-  folder:string = '/todos';
-  json:string = '.json';
-  url:string = this.database + this.folder + this.json;
+  private url:string = getFirebaseEndpoint('todos');
 
   @ViewChild('form') form?:NgForm;
   todoList:Todo[] = [];
@@ -78,7 +76,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
   onSingleTodoDelete( id:Todo['id'] ) {
     this.isFetching = true;
     this.http
-      .delete(this.database + this.folder + '/' + id + this.json)
+      .delete('https://learning-angular-app-http-default-rtdb.europe-west1.firebasedatabase.app/todos/' + id + '.json')
       .subscribe({
         next: () => {
           this.isFetching = false;

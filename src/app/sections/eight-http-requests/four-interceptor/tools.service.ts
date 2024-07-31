@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { ToolsInterceptor } from './tools.interceptor';
+import { getFirebaseEndpoint } from '../http-utilities';
 
 export interface Tools {
   name:string;
@@ -22,7 +22,7 @@ export class ToolsService {
     private http:HttpClient,
   ) { }
 
-  url:string = 'https://http-interceptor-ed4d8-default-rtdb.firebaseio.com/tools.json';
+  private url:string = getFirebaseEndpoint('languages');
   message:string = 'Loading...';
 
   fetchTools() {
@@ -93,6 +93,6 @@ export class ToolsService {
       }
     ).subscribe()
 
-}
+  }
 
 }
