@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Observer, Subscription, filter } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-six-filter-operator',
@@ -20,7 +21,8 @@ import { Observable, Observer, Subscription, filter } from 'rxjs';
     <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{ fizBuzzNumbers.join(', ') }}</p>
   
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class SixFilterOperatorComponent implements OnInit, OnDestroy {
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-four-ng-if',
@@ -29,7 +30,8 @@ import { Component } from '@angular/core';
     </div>
   
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class FourNgIfComponent {
   

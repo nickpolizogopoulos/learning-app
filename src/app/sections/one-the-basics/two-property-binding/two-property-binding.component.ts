@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-property-binding',
@@ -47,7 +48,8 @@ import { Component } from '@angular/core';
     border-color: rgb(176, 176, 176);
   }
   
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class TwoPropertyBindingComponent {
 

@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Observer, Subscription, map } from 'rxjs';
 import { Observable } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-five-map-operator',
@@ -18,7 +19,8 @@ import { Observable } from 'rxjs';
     <p *ngIf="counting">* hiders gonna hide *</p>
     <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class FiveMapOperatorComponent implements OnDestroy {
 

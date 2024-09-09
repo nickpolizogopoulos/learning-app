@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-six-ng-for',
@@ -26,7 +27,8 @@ import { Component } from '@angular/core';
     </p>
   
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class SixNgForComponent {
 

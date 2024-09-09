@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, Observable, timer, Observer } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-four-observable-completion',
@@ -26,7 +27,8 @@ import { Subscription, Observable, timer, Observer } from 'rxjs';
     <span *ngIf="timerEnded" (click)="reload()" class="addToTestText cursor-pointer">[ reload ]</span>
 
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class FourObservableCompletionComponent implements OnDestroy {
 

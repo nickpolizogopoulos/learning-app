@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Tools, ToolsService } from './tools.service';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-four-interceptor',
@@ -37,7 +38,8 @@ import { Tools, ToolsService } from './tools.service';
     filter: grayscale(0%);
   }
   
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class FourInterceptorComponent implements OnInit {
 

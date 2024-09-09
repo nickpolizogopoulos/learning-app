@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-using-ngif',
   templateUrl: './one-using-ngif.component.html',
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class OneUsingNgifComponent {
 

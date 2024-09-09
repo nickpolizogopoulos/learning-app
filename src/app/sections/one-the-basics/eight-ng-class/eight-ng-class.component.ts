@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-eight-ng-class',
@@ -10,7 +11,8 @@ import { Component } from '@angular/core';
     background-color: rgb(243, 255, 243);
     border: 3px dashed rgb(36, 54, 99);
   }
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class EightNgClassComponent {
 

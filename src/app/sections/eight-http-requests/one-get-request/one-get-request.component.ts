@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { getFirebaseEndpoint } from '../http-utilities';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 interface ReleaseDateProps {
   day:number;
@@ -39,7 +40,8 @@ interface AlbumProps {
     </div>
 
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class OneGetRequestComponent implements OnInit {
 

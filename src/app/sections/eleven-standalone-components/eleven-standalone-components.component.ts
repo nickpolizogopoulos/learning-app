@@ -5,7 +5,10 @@ import { TwoStandaloneComponent } from './two-standalone/two-standalone.componen
 @Component({
   selector: 'app-eleven-standalone-components',
   standalone: true,
-  imports: [OneStandaloneComponent, TwoStandaloneComponent],
+  imports: [
+    OneStandaloneComponent,
+    TwoStandaloneComponent
+  ],
   template: `
   
     <h2>Standalone Components - 1 Lesson</h2>

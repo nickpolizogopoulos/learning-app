@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 interface Contact {
   name:string;
@@ -12,7 +13,14 @@ interface Contact {
 @Component({
   selector: 'app-two-post-request',
   templateUrl: './two-post-request.component.html',
-  styles: [` .tableRow { border-bottom: 1px solid red; }`]
+  styles: [` 
+  
+    .tableRow {
+      border-bottom: 1px solid red; 
+    }
+
+  `],
+  host: lessonHostClasses
 })
 export class TwoPostRequestComponent implements OnInit {
 

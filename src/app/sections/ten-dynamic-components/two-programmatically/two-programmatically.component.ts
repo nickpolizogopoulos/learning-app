@@ -4,11 +4,19 @@ import { Observable, Observer, Subscription } from 'rxjs';
 import {ViewContainerRef} from '@angular/core';
 import { ProgAlertComponent } from './prog-alert.component';
 import { PlaceholderDirective } from './placeholder.directive';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-programmatically',
   templateUrl: './two-programmatically.component.html',
-  styles: [``]
+  styles: [`
+  
+    p {
+      background-color: transparent;
+    }
+    
+  `],
+  host: lessonHostClasses
 })
 export class TwoProgrammaticallyComponent implements OnDestroy {
 

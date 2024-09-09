@@ -1,10 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Observable, Observer, Subscription } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-custom-observable',
   templateUrl: './two-custom-observable.component.html',
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class TwoCustomObservableComponent implements OnDestroy {
 

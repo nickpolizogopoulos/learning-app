@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 interface Guests {
   id: number
@@ -42,7 +43,8 @@ interface Guests {
     </div>
   
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class ThreeFilterPipeComponent {
 

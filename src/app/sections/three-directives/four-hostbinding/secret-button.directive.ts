@@ -1,13 +1,15 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, inject } from '@angular/core';
 
 @Directive({
-  selector: '[appSecretButton]'
+  selector: '[appSecretButton]',
+
+  //* for the newer approach
+  // host: {
+  //   '(mouseover)': 'mouseOver()',
+  //   '(mouseleave)': 'mouseLeave()'
+  // }
 })
 export class SecretButtonDirective {
-
-  constructor() {
-
-  }
   
   @HostBinding('class.text-success') classPass:string = '';
   @HostBinding('style.fontWeight') fontStrong:string = '';
@@ -20,8 +22,24 @@ export class SecretButtonDirective {
   }
   @HostListener('mouseleave') mouseLeave() {
     this.fontStrong = '';
-    this.classPass = '';
+    this.classPass = '';           
     this.cursorClass = '';
   }
+
+  //* for the newer approach
+
+  // private elementRef = inject(ElementRef);
+
+  // mouseOver() {
+  //   this.fontStrong = 'bold';
+  //   this.classPass = 'text-success';
+  //   this.cursorClass = 'cursor-pointer';
+  // }
+
+  // mouseLeave() {
+  //   this.fontStrong = '';
+  //   this.classPass = '';
+  //   this.cursorClass = '';
+  // }
 
 }

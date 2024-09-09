@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserListService, UserProps } from './user-list.service';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-data-service',
@@ -24,10 +25,10 @@ import { UserListService, UserProps } from './user-list.service';
       {{removalMessage}}
     </div>
 
-
   `,
   styles: [``],
-  providers: [UserListService]
+  providers: [UserListService],
+  host: lessonHostClasses
 })
 export class TwoDataServiceComponent implements OnInit {
   

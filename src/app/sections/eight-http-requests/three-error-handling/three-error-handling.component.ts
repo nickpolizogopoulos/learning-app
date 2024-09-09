@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { getFirebaseEndpoint } from '../http-utilities';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 interface Todo {
   description:string;
@@ -12,7 +13,14 @@ interface Todo {
 @Component({
   selector: 'app-three-error-handling',
   templateUrl: './three-error-handling.component.html',
-  styles: [``]
+  styles: [`
+    
+    p {
+      background-color: transparent;
+    }
+    
+  `],
+  host: lessonHostClasses
 })
 export class ThreeErrorHandlingComponent implements OnInit {
 

@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
       <p class="lead">The page you are looking for doesn't exist.</p>
       <div class="ms-3 mt-5">
           <a class="nodecor inherit" routerLink="/">
-              <span class="customButton lead">
-                  Back to home
-              </span>
+            <app-custom-button>
+              Back to home
+            </app-custom-button>
           </a>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-seven-ng-style',
@@ -66,7 +67,8 @@ import { Component } from '@angular/core';
     }
       
   
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class SevenNgStyleComponent {
 

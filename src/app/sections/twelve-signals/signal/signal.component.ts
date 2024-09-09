@@ -1,4 +1,5 @@
 import { Component, WritableSignal, signal } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-signal',
@@ -27,7 +28,8 @@ import { Component, WritableSignal, signal } from '@angular/core';
     </div>
  
   `,
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class SignalComponent {
 

@@ -1,10 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-basic-observable',
   templateUrl: './one-basic-observable.component.html',
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class OneBasicObservableComponent implements OnDestroy {
 

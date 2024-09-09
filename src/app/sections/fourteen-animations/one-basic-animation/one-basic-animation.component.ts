@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-basic-animation',
@@ -70,7 +71,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         )
       ]
     )
-  ]
+  ],
+  host: lessonHostClasses
 })
 export class OneBasicAnimationComponent {
 

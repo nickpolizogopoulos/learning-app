@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-five-ng-if-else',
@@ -37,7 +38,8 @@ import { Component } from '@angular/core';
     height: 45px;
     width: 45px;
   }
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class FiveNgIfElseComponent {
   

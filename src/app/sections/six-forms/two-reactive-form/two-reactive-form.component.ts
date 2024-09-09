@@ -5,11 +5,13 @@ import {
   FormGroup, 
   Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-reactive-form',
   templateUrl: './two-reactive-form.component.html',
-  styles: [``]
+  styles: [``],
+  host: lessonHostClasses
 })
 export class TwoReactiveFormComponent implements OnInit {
 
