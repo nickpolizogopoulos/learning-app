@@ -10,7 +10,10 @@ export interface ShoppingItemProps {
 @Component({
   selector: 'app-my-shopping-list',
   templateUrl: './my-shopping-list.component.html',
-  styleUrls: ['./my-shopping-list.component.css']
+  styleUrls: [
+    './my-shopping-list.component.css', 
+    '../projects.css'
+  ]
 })
 export class MyShoppingListComponent {
 

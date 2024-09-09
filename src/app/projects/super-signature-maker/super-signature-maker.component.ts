@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-super-signature-maker',
-  // templateUrl: './super-signature-maker.component.html',
   template: `
   
     <section class="container project-container">
@@ -113,7 +112,8 @@ import { Component } from '@angular/core';
     border: 1px solid rgba(178, 178, 178, 0.384);
   }
   
-  `]
+  `],
+  styleUrls: ['../projects.css']
 })
 export class SuperSignatureMakerComponent {
 

@@ -17,8 +17,12 @@ export interface ExternalLink {
 })
 export class SectionsAndProjectsService {
 
-  sectionImage:string = '../../assets/images/home-images/angular-banner-image.jpg';
-  projectImage:string = '../../assets/images/home-images/project-banner-image.jpg';
+  getImagePath( section:string ):string {
+    return `../../assets/images/home-images/${section}-banner-image.jpg`;
+  }
+
+  sectionImage:string = this.getImagePath('angular');
+  projectImage:string = this.getImagePath('project');
 
   getSections(): SectionsAndProjects[] {
     return this.angularSections.slice();

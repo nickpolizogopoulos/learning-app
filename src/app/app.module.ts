@@ -15,6 +15,7 @@ import { AboutComponent } from './shared-components/about.component';
 import { NavbarComponent } from './shared-components/navbar.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found.component';
 import { FooterComponent } from './shared-components/footer.component';
+import { CustomButtonComponent } from './shared/custom-button.component';
 
 //* PROJECTS
 import { ToDoAppComponent } from './projects/to-do-app/to-do-app.component';
@@ -150,7 +151,6 @@ import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/fou
 import { FourteenAnimationsComponent } from './sections/fourteen-animations/fourteen-animations.component';
 import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-basic-animation/one-basic-animation.component';
 import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
-
 @NgModule({
   declarations: [
 
@@ -161,6 +161,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
     NavbarComponent,
     PageNotFoundComponent,
     FooterComponent,
+    CustomButtonComponent,
     
     //* PROJECTS
     ToDoAppComponent,
@@ -291,6 +292,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
     FourteenAnimationsComponent,
       OneBasicAnimationComponent,
       TwoVoidStateComponent,
+      
 
   ],
   imports: [

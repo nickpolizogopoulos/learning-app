@@ -8,12 +8,14 @@ import { Component } from '@angular/core';
     .heartColor {
       color: #ff2164;
     }
+
     .hint {
       font-size: 10px;
       color: #bababa;
       cursor: pointer;
       margin-left: 7px;
     }
+
     img {
       height: 50px;
       width: auto;
@@ -30,8 +32,9 @@ export class FourHostbindingComponent {
   heartVisible:boolean = false;
   hint:boolean = false;
   
-  onEnable() {
+  onWayClick() {
     this.btnDisabled = false;
+    this.hint = false;
   }
   onClick() {
     this.buttonClicked = true;
@@ -50,7 +53,7 @@ export class FourHostbindingComponent {
     this.buttonClicked = false;
     this.btnDisabled = true;
   }
-  onTipClick() {
+  onHintClick() {
     this.hint = !this.hint;
   }
 }

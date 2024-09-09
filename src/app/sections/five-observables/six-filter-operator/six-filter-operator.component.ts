@@ -49,7 +49,7 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
             this.gameIsRunning = false;
           }
           count++;
-        }, 5);
+        }, 1);
       }
     );
 

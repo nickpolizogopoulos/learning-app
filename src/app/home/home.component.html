@@ -3,18 +3,20 @@
     <img class="d-lg-none img-fluid" src="../../assets/images/home-images/learning-angular-hero-mobile.jpg" alt="Learning Angular Banner">
 </section>
 
-<section class="container pt-3 mt-5 mb-5">
-    <h1 class="niceblue mb-4"><mark>Welcome to Learning Angular!</mark></h1>
+<section class="container pt-3 mt-5 mb-5 lead">
+    <h1 class="mb-4">Welcome to Learning Angular!</h1>
 
-    <p class="lead"><mark>I started this project along with my Angular course and I update it constantly.</mark></p>
-    <p class="lead mb-4"><mark>Here you can find my solutions on exercise ideas I came up with during the 
-        course plus the projects I've implemented for some of the lessons!</mark>
-    </p>
-    <a class="nodecor inherit" routerLink="about"><span class="niceblue customButton lead">Learn more!</span></a>
+    <div>
+        <p>I started this project along with my Angular course and I update it constantly.</p>
+        <p>Here you can find my solutions on exercise ideas I came up with during the 
+            course plus the projects I've implemented for some of the lessons!
+        </p>
+        <app-custom-button>learn more!</app-custom-button>
+    </div>
 </section>
 
 <section class="container pt-5 mt-5 mb-5">
-    <h1 class="niceblue mb-5"><mark>Angular Sections</mark></h1> 
+    <h1 class="mb-5">Angular Sections</h1> 
     <div class="row">
         <div *ngFor="let card of homeCards let i = index" 
             class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
@@ -43,7 +45,7 @@
 </section>
 
 <section class="container mt-5 mb-5">
-    <h1 class="niceblue mb-5"><mark>Angular Projects</mark></h1> 
+    <h1 class="mb-5">Angular Projects</h1> 
     <div class="row">
         <div *ngFor="let project of projectCards let i = index" 
             class="mb-5 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-6">
@@ -51,7 +53,7 @@
                 <a routerLink="{{ project.link }}" class="stretched-link">
                     <img class="cardimage" src="{{project.img}}" alt="Angular Project banner">
                 </a>
-                <div class="p-3 pb-0 niceblue">
+                <div class="p-3 pb-0">
                     <div class="row">
                         <div class="col-1">
                             <h4>{{ i + 1 }}.</h4>

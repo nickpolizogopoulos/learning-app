@@ -5,11 +5,11 @@ import { Component } from '@angular/core';
   selector: 'app-fourteen-animations',
   template: `
   
-    <h2 [@title]><mark>Animations - 2 Lessons.</mark></h2>
+    <h2 [@title]>Animations - 2 Lessons.</h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
-          <app-one-basic-animation [@first] class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-one-basic-animation>
-          <app-two-void-state class="lessonbox col-md-6 col-lg-5 col-xxl-3"></app-two-void-state>
+          <app-one-basic-animation [@first] class="lessonbox col-md-6 col-lg-5 col-xxl-3" />
+          <app-two-void-state class="lessonbox col-md-6 col-lg-5 col-xxl-3" />
       </div>
     </section>
   

@@ -6,7 +6,14 @@ import { PitesService } from './pites.service';
 @Component({
   selector: 'app-greek-gyro-pita-order-maker',
   templateUrl: './greek-gyro-pita-order-maker.component.html',
-  styles: [` .btn-close { padding: 32px; }`]
+  styles: [` 
+
+    .btn-close { 
+      padding: 32px;
+    }`
+
+  ],
+  styleUrls: ['../projects.css']
 })
 export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
 

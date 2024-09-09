@@ -16,10 +16,7 @@ interface Contact {
 })
 export class TwoPostRequestComponent implements OnInit {
 
-  databaseLink:string = 'https://http-contacts-default-rtdb.firebaseio.com';
-  folder:string = '/contacts';
-  json:string = '.json';
-  url:string = this.databaseLink + this.folder + this.json;
+  url:string = 'https://http-contacts-default-rtdb.firebaseio.com/contacts.json';
   dummyText:boolean = true;
 
   contacts:Contact[] = [];
@@ -82,7 +79,7 @@ export class TwoPostRequestComponent implements OnInit {
 
   onDeleteContact( id:Contact['id'] ) {
     this.http
-      .delete(this.databaseLink + this.folder + '/' + id + this.json)
+      .delete ('https://http-contacts-default-rtdb.firebaseio.com/contacts/' + id + '.json')
       .subscribe(() => {
         this.fetchList()
     })

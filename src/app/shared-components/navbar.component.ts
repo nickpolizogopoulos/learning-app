@@ -25,7 +25,7 @@ import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '.
                       <ul class="dropdown-menu">
                           <li *ngFor="let section of angularSections let i = index">
                               <a class="dropdown-item section-link"
-                              routerLink="{{section.link}}">{{ i + 1 }}. {{section.name}}
+                                routerLink="{{section.link}}">{{ i + 1 }}. {{section.name}}
                               </a>
                           </li>
                       </ul>

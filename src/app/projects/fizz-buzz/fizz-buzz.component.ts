@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-fizz-buzz',
   templateUrl: './fizz-buzz.component.html',
-  styles: [``]
+  styleUrls: ['../projects.css']
 })
 export class FizzBuzzComponent {
 

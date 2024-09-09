@@ -21,7 +21,6 @@ interface AlbumProps {
 
 @Component({
   selector: 'app-one-get-request',
-  // templateUrl: './one-albums-list.component.html',
   template: `
   
     <h4>1. Requesting data with the .get( ) method.</h4>
