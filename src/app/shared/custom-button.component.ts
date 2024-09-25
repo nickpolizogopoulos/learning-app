@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-custom-button',
   template: `
   
     <div>
-      <a class="nodecor inherit" routerLink="about">
+      <a class="nodecor inherit" routerLink="/{{ path }}">
         <span class="customButton lead">
           <ng-content />
         </span>
@@ -55,4 +55,8 @@ import { Component } from '@angular/core';
     
   `]
 })
-export class CustomButtonComponent {}
+export class CustomButtonComponent {
+
+  @Input() path?:string;
+
+}
