@@ -43,6 +43,4 @@ import { Component } from '@angular/core';
     
   `]
 })
-export class LoaderSpinnerComponent {
-
-}
+export class LoaderSpinnerComponent {}

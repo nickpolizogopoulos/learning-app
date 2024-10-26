@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -30,26 +31,25 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </div>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class FourNgIfComponent {
   
-  healthyFood = false;
-  realFood = false;
+  healthyFood: boolean = false;
+  realFood: boolean = false;
 
 
-  onHealthySelect() {
+  onHealthySelect(): void {
     this.healthyFood = true;
     this.realFood = false;
   }
 
-  onRealSelect() {
+  onRealSelect(): void {
     this.healthyFood = false;
     this.realFood = true;
   }
 
-  onClose() {
+  onClose(): void {
     this.healthyFood = false;
     this.realFood = false;
   }

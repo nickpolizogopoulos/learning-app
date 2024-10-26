@@ -12,9 +12,6 @@ import { Component } from '@angular/core';
         </div>
     </section>
     
-  `,
-  styles: [``]
+  `
 })
-export class FourServicesDependencyInjectionComponent {
-
-}
+export class FourServicesDependencyInjectionComponent {}

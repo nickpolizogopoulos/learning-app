@@ -1,13 +1,18 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ItemProps } from '../one-passing-data-between-components.component';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
 
+import { type ListItem } from '../one-passing-data-between-components.component';
 
 @Component({
   selector: 'app-list',
   template: `
   
     <div class="wishBox alert alert-dismissible align-items-center">
-      <ng-content></ng-content>
+      <ng-content />
       <button (click)="deleteItem()" type="button" class="btn-close shadow-none"></button>
     </div>
   
@@ -25,15 +30,11 @@ import { ItemProps } from '../one-passing-data-between-components.component';
 })
 export class ListComponent {
 
-  // element has the 'Definite Assignment Assertion' => !
-  // to tell typescript that this variable will have
-  // a value at runtime.
-  @Input() listItem?:ItemProps;
-  @Output() onDeleteItem = new EventEmitter<Function>()
+  @Input() listItem?: ListItem;
+  @Output() onDeleteItem = new EventEmitter<void>();
 
-  deleteItem():void {
-    this.onDeleteItem.emit(
-      () => {}
-    ) 
-  }  
+  deleteItem(): void {
+    this.onDeleteItem.emit();
+  }
+
 }

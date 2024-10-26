@@ -16,9 +16,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   
-  `,
-  styles: [``]
+  `
 })
-export class PageNotFoundComponent { 
-  
-}
+export class PageNotFoundComponent {}

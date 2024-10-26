@@ -1,5 +1,13 @@
-import { createReducer, on } from "@ngrx/store";
-import { macSelected, noneSelected, windowsSelected } from "./macWindows.actions";
+import {
+  createReducer,
+  on
+} from "@ngrx/store";
+
+import {
+  macSelected,
+  noneSelected,
+  windowsSelected
+} from "./macWindows.actions";
 
 const initialState = 'empty';
 

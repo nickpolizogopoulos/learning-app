@@ -1,12 +1,16 @@
 import { NgModule } from "@angular/core";
-import { ExtraOptions, RouterModule, Routes } from "@angular/router";
+import { 
+    ExtraOptions,
+    RouterModule,
+    Routes
+} from "@angular/router";
 
-//APP PAGES
-import { AboutComponent } from "./shared-components/about.component";
+//* APP PAGES
+import { AboutComponent } from "./pages/about.component";
 import { HomeComponent } from "./home/home.component";
-import { PageNotFoundComponent } from "./shared-components/page-not-found.component";
+import { PageNotFoundComponent } from "./pages/page-not-found.component";
 
-//APP SECTIONS
+//* APP SECTIONS
 import { OneTheBasicsComponent } from "./sections/one-the-basics/one-the-basics.component";
 import { TwoComponentsDatabindingComponent } from "./sections/two-components-databinding/two-components-databinding.component";
 import { ThreeDirectivesComponent } from "./sections/three-directives/three-directives.component";
@@ -21,7 +25,7 @@ import { ElevenStandaloneComponentsComponent } from "./sections/eleven-standalon
 import { TwelveSignalsComponent } from "./sections/twelve-signals/twelve-signals.component";
 import { ThirteenNgrxComponent } from "./sections/thirteen-ngrx/thirteen-ngrx.component";
 
-//APP PROJECTS
+//* APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
 import { SuperSignatureMakerComponent } from "./projects/super-signature-maker/super-signature-maker.component";
 import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping-list.component";
@@ -29,7 +33,11 @@ import { FizzBuzzComponent } from "./projects/fizz-buzz/fizz-buzz.component";
 import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component";
 import { FourteenAnimationsComponent } from "./sections/fourteen-animations/fourteen-animations.component";
 
-const appTitle:string = 'Learning Angular -';
+const appTitle: string = 'Learning Angular - ';
+
+const getTitle = ( pageTitle: string ): string => {
+    return appTitle + pageTitle;
+};
 
 const appRoutes: Routes = [
 
@@ -41,112 +49,112 @@ const appRoutes: Routes = [
     },
     { 
         path: 'about', 
-        title: `${appTitle} About`, 
+        title: getTitle('About'), 
         component: AboutComponent 
     },
     
     { 
-        path: 'the-basics', 
-        title: `${appTitle} The Basics`, 
+        path: 'the-basics',
+        title: getTitle('The Basics'), 
         component: OneTheBasicsComponent 
     },
     { 
-        path: 'components-databinding', 
-        title: `${appTitle} Components & Databinding`, 
+        path: 'components-databinding',
+        title: getTitle('Components & Databinding'),
         component: TwoComponentsDatabindingComponent 
     },
     { 
         path: 'directives', 
-        title: `${appTitle} Directives`, 
+        title: getTitle('Directives'),
         component: ThreeDirectivesComponent 
     },
     { 
         path: 'services', 
-        title: `${appTitle} Services`, 
+        title: getTitle('Services'), 
         component: FourServicesDependencyInjectionComponent 
     },
     { 
         path: 'rxjs-observables', 
-        title: `${appTitle} Observables`, 
+        title: getTitle('Observables'),
         component: FiveObservablesComponent 
     },
     { 
         path: 'forms', 
-        title: `${appTitle} Forms`, 
+        title: getTitle('Forms'),
         component: SixFormsComponent 
     },
     { 
         path: 'pipes', 
-        title: `${appTitle} Pipes`, 
+        title: getTitle('Pipes'),
         component: SevenPipesComponent 
     },
     { 
-        path: 'http-requests', 
-        title: `${appTitle} Http Requests`, 
+        path: 'http-requests',
+        title: getTitle('Http Requests'),
         component: EightHttpRequestsComponent
      },
     { 
-        path: 'authentication-route-protection', 
-        title: `${appTitle} Authentication`, 
+        path: 'authentication-route-protection',
+        title: getTitle('Authentication'),
         component: NineAuthenticationRouteProtectionComponent 
     },
     { 
         path: 'dynamic-components', 
-        title: `${appTitle} Dynamic Components`, 
+        title: getTitle('Dynamic Components'),
         component: TenDynamicComponentsComponent 
     },
     { 
         path: 'standalone-components', 
-        title: `${appTitle} Standalone Components`, 
+        title: getTitle('Standalone Components'),
         component: ElevenStandaloneComponentsComponent 
     },
     { 
         path: 'signals', 
-        title: `${appTitle} Signals`, 
+        title: getTitle('Signals'),
         component: TwelveSignalsComponent 
     },
     { 
         path: 'ngrx', 
-        title: `${appTitle} NgRx`, 
+        title: getTitle('NgRx'),
         component: ThirteenNgrxComponent 
     },
     { 
-        path: 'animations', 
-        title: `${appTitle} Animations`, 
+        path: 'animations',
+        title: getTitle('Animations'),
         component: FourteenAnimationsComponent 
     },
   
     //* PROJECTS -------------------------------
     { 
         path: 'project-to-do-application', 
-        title: `${appTitle} To-Do App`,
+        title: getTitle('To-Do App'),
          component: ToDoAppComponent 
     },
     { 
-        path: 'project-super-signature-maker', 
-        title: `${appTitle} Super Signature Maker`,
-         component: SuperSignatureMakerComponent 
+        path: 'project-super-signature-maker',
+        title: getTitle('Super Signature Maker'),
+        component: SuperSignatureMakerComponent 
     },
     { 
         path: 'project-shopping-list',
-         title: `${appTitle} Shopping List App`,
-          component: MyShoppingListComponent
+        title: getTitle('Shopping List App'),
+        component: MyShoppingListComponent
     },
     { 
         path: 'project-fizzbuzz', 
-        title: `${appTitle} FizzBuzz`, 
+        title: getTitle('FizzBuzz'),
         component: FizzBuzzComponent 
     },
     { 
         path: 'project-pita-gyro', 
-        title: `${appTitle} Greek Pita Gyro Order Maker`, 
+        title: getTitle('Greek Pita Gyro Order Maker'),
         component: GreekGyroPitaOrderMakerComponent 
     },
     
     //* 404 -------------------------------
     { 
         path: '404', 
-        title: `${appTitle} 404`, 
+        title: getTitle('404'),
         component: PageNotFoundComponent 
     },
     { 

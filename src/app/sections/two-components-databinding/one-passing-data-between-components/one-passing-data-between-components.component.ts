@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
-export interface ItemProps {
+export type ListItem = {
   name: string;
   description: string;
   type: 'immediate' | 'future'
@@ -8,37 +8,45 @@ export interface ItemProps {
 
 @Component({
   selector: 'app-one-passing-data-between-components',
-  templateUrl: './one-passing-data-between-components.component.html',
-  styles: [``]
+  templateUrl: './one-passing-data-between-components.component.html'
 })
 export class OnePassingDataBetweenComponentsComponent {
 
-  wishList:ItemProps[] = [
-    { name: 'Backpack', description: 'For carrying important files.', type: 'immediate' },
-    { name: 'Sleeping bag', description: 'For the winter.', type: 'future' },
+  wishList: ListItem[] = [
+    { 
+      name: 'Backpack',
+      description: 'For carrying important files.',
+      type: 'immediate'
+    },
+    {
+      name: 'Sleeping bag',
+      description: 'For the winter.',
+      type: 'future'
+    }
   ];
   
-  onImmediateAdded(itemData:ItemProps):void {
+  onImmediateAdded( itemData: ListItem ): void {
     this.wishList.push({
       name: itemData.name,
       description: itemData.description,
       type: itemData.type 
-    })
+    });
   }
   
-  onFutureAdded(itemData:ItemProps):void {
+  onFutureAdded( itemData: ListItem ): void {
     this.wishList.push({
       name: itemData.name,
       description: itemData.description,
       type: itemData.type 
-    })
+    });
   }
   
-  onClearList():void {
+  onClearList(): void {
     this.wishList.length = 0;
   }
-  onDeleteItem( i:number ):void {
-    this.wishList.splice( i, 1 )
+
+  onDeleteItem( i: number ): void {
+    this.wishList.splice( i, 1 );
   }
 
 }

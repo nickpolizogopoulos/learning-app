@@ -1,12 +1,15 @@
-import { createAction, props } from "@ngrx/store";
+import {
+    createAction,
+    props
+} from "@ngrx/store";
 
-interface ActionProps {
+type ActionProps = {
     value:number;
 }
 
-const oneINCREMENT:string = '[oneCounter] Increment';
-const oneDECREMENT:string = '[oneCounter] Decrement';
-const oneRESET:string = '[oneCounter] Reset';
+const oneINCREMENT: string = '[oneCounter] Increment';
+const oneDECREMENT: string = '[oneCounter] Decrement';
+const oneRESET: string = '[oneCounter] Reset';
 
 export const incrementAction = createAction(
     oneINCREMENT,

@@ -93,14 +93,12 @@ import { Component } from '@angular/core';
         margin: 45px 0px 45px 30px;
         border-left: 2px solid rgba(36, 54, 99, 0.6);
         padding: 5px 0px 5px 15px;
-        p {
+        
+        & p {
             margin-bottom: 5px;
         }
     }
 
-  
   `]
 })
-export class AboutComponent {
-  
-}
+export class AboutComponent {}

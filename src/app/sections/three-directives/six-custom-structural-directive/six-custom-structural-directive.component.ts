@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
 @Component({
   selector: 'app-six-custom-structural-directive',
   templateUrl: './six-custom-structural-directive.component.html',
@@ -9,27 +11,30 @@ import { Component } from '@angular/core';
       color: inherit;
       font-size: 17px;
     }
+
     .emojiImg {
       height: 30px;
       width: auto;
     }
 
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class SixCustomStructuralDirectiveComponent {
 
-  firstResponse:boolean = false;
-  secondResponse:boolean = false;
-  lieDetector:boolean = false;
-  okYesBtn:boolean = false;
-  btnOne:boolean = true;
-  btnTwo:boolean = true;
+  firstResponse: boolean = false;
+  secondResponse: boolean = false;
+  lieDetector: boolean = false;
+  okYesBtn: boolean = false;
+  btnOne: boolean = true;
+  btnTwo: boolean = true;
 
-  onYes() {
+  onYes(): void {
     this.firstResponse = true;
     this.secondResponse = false;
   }
-  onNo() {
+
+  onNo(): void {
     this.firstResponse = false;
     this.secondResponse = false;
     this.lieDetector = true;
@@ -40,13 +45,15 @@ export class SixCustomStructuralDirectiveComponent {
       this.okYesBtn = true;
     }, 3000)
   }
-  onOkYesClick() {
+
+  onOkYesClick(): void {
     this.secondResponse = true;
     this.okYesBtn = false;
     this.btnOne = true;
     this.btnTwo = true;
   }
-  onReset() {
+
+  onReset(): void {
     this.firstResponse = false;
     this.secondResponse = false;
   }

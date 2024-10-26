@@ -9,16 +9,14 @@
 </div>
 <div class="row mt-4">
     <div class="col-3">
-        <app-loader-spinner *ngIf="announcement"></app-loader-spinner>
+        <app-loader-spinner *ngIf="announcement" />
     </div>
     <div class="col">
         <code *ngIf="announcement">
-            <em class="lead">
-                {{ announcement }}
-            </em>
+            <em class="lead">{{ announcement }}</em>
         </code>
     </div>
     <code *ngIf="mimironsQuote"><em class="lead">{{ mimironsQuote }}</em></code>
-    <app-line-loader *ngIf="mimironsQuote" ></app-line-loader>
+    <app-line-loader *ngIf="mimironsQuote" />
 </div>
-<app-custom-alert *ngIf="alertMessage" (close)="alertClose()" [message]="alertMessage" [quote]="alertQuote"></app-custom-alert>
+<app-custom-alert *ngIf="alertMessage" (close)="alertClose()" [message]="alertMessage" [quote]="alertQuote" />

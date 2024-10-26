@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export interface ShoppingItemProps {
+export type ShoppingItem = {
   name:string;
   quantity:number;
   comment:string;
@@ -11,13 +11,13 @@ export interface ShoppingItemProps {
   selector: 'app-my-shopping-list',
   templateUrl: './my-shopping-list.component.html',
   styleUrls: [
-    './my-shopping-list.component.css', 
-    '../projects.css'
+    './my-shopping-list.component.scss', 
+    '../projects.scss'
   ]
 })
 export class MyShoppingListComponent {
 
-  foodList:ShoppingItemProps[] = [
+  foodList: ShoppingItem[] = [
     {
       name: 'Tomatoes',
       quantity: 5,
@@ -31,7 +31,7 @@ export class MyShoppingListComponent {
       type: 'food'
     }
   ]
-  homeList:ShoppingItemProps[] = [
+  homeList: ShoppingItem[] = [
     {
       name: 'Cleaning Gloves',
       quantity: 15,
@@ -43,80 +43,105 @@ export class MyShoppingListComponent {
       quantity: 2,
       comment: 'For cleaning',
       type: 'home'
-    },
-  ]
+    }
+  ];
 
-  onFoodItemAdded(itemData:ShoppingItemProps):void {
+  onFoodItemAdded( itemData: ShoppingItem ): void {
     this.foodList.push({
       name: itemData.name,
       quantity: itemData.quantity,
       comment: itemData.comment,
       type: 'food'
-    })
+    });
   }
-  onHomeItemAdded(itemData:ShoppingItemProps):void {
+
+  onHomeItemAdded( itemData: ShoppingItem ): void {
     this.homeList.push({
       name: itemData.name,
       quantity: itemData.quantity,
       comment: itemData.comment,
       type: 'home'
-    })
+    });
   }
-  onListsClear() {
+
+  onListsClear(): void {
     this.foodList.length = 0;
     this.homeList.length = 0;
   }
-  onDeleteFoodItem(index:number):void {
-    this.foodList.splice(index, 1)
+
+  onDeleteFoodItem( index: number ): void {
+    this.foodList.splice(index, 1);
   }
-  onDeleteHomeItem(index:number):void {
-    this.homeList.splice(index, 1)
+
+  onDeleteHomeItem( index: number ): void {
+    this.homeList.splice(index, 1);
   }
-  onMoveFoodItem(index:number, item:ShoppingItemProps):void {
-    this.foodList.splice(index, 1)
-    this.homeList.push(item)
+
+  onMoveFoodItem( index: number, item: ShoppingItem): void {
+    this.foodList.splice(index, 1);
+    this.homeList.push(item);
   }
-  onMoveHomeItem(index:number, item:ShoppingItemProps):void {
-    this.homeList.splice(index, 1)
-    this.foodList.push(item)
+
+  onMoveHomeItem( index: number, item: ShoppingItem): void {
+    this.homeList.splice(index, 1);
+    this.foodList.push(item);
   }
-  foodLengthMessage():string {
-    return (this.foodList.length === 0) ? `the list is empty` 
-    : (this.foodList.length === 1)
-    ? `${this.foodList.length} item in the list`
-    : `${this.foodList.length} items in the list`;
+
+  foodLengthMessage(): string {
+    return (
+      (this.foodList.length === 0) 
+      ? `the list is empty` 
+      : (this.foodList.length === 1)
+      ? `${this.foodList.length} item in the list`
+      : `${this.foodList.length} items in the list`
+    );
   }
-  homeLengthMessage():string {
-    return (this.homeList.length === 0) ? `the list is empty` 
-    : (this.homeList.length === 1)
-    ? `${this.homeList.length} item in the list`
-    : `${this.homeList.length} items in the list`;
+
+  homeLengthMessage(): string {
+    return (
+      (this.homeList.length === 0)
+      ? `the list is empty` 
+      : (this.homeList.length === 1)
+      ? `${this.homeList.length} item in the list`
+      : `${this.homeList.length} items in the list`
+    );
   }
-  foodTotalQuantity():number {
+
+  foodTotalQuantity(): number {
     let foodQuantity = 0;
+
     for (let item of this.foodList)
-      foodQuantity += item.quantity
+      foodQuantity += item.quantity;
+
     return foodQuantity;
   }
-  homeTotalQuantity():number {
+
+  homeTotalQuantity(): number {
     let homeQuantity = 0;
+
     for (let item of this.homeList)
-      homeQuantity += item.quantity
+      homeQuantity += item.quantity;
+
     return homeQuantity;
   }
-  onClearFoodList():void {
+
+  onClearFoodList(): void {
     this.foodList.length = 0;
   }
-  onClearHomeList():void {
+
+  onClearHomeList(): void {
     this.homeList.length = 0;
   }
-  removeLastFoodList():void {
-    this.foodList.pop()
+
+  removeLastFoodList(): void {
+    this.foodList.pop();
   }
-  removeLastHomeList():void {
-    this.homeList.pop()
+
+  removeLastHomeList(): void {
+    this.homeList.pop();
   }
-  addTwoFood():void {
+
+  addTwoFood(): void {
     this.foodList.push(
       {
         name: 'Carrots',
@@ -130,9 +155,10 @@ export class MyShoppingListComponent {
         comment: 'for the weekend.',
         type: 'food'
       }
-    )
+    );
   }
-  addTwoHome():void {
+
+  addTwoHome(): void {
     this.homeList.push(
       {
         name: 'Carpet',
@@ -146,6 +172,7 @@ export class MyShoppingListComponent {
         comment: 'kitchen tools.',
         type: 'home'
       }
-    )
+    );
   }
+
 }

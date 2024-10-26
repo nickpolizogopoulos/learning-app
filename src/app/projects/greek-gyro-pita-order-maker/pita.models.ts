@@ -1,4 +1,5 @@
-export interface Pita {
+
+export type Pita = {
     name:string;
     quantity:number;
     mainIngredient:string;
@@ -11,11 +12,11 @@ export interface Pita {
     id?:string;
 }
 
-export interface Additionals {
+export type Additionals = {
     name:string;
     text:string;
 }
 
-export interface Quantity {
+export type Quantity = {
     value:string;
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -30,16 +31,16 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
       {{ data | uppercase }}
     </p>
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class OneSimpleTransformationComponent {
 
-  data:string = 'With just a symbol and a keyword???';
-  quote:string = 'Το ζω, απλά.';
-  quoteVisible:boolean = false;
+  data: string = 'With just a symbol and a keyword???';
+  quote: string = 'Το ζω, απλά.';
+  quoteVisible: boolean = false;
 
-  onChangeVisibility():void {
+  onChangeVisibility(): void {
     this.quoteVisible = !this.quoteVisible;
   }
+  
 }

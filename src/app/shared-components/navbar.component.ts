@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  SectionsAndProjectsService,
+  type ExternalLink,
+  type SectionsAndProjects
+} from '../shared/sections-and-projects.service';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-header',
   template: `
   
     <nav class="navbar navbar-expand-lg">
@@ -25,8 +32,8 @@ import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '.
                       <ul class="dropdown-menu">
                           <li *ngFor="let section of angularSections let i = index">
                               <a class="dropdown-item section-link"
-                                routerLink="{{section.link}}">{{ i + 1 }}. {{section.name}}
-                              </a>
+                              routerLink="{{ section.link }}">{{ i + 1 }}. {{section.name}}
+                            </a>
                           </li>
                       </ul>
                   </li>
@@ -38,13 +45,13 @@ import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '.
                       <ul class="dropdown-menu">
                           <li *ngFor="let project of angularProjects let i = index">
                               <a class="dropdown-item section-link"
-                              routerLink="{{project.link}}">{{ i + 1 }}. {{project.name}}
+                              routerLink="{{ project.link }}">{{ i + 1 }}. {{project.name}}
                               </a>
                           </li>
                       </ul>
                   </li>
                   <li *ngFor="let link of navLinks" class="me-4 nav-item lead">
-                      <a class="nav-link active" routerLink="{{link.link}}">{{link.name}}</a>
+                      <a class="nav-link active" routerLink="{{ link.link }}">{{link.name}}</a>
                   </li>
                   <li *ngFor="let link of externalLinks" class="me-4 nav-item lead">
                       <a class="nav-link active" href="{{link.link}}" target="_blank">{{link.name}}</a>
@@ -65,14 +72,14 @@ import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '.
     .section-link {
       font-size: 17px;
       padding: 10px 20px;
-    }
 
-    .section-link:hover {
-      background-color: rgb(231, 231, 231);
-    }
-    
-    .section-link:focus {
-      color: rgb(36, 54, 99);
+      &:hover {
+        background-color: rgb(231, 231, 231);
+      }
+
+      &:focus {
+        color: rgb(36, 54, 99);
+      }
     }
     
   `]
@@ -80,22 +87,25 @@ import { ExternalLink, SectionsAndProjects, SectionsAndProjectsService } from '.
 export class NavbarComponent implements OnInit {
  
   constructor(
-    private sections:SectionsAndProjectsService
-  ) { }
+    private sections: SectionsAndProjectsService
+  ) {}
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.angularSections = this.sections.getSections();
     this.angularProjects = this.sections.getProjects();
     this.externalLinks = this.sections.getLinks();
   }
 
-  angularSections:SectionsAndProjects[] = [];
-  angularProjects:SectionsAndProjects[] = [];
-  externalLinks:ExternalLink[] = [];
+  angularSections: SectionsAndProjects[] = [];
+  angularProjects: SectionsAndProjects[] = [];
+  externalLinks: ExternalLink[] = [];
+
+  get navLinks(): ExternalLink[] {
+    return [ ...this.links ];
+  }
     
   // * NAVBAR LINKS 
-  navLinks = [
-
+  private links = [
     {
       name: 'Home',
       link: '/'
@@ -103,8 +113,7 @@ export class NavbarComponent implements OnInit {
     {
       name: 'About',
       link: '/about'
-    },
-
+    }
   ];
   
 }

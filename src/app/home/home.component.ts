@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SectionsAndProjects, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
   constructor(
-    private sections:SectionsAndProjectsService
+    private sections: SectionsAndProjectsService
   ) {}
 
-  ngOnInit():void {
-    this.homeCards = this.sections.angularSections;
-    this.projectCards = this.sections.angularProjects;
+  ngOnInit(): void {
+    this.homeCards = this.sections.getSections();
+    this.projectCards = this.sections.getProjects();
   }
 
-  homeCards:SectionsAndProjects[] = [];
-  projectCards:SectionsAndProjects[] = [];
+  homeCards: SectionsAndProjects[] = [];
+  projectCards: SectionsAndProjects[] = [];
 
 }

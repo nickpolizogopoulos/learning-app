@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -34,21 +35,20 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
   `,
   styles: [`
   
-  .emojiImg {
-    height: 45px;
-    width: 45px;
-  }
+    .emojiImg {
+      height: 45px;
+      width: 45px;
+    }
+
   `],
   host: lessonHostClasses
 })
 export class FiveNgIfElseComponent {
   
-  statement:boolean = false;
+  statement: boolean = false;
 
-  onClick():void {
+  onClick(): void {
     this.statement = !this.statement;
   }
-
-
 
 }

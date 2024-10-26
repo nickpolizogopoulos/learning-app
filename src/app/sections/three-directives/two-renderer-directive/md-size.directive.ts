@@ -1,4 +1,9 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  OnInit,
+  ElementRef,
+  Renderer2
+} from '@angular/core';
 
 @Directive({
   selector: '[appMdSize]'
@@ -6,12 +11,12 @@ import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 export class MdSizeDirective implements OnInit {
 
   constructor(
-    private element:ElementRef,
+    private element: ElementRef,
     private renderer: Renderer2
-  ) { }
+  ) {}
 
-  ngOnInit() {
-    this.renderer.setStyle(this.element.nativeElement, 'fontSize', '20px' )
+  ngOnInit(): void {
+    this.renderer.setStyle( this.element.nativeElement, 'fontSize', '20px' );
   }
 
 }

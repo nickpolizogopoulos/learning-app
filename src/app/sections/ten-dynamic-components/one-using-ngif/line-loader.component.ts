@@ -20,6 +20,7 @@ import { Component } from "@angular/core";
             box-sizing: border-box;
             animation: barStripe 1s linear infinite;
         }
+
         @keyframes barStripe {
             0% {
                 background-position: 1em 0;
@@ -28,8 +29,7 @@ import { Component } from "@angular/core";
                 background-position: 0 0;
             }
         }
+
     `]
 })
-export class LineLoaderComponent {
-
-}
+export class LineLoaderComponent {}

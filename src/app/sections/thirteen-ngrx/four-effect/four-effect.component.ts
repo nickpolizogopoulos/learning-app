@@ -1,6 +1,10 @@
-import { Component, OnInit} from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
 import {
   Counter, 
   decrement, 
@@ -10,6 +14,7 @@ import {
   selectCount, 
   selectDoubleCount 
 } from './store-all-in-one';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-four-effect',
@@ -49,33 +54,34 @@ import {
       margin-bottom: 2px;
     }
     
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class FourEffectComponent implements OnInit {
 
   constructor(
-    private store:Store<Counter>
+    private store: Store<Counter>
   ) {
     this.count$ = this.store.select( selectCount );
     this.doubleCount$ = this.store.select( selectDoubleCount );
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.store.dispatch( init() );
   }
   
   count$!:Observable<number>;
   doubleCount$!:Observable<number>;
 
-  increment():void {
+  increment(): void {
     this.store.dispatch( increment( {value:1} ) );
   }
 
-  decrement():void {
+  decrement(): void {
     this.store.dispatch( decrement( {value:1} ) );
   }
 
-  reset():void {
+  reset(): void {
     this.store.dispatch( reset( {value:0} ) );
   }
 }

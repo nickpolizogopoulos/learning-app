@@ -16,9 +16,6 @@ import { Component } from '@angular/core';
       </div>
     </section>  
   
-  `,
-  styles: [``]
+  `
 })
-export class EightHttpRequestsComponent {
-
-}
+export class EightHttpRequestsComponent {}

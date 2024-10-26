@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 
-export interface SectionsAndProjects {
-  name:string;
-  link:string;
-  img:string;
+export type SectionsAndProjects = {
+  name: string;
+  link: string;
+  img: string;
   description:string;
 };
 
-export interface ExternalLink {
-  name:string;
-  link:string;
+export type ExternalLink = {
+  name: string;
+  link: string;
 };
 
 @Injectable({
@@ -17,12 +17,12 @@ export interface ExternalLink {
 })
 export class SectionsAndProjectsService {
 
-  getImagePath( section:string ):string {
+  getImagePath( section: string ): string {
     return `../../assets/images/home-images/${section}-banner-image.jpg`;
   }
 
-  sectionImage:string = this.getImagePath('angular');
-  projectImage:string = this.getImagePath('project');
+  sectionImage: string = this.getImagePath('angular');
+  projectImage: string = this.getImagePath('project');
 
   getSections(): SectionsAndProjects[] {
     return this.angularSections.slice();
@@ -36,10 +36,8 @@ export class SectionsAndProjectsService {
     return this.externalNavLinks.slice();
   }
 
-  constructor() {}
-
   //**ANGULAR LESSON SECTIONS
-  angularSections:SectionsAndProjects[] = [
+  private angularSections: SectionsAndProjects[] = [
     { 
       name: 'The Basics', 
       link: 'the-basics',
@@ -140,13 +138,11 @@ export class SectionsAndProjectsService {
       link: 'animations',
       img: this.sectionImage,
       description: `Basic Animation triggering, state switching, "Void" and "Wildcard" states!`
-    },
-
-    
-  ]
+    }
+  ];
 
   //**ANGULAR PROJECTS
-  angularProjects:SectionsAndProjects[] = [
+  private angularProjects: SectionsAndProjects[] = [
     {
       name: 'To Do Application',
       link: '/project-to-do-application',
@@ -180,12 +176,11 @@ export class SectionsAndProjectsService {
       img: this.projectImage,
       description: `Your family wants to order Greek Pita Gyro 
       today. This app will make it easy for you. Let's go!`
-    },
-
-  ]
+    }
+  ];
 
   //**MENU BAR LINKS
-  externalNavLinks:ExternalLink[] = [
+  private externalNavLinks: ExternalLink[] = [
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/nickpolizogopoulos'
@@ -194,6 +189,6 @@ export class SectionsAndProjectsService {
       name: 'Source Code',
       link: 'https://github.com/nickpolizogopoulos/learning-app'
     },
-  ]
+  ];
 
 }

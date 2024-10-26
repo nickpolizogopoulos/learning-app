@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import {
+  Observable,
+  map
+} from 'rxjs';
+
 import { getFirebaseEndpoint } from '../http-utilities';
 
-export interface Tools {
+export type Tools = {
   name:string;
   extension:string;
   year:number;
@@ -19,13 +23,13 @@ export interface Tools {
 export class ToolsService {
 
   constructor(
-    private http:HttpClient,
-  ) { }
+    private http: HttpClient,
+  ) {}
 
-  private url:string = getFirebaseEndpoint('languages');
-  message:string = 'Loading...';
+  private url: string = getFirebaseEndpoint('languages');
+  message: string = 'Loading...';
 
-  fetchTools() {
+  fetchTools(): Observable<Tools[]> {
     return this.http
       .get <{[key:string]:Tools}> (this.url)
       .pipe(

@@ -1,5 +1,12 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -61,24 +68,24 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
 })
 export class TwoVoidStateComponent {
   
-  timer = 1000;
+  timer: number = 1000;
 
-  submitted:boolean = false;
-  paragraph:string | null = null;
-  title:string = 'My Note:';
-  alert:boolean = false;
+  submitted: boolean = false;
+  paragraph: string | null = null;
+  title: string = 'My Note:';
+  alert: boolean = false;
 
-  onDummyNote():void {
+  onDummyNote(): void {
     this.title = 'Useless Fact:'
     this.paragraph = 'On average, a human being will spend up to two weeks kissing in their lifetime.'
     this.onSubmit();
   }
 
-  onCloseAlert():void { 
+  onCloseAlert(): void { 
     this.alert = false;
   }
 
-  onSubmit():void {
+  onSubmit(): void {
     if (!this.paragraph || this.paragraph.trim() === '') {
       this.alert = true;
       return;
@@ -87,9 +94,10 @@ export class TwoVoidStateComponent {
     this.onCloseAlert();
   }
 
-  onDelete():void {
+  onDelete(): void {
     this.paragraph = null;
     this.submitted = false;
     this.title = 'My Note:';
   }
+  
 }

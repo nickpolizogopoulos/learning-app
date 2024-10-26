@@ -1,24 +1,28 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ShoppingItemProps } from '../my-shopping-list.component';
+import {
+  Component,
+  EventEmitter,
+  Output
+} from '@angular/core';
+
+import { type ShoppingItem } from '../my-shopping-list.component';
 
 @Component({
   selector: 'app-project-form',
   templateUrl: './project-form.component.html',
-  styles: [``]
 })
 export class ProjectFormComponent {
 
-  @Output() foodItem = new EventEmitter<ShoppingItemProps>();
-  @Output() homeItem = new EventEmitter<ShoppingItemProps>();
-  @Output() clearLists = new EventEmitter<Function>();
+  @Output() foodItem = new EventEmitter<ShoppingItem>();
+  @Output() homeItem = new EventEmitter<ShoppingItem>();
+  @Output() clearLists = new EventEmitter<void>();
 
-  alertMessage:boolean = false;
+  alertMessage: boolean = false;
 
   onAddFoodItem(
     name:HTMLInputElement,
     quantity:HTMLInputElement, 
     comment:HTMLInputElement
-    ):void
+  ): void
   {
     if (
       name.value === '' || 
@@ -26,15 +30,17 @@ export class ProjectFormComponent {
       comment.value === ''
       ) {
         this.alertMessage = true;
-        return
+        return;
       } 
     this.alertMessage = false;
-    this.foodItem.emit({
-      name: name.value,
-      quantity: quantity.valueAsNumber,
-      comment: comment.value,
-      type: 'food'
-    });
+    this.foodItem.emit(
+      {
+        name: name.value,
+        quantity: quantity.valueAsNumber,
+        comment: comment.value,
+        type: 'food'
+      }
+    );
     name.value = '';
     quantity.value = '';
     comment.value = '';
@@ -44,7 +50,7 @@ export class ProjectFormComponent {
     name:HTMLInputElement, 
     quantity:HTMLInputElement, 
     comment:HTMLInputElement
-    ):void
+  ): void
   {
     if (
       name.value === '' || 
@@ -52,26 +58,28 @@ export class ProjectFormComponent {
       comment.value === ''
       ) {
         this.alertMessage = true;
-        return
+        return;
       } 
     this.alertMessage = false;
-    this.homeItem.emit({
-      name: name.value,
-      quantity: quantity.valueAsNumber,
-      comment: comment.value,
-      type: 'food'
-    });
+    this.homeItem.emit(
+      {
+        name: name.value,
+        quantity: quantity.valueAsNumber,
+        comment: comment.value,
+        type: 'food'
+      }
+    );
     name.value = '';
     quantity.value = '';
     comment.value = '';
   }
-  onCloseAlert():void {
+
+  onCloseAlert(): void {
     this.alertMessage = false;
   }
-  onClearLists():void {
-    this.clearLists.emit(
-      () => {}
-    )
+
+  onClearLists(): void {
+    this.clearLists.emit();
   }
 
 }

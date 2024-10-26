@@ -1,18 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-template-driven-form',
   templateUrl: './one-template-driven-form.component.html',
-  styles: [``],
   host: lessonHostClasses
 })
 export class OneTemplateDrivenFormComponent {
 
-  @ViewChild('form') form?:NgForm;
-  alertSuccess:boolean = false;
-  mailResults:boolean = false;
+  @ViewChild('form') form?: NgForm;
+  alertSuccess: boolean = false;
+  mailResults: boolean = false;
 
   emailData = {
     name: '',
@@ -22,15 +25,15 @@ export class OneTemplateDrivenFormComponent {
     check: false
   }
 
-  putRandomMessage():void {
+  putRandomMessage(): void {
     const randomMessage = `Hey! I'm reaching out to see how things are going on your end. Drop me a line and let me know you're all good!`;
 
     this.form?.form.patchValue({
       message: randomMessage
-    })
+    });
   }
   
-  onSubmit():void {
+  onSubmit(): void {
     this.mailResults = true;
     console.log(this.form?.value);
 
@@ -41,24 +44,26 @@ export class OneTemplateDrivenFormComponent {
     this.emailData.check = this.form?.value.check;
 
     this.alertSuccess = true;
-    setTimeout(() => {
-      this.alertSuccess = false;
-    }, 1600)
+    setTimeout(() =>
+      this.alertSuccess = false,
+      1600
+    );
     
-    this.form!.reset()
+    this.form!.reset();
   }
 
-  fillTheForm():void {
+  fillTheForm(): void {
     this.form?.setValue({
       name: 'Nick Polizogopoulos',
       email: 'test@test.com',
       priority: 'High',
       message: `Hey! Just wanted to check in and make sure you're doing well. Let me know!`,
       check: true
-    })
+    });
   }
 
-  onCloseInfo():void {
+  onCloseInfo(): void {
     this.mailResults = false;
   }
+  
 }

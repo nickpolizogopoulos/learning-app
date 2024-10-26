@@ -1,42 +1,44 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ItemProps } from '../two-viewchild-and-local-references.component';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
+
+import { type ListItem } from '../two-viewchild-and-local-references.component';
 
 @Component({
   selector: 'app-important',
   templateUrl: './important.component.html',
   styles: [`
   
-  .wishBox {
-    margin-bottom: 14px;
-    border: 1px solid rgba(209, 209, 209, 0.25);
-    border-radius: 3px;
-    box-shadow: 4px 4px 7px #d8d8d8;
-  }
+    .wishBox {
+      margin-bottom: 14px;
+      border: 1px solid rgba(209, 209, 209, 0.25);
+      border-radius: 3px;
+      box-shadow: 4px 4px 7px #d8d8d8;
+    }
   
   `]
 })
 export class ImportantComponent {
 
-  @Output() clearImportantList = new EventEmitter<Function>();
-  @Output() deleteImportantItem = new EventEmitter<Function>();
-  @Output() moveImportantItem = new EventEmitter<Function>();
+  @Output() clearImportantList = new EventEmitter<void>();
+  @Output() deleteImportantItem = new EventEmitter<void>();
+  @Output() moveImportantItem = new EventEmitter<void>();
 
-  @Input() importantListItem!:ItemProps;
+  @Input() importantListItem!: ListItem;
 
-  onClearImportantList() {
-    this.clearImportantList.emit(
-      () => {}
-    )
+  onClearImportantList(): void {
+    this.clearImportantList.emit();
   }
-  onDeleteImportantItem() {
-    this.deleteImportantItem.emit(
-      () => {}
-    )
+
+  onDeleteImportantItem(): void {
+    this.deleteImportantItem.emit();
   }
-  onMoveToUnimportant() {
-    this.moveImportantItem.emit(
-      () => {}
-    )
+
+  onMoveToUnimportant(): void {
+    this.moveImportantItem.emit();
   }
 
 }

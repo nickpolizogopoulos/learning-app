@@ -1,14 +1,19 @@
-import { CommonModule } from '@angular/common';
+import {
+  NgFor,
+  NgIf
+} from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-interface DaysProps {
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
+type Days = {
   name: string;
   dayTitle: string;
-  exercises: ExercisesProps[];
+  exercises: Exercises[];
 }
 
-interface ExercisesProps {
+type Exercises = {
   name: string;
   description: string;
 }
@@ -16,7 +21,11 @@ interface ExercisesProps {
 @Component({
   selector: 'app-two-standalone',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    NgIf,
+    NgFor,
+    FormsModule
+  ],
   template: `
   
     <h4>Standalone Component #2 - Fit Today: Pick Your Workout Plan! </h4>
@@ -47,13 +56,13 @@ interface ExercisesProps {
     </table>
 
   `,
-  styles: [``]
+  host: lessonHostClasses
 })
 export class TwoStandaloneComponent {
 
-  selectedDay:any = 0;
+  selectedDay: any = 0;
 
-  days:DaysProps[] = [
+  days: Days[] = [
     {
       name: 'Monday',
       dayTitle: 'Lower Body Strength Resistance Work',
@@ -82,7 +91,7 @@ export class TwoStandaloneComponent {
       exercises:
       [
         { name: 'Mobility', description: '30 minutes incorporating hip, shoulder, spine and ankle mobility movements' },
-        { name: 'Walk briskly', description: '30 minutes' },
+        { name: 'Walk briskly', description: '30 minutes' }
       ]
     },
     {
@@ -93,7 +102,7 @@ export class TwoStandaloneComponent {
         { name: 'Push-ups', description: 'Three sets of 12 reps' },
         { name: 'Dumbbell chest press', description: 'Three sets of 10 reps' },
         { name: 'Bent-over rows', description: 'Three sets of 10 reps' },
-        { name: 'Tricep dips', description: 'Three sets of 12 reps' },
+        { name: 'Tricep dips', description: 'Three sets of 12 reps' }
       ]
     },
     {
@@ -103,7 +112,7 @@ export class TwoStandaloneComponent {
       [
         { name: 'Jumping jacks', description: 'Three 1-minute sets' },
         { name: 'High knees', description: 'Three 1-minute sets' },
-        { name: 'Full-body burpees & push-ups', description: ' Three 30 second rounds for burpees and push-ups' },
+        { name: 'Full-body burpees & push-ups', description: ' Three 30 second rounds for burpees and push-ups' }
       ]
     },
     {
@@ -112,7 +121,7 @@ export class TwoStandaloneComponent {
       exercises:
       [
         { name: 'Walk or light cycle', description: '20 minutes' },
-        { name: 'Dynamic stretching routine', description: '10 to 15 minutes' },
+        { name: 'Dynamic stretching routine', description: '10 to 15 minutes' }
       ]
     },
     {
@@ -120,18 +129,19 @@ export class TwoStandaloneComponent {
       dayTitle: 'Endurance Cardio',
       exercises:
       [
-        { name: 'Hike, bike or brisk walk', description: '60 to 100 minutes (one hour to about one hour and 40 minutes)' },
+        { name: 'Hike, bike or brisk walk', description: '60 to 100 minutes (one hour to about one hour and 40 minutes)' }
       ]
     }
   ];
 
-  getSelectedDayTitle():string {
-    const selectedDayTitle = this.days.find( day => day.name === this.selectedDay.name )
+  getSelectedDayTitle(): string {
+    const selectedDayTitle = this.days.find( day => day.name === this.selectedDay.name );
     return selectedDayTitle ? selectedDayTitle.dayTitle : '';
   }
 
-  getSelectedDayExercises(): ExercisesProps[] {
+  getSelectedDayExercises(): Exercises[] {
     const selectedDayObject = this.days.find( day => day.name === this.selectedDay.name );
     return selectedDayObject ? selectedDayObject.exercises : [];
   }
+
 }

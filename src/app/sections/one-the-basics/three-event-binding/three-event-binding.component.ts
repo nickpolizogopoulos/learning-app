@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -17,14 +18,13 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p>data : string = '{{ data }}' ;</p>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class ThreeEventBindingComponent {
   
-  data = 'hello!';
+  data: string = 'hello!';
 
-  onInput( event: Event ) {
+  onInput( event: Event ): void {
     this.data = (<HTMLInputElement>event.target).value;
   }
 

@@ -1,21 +1,25 @@
 import { Component } from '@angular/core';
 
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
 @Component({
   selector: 'app-seven-ngswitch',
   templateUrl: './seven-ngswitch.component.html',
-  styles: [``]
+  host: lessonHostClasses
 })
 export class SevenNgswitchComponent {
 
-  value?:number;
+  value?: number;
 
-  onPlaneSelect():void {
+  onPlaneSelect(): void {
     this.value = 1;
   }
-  onTrainSelect():void {
+
+  onTrainSelect(): void {
     this.value = 2;
   }
-  onCarSelect():void {
+
+  onCarSelect(): void {
     this.value = 3;
   }
 

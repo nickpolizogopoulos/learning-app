@@ -1,5 +1,13 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Observable, Observer, Subscription } from 'rxjs';
+import {
+  Component,
+  OnDestroy
+} from '@angular/core';
+import {
+  Observable,
+  Observer,
+  Subscription
+} from 'rxjs';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -58,14 +66,14 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
 })
 export class ThreeObservableErrorsComponent implements OnDestroy {
 
-  playing:boolean = false;
-  counter:number = 0;
-  subscription?:Subscription;
+  playing: boolean = false;
+  counter: number = 0;
+  subscription?: Subscription;
 
-  play():void {
+  play(): void {
     this.playing = true;
     const customObservable = Observable.create(
-      (observer:Observer<number>) => {
+      (observer: Observer<number>) => {
         let count = 0;
         setInterval( () => {
           observer.next(count);
@@ -77,15 +85,15 @@ export class ThreeObservableErrorsComponent implements OnDestroy {
       });
 
     this.subscription = customObservable.subscribe({
-      next: (data:number) => this.counter = data,
-      error: (error:Error) => {
+      next: (data: number) => this.counter = data,
+      error: (error: Error) => {
         alert(error.message),
         this.playing = false;
       }
     })
   }
 
-  stop():void {
+  stop(): void {
     this.playing = false;
     this.subscription!.unsubscribe();
   }
@@ -93,4 +101,5 @@ export class ThreeObservableErrorsComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
+  
 }

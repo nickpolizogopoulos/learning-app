@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
 
+import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-two-basic-reducer-and-action-old-method',
@@ -39,23 +40,23 @@ import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
     <img *ngIf="!(onOff$ | async)" width="40" src="../../../assets/images/slightly-smiling-face_1f642.png">
   
   `,
-  styles: [``]
+  host: lessonHostClasses
 })
 export class TwoBasicReducerAndActionOldMethodComponent {
 
-  onOff$!:Observable<boolean>;
+  onOff$!: Observable<boolean>;
   
   constructor (
-    private store:Store<{ onOffState:boolean }>
+    private store: Store<{ onOffState:boolean }>
   ) { 
     this.onOff$ = this.store.select('onOffState');
   }
 
-  setOff():void {
+  setOff(): void {
     this.store.dispatch( new TurnLightsOff(false) );
   }
 
-  setOn():void {
+  setOn(): void {
     this.store.dispatch( new TurnLightsOn(true) );
   }
 

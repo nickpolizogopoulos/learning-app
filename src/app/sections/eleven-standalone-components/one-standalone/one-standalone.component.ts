@@ -1,11 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {
+  NgFor,
+  NgIf
+} from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-standalone',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    NgIf,
+    NgFor,
+    FormsModule],
   template: `
   
     <h4>Standalone Component #1 - Match It Up: Weather and Fun Activities!</h4>
@@ -70,14 +78,14 @@ import { FormsModule } from '@angular/forms';
     </div>
 
   `,
-  styles: [``]
+  host: lessonHostClasses
 })
 export class OneStandaloneComponent {
 
-  chosenCondition?:string;
-  chosenActivity?:number = 0;
+  chosenCondition?: string;
+  chosenActivity?: number = 0;
 
-  activities:string[] = [
+  activities: string[] = [
     'Walking',
     'Watching Movies',
     'Hiking',
@@ -86,7 +94,7 @@ export class OneStandaloneComponent {
     'Surfing',
   ];
 
-  onReset():void {
+  onReset(): void {
     this.chosenCondition = undefined;
     this.chosenActivity = 0;
   }

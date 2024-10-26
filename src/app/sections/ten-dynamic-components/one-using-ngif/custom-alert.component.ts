@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import {
+    Component,
+    EventEmitter,
+    Input,
+    Output
+} from "@angular/core";
 
 @Component({
     selector: 'app-custom-alert',
@@ -27,6 +32,12 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
         }
+
+        h2, 
+        p {
+            background-color: transparent !important;
+        }
+
         .alert-box {
             position: fixed;
             top: 30vh;
@@ -39,18 +50,21 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             border: 1px solid rgb(255, 153, 153);
             border-radius: 5px;
         }
+
         .alert-box-actions {
             text-align: right;
         }
+
     `]
 })
 export class CustomAlertComponent {
 
-    @Input() message!:string | null;
-    @Input() quote!:string | null;
-    @Output() close = new EventEmitter <void> ();
+    @Input() message!: string | null;
+    @Input() quote!: string | null;
+    @Output() close = new EventEmitter<void>();
 
-    onClose():void {
+    onClose(): void {
         this.close.emit();
     }
+
 }

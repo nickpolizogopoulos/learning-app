@@ -17,23 +17,29 @@ p {
 h2 {
   line-height: 140%;
 }
+
 .menlo {
   font-family: 'Menlo', sans-serif;
 }
+
 .divline {
   background-color: rgb(154, 154, 154);
   height: 2px;
 }
+
 .cursor-pointer {
   cursor: pointer;
 }
+
 .cursor-default {
   cursor: default;
 }
+
 .addToTestText {
   font-size: 14px;
   color: rgb(185, 185, 185);
 }
+
 .lessonbox {
   color: rgb(36, 54, 99);
   padding: 40px;
@@ -42,28 +48,33 @@ h2 {
   border: 1px solid rgb(211, 211, 211);
   transition: box-shadow 0.3s;
   background-color: rgba(255, 255, 255, 0.92);
+  &:hover {
+    box-shadow: 4px 4px 10px #cbcbcb;
+  }
 }
-.lessonbox:hover {
-  /* transform: translate(0px, -3px); */
-  box-shadow: 4px 4px 10px #cbcbcb;
-}
+
 .niceblue {
   color: rgb(36, 54, 99);
 }
+
 .nodecor {
   text-decoration: none;
   cursor: pointer;
 }
+
 .linethrough {
   text-decoration: line-through;
 }
+
 .inherit {
   color: inherit;
 }
+
 .readMoreLess {
   font-size: 15px;
   color: rgb(95, 95, 95);
 }
+
 .filter-btn {
   background-color: rgb(229, 229, 229);
   padding: 4px;
@@ -71,11 +82,12 @@ h2 {
   padding-right:7px;
   border: 1px solid rgb(36, 54, 99);
 }
+
 .user-select-none {
   user-select: none;
 }
 
-/* **PROJECTS**  */
+//* PROJECTS
 .project-container {
   padding: 50px 30px;
   margin-bottom: 50px;
@@ -85,7 +97,7 @@ h2 {
   backdrop-filter: blur(5px);
 }
 
-/* * Development Tools Colours */
+//* Development Tools Colours
 .angular {
   color: #c3002f;
 }
@@ -99,7 +111,7 @@ h2 {
   color: rgb(255, 144, 1);
 }
 
-/* * Selection Colours */
+//* Selection Colours
 ::-moz-selection { 
   color: inherit;
   background: #dcdcdc;

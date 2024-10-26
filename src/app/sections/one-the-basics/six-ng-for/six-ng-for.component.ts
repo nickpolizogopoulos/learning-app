@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-six-ng-for',
-  // templateUrl: './six-ng-for.component.html',
   template: `
   
     <h4>6. The *ngFor Directive</h4>
@@ -27,30 +27,32 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </p>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class SixNgForComponent {
 
   // *ngIf
-  isVisible = false;
-  buttonVisibility() {
+  isVisible: boolean = false;
+
+  buttonVisibility(): void {
     this.isVisible = !this.isVisible;
   }
 
   // *ngFor
-  arrayOfItems:string[] = [];
-  message?:string;
-  userInput?:number;
+  arrayOfItems: string[] = [];
+  message?: string;
+  userInput?: number;
 
-  start() {
+  start(): void {
     this.arrayOfItems.length = 0;
     for (let i = 0; i < this.userInput!; i++)
       this.arrayOfItems.push(this.message!);
   }
-  reset() {
+
+  reset(): void {
     this.arrayOfItems.length = 0;
     this.message = '';
     this.userInput = 0;
   }
+
 }

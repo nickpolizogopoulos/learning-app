@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { UserListService, UserProps } from './user-list.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import {
+  UserListService,
+  type User
+} from './user-list.service';
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -26,46 +33,42 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </div>
 
   `,
-  styles: [``],
   providers: [UserListService],
   host: lessonHostClasses
 })
 export class TwoDataServiceComponent implements OnInit {
   
-  users:UserProps[] = [];
-  removalMessage:string = '';
-  messageState:boolean = false;
+  users: User[] = [];
+  removalMessage: string = '';
+  messageState: boolean = false;
 
   constructor(
     private userListService:UserListService
     ) {}
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.users = this.userListService.usersList;
   }
 
-  onUserDelete( index:number, name:string ):void {
-    this.userListService.removeUser(index)
+  onUserDelete( index: number, name: string ): void {
+    this.userListService.removeUser(index);
     this.messageState = true;
-    this.removalMessage = `${name} has been removed from the list.`
-    setTimeout(() => {
-      this.messageState = false;
-    }, 2000);
+    this.removalMessage = `${name} has been removed from the list.`;
+    setTimeout(() =>
+      this.messageState = false,
+      2000
+    );
   }
 
-  onAddFourUsers():void {
-    this.userListService.addUser('Josh','New York','Male','English',)
-    this.userListService.addUser('Margo','New York','Female','English',)
-    this.userListService.addUser('Quentin','New York','Male','English',)
-    this.userListService.addUser('Alice','Modesto','Female','English',)
-
-    }
+  onAddFourUsers(): void {
+    this.userListService.addUser('Josh','New York','Male','English');
+    this.userListService.addUser('Margo','New York','Female','English');
+    this.userListService.addUser('Quentin','New York','Male','English');
+    this.userListService.addUser('Alice','Modesto','Female','English');
+  }
 
   onListClear():void {
     this.userListService.usersList.length = 0;
   }
 
-  
-
 }
-

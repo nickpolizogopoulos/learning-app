@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, count } from 'rxjs';
-import { decrementAction, incrementAction, resetAction } from './one-counter.actions';
+import { Observable } from 'rxjs';
+
+import {
+  decrementAction,
+  incrementAction,
+  resetAction
+} from './one-counter.actions';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-one-basic-reducer-and-action',
@@ -34,16 +40,17 @@ import { decrementAction, incrementAction, resetAction } from './one-counter.act
         </button>
     </div>
 
-  `
+  `,
+  host: lessonHostClasses
 })
 export class OneBasicReducerAndActionComponent {
   
-  count$:Observable<number>;
-  userInput:number = 1;
-  errorAlert:string | null = null;
+  count$: Observable<number>;
+  userInput: number = 1;
+  errorAlert: string | null = null;
 
   constructor(
-    private store:Store<{ oneCounter:number }>,
+    private store: Store<{ oneCounter:number }>,
   ) {
     this.count$ = this.store.select('oneCounter')
   }
@@ -51,32 +58,34 @@ export class OneBasicReducerAndActionComponent {
   //*Quick check to avoid using template/reactive forms 
   private inputCheck():void {
     this.errorAlert = null;
+
     if (typeof this.userInput !== 'number') {
       this.errorAlert = 'Only numbers are allowed!';
       return;
     }
+
     if (this.userInput === 0) {
       this.errorAlert = `The number 0 won't increase / decrease the counter.`;
       return;
     }
   }
 
-  increment():void {
+  increment(): void {
     this.inputCheck();
     this.store.dispatch( incrementAction( {value:this.userInput} ) );
   }
 
-  decrement():void {
+  decrement(): void {
     this.inputCheck();
     this.store.dispatch( decrementAction( {value:this.userInput} ) );
   }
   
-  counterReset():void {
+  counterReset(): void {
     this.errorAlert = null;
     this.store.dispatch( resetAction( {value:0} ) );
   }
 
-  inputReset():void {
+  inputReset(): void {
     this.errorAlert = null;
     this.userInput = 1;
   }

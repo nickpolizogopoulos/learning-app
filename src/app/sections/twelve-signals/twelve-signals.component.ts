@@ -11,10 +11,6 @@ import { Component } from '@angular/core';
         </div>
     </section>
   
-  `,
-  styles: [``],
-
+  `
 })
-export class TwelveSignalsComponent {
-
-}
+export class TwelveSignalsComponent {}

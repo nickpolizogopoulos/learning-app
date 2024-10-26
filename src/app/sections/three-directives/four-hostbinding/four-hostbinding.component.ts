@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
 @Component({
   selector: 'app-four-hostbinding',
   templateUrl: './four-hostbinding.component.html',
@@ -21,39 +23,46 @@ import { Component } from '@angular/core';
       width: auto;
     }
   
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class FourHostbindingComponent {
 
-  btnDisabled:boolean = true;
-  buttonClicked:boolean = false;
-  smileOne:boolean = false;
-  smileThree:boolean = false;
-  heartVisible:boolean = false;
-  hint:boolean = false;
+  btnDisabled: boolean = true;
+  buttonClicked: boolean = false;
+  smileOne: boolean = false;
+  smileThree: boolean = false;
+  heartVisible: boolean = false;
+  hint: boolean = false;
   
-  onWayClick() {
+  onWayClick(): void {
     this.btnDisabled = false;
     this.hint = false;
   }
-  onClick() {
+
+  onClick(): void {
     this.buttonClicked = true;
     this.heartVisible = true;
   }
-  onHeartClick() {
+
+  onHeartClick(): void {
     this.heartVisible = false;
     this.smileOne = true;
   }
-  onSmileOneClick() {
+
+  onSmileOneClick(): void {
     this.smileOne = false;
     this.smileThree = true;
   }
-  onReset() {
+
+  onReset(): void {
     this.smileThree = false;
     this.buttonClicked = false;
     this.btnDisabled = true;
   }
-  onHintClick() {
+
+  onHintClick(): void {
     this.hint = !this.hint;
   }
+
 }

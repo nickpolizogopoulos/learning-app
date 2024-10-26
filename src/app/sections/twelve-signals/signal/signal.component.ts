@@ -1,4 +1,9 @@
-import { Component, WritableSignal, signal } from '@angular/core';
+import { 
+  Component,
+  WritableSignal,
+  signal
+} from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -28,23 +33,25 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </div>
  
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class SignalComponent {
 
-  ram:WritableSignal<number> = signal(4);
+  ram: WritableSignal<number> = signal(4);
 
-  increment():void {
+  increment(): void {
     if (this.ram() === 1024)
       return;
+
     if (this.ram() !== 1024)
       this.ram.set( this.ram() + this.ram() );
   }
 
-  decrement():void {
+  decrement(): void {
     if (this.ram() === 2)
       return;
+
     this.ram.update( () => this.ram() - (this.ram() / 2) );
   }
+
 }

@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { windowsSelected, macSelected } from './macWindows.actions';
-import { selectMacVsWindows } from './macWindows.selector';
 
-export interface OperatingSystem {
+import {
+  windowsSelected,
+  macSelected
+} from './macWindows.actions';
+import { selectMacVsWindows } from './macWindows.selector';
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
+export type OperatingSystem = {
   macVSwindows: string;
 }
 
@@ -38,7 +43,8 @@ export interface OperatingSystem {
       </div>
     </div>
 
-  `
+  `,
+  host: lessonHostClasses
 })
 export class ThreeSelectorComponent {
 

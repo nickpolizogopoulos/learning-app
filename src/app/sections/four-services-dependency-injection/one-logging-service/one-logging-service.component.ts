@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { LoggingServiceService } from './logging-service.service';
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
@@ -33,47 +34,50 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
       'text-danger': messageColor === 'The Red button is clicked!',
       'text-primary': messageColor === 'The Blue button is clicked!',
       'text-success': messageColor === 'The Green button is clicked!',
-      }">
-      {{messageColor}}
+      }"
+    >
+      {{ messageColor }}
     </p>
 
     <a
       *ngIf="resetButton"
       (click)="onResetMessage()" class="addToTestText inherit cursor-pointer nodecor mt-4"
-      >[ Reset ]
+    >
+      [ Reset ]
     </a>
 
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class OneLoggingServiceComponent {
 
+  constructor (
+    private loggingService: LoggingServiceService
+  ) {}
 
-  constructor ( private loggingService:LoggingServiceService ) {
-
-  }
-
-  messageColor!:string;
-  resetButton:boolean = false;
+  messageColor!: string;
+  resetButton: boolean = false;
   
-  blueButton:string = 'Blue';
-  redButton:string = 'Red';
-  greenButton:string = 'Green';
+  blueButton: string = 'Blue';
+  redButton: string = 'Red';
+  greenButton: string = 'Green';
 
-  onBlueClicked():void {
+  onBlueClicked(): void {
     this.messageColor = this.loggingService.logMessage(this.blueButton);
     this.resetButton = true;
   }
-  onRedClicked():void {
+
+  onRedClicked(): void {
     this.messageColor = this.loggingService.logMessage(this.redButton);
     this.resetButton = true;
   }
-  onGreenClicked():void {
+
+  onGreenClicked(): void {
     this.messageColor = this.loggingService.logMessage(this.greenButton);
     this.resetButton = true;
   }
-  onResetMessage():void {
+
+  onResetMessage(): void {
     this.messageColor = '';
     this.resetButton = !this.resetButton;
   }

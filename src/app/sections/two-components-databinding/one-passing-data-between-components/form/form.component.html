@@ -4,20 +4,10 @@
   Create a wish list with items for immediate purchase or future purchase.
 </p>
 <div class="mb-3">
-  <input
-  class="form-control rounded-1 shadow-none"
-  type="text"
-  placeholder="Item name..."
-  [(ngModel)]="newItemName"
-  >    
+  <input class="form-control rounded-1 shadow-none" type="text" placeholder="Item name..." [(ngModel)]="newItemName">    
 </div>
 <div class="mb-3">
-<input
-  class="form-control rounded-1 shadow-none"
-  type="text"
-  placeholder="Description..."
-  [(ngModel)]="newItemDescription"
->
+<input class="form-control rounded-1 shadow-none" type="text" placeholder="Description..." [(ngModel)]="newItemDescription">
 </div>
 <div *ngIf="infoMissing" class="alert alert-danger rounded-1 p-2 fade show" role="alert">
   Please fill both fields.

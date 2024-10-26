@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -44,9 +45,9 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
   `,
   styles: [`
   
-  .checkborder {
-    border-color: rgb(176, 176, 176);
-  }
+    .checkborder {
+      border-color: rgb(176, 176, 176);
+    }
   
   `],
   host: lessonHostClasses
@@ -55,18 +56,20 @@ export class TwoPropertyBindingComponent {
 
   isDisabled = true;
   dataArray: string[] = [];
-  data = '';
+  data: string = '';
 
-  addData() {
+  addData(): void {
     this.dataArray.push(this.data);
     this.data = '';
     this.isDisabled = false;
   }
-  removeData() { 
+
+  removeData(): void { 
     this.dataArray.pop()
     if (this.dataArray.length === 0) this.isDisabled = true;
   }
-  clearArray() {
+  
+  clearArray(): void {
     this.dataArray.length = 0;
     this.isDisabled = true;
   }

@@ -1,6 +1,13 @@
-import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, Observable, timer, Observer } from 'rxjs';
+import {
+  Component,
+  OnDestroy
+} from '@angular/core';
+import {
+  Subscription,
+  Observable,
+  Observer
+} from 'rxjs';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -18,35 +25,32 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
         </select>
       </div>
     </div>
-    <button
-      (click)="onStart()"
-      [ngClass]="{'disabled' : timerStarted}"
-      class="btn btn-sm btn-success rounded-1 mb-2"
-      [disabled]="seconds === 0">Start the clock</button>
+    <button (click)="onStart()" [ngClass]="{'disabled' : timerStarted}" class="btn btn-sm btn-success rounded-1 mb-2" [disabled]="seconds === 0">
+      Start the clock
+    </button>
     <p *ngIf="timerStarted" class="lead">Time left: {{ timeLeft }}</p>
     <span *ngIf="timerEnded" (click)="reload()" class="addToTestText cursor-pointer">[ reload ]</span>
 
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class FourObservableCompletionComponent implements OnDestroy {
 
-  seconds:number = 0;
-  timerStarted:boolean = false;
-  timeLeft:number = 0;
-  subscription?:Subscription;
-  timerEnded:boolean = false;
+  seconds: number = 0;
+  timerStarted: boolean = false;
+  timeLeft: number = 0;
+  subscription?: Subscription;
+  timerEnded: boolean = false;
 
-  onFiveSelect():void {
+  onFiveSelect(): void {
     this.seconds = 5;
   }
 
-  onTenSelect():void {
+  onTenSelect(): void {
     this.seconds = 10;
   }
 
-  onStart():void {
+  onStart(): void {
     this.timerStarted = true;
 
     const observable = Observable.create(
@@ -64,22 +68,22 @@ export class FourObservableCompletionComponent implements OnDestroy {
     );
 
     this.subscription = observable.subscribe({
-      next: (data:number) => this.timeLeft = this.seconds - data,
-      complete:() => alert('Wake up!'),
-      error: (error:string) => console.log(error)
+      next: (data: number) => this.timeLeft = this.seconds - data,
+      complete: () => alert('Wake up!'),
+      error: (error: string) => console.log(error)
     })
   }
 
-  onReset():void {
+  onReset(): void {
     this.seconds = 0;
     this.timerStarted = false;
   }
 
-  reload():void {
+  reload(): void {
     window.location.reload();
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
 

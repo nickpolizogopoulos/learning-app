@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input
+} from '@angular/core';
 
 @Component({
   selector: 'app-custom-button',
   template: `
   
-    <div>
-      <a class="nodecor inherit" routerLink="/{{ path }}">
-        <span class="customButton lead">
-          <ng-content />
-        </span>
-      </a>
-    </div>
+    <a class="nodecor inherit" routerLink="/{{ path }}">
+      <span class="customButton lead">
+        <ng-content />
+      </span>
+    </a>
   
   `,
   styles: [`
@@ -36,6 +37,7 @@ import { Component, Input } from '@angular/core';
         transform: rotate(2deg);
         border-radius: 5px;
       }
+
       &::after {
         content: "";
         z-index: -1;
@@ -51,12 +53,13 @@ import { Component, Input } from '@angular/core';
         transform: rotate(-1deg);
         border-radius: 5px;
       }
+
     }
     
   `]
 })
 export class CustomButtonComponent {
 
-  @Input() path?:string;
+  @Input() path?: string;
 
 }

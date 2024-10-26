@@ -2,18 +2,19 @@ import {
   Directive, 
   HostBinding, 
   HostListener, 
-  Input } from '@angular/core';
+  Input
+} from '@angular/core';
 
 @Directive({
   selector: '[appColours]'
 })
 export class ColoursDirective {
 
-  @Input() fillColor?:string;
+  @Input() fillColor?: string;
 
-  @HostBinding('style.color') color?:string = this.fillColor;
+  @HostBinding('style.color') color?: string = this.fillColor;
 
-  @HostListener('click') forFill() {
+  @HostListener('click') forFill(): void {
     this.color = this.fillColor;
   }
 

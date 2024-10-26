@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
@@ -11,9 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 //* SHARED COMPONENTS
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './shared-components/about.component';
+import { AboutComponent } from './pages/about.component';
 import { NavbarComponent } from './shared-components/navbar.component';
-import { PageNotFoundComponent } from './shared-components/page-not-found.component';
+import { PageNotFoundComponent } from './pages/page-not-found.component';
 import { FooterComponent } from './shared-components/footer.component';
 import { CustomButtonComponent } from './shared/custom-button.component';
 
@@ -87,7 +87,6 @@ import { ThreeObservableErrorsComponent } from './sections/five-observables/thre
 import { FourObservableCompletionComponent } from './sections/five-observables/four-observable-completion/four-observable-completion.component';
 import { FiveMapOperatorComponent } from './sections/five-observables/five-map-operator/five-map-operator.component';
 import { SixFilterOperatorComponent } from './sections/five-observables/six-filter-operator/six-filter-operator.component';
-import { SevenSubjectsComponent } from './sections/five-observables/seven-subjects/seven-subjects.component';
 import { FirstSubjectsComponent } from './sections/five-observables/seven-subjects/first-subjects/first-subjects.component';
 import { SecondSubjectsComponent } from './sections/five-observables/seven-subjects/second-subjects/second-subjects.component';
 
@@ -233,7 +232,6 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
       FourObservableCompletionComponent,
       FiveMapOperatorComponent,
       SixFilterOperatorComponent,
-      SevenSubjectsComponent,
       FirstSubjectsComponent,
       SecondSubjectsComponent,
 
@@ -301,12 +299,14 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+
     StoreModule.forRoot({
       oneCounter: counterReducer,
       onOffState: onOffReducer,
       macVSwindows: macWindowsReducer,
       fourCounter: fourCounterReducer,
     }),
+
     BrowserAnimationsModule,
     EffectsModule.forRoot([
       CounterEffects
@@ -315,11 +315,10 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:ToolsInterceptor,
-      multi:true
+      useClass: ToolsInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

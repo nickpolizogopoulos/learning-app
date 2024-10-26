@@ -1,82 +1,112 @@
 import { Component } from '@angular/core';
 
-export interface ItemProps {
+export type ListItem = {
   name:string;
   description:string;
 }
 
 @Component({
   selector: 'app-two-viewchild-and-local-references',
-  templateUrl: './two-viewchild-and-local-references.component.html',
-  styles: [``]
+  templateUrl: './two-viewchild-and-local-references.component.html'
 })
 export class TwoViewchildAndLocalReferencesComponent {
 
   addTwoImportantItemsButton = true;
   addTwoUnimportantItemsButton = true;
 
-  importantList:ItemProps[] = [
-    {name: 'Laptop', description: 'For working remotely'},
-    {name: 'Blanket', description: 'For the winter'},
-  ];
-  unimportantList:ItemProps[] = [
-    {name: 'Boots', description: 'For hiking'},
-    {name: 'Gloves', description: 'For climbing'},
+  importantList: ListItem[] = [
+    {
+      name: 'Laptop',
+      description: 'For working remotely'
+    },
+    {
+      name: 'Blanket',
+      description: 'For the winter'
+    }
   ];
 
-  onImportantAdded(importantItem:ItemProps) {
+  unimportantList: ListItem[] = [
+    { 
+      name: 'Boots',
+      description: 'For hiking'
+    },
+    {
+      name: 'Gloves',
+      description: 'For climbing'
+    }
+  ];
+
+  onImportantAdded( importantItem: ListItem ): void {
     this.importantList.push({
       name: importantItem.name,
-      description: importantItem.description,
-    })
-  }
-  onImportantDeleted( index:number ) {
-    this.importantList.splice(index, 1);
-    console.log('item', index, 'deleted');
+      description: importantItem.description
+    });
   }
 
-  onUnimportantAdded(unimportantItem:ItemProps) {
+  onImportantDeleted( index: number ): void {
+    this.importantList.splice(index, 1);
+  }
+
+  onUnimportantAdded( unimportantItem: ListItem ): void {
     this.unimportantList.push({
       name: unimportantItem.name,
-      description: unimportantItem.description,
-    })
+      description: unimportantItem.description
+    });
   }
-  onUnimportantDeleted( index:number ) {
+  
+  onUnimportantDeleted( index: number ): void {
     this.unimportantList.splice(index, 1);
-    console.log('item', index, 'deleted');
   }
 
-  onClearLists() {
+  onClearLists(): void {
     this.importantList.length = 0;
     this.unimportantList.length = 0;
   }
-  clearImportant() {
+
+  clearImportant(): void {
     this.importantList.length = 0;
   }
-  clearUnimportant() {
+
+  clearUnimportant(): void {
     this.unimportantList.length = 0;
   }
-  onImportantMoved( index:number, item:ItemProps ) {
-    this.importantList.splice(index, 1)
-    this.unimportantList.push(item)
+
+  onImportantMoved( index:number, item:ListItem ): void {
+    this.importantList.splice(index, 1);
+    this.unimportantList.push(item);
   }
-  onUnimportantMoved( index:number, item:ItemProps ) {
-    this.unimportantList.splice(index, 1)
-    this.importantList.push(item)
+
+  onUnimportantMoved( index: number, item: ListItem ): void {
+    this.unimportantList.splice(index, 1);
+    this.importantList.push(item);
   }
-  onAddTwoUnimportant() {
+
+  onAddTwoUnimportant(): void {
     this.addTwoUnimportantItemsButton = false;
     this.unimportantList.push(
-      {name: 'Mousepad', description: 'Gaming accessory'},
-      {name: 'USB Hub', description: 'Ports!'},
-    )
+      {
+        name: 'Mousepad',
+        description: 'Gaming accessory'
+      },
+      {
+        name: 'USB Hub',
+        description: 'Ports!'
+      }
+    );
   }
-  onAddTwoImportant() {
+
+  onAddTwoImportant(): void {
     this.addTwoImportantItemsButton = false;
     this.importantList.push(
-      {name: 'Sunglasses', description: 'Eye protection'},
-      {name: 'Vinyl Records', description: 'I love vinyl'},
-    )
+      {
+        name: 'Sunglasses',
+        description: 'Eye protection'
+      },
+      {
+        name: 'Vinyl Records',
+        description: 'I love vinyl'
+      }
+    );
   }
 
 }

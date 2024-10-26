@@ -1,15 +1,20 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  OnInit
+} from '@angular/core';
 
-//bordeaux
 @Directive({
   selector: '[appBordeauxBg]'
 })
 export class BordeauxBgDirective implements OnInit {
 
-  constructor(private elementRef:ElementRef ) { }
+  constructor(
+    private elementRef: ElementRef
+  ) {}
 
-  ngOnInit() {
-    this.elementRef.nativeElement.style.backgroundColor = '#660021'
-    this.elementRef.nativeElement.style.color = 'white'
+  ngOnInit(): void {
+    this.elementRef.nativeElement.style.backgroundColor = '#660021';
+    this.elementRef.nativeElement.style.color = 'white';
   }
 }

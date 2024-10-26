@@ -1,10 +1,16 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Tools, ToolsService } from './tools.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import {
+  type Tools,
+  ToolsService
+} from './tools.service';
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-four-interceptor',
-  // templateUrl: './four-interceptor.component.html',
   template: `
   
     <h4>4. A basic Interceptor</h4>
@@ -29,14 +35,15 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
   `,
   styles: [`
   
-  img {
-    width: 60px;
-    height: auto;
-    filter: grayscale(100%);
-  }
-  img:hover {
-    filter: grayscale(0%);
-  }
+    img {
+      width: 60px;
+      height: auto;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
   
   `],
   host: lessonHostClasses
@@ -44,21 +51,21 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
 export class FourInterceptorComponent implements OnInit {
 
   constructor(
-    private toolsService:ToolsService,
-  ) { }
+    private toolsService: ToolsService,
+  ) {}
 
-  isLoading:boolean = false;
-  message?:string | null;
-  toolsList:Tools[] = [];
-  time:number = 0;
+  isLoading: boolean = false;
+  message?: string | null;
+  toolsList: Tools[] = [];
+  time: number = 0;
 
-  ngOnInit():void {
+  ngOnInit(): void {
     // this.postTools();
     this.fetchTools();
     this.time = 1500;
   }
 
-  fetchTools() {
+  fetchTools(): void {
     this.isLoading = true;
     this.toolsList = [];
     console.log(this.toolsService.message);
@@ -67,14 +74,16 @@ export class FourInterceptorComponent implements OnInit {
     //* setTimeout simulates 1.5 sec server response time 
     setTimeout( () => {
       this.toolsService.fetchTools()
-        .subscribe(
-          tools => {
+        .subscribe({
+          next: tools => {
             this.isLoading = false;
             this.toolsList = tools;
             this.message = null;
           }
-        )
-    }, this.time )
+        })
+      },
+      this.time
+    );
   }
 
   //* lesson utilities

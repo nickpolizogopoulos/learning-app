@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -6,33 +7,37 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
   templateUrl: './eight-ng-class.component.html',
   styles: [`
 
-  .ngClassBox {
-    padding: 20px 14px;
-    background-color: rgb(243, 255, 243);
-    border: 3px dashed rgb(36, 54, 99);
-  }
+    .ngClassBox {
+      padding: 20px 14px;
+      background-color: rgb(243, 255, 243);
+      border: 3px dashed rgb(36, 54, 99);
+    }
+
   `],
   host: lessonHostClasses
 })
 export class EightNgClassComponent {
 
-  leftActive = true;
-  midActive = false;
-  rightActive = false;
+  leftActive: boolean = true;
+  midActive: boolean = false;
+  rightActive: boolean = false;
 
-  onLeftSelect():void {
+  onLeftSelect(): void {
     this.leftActive = true;
     this.midActive = false;
     this.rightActive = false;
   }
-  onMidSelect():void {
+
+  onMidSelect(): void {
     this.leftActive = false;
     this.midActive = true;
     this.rightActive = false;
   }
-  onRightSelect():void {
+
+  onRightSelect(): void {
     this.leftActive = false;
     this.midActive = false;
     this.rightActive = true;
   }
+  
 }

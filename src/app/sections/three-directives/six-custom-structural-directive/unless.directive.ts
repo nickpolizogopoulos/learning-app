@@ -10,18 +10,18 @@ import {
 })
 export class UnlessDirective {
 
-  @Input() set appUnless( condition:boolean ) {
-    if (!condition) {
-      this.viewContainer.createEmbeddedView(this.template);
-    }
-    else {
-      this.viewContainer.clear();
-    }
-  }
-
   constructor(
-    private template:TemplateRef<any>,
-    private viewContainer:ViewContainerRef
-  ) { }
+    private template: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {}
 
+  @Input() set appUnless( condition: boolean ) {
+
+    if (!condition)
+      this.viewContainer.createEmbeddedView(this.template);
+
+    else
+      this.viewContainer.clear();  
+  }
+  
 }

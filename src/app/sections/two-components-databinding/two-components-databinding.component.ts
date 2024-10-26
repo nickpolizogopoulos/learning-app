@@ -13,9 +13,6 @@ import { Component } from '@angular/core';
         </div>
     </section>  
   
-  `,
-  styles: [``]
+  `
 })
-export class TwoComponentsDatabindingComponent {
-  
-}
+export class TwoComponentsDatabindingComponent {}

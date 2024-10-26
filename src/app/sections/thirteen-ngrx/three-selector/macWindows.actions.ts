@@ -1,12 +1,15 @@
-import { createAction, props } from "@ngrx/store";
+import {
+    createAction,
+    props
+} from "@ngrx/store";
 
-interface ActionProps {
+type ActionProps = {
     value:string;
 }
 
-const noneSelect:string = '[macVSwindows] None';
-const windowsSelect:string = '[macVSwindows] Windows';
-const macSelect:string = '[macVSwindows] Mac';
+const noneSelect: string = '[macVSwindows] None';
+const windowsSelect: string = '[macVSwindows] Windows';
+const macSelect: string = '[macVSwindows] Mac';
 
 export const noneSelected = createAction(
     noneSelect,

@@ -1,4 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,13 +20,12 @@ import { Component } from '@angular/core';
     </section>
   
   `,
-  styles: [``],
   animations: [
 
     trigger(
       'first',
       [
-        state('in', style({ transform: 'scale(1)', opacity:1 })),
+        state('in', style( { transform: 'scale(1)', opacity:1 } )),
         transition(
           'void => *',
           [
@@ -34,7 +39,7 @@ import { Component } from '@angular/core';
     trigger(
       'title',
       [
-        state('in', style({ transform: 'translateY(0)', opacity:1 })),
+        state('in', style( { transform: 'translateY(0)', opacity:1 } )),
         transition(
           'void => *',
           [
@@ -47,6 +52,4 @@ import { Component } from '@angular/core';
 
   ]
 })
-export class FourteenAnimationsComponent {
-
-}
+export class FourteenAnimationsComponent {}

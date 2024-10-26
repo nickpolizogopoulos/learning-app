@@ -5,20 +5,9 @@
 <button *ngIf="blueBg || bordeauxBg" (click)="onResetColor()" class="btn btn-light rounded-1 me-3 mb-3">Reset</button>
 <div class="row mt-4">
     <div class="col-9">
-        <p *ngIf="!blueBg && !bordeauxBg"
-            class="p-3 text"
-            >Style me with coloured background!
-        </p>
-        <p *ngIf="blueBg"
-            class="p-3 text"
-            appBlueBg
-            >Blue background looks nice!
-        </p>
-        <p *ngIf="bordeauxBg"
-            class="p-3 text"
-            appBordeauxBg
-            >Good
-        </p>
+        <p *ngIf="!blueBg && !bordeauxBg" class="p-3 text">Style me with coloured background!</p>
+        <p *ngIf="blueBg" class="p-3 text" appBlueBg>Blue background looks nice!</p>
+        <p *ngIf="bordeauxBg" class="p-3 text" appBordeauxBg>Good</p>
     </div>
     <div class="col">
         <svg *ngIf="blueBg" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-hand-thumbs-up blueLike" viewBox="0 0 16 16">

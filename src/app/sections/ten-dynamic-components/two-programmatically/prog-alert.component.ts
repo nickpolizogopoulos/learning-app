@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import {
+    Component,
+    EventEmitter,
+    Input,
+    Output
+} from "@angular/core";
 
 @Component({
     selector: 'app-prog-alert',
@@ -24,6 +29,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             background: rgba(0,0,0,0.75);
             z-index: 50;
         }
+
         .alert-box {
             position: fixed;
             top: 30vh;
@@ -34,6 +40,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             background: white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.25);
         }
+
         .alert-box-actions {
             text-align: right;
         }
@@ -42,10 +49,10 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class ProgAlertComponent {
 
-    @Input() message?:string;
+    @Input() message?: string;
     @Output() close = new EventEmitter<void>();
 
-    onClose() {
+    onClose(): void {
         this.close.emit();
     }    
 

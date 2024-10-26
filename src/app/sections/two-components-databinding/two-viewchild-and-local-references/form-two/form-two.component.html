@@ -1,25 +1,9 @@
-<p class="lead">
-    Add your items to the coresponding wish list:
-</p>
+<p class="lead">Add your items to the coresponding wish list:</p>
 <!-- First input uses local reference -->
-<div class="mb-3">
-    <input
-        class="form-control rounded-1 shadow-none"
-        type="text"
-        placeholder="Item name..."
-        #itemName
-    >    
-</div>
+<input class="mb-3 form-control rounded-1 shadow-none" type="text" placeholder="Item name..." #itemName>    
 <!-- Second input uses @ViewChild() -->
-<div class="mb-3">
-    <input
-        class="form-control rounded-1 shadow-none"
-        type="text" placeholder="Description..."
-        #itemDescription>
-</div>
-<div *ngIf="infoMissingError" class="alert alert-danger rounded-1 p-2">
-    Please fill both fields!
-</div>  
+ <input class="mb-3 form-control rounded-1 shadow-none" type="text" placeholder="Description..." #itemDescription>
+<div *ngIf="infoMissingError" class="alert alert-danger rounded-1 p-2">Please fill both fields!</div>  
 <button (click)="onAddImportant(itemName)" class="btn btn-primary rounded-2 me-3 mb-3">Important</button>
 <button (click)="onAddUnimportant(itemName)" class="btn btn-warning rounded-2 me-3 mb-3">Unimportant</button>
 <button (click)="onClearBoth()" class="btn btn-success rounded-2 me-3 mb-3">Clear both Lists</button>

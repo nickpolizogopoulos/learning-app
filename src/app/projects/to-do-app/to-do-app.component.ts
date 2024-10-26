@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface ToDoItemProps {
+type todoItem = {
   id:number;
   title:string;
   comment:string;
@@ -11,16 +11,16 @@ interface ToDoItemProps {
 @Component({
   selector: 'app-to-do-app',
   templateUrl: './to-do-app.component.html',
-  styleUrls: ['../projects.css']
+  styleUrls: ['../projects.scss']
 })
 export class ToDoAppComponent {
 
-  toDoTitle:string = '';
-  toDoComment:string = '';
-  toDoImportant!:boolean;
-  toDoDay:string = '-';
+  toDoTitle: string = '';
+  toDoComment: string = '';
+  toDoImportant!: boolean;
+  toDoDay: string = '-';
 
-  weekDays:string[] = [
+  weekDays: string[] = [
     'Monday',
     'Tuesday',
     'Wednesday',
@@ -30,7 +30,7 @@ export class ToDoAppComponent {
     'Sunday',
   ];
 
-  toDoList:ToDoItemProps[] = [
+  toDoList: todoItem[] = [
     {
       id: 1,
       title: 'Doctor appointment',
@@ -44,49 +44,50 @@ export class ToDoAppComponent {
       comment: 'The "Super Signature Maker" project.',
       day: 'Monday',
       important:false
-    },
+    }
+  ];
 
-  ]
+  formVisible: boolean = true;
 
-  formVisible:boolean = true;
-  onHideOrShowForm() {
+  onHideOrShowForm(): void {
     this.formVisible = !this.formVisible;
   }
-  onAddToDoItem() {
+
+  onAddToDoItem(): void {
     this.toDoList.push({
       id: this.toDoList.length + 1,
       title: this.toDoTitle,
       comment: this.toDoComment,
       day: this.toDoDay,
       important: this.toDoImportant
-    })
+    });
     this.toDoTitle = '';
     this.toDoComment = '';
     this.toDoImportant = false;
     this.toDoDay = '-'
   }
 
-  onImportantClick() {
-    this.toDoList.sort((a, b) => Number(b.important) - Number(a.important) )
+  onImportantClick(): void {
+    this.toDoList.sort( (a, b) => Number(b.important) - Number(a.important) );
   }
 
-  onNonImportantClick() {
-    this.toDoList.sort((a, b) => Number(a.important) - Number(b.important) )
+  onNonImportantClick(): void {
+    this.toDoList.sort( (a, b) => Number(a.important) - Number(b.important) );
   }
 
-  onResetListClick() {
-    this.toDoList.sort((a, b) => a.id - b.id )
+  onResetListClick(): void {
+    this.toDoList.sort( (a, b) => a.id - b.id );
   }
 
-  onDeleteTodo( i:number ) {
+  onDeleteTodo( i: number ): void {
     this.toDoList.splice(i, 1);
   }
 
-  onClearList() {
+  onClearList(): void {
     this.toDoList.length = 0;
   }
 
-  addFourToDoItems() {
+  addFourToDoItems(): void {
     this.toDoList.push(
       {
         id: this.toDoList.length + 1,
@@ -116,6 +117,7 @@ export class ToDoAppComponent {
         day: 'Wednesday',
         important: true
       },
-    )
+    );
   }
+
 }

@@ -1,20 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Additionals, Pita, Quantity } from './pita.models';
 import { Observable, map } from 'rxjs';
+
+import {
+  type Additionals,
+  type Pita,
+  type Quantity
+} from './pita.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PitesService {
 
-  database:string = 'https://pites-project-default-rtdb.firebaseio.com';
-  folder:string = '/pites'
-  json:string = '.json';
+  database: string = 'https://pites-project-default-rtdb.firebaseio.com';
+  folder: string = '/pites'
+  json: string = '.json';
 
-  url:string = this.database + this.folder + this.json;
+  url: string = this.database + this.folder + this.json;
 
-  additionals:Additionals[] = [
+  additionals: Additionals[] = [
     {
       name: 'potatoes',
       text: 'Potakoes'
@@ -30,7 +35,7 @@ export class PitesService {
     {
       name: 'tzatziki', 
       text: 'Tzatziki'
-    },
+    }
   ];
 
   // quantity:Quantity[] = [
@@ -46,7 +51,7 @@ export class PitesService {
   //   {value: '10'},
   // ];
 
-  quantity:Quantity[] = Array.from(
+  quantity: Quantity[] = Array.from(
 
     { length: 10 },
     (_, i) => ( { value: (i + 1).toString() } )
@@ -54,27 +59,27 @@ export class PitesService {
   );
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
-  createAndStorePita( pita:Pita ) {
+  createAndStorePita( pita: Pita ) {
     return this.http
       .post <{ [key:string]:Pita }> (this.url, pita)
   }
 
   deletePitesList() {
     return this.http
-      .delete(this.url)
+      .delete(this.url);
   }
 
-  onDeleteSinglePita( id:Pita ) {
+  onDeleteSinglePita( id: Pita ) {
     return this.http
       .delete( this.database + this.folder + '/' + id + this.json);
   }
 
   fetchPites(): Observable<Pita[]> {
     return this.http
-      .get <{ [key:string]:Pita }> (this.url)
+      .get <{ [key: string]: Pita }> (this.url)
       .pipe( map( 
         responseData => {
           const pitesArray:Pita[] = [];
@@ -87,9 +92,9 @@ export class PitesService {
       )
   }
 
-  addDummyPites():void {
+  addDummyPites(): void {
     this.http
-      .post <{ [key:string]:Pita }> (this.url, 
+      .post <{ [key: string]: Pita }> (this.url, 
         {
           name: 'Nick',
           quantity: 2,
@@ -101,10 +106,11 @@ export class PitesService {
           sauce: 'Yellow sauce (Mustard - Mayonnaise mix)',
           extras: 'Sweet Paprika'
         }
-        ).subscribe();
+        )
+        .subscribe();
 
     this.http
-      .post <{ [key:string]:Pita }> (this.url, 
+      .post <{ [key: string]: Pita }> (this.url, 
         {
           name: 'Jelly',
           quantity: 1,
@@ -115,10 +121,11 @@ export class PitesService {
           tzatziki: false,
           sauce: 'Red sauce (Ketchup - Mayonnaise mix)',
         }
-        ).subscribe();
+        )
+        .subscribe();
 
     this.http
-      .post <{ [key:string]:Pita }> (this.url, 
+      .post <{ [key: string]: Pita }> (this.url, 
         {
           name: 'Margo',
           quantity: 1,
@@ -130,10 +137,11 @@ export class PitesService {
           sauce: 'Mustard - Ketchup mix',
           extras: `High King's Fillorian Seasonings`
         }
-        ).subscribe();
+        )
+        .subscribe();
 
     this.http
-      .post <{ [key:string]:Pita }> (this.url, 
+      .post <{ [key: string]: Pita }> (this.url, 
         {
           name: 'Alice',
           quantity: 1,
@@ -145,7 +153,8 @@ export class PitesService {
           sauce: 'Mustard - Ketchup mix',
           extras: `Smoked bacon slices`
         }
-        ).subscribe();
+        )
+        .subscribe();
   }
 
 }

@@ -1,10 +1,15 @@
+import {
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
-interface Contact {
+type Contact = {
   name:string;
   phone:string;
   id?:string;
@@ -24,38 +29,39 @@ interface Contact {
 })
 export class TwoPostRequestComponent implements OnInit {
 
-  url:string = 'https://http-contacts-default-rtdb.firebaseio.com/contacts.json';
-  dummyText:boolean = true;
+  url: string = 'https://http-contacts-default-rtdb.firebaseio.com/contacts.json';
+  dummyText: boolean = true;
 
-  contacts:Contact[] = [];
-  successAlert:boolean = false;
-  @ViewChild('form') form?:NgForm;
-  spinner:boolean = false;
+  contacts: Contact[] = [];
+  successAlert: boolean = false;
+  @ViewChild('form') form?: NgForm;
+  spinner: boolean = false;
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.clearList();
   }
 
-  onSubmit( postData:Contact ):void {
+  onSubmit( postData: Contact ): void {
     this.http
       .post( this.url, postData )
-      .subscribe( () => {
-        this.fetchList()
+      .subscribe({
+        next: () => this.fetchList()
       });
 
     this.successAlert = true;
     this.form?.reset();
-    setTimeout( () => {
-      this.successAlert = !this.successAlert
-    }, 2000);
+    setTimeout(() =>
+      this.successAlert = !this.successAlert,
+      2000
+    );
     
   }
 
-  fetchList():void {
+  fetchList(): void {
     this.spinner = true;
     this.http
       .get <{ [key:string]:Contact }> ( this.url )
@@ -68,60 +74,75 @@ export class TwoPostRequestComponent implements OnInit {
           return contacts;
         })
       )
-      .subscribe( contacts => {
+      .subscribe({
+        next: contacts => {
           this.spinner = false;
           this.contacts = contacts;
-        })
+        }
+      })
   }
 
-  clearList():void {
+  clearList(): void {
     this.spinner = true;
     this.http
       .delete(this.url)
-      .subscribe( () => {
-        this.fetchList();
-        this.spinner = false;
-        this.contacts = []
+      .subscribe({
+        next: () => {
+          this.fetchList();
+          this.spinner = false;
+          this.contacts = []
+        }
       });
   }
 
-  onDeleteContact( id:Contact['id'] ) {
+  onDeleteContact( id: Contact['id'] ): void {
     this.http
       .delete ('https://http-contacts-default-rtdb.firebaseio.com/contacts/' + id + '.json')
-      .subscribe(() => {
-        this.fetchList()
-    })
-
+      .subscribe({
+        next: () => this.fetchList()
+      });
   }
 
-  addFourDummyContacts():void {
+  addFourDummyContacts(): void {
     this.dummyText = false;
     this.http.post(this.url, 
       {
         name: 'Nick P.',
         phone: '+30 6900000007'
       }
-      ).subscribe( () => this.fetchList())
+      )
+      .subscribe({
+        next: () => this.fetchList()
+      });
 
     this.http.post(this.url, 
       {
         name: 'Jelly M.',
         phone: '+30 6900000004'
       }
-      ).subscribe( () => this.fetchList())
+      )
+      .subscribe({
+        next: () => this.fetchList()
+      });
 
     this.http.post(this.url, 
       {
         name: 'Margo H.',
         phone: '+30 6900000000'
       }
-      ).subscribe( () => this.fetchList())
+      )
+      .subscribe({
+        next: () => this.fetchList()
+      });
 
     this.http.post(this.url, 
       {
         name: 'Alice Q.',
         phone: '+30 6900000000'
       }
-      ).subscribe( () => this.fetchList())
+      )
+      .subscribe({
+        next: () => this.fetchList()
+      });
   }
 }

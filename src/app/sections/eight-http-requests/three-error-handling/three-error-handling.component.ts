@@ -1,13 +1,18 @@
+import {
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
+
 import { getFirebaseEndpoint } from '../http-utilities';
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
-interface Todo {
-  description:string;
-  id?:string;
+type Todo = {
+  description: string;
+  id?: string;
 }
 
 @Component({
@@ -25,23 +30,23 @@ interface Todo {
 export class ThreeErrorHandlingComponent implements OnInit {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
-  private url:string = getFirebaseEndpoint('todos');
+  private url: string = getFirebaseEndpoint('todos');
 
-  @ViewChild('form') form?:NgForm;
-  todoList:Todo[] = [];
+  @ViewChild('form') form?: NgForm;
+  todoList: Todo[] = [];
 
-  isFetching:boolean = false;
-  errorTitle?:string
-  error:string | null = null;
+  isFetching: boolean = false;
+  errorTitle?: string
+  error: string | null = null;
   
-  ngOnInit():void {
+  ngOnInit(): void {
     this.fetchTodos();
   }
 
-  onAddTodo( newItem:Todo ):void {
+  onAddTodo( newItem: Todo ): void {
     this.isFetching = true;
     this.http
     .post <{[key:string]:Todo}> (this.url, newItem)
@@ -60,10 +65,10 @@ export class ThreeErrorHandlingComponent implements OnInit {
     this.form!.reset();
   }
 
-  fetchTodos():void {
+  fetchTodos(): void {
     this.isFetching = true;
     this.http
-      .get <{[key:string]:Todo}> (this.url)
+      .get <{[key: string]: Todo}> (this.url)
       .pipe(
         map( responseData => {
           const todoArray:Todo[] = [];
@@ -81,7 +86,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
       })
   }
 
-  onSingleTodoDelete( id:Todo['id'] ) {
+  onSingleTodoDelete( id: Todo['id'] ): void {
     this.isFetching = true;
     this.http
       .delete('https://learning-angular-app-http-default-rtdb.europe-west1.firebasedatabase.app/todos/' + id + '.json')
@@ -99,7 +104,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
       })
   }
 
-  onClearList():void {
+  onClearList(): void {
     this.isFetching = true
     this.http
       .delete(this.url)
@@ -117,7 +122,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
       })
   }
 
-  onCloseAlert():void {
+  onCloseAlert(): void {
     this.error = null;
   }
 

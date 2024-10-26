@@ -13,7 +13,6 @@ import { Component } from '@angular/core';
             <app-four-observable-completion  />
             <app-five-map-operator  />
             <app-six-filter-operator  />
-
             <app-first-subjects />
             <app-second-subjects />
         </div>
@@ -21,6 +20,4 @@ import { Component } from '@angular/core';
     
   `
 })
-export class FiveObservablesComponent {
-
-}
+export class FiveObservablesComponent {}

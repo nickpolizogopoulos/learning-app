@@ -1,37 +1,31 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { 
+  Component,
+  EventEmitter,
+  Output
+} from '@angular/core';
+
 import { LoggingServiceService } from '../logging-service.service';
 
 @Component({
   selector: 'app-two-service-button',
   template: `
   
-  <button 
-    (click)="onRedButtonClick()" 
-    class="btn btn-danger rounded-1 me-4 mb-3"
+    <button 
+      (click)="onRedButtonClick()" 
+      class="btn btn-danger rounded-1 me-4 mb-3"
     >
-    Red button
-  </button>
+      Red button
+    </button>
   
   `,
-  styles: [``],
   providers: [LoggingServiceService]
 })
 export class TwoServiceButtonComponent {
 
-  // constructor( private LoggingService:LoggingServiceService) {
-    
-  // }
-
-  @Output() redClick = new EventEmitter<Function>();
-
-  // redColor:string = 'Red';
+  @Output() redClick = new EventEmitter<void>();
 
   onRedButtonClick() {
-    // this.LoggingService.logMessage(this.redColor);
-    this.redClick.emit(
-      () => {}
-      )
+    this.redClick.emit();
   }
+
 }
-
-

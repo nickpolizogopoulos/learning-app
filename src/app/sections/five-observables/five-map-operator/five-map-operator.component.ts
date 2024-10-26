@@ -1,6 +1,14 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Observer, Subscription, map } from 'rxjs';
-import { Observable } from 'rxjs';
+import {
+  Component,
+  OnDestroy
+} from '@angular/core';
+import {
+  Observer,
+  Subscription,
+  Observable,
+  map
+} from 'rxjs';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -19,21 +27,20 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p *ngIf="counting">* hiders gonna hide *</p>
     <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class FiveMapOperatorComponent implements OnDestroy {
 
-  count:number = 0;
-  subscription?:Subscription;
-  ready:boolean = false;
-  counting:boolean = false;
+  count: number = 0;
+  subscription?: Subscription;
+  ready: boolean = false;
+  counting: boolean = false;
 
-  onStart():void {
+  onStart(): void {
     this.ready = false;
 
     //observable
-    const timer = Observable.create( (observer:Observer<number>) => {
+    const timer = Observable.create( (observer: Observer<number>) => {
       let count = 0;
       setInterval( () => {
         observer.next(count);
@@ -45,12 +52,12 @@ export class FiveMapOperatorComponent implements OnDestroy {
     //Operator
     const addition:number = 5;
     const operator = timer.pipe(
-      map( (data:number) => data * addition )
+      map( (data: number) => data * addition )
     );
 
     //*Operator subscription
     this.subscription = operator.subscribe({
-      next: (data:number) => {
+      next: (data: number) => {
         this.count = data;
         this.counting = true;
       },
@@ -58,17 +65,18 @@ export class FiveMapOperatorComponent implements OnDestroy {
         this.ready = true;
         this.counting = false;
       },
-      error: (error:string) => console.log(error),
+      error: (error: string) => console.log(error),
     });
   }
 
-  onReset():void {
+  onReset(): void {
     this.count = 0;
     this.ready = false;
     this.counting = false;
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
+
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -13,7 +14,8 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
       #pick (input)="pick.value" 
       min="0" max="330" 
       [(ngModel)]="textLength" 
-      [disabled]="!isExpanded">
+      [disabled]="!isExpanded"
+    >
 
     <p *ngIf="isExpanded" class="lead">{{ text | shorten: textLength }}
         <span *ngIf="text.length > textLength">
@@ -27,21 +29,20 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </p>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class TwoCustomPipeComponent {
 
-  isExpanded:boolean = true;
-  textLength:number = 117;
+  isExpanded: boolean = true;
+  textLength: number = 117;
 
-  text:string = `The Soyuz spacecraft is a Russian space vehicle 
+  text: string = `The Soyuz spacecraft is a Russian space vehicle 
   designed for human spaceflight. It has been in use since the 1960s and 
   remains a key component of the Russian space program. Soyuz has transported 
   astronauts to the International Space Station and is known 
   for its robustness and versatility in various mission profiles.`;
 
-  onMoreLessSelect():void {
+  onMoreLessSelect(): void {
     this.isExpanded = !this.isExpanded;
   }
 

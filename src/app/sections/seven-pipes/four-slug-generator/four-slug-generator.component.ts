@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -14,22 +15,20 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p class="lead">{{ result | lowercase | symbolsToHyphens }}</p>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class FourSlugGeneratorComponent {
 
-  textarea:string = '';
+  textarea: string = '';
   result:string = '';
 
-  convert():void {
+  convert(): void {
     this.result = this.textarea;
   }  
 
-  reset():void {
+  reset(): void {
     this.textarea = '';
     this.result = '';
   }
   
-
 }

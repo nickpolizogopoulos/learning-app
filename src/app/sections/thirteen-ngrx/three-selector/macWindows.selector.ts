@@ -1,3 +1,3 @@
 import { OperatingSystem } from "./three-selector.component";
 
-export const selectMacVsWindows = ( state:OperatingSystem ) => state.macVSwindows;
+export const selectMacVsWindows = ( state: OperatingSystem ): string => state.macVSwindows;

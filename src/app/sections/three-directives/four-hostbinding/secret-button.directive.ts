@@ -1,4 +1,10 @@
-import { Directive, ElementRef, HostBinding, HostListener, inject } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  inject
+} from '@angular/core';
 
 @Directive({
   selector: '[appSecretButton]',
@@ -11,32 +17,32 @@ import { Directive, ElementRef, HostBinding, HostListener, inject } from '@angul
 })
 export class SecretButtonDirective {
   
-  @HostBinding('class.text-success') classPass:string = '';
-  @HostBinding('style.fontWeight') fontStrong:string = '';
-  @HostBinding('class.cursor-pointer') cursorClass:string = '';
+  @HostBinding('class.text-success') classPass: string = '';
+  @HostBinding('style.fontWeight') fontStrong: string = '';
+  @HostBinding('class.cursor-pointer') cursorClass: string = '';
 
-  @HostListener('mouseover') mouseOver() {
+  @HostListener('mouseover') mouseOver(): void {
     this.fontStrong = 'bold';
     this.classPass = 'text-success';
     this.cursorClass = 'cursor-pointer';
   }
-  @HostListener('mouseleave') mouseLeave() {
+
+  @HostListener('mouseleave') mouseLeave(): void {
     this.fontStrong = '';
     this.classPass = '';           
     this.cursorClass = '';
   }
 
   //* for the newer approach
-
   // private elementRef = inject(ElementRef);
 
-  // mouseOver() {
+  // mouseOver(): void {
   //   this.fontStrong = 'bold';
   //   this.classPass = 'text-success';
   //   this.cursorClass = 'cursor-pointer';
   // }
 
-  // mouseLeave() {
+  // mouseLeave(): void {
   //   this.fontStrong = '';
   //   this.classPass = '';
   //   this.cursorClass = '';

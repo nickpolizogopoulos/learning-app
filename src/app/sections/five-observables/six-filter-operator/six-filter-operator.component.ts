@@ -1,5 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Observer, Subscription, filter } from 'rxjs';
+import {
+  Component,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
+import {
+  Observable,
+  Observer,
+  Subscription,
+  filter
+} from 'rxjs';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -21,28 +31,27 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{ fizBuzzNumbers.join(', ') }}</p>
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class SixFilterOperatorComponent implements OnInit, OnDestroy {
 
-  userInput?:number;
-  fizBuzzNumbers:number[] = [];
-  subscription?:Subscription;
-  gameIsRunning:boolean = false;
+  userInput?: number;
+  fizBuzzNumbers: number[] = [];
+  subscription?: Subscription;
+  gameIsRunning: boolean = false;
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.gameIsRunning = false;
     this.fizBuzzNumbers.length = 0;
     this.userInput = undefined;
   }
 
-  onStart():void {
+  onStart(): void {
     this.gameIsRunning = true;
     this.fizBuzzNumbers.length = 0;
 
     const customObservable = Observable.create(
-      (observer:Observer<number>) => {
+      (observer: Observer<number>) => {
         let count = 0;
         setInterval( () => {  
           observer.next(count);
@@ -56,24 +65,24 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
     );
 
     const operator = customObservable.pipe(
-      filter( (data:number) => {
+      filter( (data: number) => {
         return data > 0 && (data % 3 === 0 && data % 5 === 0)
       } )
     )
 
     this.subscription = operator.subscribe({
-      next: (data:number) => this.fizBuzzNumbers.push(data)
+      next: (data: number) => this.fizBuzzNumbers.push(data)
     })
   }
 
-  onReset():void {
+  onReset(): void {
     this.subscription?.unsubscribe();
     this.gameIsRunning = false;
     this.fizBuzzNumbers.length = 0;
     this.userInput = undefined;
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
   

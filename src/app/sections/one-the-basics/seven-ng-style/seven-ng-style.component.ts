@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
   selector: 'app-seven-ng-style',
-  // templateUrl: './seven-ng-style.component.html',
   template: `
   
     <h4>7. The [ngStyle] Directive</h4>
@@ -31,25 +31,27 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
   styles: [`
   
     .coin-spinner {
-    transform: translateZ(1px);
+      transform: translateZ(1px);
+      
+      &:after {
+        content: '$';
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        text-align: center;
+        line-height:40px;
+        font-size: 32px;
+        font-weight: bold;
+        background: #FFD700;
+        color: #DAA520;
+        border: 4px double ;
+        box-sizing: border-box;
+        box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+        animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
     }
-    .coin-spinner:after {
-      content: '$';
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      text-align: center;
-      line-height:40px;
-      font-size: 32px;
-      font-weight: bold;
-      background: #FFD700;
-      color: #DAA520;
-      border: 4px double ;
-      box-sizing: border-box;
-      box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
-      animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-    }
+
     @keyframes coin-flip {
       0%, 100% {
         animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
@@ -65,38 +67,39 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
         transform: rotateY(3600deg);
       }
     }
-      
-  
+    
   `],
   host: lessonHostClasses
 })
 export class SevenNgStyleComponent {
 
-  showResult = false;
-  spinnerOn = false;
-  result = 'Tails';
+  showResult: boolean = false;
+  spinnerOn: boolean = false;
+  result: string = 'Tails';
 
-  onFlip():void {
+  onFlip(): void {
     this.spinnerOn = true;
-    setTimeout(() => {
-      this.spinnerOn = false;
-    }, 1100);
+    setTimeout(() =>
+      this.spinnerOn = false,
+      1100
+    );
     
     this.result = Math.random() > 0.5 ? 'Tails' : 'Heads';
 
     this.showResult = false;
-    setTimeout(() => {
-      this.showResult = true;
-    }, 1100);
+    setTimeout(() =>
+      this.showResult = true,
+      1100
+    );
   }
 
-  getResult():string {
-    //for coloured bg
+  getResult(): string {
     return this.result === 'Tails' ? '#add5ff' : '#ffadad';
   }
   
-  reset():void {
+  reset(): void {
     this.showResult = false;
     this.spinnerOn = false;
   }
+
 }

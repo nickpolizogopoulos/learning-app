@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
     <h2>Forms - 2 Lessons.
       <span (click)="onInfoClick()" class="lead cursor-pointer">[ info ]</span>
       <span *ngIf="information" class="lead">
-      Both forms are made for demonstration purposes only. 
-      They <u><strong>do not</strong></u> collect, store or send data, anywhere. 
+        Both forms are made for demonstration purposes only. 
+        They <u><strong>do not</strong></u> collect, store or send data, anywhere. 
       </span>
     </h2>
     <section class="container-fluid">

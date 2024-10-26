@@ -38,9 +38,6 @@ import { Component } from '@angular/core';
       </div>
     </section>
   
-  `,
-  styles: [``]
+  `
 })
-export class NineAuthenticationRouteProtectionComponent {
-  
-}
+export class NineAuthenticationRouteProtectionComponent {}

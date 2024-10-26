@@ -1,6 +1,16 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Additionals, Pita, Quantity } from './pita.models';
+
+import {
+  type Additionals,
+  type Pita,
+  type Quantity
+} from './pita.models';
 import { PitesService } from './pites.service';
 
 @Component({
@@ -10,103 +20,103 @@ import { PitesService } from './pites.service';
 
     .btn-close { 
       padding: 32px;
-    }`
+    }
 
-  ],
-  styleUrls: ['../projects.css']
+  `],
+  styleUrls: ['../projects.scss']
 })
 export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
 
-  termsVisible:boolean = false;
-  stepOneVisible:boolean = true;
-  orderMakerSection:boolean = false;
-  @ViewChild('foodForm') form?:NgForm;
-  requiredMessage:string = 'This field is required';
-  isFetchingPites:boolean = false;
-  formVisible:boolean = true;
-  loadedPites:Pita[] = [];
-  mainAdditionals:Additionals[] = [];
-  pitaQuantity:Quantity[] = [];
+  termsVisible: boolean = false;
+  stepOneVisible: boolean = true;
+  orderMakerSection: boolean = false;
+  @ViewChild('foodForm') form?: NgForm;
+  requiredMessage: string = 'This field is required';
+  isFetchingPites: boolean = false;
+  formVisible: boolean = true;
+  loadedPites: Pita[] = [];
+  mainAdditionals: Additionals[] = [];
+  pitaQuantity: Quantity[] = [];
   
   constructor(
-    private pitesService:PitesService
+    private pitesService: PitesService
   ) { }
   
   //* Clears Firebase on Component Init
-  ngOnInit():void {
-    this.onClearList()
+  ngOnInit(): void {
+    this.onClearList();
     this.mainAdditionals = this.pitesService.additionals;
     this.pitaQuantity = this.pitesService.quantity;
     }
 
-  onStartHere():void {
+  onStartHere(): void {
     this.termsVisible = !this.termsVisible;
   }
 
-  onAgree():void {
+  onAgree(): void {
     this.termsVisible = !this.termsVisible;
     this.orderMakerSection = true;
     this.stepOneVisible = false;
   }
 
-  onShowHideForm():void {
+  onShowHideForm(): void {
     this.formVisible = !this.formVisible;
   }
 
-  onAddToList( pita:Pita ):void {
-    this.pitesService.createAndStorePita(pita)
-      .subscribe( () => {
-        this.fetchPitesList();
-      })
-    this.form?.reset()
+  onAddToList( pita: Pita ): void {
+    this.pitesService.createAndStorePita(pita).subscribe({
+      next: () => this.fetchPitesList()
+    });
+    this.form?.reset();
   }
 
-  onClearList():void {
+  onClearList(): void {
     this.isFetchingPites = true;
-    this.pitesService.deletePitesList()
-      .subscribe(
-        () => {
-          this.isFetchingPites = false;
-          this.loadedPites = [];
-        })
+    this.pitesService.deletePitesList().subscribe({
+      next: () => {
+        this.isFetchingPites = false;
+        this.loadedPites = [];
+      }
+    });
   }
 
-  onDeletePita( id:Pita['id'] ) { 
-    this.pitesService.onDeleteSinglePita(id as any)
-      .subscribe(() => {
+  onDeletePita( id: Pita['id'] ) { 
+    this.pitesService.onDeleteSinglePita(id as any).subscribe({
+      next: () => {
         this.loadedPites.splice(1, id as any)
         this.fetchPitesList()
       }
-    )
+    });
   }
 
-  fetchPitesList():void {
+  fetchPitesList(): void {
     this.isFetchingPites = true;
-    this.pitesService.fetchPites().subscribe(
-      pites => {
+    this.pitesService.fetchPites().subscribe({
+      next: pites => {
         this.isFetchingPites = false;
         this.loadedPites = pites;
       }
-    )
+    });
   }
 
-  addFourDummyPites() {
+  addFourDummyPites(): void {
     this.isFetchingPites = true;
-    this.pitesService.addDummyPites()
+    this.pitesService.addDummyPites();
 
     //* fetch doesn't work at once, 
     //* so I leave 1,2 seconds to pass
     //* with the setTimeout function.
 
-    setTimeout(() => {
-      this.fetchPitesList()
-    }, 1200);
+    setTimeout(() => 
+      this.fetchPitesList(),
+      1200
+    );
   }
 
 
   //* Clears Firebase on Component Destruction
-  ngOnDestroy():void {
-    this.onClearList()
+  ngOnDestroy(): void {
+    this.onClearList();
   }
 
 }

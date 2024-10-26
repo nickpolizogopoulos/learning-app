@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-one-the-basics',
-  // templateUrl: './one-the-basics.component.html',
   template: `
   
     <h2>The Basics - 8 Lessons.</h2>
@@ -20,9 +19,6 @@ import { Component } from '@angular/core';
         </div>
     </section>
   
-  `,
-  styles: [``]
+  `
 })
-export class OneTheBasicsComponent {
-  
-}
+export class OneTheBasicsComponent {}

@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -76,26 +83,26 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
 })
 export class OneBasicAnimationComponent {
 
-  state:string = 'left';
-  clicked:boolean = false;
-  realHint:boolean = false;
+  state: string = 'left';
+  clicked: boolean = false;
+  realHint: boolean = false;
 
-  onAnimate():void {
+  onAnimate(): void {
     this.state === 'left' ? this.state = 'right' : this.state = 'left'
   }
 
-  onHintClick():void {
+  onHintClick(): void {
     this.realHint = true;
   }
 
-  onRealHintClick():void {
+  onRealHintClick(): void {
     this.realHint = false;
   }
 
-  onLineClick():void {
+  onLineClick(): void {
     this.clicked = true;
-    setTimeout(
-      () => this.clicked = false,
+    setTimeout(() =>
+      this.clicked = false,
       500
     );
   }

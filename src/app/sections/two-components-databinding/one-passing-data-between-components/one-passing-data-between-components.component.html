@@ -14,11 +14,7 @@
             <p class="lead"> <u>Child Component #2</u> </p>
             <p class="lead">Your List: (Immediate Purchases will be <u class="text-primary">highlighted</u>)</p>
 
-            <app-list
-                *ngFor="let item of wishList let i = index"
-                [listItem]="item"
-                (onDeleteItem)="onDeleteItem(i)"
-            >
+            <app-list *ngFor="let item of wishList let i = index" [listItem]="item" (onDeleteItem)="onDeleteItem(i)">
                 <div *ngIf="item.type === 'immediate'">
                     <h5><u class="text-primary">{{item.name}}</u>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">

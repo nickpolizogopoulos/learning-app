@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 interface Guests {
@@ -49,10 +50,10 @@ interface Guests {
 export class ThreeFilterPipeComponent {
 
   currentYear = new Date().getFullYear();
-  selection:string = '';
-  filterBtn:boolean = false;
+  selection: string = '';
+  filterBtn: boolean = false;
 
-  guests:Guests[] = [
+  guests: Guests[] = [
     {
       id: 1,
       name: 'Nick P.',
@@ -80,10 +81,10 @@ export class ThreeFilterPipeComponent {
       age: this.currentYear-1990,
       status: 'Married',
       title: 'The Spectacular'
-    },
-  ]
+    }
+  ];
 
-  onReset() {
+  onReset(): void {
     this.guests.sort(
       ( a, b ) => a.id - b.id
     )
@@ -91,11 +92,12 @@ export class ThreeFilterPipeComponent {
     this.filterBtn = false;
   }
 
-  onMarriedSelect():void {
+  onMarriedSelect(): void {
     this.selection = 'Married';
     this.filterBtn = true;
   }
-  onSingleSelect():void {
+
+  onSingleSelect(): void {
     this.selection = 'Single';
     this.filterBtn = true;
   }

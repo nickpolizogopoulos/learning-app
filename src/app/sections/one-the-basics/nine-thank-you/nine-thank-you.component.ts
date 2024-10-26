@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
 @Component({
@@ -23,9 +24,6 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
         </table> 
   
   `,
-  styles: [``],
   host: lessonHostClasses
 })
-export class NineThankYouComponent {
-
-}
+export class NineThankYouComponent {}

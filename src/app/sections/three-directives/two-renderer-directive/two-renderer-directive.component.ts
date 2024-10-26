@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { lessonHostClasses } from 'src/app/shared/host-classes';
+
 @Component({
   selector: 'app-two-renderer-directive',
   template: `
@@ -36,7 +38,8 @@ import { Component, OnInit } from '@angular/core';
         height: 70px;
     }
   
-  `]
+  `],
+  host: lessonHostClasses
 })
 export class TwoRendererDirectiveComponent implements OnInit {
 

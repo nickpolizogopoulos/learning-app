@@ -1,19 +1,23 @@
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+
 import { getFirebaseEndpoint } from '../http-utilities';
 import { lessonHostClasses } from 'src/app/shared/host-classes';
 
-interface ReleaseDateProps {
+type ReleaseDate = {
   day:number;
   month:string;
   year:number;
 }
 
-interface AlbumProps {
+type Album = {
   name:string;
   artist:string;
-  releaseDate: ReleaseDateProps,
+  releaseDate: ReleaseDate,
   genre:string;
   label:string;
   infoLink:string;
@@ -40,30 +44,29 @@ interface AlbumProps {
     </div>
 
   `,
-  styles: [``],
   host: lessonHostClasses
 })
 export class OneGetRequestComponent implements OnInit {
 
-  infoIsExpanded:boolean = false;
-  private url:string = getFirebaseEndpoint('albums');
-  albums:AlbumProps[] = [];
+  private url: string = getFirebaseEndpoint('albums');
+  infoIsExpanded: boolean = false;
+  albums: Album[] = [];
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.fetchAlbums();
   }
 
-  infoExpand():void {
+  infoExpand(): void {
     this.infoIsExpanded = !this.infoIsExpanded;
   }
 
-  fetchAlbums() {
+  fetchAlbums(): void {
     this.http
-      .get <{ [key:string]:AlbumProps }> (this.url)
+      .get <{ [key: string]: Album }> (this.url)
       .pipe(
         map( responseData => {
           const array = [];
@@ -73,7 +76,9 @@ export class OneGetRequestComponent implements OnInit {
           }
           return array;
         })
-      ).subscribe( posts => this.albums = posts );
+      ).subscribe({
+        next: posts => this.albums = posts
+      });
   }
 
   // * a method to post the albums

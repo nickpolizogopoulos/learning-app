@@ -1,9 +1,20 @@
 import { Action } from "@ngrx/store";
-import { LIGHTSOFF, LIGHTSON, LightOnOrOffActions, TurnLightsOff, TurnLightsOn } from "./onoff.actions";
 
-const initialState = true;
+import {
+    LIGHTSOFF,
+    LIGHTSON,
+    LightOnOrOffActions,
+    TurnLightsOff,
+    TurnLightsOn
+} from "./onoff.actions";
 
-export const onOffReducer = ( state = initialState, action:LightOnOrOffActions | Action ):boolean => {
+const initialState: boolean = true;
+
+export const onOffReducer = ( 
+    state = initialState, 
+    action: LightOnOrOffActions | Action
+): boolean =>
+{
     if (action.type === LIGHTSON)
         return (action as TurnLightsOn).value;
 

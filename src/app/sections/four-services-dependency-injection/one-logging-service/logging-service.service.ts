@@ -5,12 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoggingServiceService {
 
-  constructor() {
-    
-  }
-
-  logMessage(buttonColor:string):string {
-    console.log(`The ${buttonColor} button is clicked!`)
+  logMessage( buttonColor: string ): string {
     return `The ${buttonColor} button is clicked!`
   }
 

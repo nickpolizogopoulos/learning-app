@@ -4,16 +4,17 @@ import {
   HttpHandler,
   HttpInterceptor
 } from '@angular/common/http';
+
 import { ToolsService } from './tools.service';
 
 @Injectable()
 export class ToolsInterceptor implements HttpInterceptor {
 
   constructor(
-    private toolsService:ToolsService,
+    private toolsService: ToolsService,
   ) { }
 
-  message:string = `Interceptor: "Your request is being processed..."`;
+  message: string = `Interceptor: "Your request is being processed..."`;
 
   intercept(
     request: HttpRequest<unknown>,

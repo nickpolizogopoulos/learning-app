@@ -4,13 +4,21 @@ export const LIGHTSON = '[Bulb] On';
 export const LIGHTSOFF = '[Bulb] Off';
 
 export class TurnLightsOff implements Action {
+    
+    constructor(
+        public value: boolean
+    ) {}
+
     readonly type = LIGHTSOFF;
-    constructor( public value:boolean ) {}
 }
 
 export class TurnLightsOn implements Action {
+
+    constructor(
+        public value:boolean
+    ) {}
+
     readonly type = LIGHTSON;
-    constructor( public value:boolean ) {}
 }
 
 export type LightOnOrOffActions = TurnLightsOff | TurnLightsOn;

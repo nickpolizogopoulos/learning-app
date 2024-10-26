@@ -3,39 +3,39 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-fizz-buzz',
   templateUrl: './fizz-buzz.component.html',
-  styleUrls: ['../projects.css']
+  styleUrls: ['../projects.scss']
 })
 export class FizzBuzzComponent {
 
-  optionA:boolean = false;
-  optionB:boolean = false;
-  optionC:boolean = false;
-  optionD:boolean = false;
+  optionA: boolean = false;
+  optionB: boolean = false;
+  optionC: boolean = false;
+  optionD: boolean = false;
 
-  rangeOfNumbers:number = 250;
-  optionAinput?:number;
-  optionCto?:string;
-  optionCfrom?:string;
+  rangeOfNumbers: number = 250;
+  optionAinput?: number;
+  optionCto?: string;
+  optionCfrom?: string;
 
-  calculating:boolean = false;
-  alert:boolean = false;
-  spinnerLoading:boolean = false;
+  calculating: boolean = false;
+  alert: boolean = false;
+  spinnerLoading: boolean = false;
 
-  result?:string;
-  fizzNumbers:number[] = [];
-  buzzNumbers:number[] = [];
-  fizzBuzzNumbers:number[] = [];
-  regularNumbers:number[] = [];
-  randomNumber?:number;
+  result?: string;
+  fizzNumbers: number[] = [];
+  buzzNumbers: number[] = [];
+  fizzBuzzNumbers: number[] = [];
+  regularNumbers: number[] = [];
+  randomNumber?: number;
 
-  private emptyArrays():void {
+  private emptyArrays(): void {
     this.fizzBuzzNumbers = [];
     this.fizzNumbers = [];
     this.buzzNumbers = [];
     this.regularNumbers = [];
   }
 
-  onOptionASelect():void {
+  onOptionASelect(): void {
     this.result = undefined;
     this.alert = false;
     this.optionA = true;
@@ -45,7 +45,7 @@ export class FizzBuzzComponent {
     this.onReset();
   }
 
-  onOptionBSelect():void {
+  onOptionBSelect(): void {
     this.result = undefined;
     this.alert = false;
     this.optionA = false;
@@ -55,7 +55,7 @@ export class FizzBuzzComponent {
     this.onReset();
   }
 
-  onOptionCSelect():void {
+  onOptionCSelect(): void {
     this.result = undefined;
     this.alert = false;
     this.optionA = false;
@@ -65,7 +65,7 @@ export class FizzBuzzComponent {
     this.onReset();
   }
 
-  onOptionDSelect():void {
+  onOptionDSelect(): void {
     this.result = undefined;
     this.alert = false;
     this.optionA = false;
@@ -75,7 +75,7 @@ export class FizzBuzzComponent {
     this.onReset();
   }
 
-  rng():void {
+  rng(): void {
     this.spinnerLoading = true;
     this.randomNumber = undefined;
     this.result = undefined;
@@ -85,7 +85,7 @@ export class FizzBuzzComponent {
     }, 500); 
   }
 
-  private fizzBuzzChecker( value:number ):void {
+  private fizzBuzzChecker( value: number ): void {
     if (value % 3 === 0 && value % 5 === 0)
       this.result = `The number ${value} is FizzBuzz!`;
     else if (value % 3 === 0)
@@ -96,7 +96,7 @@ export class FizzBuzzComponent {
       this.result = `The number ${value} is neither Fizz, Buzz or FizzBuzz.`;
   }
 
-  private rangeChecker( firstValue:number, secondValue:number ):void {
+  private rangeChecker( firstValue: number, secondValue: number ): void {
     for (let i = firstValue; i <= secondValue; i++)
       if (i % 3 === 0 && i % 5 === 0)
         this.fizzBuzzNumbers.push(i);
@@ -108,7 +108,7 @@ export class FizzBuzzComponent {
         this.regularNumbers.push(i);
   }
 
-  onRun():void {
+  onRun(): void {
     this.emptyArrays();
     this.alert = false;
 
@@ -144,7 +144,7 @@ export class FizzBuzzComponent {
 
   }
 
-  onReset():void {
+  onReset(): void {
     this.alert = false;
     this.result = undefined;
     this.optionAinput = undefined;
