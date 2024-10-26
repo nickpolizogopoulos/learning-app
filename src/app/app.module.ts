@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -150,175 +150,149 @@ import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/fou
 import { FourteenAnimationsComponent } from './sections/fourteen-animations/fourteen-animations.component';
 import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-basic-animation/one-basic-animation.component';
 import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
-@NgModule({
-  declarations: [
-
-    //* SHARED COMPONENTS
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    NavbarComponent,
-    PageNotFoundComponent,
-    FooterComponent,
-    CustomButtonComponent,
-    
-    //* PROJECTS
-    ToDoAppComponent,
-    SuperSignatureMakerComponent,
-    FizzBuzzComponent,
-    MyShoppingListComponent,
-      ProjectFormComponent,
-      ProjectFoodListComponent,
-      ProjectHomeListComponent,
-    GreekGyroPitaOrderMakerComponent,
-    
-    //* SECTION The Basics
-    OneTheBasicsComponent,
-      OneDataBindingComponent,
-      TwoPropertyBindingComponent,
-      ThreeEventBindingComponent,
-      FourNgIfComponent,
-      FiveNgIfElseComponent,
-      SixNgForComponent,
-      SevenNgStyleComponent,
-      EightNgClassComponent,
-      NineThankYouComponent,
-      
-    //* SECTION Components & Databinding
-    TwoComponentsDatabindingComponent,
-      OnePassingDataBetweenComponentsComponent,
-      FormComponent,
-      ListComponent,
-      TwoViewchildAndLocalReferencesComponent,
-      ImportantComponent,
-      UnimportantComponent,
-      FormTwoComponent,
-
-    //* SECTION Directives
-    ThreeDirectivesComponent,
-      OneBasicCustomDirectiveComponent,
-      BlueBgDirective,
-      BordeauxBgDirective,
-      TwoRendererDirectiveComponent,
-      SmSizeDirective,
-      MdSizeDirective,
-      XlSizeDirective,
-      ThreeHostlistenerComponent,
-      GreenFilterDirective,
-      YellowFilterDirective,
-      FourHostbindingComponent,
-      SecretButtonDirective,
-      FiveBindingToDirectivePropertiesComponent,
-      ColoursDirective,
-      SixCustomStructuralDirectiveComponent,
-      UnlessDirective,
-      SevenNgswitchComponent,
-
-    //* SECTION Services & Dependency Injection
-    FourServicesDependencyInjectionComponent,
-      OneLoggingServiceComponent,
-      OneServiceButtonComponent,
-      TwoServiceButtonComponent,
-      ThreeServiceButtonComponent,
-      TwoDataServiceComponent,
-      FormDataServiceComponent,
-      ListDataServiceComponent,
-
-    //* SECTION Observables
-    FiveObservablesComponent,
-      OneBasicObservableComponent,
-      TwoCustomObservableComponent,
-      ThreeObservableErrorsComponent,
-      FourObservableCompletionComponent,
-      FiveMapOperatorComponent,
-      SixFilterOperatorComponent,
-      FirstSubjectsComponent,
-      SecondSubjectsComponent,
-
-    //* SECTION Forms
-    SixFormsComponent,
-      OneTemplateDrivenFormComponent,
-      TwoReactiveFormComponent,
-
-    //* SECTION Data Transformation with Pipes
-    SevenPipesComponent,
-      OneSimpleTransformationComponent,
-      TwoCustomPipeComponent,
-      ShortenPipe,
-      ThreeFilterPipeComponent,
-      StatusFilterPipe,
-      FourSlugGeneratorComponent,
-      SymbolsToHyphensPipe,
-
-    //* SECTION Http Requests
-    EightHttpRequestsComponent,
-    OneGetRequestComponent,
-    TwoPostRequestComponent,
-    ThreeErrorHandlingComponent,
-    FourInterceptorComponent,
-
-    //* SECTION Authentication & Route Protection
-    NineAuthenticationRouteProtectionComponent,
-
-    //* SECTION Dynamic Components
-    TenDynamicComponentsComponent,
-      OneUsingNgifComponent,
-      TwoProgrammaticallyComponent,
-      LoaderSpinnerComponent,
-      CustomAlertComponent,
-      LineLoaderComponent,
-      ProgAlertComponent,
-      PlaceholderDirective,
-
-    //* SECTION Standalone Components - these are standalone components 
-    // ElevenStandaloneComponentsComponent,
-      // OneStandaloneComponent,
-      // TwoStandaloneComponent,
-
-    //* SECTION Signals
-    TwelveSignalsComponent,
-      SignalComponent,
-
-    //* SECTION NGRX
-    ThirteenNgrxComponent,
-      OneBasicReducerAndActionComponent,
-      TwoBasicReducerAndActionOldMethodComponent,
-      ThreeSelectorComponent,
-      FourEffectComponent,
-
-    //* SECTION Animations
-    FourteenAnimationsComponent,
-      OneBasicAnimationComponent,
-      TwoVoidStateComponent,
-      
-
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-
-    StoreModule.forRoot({
-      oneCounter: counterReducer,
-      onOffState: onOffReducer,
-      macVSwindows: macWindowsReducer,
-      fourCounter: fourCounterReducer,
-    }),
-
-    BrowserAnimationsModule,
-    EffectsModule.forRoot([
-      CounterEffects
-    ])
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ToolsInterceptor,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        //* SHARED COMPONENTS
+        AppComponent,
+        HomeComponent,
+        AboutComponent,
+        NavbarComponent,
+        PageNotFoundComponent,
+        FooterComponent,
+        CustomButtonComponent,
+        //* PROJECTS
+        ToDoAppComponent,
+        SuperSignatureMakerComponent,
+        FizzBuzzComponent,
+        MyShoppingListComponent,
+        ProjectFormComponent,
+        ProjectFoodListComponent,
+        ProjectHomeListComponent,
+        GreekGyroPitaOrderMakerComponent,
+        //* SECTION The Basics
+        OneTheBasicsComponent,
+        OneDataBindingComponent,
+        TwoPropertyBindingComponent,
+        ThreeEventBindingComponent,
+        FourNgIfComponent,
+        FiveNgIfElseComponent,
+        SixNgForComponent,
+        SevenNgStyleComponent,
+        EightNgClassComponent,
+        NineThankYouComponent,
+        //* SECTION Components & Databinding
+        TwoComponentsDatabindingComponent,
+        OnePassingDataBetweenComponentsComponent,
+        FormComponent,
+        ListComponent,
+        TwoViewchildAndLocalReferencesComponent,
+        ImportantComponent,
+        UnimportantComponent,
+        FormTwoComponent,
+        //* SECTION Directives
+        ThreeDirectivesComponent,
+        OneBasicCustomDirectiveComponent,
+        BlueBgDirective,
+        BordeauxBgDirective,
+        TwoRendererDirectiveComponent,
+        SmSizeDirective,
+        MdSizeDirective,
+        XlSizeDirective,
+        ThreeHostlistenerComponent,
+        GreenFilterDirective,
+        YellowFilterDirective,
+        FourHostbindingComponent,
+        SecretButtonDirective,
+        FiveBindingToDirectivePropertiesComponent,
+        ColoursDirective,
+        SixCustomStructuralDirectiveComponent,
+        UnlessDirective,
+        SevenNgswitchComponent,
+        //* SECTION Services & Dependency Injection
+        FourServicesDependencyInjectionComponent,
+        OneLoggingServiceComponent,
+        OneServiceButtonComponent,
+        TwoServiceButtonComponent,
+        ThreeServiceButtonComponent,
+        TwoDataServiceComponent,
+        FormDataServiceComponent,
+        ListDataServiceComponent,
+        //* SECTION Observables
+        FiveObservablesComponent,
+        OneBasicObservableComponent,
+        TwoCustomObservableComponent,
+        ThreeObservableErrorsComponent,
+        FourObservableCompletionComponent,
+        FiveMapOperatorComponent,
+        SixFilterOperatorComponent,
+        FirstSubjectsComponent,
+        SecondSubjectsComponent,
+        //* SECTION Forms
+        SixFormsComponent,
+        OneTemplateDrivenFormComponent,
+        TwoReactiveFormComponent,
+        //* SECTION Data Transformation with Pipes
+        SevenPipesComponent,
+        OneSimpleTransformationComponent,
+        TwoCustomPipeComponent,
+        ShortenPipe,
+        ThreeFilterPipeComponent,
+        StatusFilterPipe,
+        FourSlugGeneratorComponent,
+        SymbolsToHyphensPipe,
+        //* SECTION Http Requests
+        EightHttpRequestsComponent,
+        OneGetRequestComponent,
+        TwoPostRequestComponent,
+        ThreeErrorHandlingComponent,
+        FourInterceptorComponent,
+        //* SECTION Authentication & Route Protection
+        NineAuthenticationRouteProtectionComponent,
+        //* SECTION Dynamic Components
+        TenDynamicComponentsComponent,
+        OneUsingNgifComponent,
+        TwoProgrammaticallyComponent,
+        LoaderSpinnerComponent,
+        CustomAlertComponent,
+        LineLoaderComponent,
+        ProgAlertComponent,
+        PlaceholderDirective,
+        //* SECTION Standalone Components - these are standalone components 
+        // ElevenStandaloneComponentsComponent,
+        // OneStandaloneComponent,
+        // TwoStandaloneComponent,
+        //* SECTION Signals
+        TwelveSignalsComponent,
+        SignalComponent,
+        //* SECTION NGRX
+        ThirteenNgrxComponent,
+        OneBasicReducerAndActionComponent,
+        TwoBasicReducerAndActionOldMethodComponent,
+        ThreeSelectorComponent,
+        FourEffectComponent,
+        //* SECTION Animations
+        FourteenAnimationsComponent,
+        OneBasicAnimationComponent,
+        TwoVoidStateComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        StoreModule.forRoot({
+            oneCounter: counterReducer,
+            onOffState: onOffReducer,
+            macVSwindows: macWindowsReducer,
+            fourCounter: fourCounterReducer,
+        }),
+        BrowserAnimationsModule,
+        EffectsModule.forRoot([
+            CounterEffects
+        ])], providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ToolsInterceptor,
+            multi: true
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {}
