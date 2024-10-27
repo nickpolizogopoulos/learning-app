@@ -7,7 +7,7 @@ import {
   UserListService,
   type User
 } from './user-list.service';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-data-service',
@@ -34,7 +34,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
 
   `,
   providers: [UserListService],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoDataServiceComponent implements OnInit {
   

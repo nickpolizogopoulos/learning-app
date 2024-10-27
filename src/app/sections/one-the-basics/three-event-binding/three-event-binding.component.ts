@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-three-event-binding',
@@ -18,7 +18,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p>data : string = '{{ data }}' ;</p>
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class ThreeEventBindingComponent {
   

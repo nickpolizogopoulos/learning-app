@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 type Contact = {
   name:string;
@@ -25,7 +25,7 @@ type Contact = {
     }
 
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoPostRequestComponent implements OnInit {
 

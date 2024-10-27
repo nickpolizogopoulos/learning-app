@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-four-hostbinding',
@@ -24,7 +24,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     }
   
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FourHostbindingComponent {
 

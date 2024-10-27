@@ -16,14 +16,14 @@ import { PitesService } from './pites.service';
 @Component({
   selector: 'app-greek-gyro-pita-order-maker',
   templateUrl: './greek-gyro-pita-order-maker.component.html',
-  styles: [` 
+  styles: ` 
 
     .btn-close { 
       padding: 32px;
     }
 
-  `],
-  styleUrls: ['../projects.scss']
+  `,
+  styleUrl: '../projects.scss'
 })
 export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
 
@@ -112,7 +112,6 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
       1200
     );
   }
-
 
   //* Clears Firebase on Component Destruction
   ngOnDestroy(): void {

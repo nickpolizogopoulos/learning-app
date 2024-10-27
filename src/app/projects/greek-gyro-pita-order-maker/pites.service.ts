@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import {
+  Observable,
+  map
+} from 'rxjs';
 
 import {
   type Additionals,
@@ -64,7 +67,7 @@ export class PitesService {
 
   createAndStorePita( pita: Pita ) {
     return this.http
-      .post <{ [key:string]:Pita }> (this.url, pita)
+      .post <{ [key:string]: Pita }> (this.url, pita)
   }
 
   deletePitesList() {

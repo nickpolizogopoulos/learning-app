@@ -17,11 +17,11 @@ export class ProjectHomeListComponent {
   @Output() deleteHomeItem = new EventEmitter<void>();
   @Output() moveHomeItem = new EventEmitter<void>()
 
-  onDeleteItem():void {
+  onDeleteItem(): void {
     this.deleteHomeItem.emit();
   }
 
-  onMoveItem():void {
+  onMoveItem(): void {
     this.moveHomeItem.emit();
   }
   

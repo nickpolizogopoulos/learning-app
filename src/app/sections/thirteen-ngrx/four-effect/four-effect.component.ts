@@ -14,7 +14,7 @@ import {
   selectCount, 
   selectDoubleCount 
 } from './store-all-in-one';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-four-effect',
@@ -55,7 +55,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     }
     
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FourEffectComponent implements OnInit {
 

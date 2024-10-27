@@ -9,12 +9,12 @@ import {
   Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-reactive-form',
   templateUrl: './two-reactive-form.component.html',
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoReactiveFormComponent implements OnInit {
 

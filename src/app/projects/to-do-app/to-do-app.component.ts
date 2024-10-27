@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 type todoItem = {
-  id:number;
-  title:string;
-  comment:string;
-  day:string;
-  important:boolean;
+  id: number;
+  title: string;
+  comment: string;
+  day: string;
+  important: boolean;
 }
 
 @Component({
   selector: 'app-to-do-app',
   templateUrl: './to-do-app.component.html',
-  styleUrls: ['../projects.scss']
+  styleUrl: '../projects.scss'
 })
 export class ToDoAppComponent {
 
@@ -116,7 +116,7 @@ export class ToDoAppComponent {
         comment: `Finish the project together`,
         day: 'Wednesday',
         important: true
-      },
+      }
     );
   }
 

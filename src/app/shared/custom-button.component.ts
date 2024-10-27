@@ -14,11 +14,10 @@ import {
     </a>
   
   `,
-  styles: [`
+  styles: `
     
     .customButton{
-
-      position:relative;
+      position: relative;
       padding: 0px 5px;
       border-color: rgba(36, 54, 99, 0.9);
       
@@ -56,7 +55,7 @@ import {
 
     }
     
-  `]
+  `
 })
 export class CustomButtonComponent {
 

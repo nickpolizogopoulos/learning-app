@@ -4,19 +4,19 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   
-    <app-header />
+    <header appHeader></header>
     <main class="main-content">
       <router-outlet />
     </main>
-    <app-footer />
+    <footer appFooter></footer>
   
   `,
-  styles: [`
+  styles: `
   
     .main-content {
       margin: 40px 40px 0px 40px;
     }
   
-  `]
+  `
 })
 export class AppComponent {}

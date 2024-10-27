@@ -7,7 +7,7 @@ import {
   type Tools,
   ToolsService
 } from './tools.service';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-four-interceptor',
@@ -46,7 +46,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     }
   
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FourInterceptorComponent implements OnInit {
 

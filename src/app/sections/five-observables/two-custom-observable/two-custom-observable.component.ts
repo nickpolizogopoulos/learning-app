@@ -8,12 +8,12 @@ import {
   Subscription
 } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-custom-observable',
   templateUrl: './two-custom-observable.component.html',
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoCustomObservableComponent implements OnDestroy {
 

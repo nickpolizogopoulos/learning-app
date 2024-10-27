@@ -8,7 +8,7 @@ import {
   Subscription
 } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-three-observable-errors',
@@ -62,7 +62,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     }
 
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class ThreeObservableErrorsComponent implements OnDestroy {
 

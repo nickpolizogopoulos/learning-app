@@ -157,19 +157,24 @@ const appRoutes: Routes = [
         title: getTitle('404'),
         component: PageNotFoundComponent 
     },
+
+    //* WILDCARD --------------------------
     { 
         path: '**', 
         redirectTo: '404'
     }
   ];
 
-  const extraOptions:ExtraOptions = {
+  const extraOptions: ExtraOptions = {
     scrollPositionRestoration: 'enabled'
   }
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes, extraOptions)
+        RouterModule.forRoot(
+            appRoutes,
+            extraOptions
+        )
     ],
     exports: [
         RouterModule

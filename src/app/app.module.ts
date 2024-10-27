@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -150,7 +151,8 @@ import { CounterEffects, fourCounterReducer } from './sections/thirteen-ngrx/fou
 import { FourteenAnimationsComponent } from './sections/fourteen-animations/fourteen-animations.component';
 import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-basic-animation/one-basic-animation.component';
 import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
-@NgModule({ declarations: [
+@NgModule({ 
+    declarations: [
         //* SHARED COMPONENTS
         AppComponent,
         HomeComponent,
@@ -274,25 +276,34 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         OneBasicAnimationComponent,
         TwoVoidStateComponent,
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
+
         StoreModule.forRoot({
             oneCounter: counterReducer,
             onOffState: onOffReducer,
             macVSwindows: macWindowsReducer,
             fourCounter: fourCounterReducer,
         }),
-        BrowserAnimationsModule,
+        
         EffectsModule.forRoot([
             CounterEffects
-        ])], providers: [
+        ])
+    ], 
+    providers: [
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ToolsInterceptor,
             multi: true
         },
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
+        provideHttpClient(
+            withInterceptorsFromDi()
+        )
+    ] 
+})
 export class AppModule {}

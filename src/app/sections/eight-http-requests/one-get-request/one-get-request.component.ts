@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { getFirebaseEndpoint } from '../http-utilities';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 type ReleaseDate = {
   day:number;
@@ -44,7 +44,7 @@ type Album = {
     </div>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneGetRequestComponent implements OnInit {
 

@@ -86,7 +86,7 @@ import { Component } from '@angular/core';
     </section>
   
   `,
-  styles: [`
+  styles: `
   
     .explanation {
         font-size: 16px;
@@ -99,6 +99,6 @@ import { Component } from '@angular/core';
         }
     }
 
-  `]
+  `
 })
 export class AboutComponent {}

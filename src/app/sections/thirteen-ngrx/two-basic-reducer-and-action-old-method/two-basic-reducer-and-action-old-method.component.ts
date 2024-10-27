@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-basic-reducer-and-action-old-method',
@@ -40,7 +40,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <img *ngIf="!(onOff$ | async)" width="40" src="../../../assets/images/slightly-smiling-face_1f642.png">
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoBasicReducerAndActionOldMethodComponent {
 

@@ -10,7 +10,7 @@ import {
   filter
 } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-six-filter-operator',
@@ -31,7 +31,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p *ngIf="fizBuzzNumbers.length !== 0" class="lead">Results: {{ fizBuzzNumbers.join(', ') }}</p>
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class SixFilterOperatorComponent implements OnInit, OnDestroy {
 

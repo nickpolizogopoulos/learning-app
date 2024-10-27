@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { LoggingServiceService } from './logging-service.service';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-one-logging-service',
@@ -47,7 +47,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </a>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneLoggingServiceComponent {
 

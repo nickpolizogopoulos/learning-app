@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-between mb-4 niceblue">                
                 <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
-                    <h3 class="mb-4">Food List: <span class="ms-2 lead">{{foodLengthMessage()}}.</span>
+                    <h3 class="mb-4">Food List: <span class="ms-2 lead">{{ foodLengthMessage() }}.</span>
                         <span (click)="addTwoFood()" class="addToTestText cursor-pointer ms-3">[ +2 items ]</span>
                     </h3>
                     <app-project-food-list
@@ -26,12 +26,12 @@
                             <button (click)="removeLastFoodList()" class="btn btn-sm btn-warning rounded-1 me-2">Remove Last</button>
                         </div>
                         <div class="col">
-                            <span class="ms-2 lead"><u>Total Quantity: {{foodTotalQuantity()}}</u></span>
+                            <span class="ms-2 lead"><u>Total Quantity: {{ foodTotalQuantity() }}</u></span>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-5 col-xxl-5 shopping-list-card mb-3">
-                    <h3 class="mb-4">Home List<span class="ms-2 lead">{{homeLengthMessage()}}.</span>
+                    <h3 class="mb-4">Home List<span class="ms-2 lead">{{ homeLengthMessage() }}.</span>
                         <span (click)="addTwoHome()" class="addToTestText cursor-pointer ms-3">[ +2 items ]</span>
                     </h3>
                     <app-project-home-list
@@ -46,7 +46,7 @@
                             <button (click)="removeLastHomeList()" class="btn btn-sm btn-warning rounded-1 me-2">Remove Last</button>
                         </div>
                         <div class="col">
-                            <span class="ms-2 lead"><u>Total Quantity: {{homeTotalQuantity()}}</u></span>
+                            <span class="ms-2 lead"><u>Total Quantity: {{ homeTotalQuantity() }}</u></span>
                         </div>
                     </div>
                 </div>

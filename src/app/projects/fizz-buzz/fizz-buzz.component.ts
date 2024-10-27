@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-fizz-buzz',
   templateUrl: './fizz-buzz.component.html',
-  styleUrls: ['../projects.scss']
+  styleUrl: '../projects.scss'
 })
 export class FizzBuzzComponent {
 
@@ -80,9 +80,11 @@ export class FizzBuzzComponent {
     this.randomNumber = undefined;
     this.result = undefined;
     setTimeout(() => {
-      this.spinnerLoading = false;
-      this.randomNumber = Math.floor(Math.random() * 5000)
-    }, 500); 
+        this.spinnerLoading = false;
+        this.randomNumber = Math.floor(Math.random() * 5000)
+      },
+      500
+    ); 
   }
 
   private fizzBuzzChecker( value: number ): void {
@@ -115,9 +117,10 @@ export class FizzBuzzComponent {
     if (this.optionA) {
       if (typeof this.optionAinput !== 'number') {
         this.alert = true;
-        setTimeout(() => {
-          this.alert = false;
-        }, 2600);
+        setTimeout(() =>
+          this.alert = false,
+          2600
+        );
         return;
       }
       this.fizzBuzzChecker(this.optionAinput);
@@ -128,12 +131,12 @@ export class FizzBuzzComponent {
     
     
     if (this.optionC) {
-      if (typeof this.optionCfrom !== 'number' || 
-          typeof this.optionCto !== 'number') {
+      if (typeof this.optionCfrom !== 'number' || typeof this.optionCto !== 'number') {
         this.alert = true;
-        setTimeout(() => {
-          this.alert = false;
-        }, 2600);
+        setTimeout(() =>
+          this.alert = false,
+          2600
+        );
         return
       }
       this.rangeChecker(this.optionCfrom, this.optionCto);

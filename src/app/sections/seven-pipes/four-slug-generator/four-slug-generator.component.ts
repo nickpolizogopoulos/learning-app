@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-four-slug-generator',
@@ -15,7 +15,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p class="lead">{{ result | lowercase | symbolsToHyphens }}</p>
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FourSlugGeneratorComponent {
 

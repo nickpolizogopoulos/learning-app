@@ -1,10 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { SectionsAndProjects, SectionsAndProjectsService } from '../shared/sections-and-projects.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import {
+  SectionsAndProjects,
+  SectionsAndProjectsService
+} from '../shared/sections-and-projects.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 

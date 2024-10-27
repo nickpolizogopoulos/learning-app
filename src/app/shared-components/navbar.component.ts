@@ -9,7 +9,7 @@ import {
 } from '../shared/sections-and-projects.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header[appHeader]',
   template: `
   
     <nav class="navbar navbar-expand-lg">
@@ -32,7 +32,7 @@ import {
                       <ul class="dropdown-menu">
                           <li *ngFor="let section of angularSections let i = index">
                               <a class="dropdown-item section-link"
-                              routerLink="{{ section.link }}">{{ i + 1 }}. {{section.name}}
+                              routerLink="{{ section.link }}">{{ i + 1 }}. {{ section.name }}
                             </a>
                           </li>
                       </ul>
@@ -45,16 +45,16 @@ import {
                       <ul class="dropdown-menu">
                           <li *ngFor="let project of angularProjects let i = index">
                               <a class="dropdown-item section-link"
-                              routerLink="{{ project.link }}">{{ i + 1 }}. {{project.name}}
+                              routerLink="{{ project.link }}">{{ i + 1 }}. {{ project.name }}
                               </a>
                           </li>
                       </ul>
                   </li>
                   <li *ngFor="let link of navLinks" class="me-4 nav-item lead">
-                      <a class="nav-link active" routerLink="{{ link.link }}">{{link.name}}</a>
+                      <a class="nav-link active" routerLink="{{ link.link }}">{{ link.name }}</a>
                   </li>
                   <li *ngFor="let link of externalLinks" class="me-4 nav-item lead">
-                      <a class="nav-link active" href="{{link.link}}" target="_blank">{{link.name}}</a>
+                      <a class="nav-link active" href="{{ link.link }}" target="_blank">{{ link.name }}</a>
                   </li>
               </ul>
           </div>
@@ -62,7 +62,7 @@ import {
     </nav>
   
   `,
-  styles: [`
+  styles: `
   
     .navbar-custom-colour {
       background-color: rgb(231, 231, 231);
@@ -80,9 +80,10 @@ import {
       &:focus {
         color: rgb(36, 54, 99);
       }
+      
     }
     
-  `]
+  `
 })
 export class NavbarComponent implements OnInit {
  

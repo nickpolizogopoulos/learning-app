@@ -7,7 +7,7 @@ import {
   incrementAction,
   resetAction
 } from './one-counter.actions';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-one-basic-reducer-and-action',
@@ -41,7 +41,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </div>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneBasicReducerAndActionComponent {
   

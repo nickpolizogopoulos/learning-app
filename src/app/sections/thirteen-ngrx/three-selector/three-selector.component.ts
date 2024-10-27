@@ -7,7 +7,7 @@ import {
   macSelected
 } from './macWindows.actions';
 import { selectMacVsWindows } from './macWindows.selector';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 export type OperatingSystem = {
   macVSwindows: string;
@@ -44,7 +44,7 @@ export type OperatingSystem = {
     </div>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class ThreeSelectorComponent {
 

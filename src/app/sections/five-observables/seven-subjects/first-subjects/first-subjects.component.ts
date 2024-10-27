@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ToggleService } from '../toggle.service';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-first-subjects',
@@ -20,7 +20,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </svg>
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FirstSubjectsComponent {
 

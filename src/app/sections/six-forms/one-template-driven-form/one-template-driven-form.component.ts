@@ -4,12 +4,12 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-one-template-driven-form',
   templateUrl: './one-template-driven-form.component.html',
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneTemplateDrivenFormComponent {
 

@@ -7,7 +7,7 @@ import {
   trigger
 } from '@angular/animations';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-void-state',
@@ -64,7 +64,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     )
     
   ],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoVoidStateComponent {
   

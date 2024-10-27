@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 import { map } from 'rxjs/operators';
 
 import { getFirebaseEndpoint } from '../http-utilities';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 type Todo = {
   description: string;
@@ -25,7 +25,7 @@ type Todo = {
     }
     
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class ThreeErrorHandlingComponent implements OnInit {
 

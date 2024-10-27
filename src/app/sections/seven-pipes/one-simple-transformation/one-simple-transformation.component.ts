@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-one-simple-transformation',
@@ -31,7 +31,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
       {{ data | uppercase }}
     </p>
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneSimpleTransformationComponent {
 

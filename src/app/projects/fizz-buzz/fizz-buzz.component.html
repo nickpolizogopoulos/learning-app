@@ -25,7 +25,7 @@
             <div *ngIf="optionB" class="pt-5 pb-5">
                 <label class="mb-2" for="range" class="form-label">Example range</label>
                 <input [(ngModel)]="rangeOfNumbers" type="range" min="1" max="500" class="form-range" id="range">
-                <p>{{rangeOfNumbers}}</p>
+                <p>{{ rangeOfNumbers }}</p>
             </div>
             <div *ngIf="optionC" class="pt-5 pb-5">
                 <p><span class="text-danger"><u>Warning:</u></span> Big numbers can make your computer cry.</p>
@@ -45,7 +45,7 @@
                 <button (click)="rng()" class="btn btn-sm btn-success rounded-1">Generate</button>
                 <div class="mt-3">
                     <div *ngIf="spinnerLoading" class="spinner-border" role="status"></div>
-                    <p class="lead mt-3">{{randomNumber}}</p>
+                    <p class="lead mt-3">{{ randomNumber }}</p>
                 </div>
             </div>
             <div *ngIf="alert" class="alert alert-danger rounded-1 p-2 ps-3" role="alert">
@@ -57,24 +57,24 @@
         <button [disabled]="!randomNumber" *ngIf="optionD" (click)="onRun()" class="btn btn-sm btn-primary me-3 rounded-1">Run FizzBuzz!</button>
         <button (click)="onReset()" *ngIf="optionA || optionB || optionC || optionD" class="btn btn-sm btn-secondary me-3 rounded-1">Reset</button>
     
-        <p *ngIf="result" class="lead mt-4">{{result}}</p>
+        <p *ngIf="result" class="lead mt-4">{{ result }}</p>
     
         <div class="row mt-4">
             <div *ngIf="fizzNumbers.length !== 0" class="col">
                 <p class="lead">Fizz Numbers:</p>
-                <span *ngFor="let number of fizzNumbers; let last = last;" >{{number}}{{!last ? ', ' : '.'}}</span>
+                <span *ngFor="let number of fizzNumbers; let last = last;" >{{ number }}{{!last ? ', ' : '.'}}</span>
             </div>
             <div *ngIf="buzzNumbers.length !== 0" class="col">
                 <p class="lead">Buzz Numbers:</p>
-                <span *ngFor="let number of buzzNumbers; let last = last;" >{{number}}{{!last ? ', ' : '.'}}</span>
+                <span *ngFor="let number of buzzNumbers; let last = last;" >{{ number }}{{ !last ? ', ' : '.' }}</span>
             </div>
             <div *ngIf="fizzBuzzNumbers.length !== 0" class="col">
                 <p class="lead">FizzBuzz Numbers:</p>
-                <span *ngFor="let number of fizzBuzzNumbers; let last = last;" >{{number}}{{!last ? ', ' : '.'}}</span>
+                <span *ngFor="let number of fizzBuzzNumbers; let last = last;" >{{ number }}{{ !last ? ', ' : '.' }}</span>
             </div>
             <div *ngIf="regularNumbers.length !== 0" class="col">
                 <p class="lead">Regular Numbers:</p>
-                <span *ngFor="let number of regularNumbers; let last = last;" >{{number}}{{!last ? ', ' : '.'}}</span>
+                <span *ngFor="let number of regularNumbers; let last = last;" >{{ number }}{{ !last ? ', ' : '.' }}</span>
             </div>
         </div>
     

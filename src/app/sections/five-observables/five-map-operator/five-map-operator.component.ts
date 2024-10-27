@@ -9,7 +9,7 @@ import {
   map
 } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-five-map-operator',
@@ -27,7 +27,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <p *ngIf="counting">* hiders gonna hide *</p>
     <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FiveMapOperatorComponent implements OnDestroy {
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-nine-thank-you',
@@ -24,6 +24,6 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
         </table> 
   
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class NineThankYouComponent {}

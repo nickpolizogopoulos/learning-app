@@ -8,7 +8,7 @@ import { type ShoppingItem } from '../my-shopping-list.component';
 
 @Component({
   selector: 'app-project-form',
-  templateUrl: './project-form.component.html',
+  templateUrl: './project-form.component.html'
 })
 export class ProjectFormComponent {
 

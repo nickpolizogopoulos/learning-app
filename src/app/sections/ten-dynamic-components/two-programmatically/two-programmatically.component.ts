@@ -13,7 +13,7 @@ import {
 
 import { ProgAlertComponent } from './prog-alert.component';
 import { PlaceholderDirective } from './placeholder.directive';
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-two-programmatically',
@@ -25,7 +25,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     }
     
   `],
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoProgrammaticallyComponent implements OnDestroy {
 

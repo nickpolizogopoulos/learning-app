@@ -5,7 +5,7 @@ import {
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 type Days = {
   name: string;
@@ -56,7 +56,7 @@ type Exercises = {
     </table>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class TwoStandaloneComponent {
 

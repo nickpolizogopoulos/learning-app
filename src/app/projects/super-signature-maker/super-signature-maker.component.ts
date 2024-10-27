@@ -100,7 +100,7 @@ import { Component } from '@angular/core';
     </section>
   
   `,
-  styles: [`
+  styles: `
   
     .signature-card {
       margin-left: 30px;
@@ -110,8 +110,8 @@ import { Component } from '@angular/core';
       border: 1px solid rgba(178, 178, 178, 0.384);
     }
   
-  `],
-  styleUrls: ['../projects.scss']
+  `,
+  styleUrl: '../projects.scss'
 })
 export class SuperSignatureMakerComponent {
 

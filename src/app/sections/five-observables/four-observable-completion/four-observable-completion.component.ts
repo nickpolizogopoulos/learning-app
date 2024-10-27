@@ -8,7 +8,7 @@ import {
   Observer
 } from 'rxjs';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-four-observable-completion',
@@ -32,7 +32,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     <span *ngIf="timerEnded" (click)="reload()" class="addToTestText cursor-pointer">[ reload ]</span>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class FourObservableCompletionComponent implements OnDestroy {
 

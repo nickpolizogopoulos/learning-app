@@ -2,7 +2,7 @@
     <div class="row mb-4">
         <section class="col niceblue">
             <h1>[Project - 05]: <u>Greek Gyro Pita - Order Maker (using <a href="https://firebase.google.com/" class="inherit " target="_blank">Firebase</a>)</u></h1>
-            <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">( penAndPaper:boring ) => please.noMore(&nbsp;)</span></p>
+            <p class="lead mt-4">Who prepares the Gyro Pita orders in your family? Guess who does that in my family. <span class="ms-3">( penAndPaper: boring ) => please.noMore(&nbsp;)</span></p>
             <p class="lead mt-4">This is how I'll prepare big family Gyro Pita orders from now on. 
                 <span *ngIf="stepOneVisible" (click)="onStartHere()" type="button" class="cursor-pointer ms-4 user-select-none">
                     <svg *ngIf="!termsVisible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
@@ -38,7 +38,7 @@
                         <div class="col-md-4 mb-3">
                             <label for="quantity" class="form-label">How many? <span class="text-danger">*</span></label>
                             <select [ngClass]="{'is-invalid' : quantity.invalid && quantity.touched}" id="quantity" class="form-select rounded-1" name="quantity" ngModel required #quantity="ngModel">
-                                <option *ngFor="let value of pitaQuantity" value="{{value.value}}">{{value.value}}</option>
+                                <option *ngFor="let value of pitaQuantity" value="{{ value.value }}">{{ value.value }}</option>
                             </select>
                             <div *ngIf="!quantity.valid && quantity.touched" class="form-text text-danger">{{ requiredMessage }}.</div>
                         </div>
@@ -60,8 +60,8 @@
                         <div *ngFor="let item of mainAdditionals" class="col">
                             <div class="col-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="{{item.name}}" name="{{item.name}}" ngModel #{{item.name}}="ngModel">
-                                    <label class="form-check-label" for="{{item.name}}">{{item.text}}</label>
+                                    <input class="form-check-input" type="checkbox" value="" id="{{ item.name }}" name="{{ item.name }}" ngModel #{{item.name}}="ngModel">
+                                    <label class="form-check-label" for="{{ item.name }}">{{ item.text }}</label>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                     <ul class="list-group rounded-0" *ngIf="loadedPites.length >= 1 && !isFetchingPites">
                         <li *ngFor="let pita of loadedPites" class="list-group-item alert-dismissible niceblue ps-4 pt-4 pb-4">
                             <h4>{{ pita.name }}</h4>
-                            <span class="lead"><u><strong>{{ pita.quantity + 'x'}}</strong></u>&nbsp;&nbsp;{{ pita.mainIngredient}}
+                            <span class="lead"><u><strong>{{ pita.quantity + 'x' }}</strong></u>&nbsp;&nbsp;{{ pita.mainIngredient }}
                                 {{ pita.potatoes || pita.tomatoes || pita.onion || pita.tzatziki ? ' - ' : '' }}</span>
                             <span [ngClass]="{
                                 'text-primary' : pita.potatoes && pita.tomatoes && pita.onion && pita.tzatziki, 

@@ -5,7 +5,7 @@ import {
 } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { lessonHostClasses } from 'src/app/shared/host-classes';
+import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({
   selector: 'app-one-standalone',
@@ -78,7 +78,7 @@ import { lessonHostClasses } from 'src/app/shared/host-classes';
     </div>
 
   `,
-  host: lessonHostClasses
+  host: lessonsHostClasses
 })
 export class OneStandaloneComponent {
 
