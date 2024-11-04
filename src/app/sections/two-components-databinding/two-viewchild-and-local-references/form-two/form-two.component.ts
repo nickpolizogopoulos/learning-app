@@ -40,9 +40,9 @@ export class FormTwoComponent {
     nameInput.value = '';
     this.itemDescription!.nativeElement.value = '';
   }
-  onAddUnimportant(nameInput: HTMLInputElement): void {
+  onAddUnimportant( nameInput: HTMLInputElement ): void {
 
-    if (nameInput.value === '' || this.itemDescription?.nativeElement.value === '') {
+    if ( nameInput.value === '' || this.itemDescription?.nativeElement.value === '' ) {
       this.infoMissingError = true;
       setTimeout(() =>
         this.infoMissingError = false,

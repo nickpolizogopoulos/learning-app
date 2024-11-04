@@ -15,11 +15,11 @@ export class YellowFilterDirective {
     private renderer: Renderer2
     ) {}
     
-  @HostListener('mouseover') mouseover( eventData: Event ) {
+  @HostListener('mouseover') mouseover( eventData: Event ): void {
     this.renderer.addClass(this.element.nativeElement, 'yellowFilter');
   }
 
-  @HostListener('mouseleave') mouseleave( eventData: Event ) {
+  @HostListener('mouseleave') mouseleave( eventData: Event ): void {
     this.renderer.removeClass(this.element.nativeElement, 'yellowFilter');
   }
   

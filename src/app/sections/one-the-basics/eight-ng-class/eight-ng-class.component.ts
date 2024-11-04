@@ -5,7 +5,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-eight-ng-class',
   templateUrl: './eight-ng-class.component.html',
-  styles: [`
+  styles: `
 
     .ngClassBox {
       padding: 20px 14px;
@@ -13,7 +13,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       border: 3px dashed rgb(36, 54, 99);
     }
 
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class EightNgClassComponent {

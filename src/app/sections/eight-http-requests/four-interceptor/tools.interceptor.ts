@@ -8,7 +8,7 @@ export class ToolsInterceptor implements HttpInterceptor {
 
   constructor(
     private toolsService: ToolsService,
-  ) { }
+  ) {}
 
   message: string = `Interceptor: "Your request is being processed..."`;
 

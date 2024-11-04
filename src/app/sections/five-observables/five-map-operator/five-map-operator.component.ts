@@ -39,7 +39,7 @@ export class FiveMapOperatorComponent implements OnDestroy {
   onStart(): void {
     this.ready = false;
 
-    //observable
+    //* observable
     const timer = Observable.create( (observer: Observer<number>) => {
       let count = 0;
       setInterval( () => {
@@ -49,13 +49,13 @@ export class FiveMapOperatorComponent implements OnDestroy {
       } ,400);
     });
 
-    //Operator
+    //* Operator
     const addition:number = 5;
     const operator = timer.pipe(
       map( (data: number) => data * addition )
     );
 
-    //*Operator subscription
+    //* Operator subscription
     this.subscription = operator.subscribe({
       next: (data: number) => {
         this.count = data;

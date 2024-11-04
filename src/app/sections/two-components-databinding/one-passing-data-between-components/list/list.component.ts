@@ -17,7 +17,7 @@ import { type ListItem } from '../one-passing-data-between-components.component'
     </div>
   
   `,
-  styles: [`
+  styles: `
   
     .wishBox {
       margin-bottom: 14px;
@@ -26,7 +26,7 @@ import { type ListItem } from '../one-passing-data-between-components.component'
       box-shadow: 4px 4px 7px #d8d8d8;
     }
 
-  `]
+  `
 })
 export class ListComponent {
 

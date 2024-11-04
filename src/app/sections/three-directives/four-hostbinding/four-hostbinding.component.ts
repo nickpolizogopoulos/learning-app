@@ -5,7 +5,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-four-hostbinding',
   templateUrl: './four-hostbinding.component.html',
-  styles: [`
+  styles: `
   
     .heartColor {
       color: #ff2164;
@@ -23,7 +23,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       width: auto;
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class FourHostbindingComponent {

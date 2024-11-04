@@ -102,7 +102,7 @@ export class TwoReactiveFormComponent implements OnInit {
     this.orderForm.reset();
   }
   
-  fillTheForm():void {
+  fillTheForm(): void {
     this.orderForm.setValue({
       'nameReactive': 'Nick',
       'surname': 'Polizogopoulos',
@@ -134,7 +134,7 @@ export class TwoReactiveFormComponent implements OnInit {
   }
 
   //-----------------CUSTOM VALIDATORS
-  forbiddenNamesValidator( control: FormControl ): {[key:string]:boolean} {
+  forbiddenNamesValidator( control: FormControl ): { [key:string]: boolean } {
 
     if (this.forbiddenNames.indexOf(control.value) !== -1)
       return {'nameIsForbidden': true};

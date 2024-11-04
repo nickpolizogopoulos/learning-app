@@ -18,14 +18,13 @@ import { Component } from '@angular/core';
       </div>
     </section>
   
-  `,
-  styles: [``]
+  `
 })
 export class SixFormsComponent {
 
   information:boolean = false;
 
-  onInfoClick():void {
+  onInfoClick(): void {
     this.information = !this.information;
   }
 }

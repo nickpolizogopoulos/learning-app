@@ -18,7 +18,7 @@ import {
         </div>
 
     `,
-    styles: [`
+    styles: `
 
         .backdrop {
             position: fixed;
@@ -45,7 +45,7 @@ import {
             text-align: right;
         }
     
-    `]
+    `
 })
 export class ProgAlertComponent {
 

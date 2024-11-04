@@ -16,7 +16,7 @@ export class FormComponent {
   infoMissing: boolean = false;
   
   onImmediateAdd(): void {
-    if (this.newItemName === '' || this.newItemDescription === '') {
+    if ( this.newItemName === '' || this.newItemDescription === '' ) {
       this.infoMissing = true;
       setTimeout(
         () => this.infoMissing = false,
@@ -37,10 +37,10 @@ export class FormComponent {
   }
   
   onFutureAdd(): void {
-    if (this.newItemName === '' || this.newItemDescription === '') {
+    if ( this.newItemName === '' || this.newItemDescription === '' ) {
       this.infoMissing = true;
-      setTimeout(
-        () => this.infoMissing = false,
+      setTimeout(() =>
+        this.infoMissing = false,
         2000
       );
       return;
@@ -58,9 +58,7 @@ export class FormComponent {
   }
 
   onClear(): void {
-    this.listCleared.emit(
-      () => {}
-    );
+    this.listCleared.emit();
   }
   
 }

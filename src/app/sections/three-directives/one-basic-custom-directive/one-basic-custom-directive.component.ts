@@ -5,7 +5,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-one-basic-custom-directive',
   templateUrl: './one-basic-custom-directive.component.html',
-  styles: [`
+  styles: `
   
     .btn-blueBg {
       color: white;
@@ -31,7 +31,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
         box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class OneBasicCustomDirectiveComponent {

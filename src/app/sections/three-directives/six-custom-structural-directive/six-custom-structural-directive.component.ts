@@ -5,7 +5,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-six-custom-structural-directive',
   templateUrl: './six-custom-structural-directive.component.html',
-  styles: [`
+  styles: `
   
     code {
       color: inherit;
@@ -17,7 +17,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       width: auto;
     }
 
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class SixCustomStructuralDirectiveComponent {

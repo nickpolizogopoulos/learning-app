@@ -43,13 +43,13 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
   
   `,
-  styles: [`
+  styles: `
   
     .checkborder {
       border-color: rgb(176, 176, 176);
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class TwoPropertyBindingComponent {

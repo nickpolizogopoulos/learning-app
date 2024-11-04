@@ -18,20 +18,20 @@ type Todo = {
 @Component({
   selector: 'app-three-error-handling',
   templateUrl: './three-error-handling.component.html',
-  styles: [`
+  styles: `
     
     p {
       background-color: transparent;
     }
     
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class ThreeErrorHandlingComponent implements OnInit {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {}
 
   private url: string = getFirebaseEndpoint('todos');
 
@@ -49,7 +49,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
   onAddTodo( newItem: Todo ): void {
     this.isFetching = true;
     this.http
-    .post <{[key:string]:Todo}> (this.url, newItem)
+    .post <{[key: string]: Todo}> (this.url, newItem)
     .subscribe({
       next: () => {
         this.isFetching = false;

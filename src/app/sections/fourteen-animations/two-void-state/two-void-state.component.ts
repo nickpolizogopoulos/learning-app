@@ -32,14 +32,14 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
   
   `,
-  styles: [`
+  styles: `
     
     .box {
       margin: 24px;
       padding: 17px;
     }  
     
-  `],
+  `,
   animations: [
 
     trigger(

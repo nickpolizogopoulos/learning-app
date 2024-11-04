@@ -16,20 +16,20 @@
 
             <app-list *ngFor="let item of wishList let i = index" [listItem]="item" (onDeleteItem)="onDeleteItem(i)">
                 <div *ngIf="item.type === 'immediate'">
-                    <h5><u class="text-primary">{{item.name}}</u>
+                    <h5><u class="text-primary">{{ item.name }}</u>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                             <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
                         </svg>
-                    <em class="lead">{{item.description}}</em>
+                    <em class="lead">{{ item.description }}</em>
                     </h5> 
                 </div>
         
                 <div *ngIf="item.type === 'future'">
-                    <h5>{{item.name}}
+                    <h5>{{ item.name }}
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                             <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
                         </svg>
-                        <em class="lead">{{item.description}}</em>
+                        <em class="lead">{{ item.description }}</em>
                     </h5> 
                 </div>
 

@@ -24,7 +24,7 @@ export class OneServiceButtonComponent {
 
   @Output() blueClick = new EventEmitter<void>();
 
-  onBlueButtonClick():void {
+  onBlueButtonClick(): void {
     this.blueClick.emit();
   }
 

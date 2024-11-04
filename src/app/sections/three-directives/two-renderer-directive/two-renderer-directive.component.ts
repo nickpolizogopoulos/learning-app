@@ -20,25 +20,28 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
   
   `,
-  styles: [`
+  styles: `
   
     .btn {
       color: rgb(79, 79, 79);
       width: 100px;
       border: 1px solid rgb(79, 79, 79);
     }
+
     .btn-group {
         border: 1px solid rgb(161, 161, 161);
     }
+
     .selected {
         color: white;
         background-color: #3656bf;
     }
+
     .headingbox {
         height: 70px;
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class TwoRendererDirectiveComponent implements OnInit {
@@ -46,23 +49,27 @@ export class TwoRendererDirectiveComponent implements OnInit {
   ngOnInit(): void {
     this.mdText = true;
   }
+
   smText?:boolean;
   mdText?:boolean;
   xlText?:boolean;
 
-  onSmallClick() {
+  onSmallClick(): void {
     this.smText = true;
     this.mdText = false;
     this.xlText = false;
   }
-  onNormalClick() {
+
+  onNormalClick(): void {
     this.smText = false;
     this.mdText = true;
     this.xlText = false;
   }
-  onBigClick() {
+
+  onBigClick(): void {
     this.smText = false;
     this.mdText = false;
     this.xlText = true;
   }
+  
 }

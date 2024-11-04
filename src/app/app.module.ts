@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import {
+    HTTP_INTERCEPTORS,
+    provideHttpClient,
+    withInterceptorsFromDi
+} from '@angular/common/http'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -153,6 +157,7 @@ import { OneBasicAnimationComponent } from './sections/fourteen-animations/one-b
 import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-state/two-void-state.component';
 @NgModule({ 
     declarations: [
+
         //* SHARED COMPONENTS
         AppComponent,
         HomeComponent,
@@ -161,6 +166,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         PageNotFoundComponent,
         FooterComponent,
         CustomButtonComponent,
+
         //* PROJECTS
         ToDoAppComponent,
         SuperSignatureMakerComponent,
@@ -170,6 +176,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         ProjectFoodListComponent,
         ProjectHomeListComponent,
         GreekGyroPitaOrderMakerComponent,
+
         //* SECTION The Basics
         OneTheBasicsComponent,
         OneDataBindingComponent,
@@ -181,6 +188,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         SevenNgStyleComponent,
         EightNgClassComponent,
         NineThankYouComponent,
+
         //* SECTION Components & Databinding
         TwoComponentsDatabindingComponent,
         OnePassingDataBetweenComponentsComponent,
@@ -190,6 +198,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         ImportantComponent,
         UnimportantComponent,
         FormTwoComponent,
+
         //* SECTION Directives
         ThreeDirectivesComponent,
         OneBasicCustomDirectiveComponent,
@@ -209,6 +218,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         SixCustomStructuralDirectiveComponent,
         UnlessDirective,
         SevenNgswitchComponent,
+
         //* SECTION Services & Dependency Injection
         FourServicesDependencyInjectionComponent,
         OneLoggingServiceComponent,
@@ -218,6 +228,7 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         TwoDataServiceComponent,
         FormDataServiceComponent,
         ListDataServiceComponent,
+
         //* SECTION Observables
         FiveObservablesComponent,
         OneBasicObservableComponent,
@@ -228,10 +239,12 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         SixFilterOperatorComponent,
         FirstSubjectsComponent,
         SecondSubjectsComponent,
+
         //* SECTION Forms
         SixFormsComponent,
         OneTemplateDrivenFormComponent,
         TwoReactiveFormComponent,
+
         //* SECTION Data Transformation with Pipes
         SevenPipesComponent,
         OneSimpleTransformationComponent,
@@ -241,14 +254,17 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         StatusFilterPipe,
         FourSlugGeneratorComponent,
         SymbolsToHyphensPipe,
+
         //* SECTION Http Requests
         EightHttpRequestsComponent,
         OneGetRequestComponent,
         TwoPostRequestComponent,
         ThreeErrorHandlingComponent,
         FourInterceptorComponent,
+
         //* SECTION Authentication & Route Protection
         NineAuthenticationRouteProtectionComponent,
+
         //* SECTION Dynamic Components
         TenDynamicComponentsComponent,
         OneUsingNgifComponent,
@@ -258,19 +274,23 @@ import { TwoVoidStateComponent } from './sections/fourteen-animations/two-void-s
         LineLoaderComponent,
         ProgAlertComponent,
         PlaceholderDirective,
+
         //* SECTION Standalone Components - these are standalone components 
         // ElevenStandaloneComponentsComponent,
         // OneStandaloneComponent,
         // TwoStandaloneComponent,
+
         //* SECTION Signals
         TwelveSignalsComponent,
         SignalComponent,
+
         //* SECTION NGRX
         ThirteenNgrxComponent,
         OneBasicReducerAndActionComponent,
         TwoBasicReducerAndActionOldMethodComponent,
         ThreeSelectorComponent,
         FourEffectComponent,
+        
         //* SECTION Animations
         FourteenAnimationsComponent,
         OneBasicAnimationComponent,

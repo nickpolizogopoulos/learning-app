@@ -10,7 +10,7 @@ import { type ListItem } from '../two-viewchild-and-local-references.component';
 @Component({
   selector: 'app-important',
   templateUrl: './important.component.html',
-  styles: [`
+  styles: `
   
     .wishBox {
       margin-bottom: 14px;
@@ -19,7 +19,7 @@ import { type ListItem } from '../two-viewchild-and-local-references.component';
       box-shadow: 4px 4px 7px #d8d8d8;
     }
   
-  `]
+  `
 })
 export class ImportantComponent {
 

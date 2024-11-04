@@ -24,7 +24,7 @@ export class TwoServiceButtonComponent {
 
   @Output() redClick = new EventEmitter<void>();
 
-  onRedButtonClick() {
+  onRedButtonClick(): void {
     this.redClick.emit();
   }
 

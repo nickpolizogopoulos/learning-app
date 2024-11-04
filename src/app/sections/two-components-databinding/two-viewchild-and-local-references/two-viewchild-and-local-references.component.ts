@@ -71,7 +71,7 @@ export class TwoViewchildAndLocalReferencesComponent {
     this.unimportantList.length = 0;
   }
 
-  onImportantMoved( index:number, item:ListItem ): void {
+  onImportantMoved( index: number, item: ListItem ): void {
     this.importantList.splice(index, 1);
     this.unimportantList.push(item);
   }

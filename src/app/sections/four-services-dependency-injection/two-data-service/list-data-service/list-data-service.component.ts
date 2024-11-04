@@ -27,13 +27,13 @@ import { type User } from '../user-list.service';
     <hr>
   
   `,
-  styles: [`
+  styles: `
   
     td {
       max-width: 10px;
     }
   
-  `]
+  `
 })
 export class ListDataServiceComponent {
 
@@ -45,7 +45,7 @@ export class ListDataServiceComponent {
   @Input() usersArrayLength!: number;
   @Output() deleteUser = new EventEmitter<Function>()
 
-  onUserDelete() {
+  onUserDelete(): void {
     this.deleteUser.emit();
     // this.userListService.userDeleted.emit(this.newUser.name)
   }

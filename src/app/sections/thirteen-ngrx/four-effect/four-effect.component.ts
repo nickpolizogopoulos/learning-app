@@ -48,13 +48,13 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
   
   `,
-  styles: [`
+  styles: `
     
     .bi {
       margin-bottom: 2px;
     }
     
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class FourEffectComponent implements OnInit {
@@ -84,4 +84,5 @@ export class FourEffectComponent implements OnInit {
   reset(): void {
     this.store.dispatch( reset( {value:0} ) );
   }
+  
 }

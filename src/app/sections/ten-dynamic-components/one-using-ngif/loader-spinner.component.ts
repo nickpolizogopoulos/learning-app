@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     <span class="loader"></span>
     
   `,
-  styles: [`
+  styles: `
   
     .loader {
       width: 48px;
@@ -41,6 +41,6 @@ import { Component } from '@angular/core';
       }
     }
     
-  `]
+  `
 })
 export class LoaderSpinnerComponent {}

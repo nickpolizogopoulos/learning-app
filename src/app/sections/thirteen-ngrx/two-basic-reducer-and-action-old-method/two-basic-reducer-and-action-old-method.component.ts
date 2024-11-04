@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { TurnLightsOff, TurnLightsOn } from './onoff.actions';
+import {
+  TurnLightsOff,
+  TurnLightsOn
+} from './onoff.actions';
 import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
 @Component({

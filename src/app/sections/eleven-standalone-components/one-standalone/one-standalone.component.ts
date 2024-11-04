@@ -13,7 +13,8 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
   imports: [
     NgIf,
     NgFor,
-    FormsModule],
+    FormsModule
+  ],
   template: `
   
     <h4>Standalone Component #1 - Match It Up: Weather and Fun Activities!</h4>

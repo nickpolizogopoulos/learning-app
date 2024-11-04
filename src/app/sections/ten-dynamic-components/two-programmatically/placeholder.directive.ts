@@ -10,6 +10,6 @@ export class PlaceholderDirective {
 
   constructor(
     public viewContainerRef: ViewContainerRef,
-  ) { }
+  ) {}
 
 }

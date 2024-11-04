@@ -38,7 +38,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </a>
 
   `,
-  styles: [`
+  styles: `
 
     .animation-line {
         cursor: pointer;
@@ -47,7 +47,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
         border-radius: 10px;
     }
     
-  `],
+  `,
   animations: [
     trigger(
       'animationLine',

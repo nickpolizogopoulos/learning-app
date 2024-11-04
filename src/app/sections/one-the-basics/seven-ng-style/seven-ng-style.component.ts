@@ -28,7 +28,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
   
   `,
-  styles: [`
+  styles: `
   
     .coin-spinner {
       transform: translateZ(1px);
@@ -68,7 +68,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       }
     }
     
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class SevenNgStyleComponent {

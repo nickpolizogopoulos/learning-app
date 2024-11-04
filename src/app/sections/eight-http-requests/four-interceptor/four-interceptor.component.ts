@@ -33,7 +33,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     <button (click)="deleteList()">clear</button> -->
   
   `,
-  styles: [`
+  styles: `
   
     img {
       width: 60px;
@@ -45,7 +45,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       }
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class FourInterceptorComponent implements OnInit {

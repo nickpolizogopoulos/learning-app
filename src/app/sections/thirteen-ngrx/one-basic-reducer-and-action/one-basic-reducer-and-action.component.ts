@@ -56,7 +56,7 @@ export class OneBasicReducerAndActionComponent {
   }
 
   //*Quick check to avoid using template/reactive forms 
-  private inputCheck():void {
+  private inputCheck(): void {
     this.errorAlert = null;
 
     if (typeof this.userInput !== 'number') {

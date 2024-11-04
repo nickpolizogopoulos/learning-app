@@ -10,7 +10,7 @@ export class FormDataServiceComponent {
 
   constructor(
     private userListService: UserListService
-    ) {
+  ) {
     userListService.userDeleted.subscribe({
       next: (name: string) => alert(`${name} has been removed from the list!`)
     });

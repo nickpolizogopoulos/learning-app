@@ -18,13 +18,13 @@ type Contact = {
 @Component({
   selector: 'app-two-post-request',
   templateUrl: './two-post-request.component.html',
-  styles: [` 
+  styles: ` 
   
     .tableRow {
       border-bottom: 1px solid red; 
     }
 
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class TwoPostRequestComponent implements OnInit {
@@ -39,7 +39,7 @@ export class TwoPostRequestComponent implements OnInit {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.clearList();

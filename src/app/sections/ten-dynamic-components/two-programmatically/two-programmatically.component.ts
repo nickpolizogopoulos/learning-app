@@ -18,13 +18,13 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-two-programmatically',
   templateUrl: './two-programmatically.component.html',
-  styles: [`
+  styles: `
   
     p {
       background-color: transparent;
     }
     
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class TwoProgrammaticallyComponent implements OnDestroy {
@@ -110,6 +110,7 @@ export class TwoProgrammaticallyComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    
     if (this.runAwaySubscription)
       this.runAwaySubscription?.unsubscribe();
 

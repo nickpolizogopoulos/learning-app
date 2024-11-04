@@ -5,7 +5,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 @Component({
   selector: 'app-three-hostlistener',
   templateUrl: './three-hostlistener.component.html',
-  styles: [`
+  styles: `
   
     .imgRow {
       background-image: url(../../../../assets/images/Clouds-by-Bing-Hui-Yau.jpg);
@@ -24,7 +24,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
         background-color: rgba(255, 255, 0, 0.2);
     }
   
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class ThreeHostlistenerComponent {

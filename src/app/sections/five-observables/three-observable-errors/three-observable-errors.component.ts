@@ -43,7 +43,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </div>
     
   `,
-  styles: [`
+  styles: `
 
     .blueLightbar {
       background-color: rgb(50, 50, 255);
@@ -61,7 +61,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
       background-color: rgb(255, 146, 146);
     }
 
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class ThreeObservableErrorsComponent implements OnDestroy {

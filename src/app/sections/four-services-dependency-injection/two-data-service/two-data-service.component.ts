@@ -67,7 +67,7 @@ export class TwoDataServiceComponent implements OnInit {
     this.userListService.addUser('Alice','Modesto','Female','English');
   }
 
-  onListClear():void {
+  onListClear(): void {
     this.userListService.usersList.length = 0;
   }
 

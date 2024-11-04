@@ -33,14 +33,14 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     </ng-template>
   
   `,
-  styles: [`
+  styles: `
   
     .emojiImg {
       height: 45px;
       width: 45px;
     }
 
-  `],
+  `,
   host: lessonsHostClasses
 })
 export class FiveNgIfElseComponent {

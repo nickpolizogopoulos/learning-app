@@ -44,7 +44,6 @@ interface Guests {
     </div>
   
   `,
-  styles: [``],
   host: lessonsHostClasses
 })
 export class ThreeFilterPipeComponent {

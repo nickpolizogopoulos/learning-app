@@ -24,7 +24,7 @@ export class ThreeServiceButtonComponent {
 
   @Output() greenClick = new EventEmitter<void>();
 
-  onGreenButtonClick() {
+  onGreenButtonClick(): void {
     this.greenClick.emit();
   }
   

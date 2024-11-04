@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
         <span class="line-loader mt-4"></span>
     
     `,
-    styles: [`
+    styles: `
     
         .line-loader {
             width: 100%;
@@ -30,6 +30,6 @@ import { Component } from "@angular/core";
             }
         }
 
-    `]
+    `
 })
 export class LineLoaderComponent {}
