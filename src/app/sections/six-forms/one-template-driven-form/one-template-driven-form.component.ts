@@ -23,7 +23,7 @@ export class OneTemplateDrivenFormComponent {
     priority: '',
     message: '',
     check: false
-  }
+  };
 
   putRandomMessage(): void {
     const randomMessage = `Hey! I'm reaching out to see how things are going on your end. Drop me a line and let me know you're all good!`;

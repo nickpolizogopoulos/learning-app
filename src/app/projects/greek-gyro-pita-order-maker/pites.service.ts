@@ -41,7 +41,7 @@ export class PitesService {
     }
   ];
 
-  // quantity:Quantity[] = [
+  // quantity: Quantity[] = [
   //   {value: '1'},
   //   {value: '2'},
   //   {value: '3'},
@@ -63,11 +63,11 @@ export class PitesService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {}
 
   createAndStorePita( pita: Pita ) {
     return this.http
-      .post <{ [key:string]: Pita }> (this.url, pita)
+      .post <{ [key: string]: Pita }> (this.url, pita);
   }
 
   deletePitesList() {
@@ -77,7 +77,7 @@ export class PitesService {
 
   onDeleteSinglePita( id: Pita ) {
     return this.http
-      .delete( this.database + this.folder + '/' + id + this.json);
+      .delete(this.database + this.folder + '/' + id + this.json);
   }
 
   fetchPites(): Observable<Pita[]> {
@@ -92,7 +92,7 @@ export class PitesService {
             }
           return pitesArray;
         })
-      )
+      );
   }
 
   addDummyPites(): void {
@@ -109,8 +109,8 @@ export class PitesService {
           sauce: 'Yellow sauce (Mustard - Mayonnaise mix)',
           extras: 'Sweet Paprika'
         }
-        )
-        .subscribe();
+      )
+      .subscribe();
 
     this.http
       .post <{ [key: string]: Pita }> (this.url, 
@@ -124,8 +124,8 @@ export class PitesService {
           tzatziki: false,
           sauce: 'Red sauce (Ketchup - Mayonnaise mix)',
         }
-        )
-        .subscribe();
+      )
+      .subscribe();
 
     this.http
       .post <{ [key: string]: Pita }> (this.url, 
@@ -140,8 +140,8 @@ export class PitesService {
           sauce: 'Mustard - Ketchup mix',
           extras: `High King's Fillorian Seasonings`
         }
-        )
-        .subscribe();
+      )
+      .subscribe();
 
     this.http
       .post <{ [key: string]: Pita }> (this.url, 
@@ -156,8 +156,8 @@ export class PitesService {
           sauce: 'Mustard - Ketchup mix',
           extras: `Smoked bacon slices`
         }
-        )
-        .subscribe();
+      )
+      .subscribe();
   }
 
 }

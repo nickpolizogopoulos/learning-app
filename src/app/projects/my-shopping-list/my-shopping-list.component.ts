@@ -30,7 +30,8 @@ export class MyShoppingListComponent {
       comment: 'For soup',
       type: 'food'
     }
-  ]
+  ];
+
   homeList: ShoppingItem[] = [
     {
       name: 'Cleaning Gloves',
@@ -89,7 +90,7 @@ export class MyShoppingListComponent {
 
   foodLengthMessage(): string {
     return (
-      (this.foodList.length === 0) 
+        (this.foodList.length === 0) 
       ? `the list is empty` 
       : (this.foodList.length === 1)
       ? `${this.foodList.length} item in the list`
@@ -99,7 +100,7 @@ export class MyShoppingListComponent {
 
   homeLengthMessage(): string {
     return (
-      (this.homeList.length === 0)
+        (this.homeList.length === 0)
       ? `the list is empty` 
       : (this.homeList.length === 1)
       ? `${this.homeList.length} item in the list`

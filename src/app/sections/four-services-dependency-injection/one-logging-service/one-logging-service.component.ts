@@ -16,17 +16,9 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
 
     <hr class="mb-5">
 
-    <app-one-service-button 
-      (blueClick)="onBlueClicked()">
-    </app-one-service-button>
-
-    <app-two-service-button
-      (redClick)="onRedClicked()">
-    </app-two-service-button>
-
-    <app-three-service-button
-      (greenClick)="onGreenClicked()">
-    </app-three-service-button>
+    <app-one-service-button (blueClick)="onBlueClicked()" />
+    <app-two-service-button (redClick)="onRedClicked()" />
+    <app-three-service-button (greenClick)="onGreenClicked()" />
 
     <p 
       class="lead mt-4 text-danger"

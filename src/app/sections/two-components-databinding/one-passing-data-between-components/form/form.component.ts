@@ -18,8 +18,8 @@ export class FormComponent {
   onImmediateAdd(): void {
     if ( this.newItemName === '' || this.newItemDescription === '' ) {
       this.infoMissing = true;
-      setTimeout(
-        () => this.infoMissing = false,
+      setTimeout( () =>
+        this.infoMissing = false,
         2000
       );
       return;

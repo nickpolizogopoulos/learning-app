@@ -38,12 +38,15 @@ export class SixCustomStructuralDirectiveComponent {
     this.firstResponse = false;
     this.secondResponse = false;
     this.lieDetector = true;
-    setTimeout(() => {
-      this.lieDetector = false;
-      this.btnOne = false;
-      this.btnTwo = false;
-      this.okYesBtn = true;
-    }, 3000)
+    setTimeout(() =>
+      {
+        this.lieDetector = false;
+        this.btnOne = false;
+        this.btnTwo = false;
+        this.okYesBtn = true;
+      },
+      3000
+    );
   }
 
   onOkYesClick(): void {

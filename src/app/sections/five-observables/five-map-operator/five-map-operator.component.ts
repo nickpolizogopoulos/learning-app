@@ -26,6 +26,7 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     <p *ngIf="count > 0" class="lead">{{ count }}<span *ngIf="count === 100" class="lead">!</span></p>
     <p *ngIf="counting">* hiders gonna hide *</p>
     <p *ngIf="ready" class="lead">Seeker: "Ready or not, here I come!"</p>
+
   `,
   host: lessonsHostClasses
 })
@@ -42,11 +43,14 @@ export class FiveMapOperatorComponent implements OnDestroy {
     //* observable
     const timer = Observable.create( (observer: Observer<number>) => {
       let count = 0;
-      setInterval( () => {
-        observer.next(count);
-        if (count === 20) observer.complete();
-        count++;
-      } ,400);
+      setInterval( () =>
+        {
+          observer.next(count);
+          if (count === 20) observer.complete();
+          count++;
+        },
+        400
+      );
     });
 
     //* Operator
@@ -56,17 +60,18 @@ export class FiveMapOperatorComponent implements OnDestroy {
     );
 
     //* Operator subscription
-    this.subscription = operator.subscribe({
-      next: (data: number) => {
-        this.count = data;
-        this.counting = true;
-      },
-      complete:() => { 
-        this.ready = true;
-        this.counting = false;
-      },
-      error: (error: string) => console.log(error),
-    });
+    this.subscription = operator
+      .subscribe({
+        next: (data: number) => {
+          this.count = data;
+          this.counting = true;
+        },
+        complete:() => { 
+          this.ready = true;
+          this.counting = false;
+        },
+        error: (error: string) => console.log(error),
+      });
   }
 
   onReset(): void {

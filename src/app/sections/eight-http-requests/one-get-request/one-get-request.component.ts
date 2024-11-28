@@ -76,7 +76,8 @@ export class OneGetRequestComponent implements OnInit {
           }
           return array;
         })
-      ).subscribe({
+      )
+      .subscribe({
         next: posts => this.albums = posts
       });
   }

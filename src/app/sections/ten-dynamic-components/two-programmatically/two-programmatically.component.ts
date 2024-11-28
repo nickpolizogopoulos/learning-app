@@ -31,7 +31,7 @@ export class TwoProgrammaticallyComponent implements OnDestroy {
 
   constructor(
     private viewContainerRef: ViewContainerRef
-  ) { }
+  ) {}
 
   knifePulledOut: boolean = false;
   formHidden: boolean = false;
@@ -83,12 +83,15 @@ export class TwoProgrammaticallyComponent implements OnDestroy {
     const observable = new Observable(
       (observer: Observer<number>) => {
         let count = 0;
-        setInterval(() => {
-          observer.next(count);
-          count++;
-        }, 150);
+        setInterval(() =>
+          {
+            observer.next(count);
+            count++;
+          },
+          150
+        );
       }
-    )
+    );
 
     this.runAwaySubscription = observable.subscribe({
       next: data => this.counter = data
@@ -100,13 +103,14 @@ export class TwoProgrammaticallyComponent implements OnDestroy {
 
     component.instance.message = message;
     this.alertSubscription = component.instance.close
-      .subscribe(() => {
+      .subscribe({
+        next: () => {
           this.alertSubscription!.unsubscribe();
           this.viewContainerRef.clear();
           this.knifePulledOut = false;
           this.formHidden = false;
         }
-      )
+      });
   }
 
   ngOnDestroy(): void {

@@ -121,6 +121,10 @@ export class SuperSignatureMakerComponent {
   phone: string = '+30 6911111111';
   email: string = 'nick.p';
 
+  onNameUpdate( event: Event ): void {
+    this.name = (<HTMLInputElement>event.target).value;
+  }
+
   onSurnameUpdate( event: Event ): void {
     this.surname = (<HTMLInputElement>event.target).value;
   }
@@ -135,10 +139,6 @@ export class SuperSignatureMakerComponent {
 
   onEmailUpdate( event: Event ): void {
     this.email = (<HTMLInputElement>event.target).value;
-  }
-
-  onNameUpdate( event: Event ): void {
-    this.name = (<HTMLInputElement>event.target).value;
   }
 
 }

@@ -64,39 +64,43 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
   }
 
   onAddToList( pita: Pita ): void {
-    this.pitesService.createAndStorePita(pita).subscribe({
-      next: () => this.fetchPitesList()
-    });
+    this.pitesService.createAndStorePita(pita)
+      .subscribe({
+        next: () => this.fetchPitesList()
+      });
     this.form?.reset();
   }
 
   onClearList(): void {
     this.isFetchingPites = true;
-    this.pitesService.deletePitesList().subscribe({
-      next: () => {
-        this.isFetchingPites = false;
-        this.loadedPites = [];
-      }
-    });
+    this.pitesService.deletePitesList()
+      .subscribe({
+        next: () => {
+          this.isFetchingPites = false;
+          this.loadedPites = [];
+        }
+      });
   }
 
   onDeletePita( id: Pita['id'] ) { 
-    this.pitesService.onDeleteSinglePita(id as any).subscribe({
-      next: () => {
-        this.loadedPites.splice(1, id as any)
-        this.fetchPitesList()
-      }
-    });
+    this.pitesService.onDeleteSinglePita(id as any)
+      .subscribe({
+        next: () => {
+          this.loadedPites.splice(1, id as any)
+          this.fetchPitesList()
+        }
+      });
   }
 
   fetchPitesList(): void {
     this.isFetchingPites = true;
-    this.pitesService.fetchPites().subscribe({
-      next: pites => {
-        this.isFetchingPites = false;
-        this.loadedPites = pites;
-      }
-    });
+    this.pitesService.fetchPites()
+      .subscribe({
+        next: pites => {
+          this.isFetchingPites = false;
+          this.loadedPites = pites;
+        }
+      });
   }
 
   addFourDummyPites(): void {
@@ -107,7 +111,7 @@ export class GreekGyroPitaOrderMakerComponent implements OnInit, OnDestroy {
     //* so I leave 1,2 seconds to pass
     //* with the setTimeout function.
 
-    setTimeout(() => 
+    setTimeout( () => 
       this.fetchPitesList(),
       1200
     );

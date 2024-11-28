@@ -56,22 +56,26 @@ export class FourObservableCompletionComponent implements OnDestroy {
     const observable = Observable.create(
       (observer:Observer<number>) => {
         let count = 0;
-        setInterval( () => {
-          observer.next(count);
-          if (this.timeLeft === 0) {
-            observer.complete();
-            this.timerEnded = true;
-          }
-          count++;
-        }, 1000);
+        setInterval( () =>
+          {
+            observer.next(count);
+            if (this.timeLeft === 0) {
+              observer.complete();
+              this.timerEnded = true;
+            }
+            count++;
+          },
+          1000
+        );
       }
     );
 
-    this.subscription = observable.subscribe({
-      next: (data: number) => this.timeLeft = this.seconds - data,
-      complete: () => alert('Wake up!'),
-      error: (error: string) => console.log(error)
-    })
+    this.subscription = observable
+      .subscribe({
+        next: (data: number) => this.timeLeft = this.seconds - data,
+        complete: () => alert('Wake up!'),
+        error: (error: string) => console.log(error)
+      });
   }
 
   onReset(): void {

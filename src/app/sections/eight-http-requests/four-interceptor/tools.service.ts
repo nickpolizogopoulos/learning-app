@@ -40,7 +40,7 @@ export class ToolsService {
               toolsArray.push( { ...responseData[key], id:key })
         return toolsArray;
         })
-      )
+      );
   }
 
   //* lesson utilities

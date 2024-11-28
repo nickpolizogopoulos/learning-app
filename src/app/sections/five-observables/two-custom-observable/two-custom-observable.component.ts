@@ -29,28 +29,36 @@ export class TwoCustomObservableComponent implements OnDestroy {
     const kmObservable = Observable.create(
       (observer: Observer<number>) => {
       let count:number = 0;
-      setInterval( () => {
-        observer.next(count);
-        count++
-      }, 123)
+      setInterval( () =>
+        {
+          observer.next(count);
+          count++
+        },
+        123
+      );
     });
 
     const secObservable = Observable.create(
       (observer:Observer<number>) => {
       let count:number = 0;
-      setInterval( () => {
-        observer.next(count);
-        count++
-      }, 1000);
+      setInterval( () =>
+        {
+          observer.next(count);
+          count++
+        },
+        1000
+      );
     });
 
-    this.kmSubscription = kmObservable.subscribe({
-      next: (data: number) => this.kilometers = data
-    });
+    this.kmSubscription = kmObservable
+      .subscribe({
+        next: (data: number) => this.kilometers = data
+      });
 
-    this.secSubscription = secObservable.subscribe({
-      next: (data: number) => this.seconds = data
-    });
+    this.secSubscription = secObservable
+      .subscribe({
+        next: (data: number) => this.seconds = data
+      });
   }
 
   onStop(): void {

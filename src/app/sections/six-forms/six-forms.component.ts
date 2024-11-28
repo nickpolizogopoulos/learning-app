@@ -13,8 +13,8 @@ import { Component } from '@angular/core';
     </h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
-          <app-one-template-driven-form />
-          <app-two-reactive-form />
+        <app-one-template-driven-form />
+        <app-two-reactive-form />
       </div>
     </section>
   

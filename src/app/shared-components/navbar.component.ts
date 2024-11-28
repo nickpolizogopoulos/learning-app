@@ -92,9 +92,9 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.angularSections = this.sections.getSections();
-    this.angularProjects = this.sections.getProjects();
-    this.externalLinks = this.sections.getLinks();
+    this.angularSections = this.sections.sections;
+    this.angularProjects = this.sections.projects;
+    this.externalLinks = this.sections.links;
   }
 
   angularSections: SectionsAndProjects[] = [];

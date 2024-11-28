@@ -1,4 +1,7 @@
-import { Component, computed } from '@angular/core';
+import {
+  Component,
+  signal
+} from '@angular/core';
 
 @Component({
   selector: 'footer[appFooter]',
@@ -10,14 +13,14 @@ import { Component, computed } from '@angular/core';
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
       </svg>
-        An 
-        <a class="angular nodecor" href="https://angular.io/" target="_blank">
-          Angular
-        </a>
-        Application by 
-        <a class="inherit nodecor" href="https://nick-polizogopoulos.web.app" target="_blank">
-          Nick Polizogopoulos
-        </a>.
+      An 
+      <a class="angular nodecor" href="https://angular.io/" target="_blank">
+        Angular
+      </a>
+      Application by 
+      <a class="inherit nodecor" href="https://nick-polizogopoulos.web.app" target="_blank">
+        Nick Polizogopoulos
+      </a>.
     </p>
   
   `,
@@ -31,6 +34,6 @@ import { Component, computed } from '@angular/core';
 })
 export class FooterComponent {
 
-    footerDate = computed( () => new Date().getFullYear() );
+    footerDate = signal(new Date().getFullYear());
     
 }

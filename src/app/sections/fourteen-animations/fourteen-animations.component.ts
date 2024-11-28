@@ -14,8 +14,8 @@ import { Component } from '@angular/core';
     <h2 [@title]>Animations - 2 Lessons.</h2>
     <section class="container-fluid">
       <div class="row mt-4 pt-4 d-flex justify-content-around">
-          <app-one-basic-animation [@first] />
-          <app-two-void-state />
+        <app-one-basic-animation [@first] />
+        <app-two-void-state />
       </div>
     </section>
   

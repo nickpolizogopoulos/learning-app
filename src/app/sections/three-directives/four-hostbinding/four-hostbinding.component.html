@@ -9,9 +9,12 @@
 <div *ngIf="!btnDisabled" style="height: 30px;"></div>
 <div class="mt-4">
     <div *ngIf="!buttonClicked else caseTwo" class="col d-flex justify-content-center">
-        <button (click)="onClick()"
+        <button 
+            (click)="onClick()"
             [ngClass]="btnDisabled ? 'btn-outline-success' : 'btn-success'" 
-            class="btn rounded-1" [disabled]="btnDisabled">{{ btnDisabled ? 'button' : 'Click me!' }}
+            class="btn rounded-1" [disabled]="btnDisabled"
+        >
+            {{ btnDisabled ? 'button' : 'Click me!' }}
         </button>
     </div>
     <ng-template #caseTwo>

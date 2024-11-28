@@ -18,14 +18,14 @@ import { lessonsHostClasses } from 'src/app/shared/lessons-host-classes';
     >
 
     <p *ngIf="isExpanded" class="lead">{{ text | shorten: textLength }}
-        <span *ngIf="text.length > textLength">
-            <span *ngIf="isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read more ]</span>
-            <span *ngIf="!isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read less ]</span>
-        </span>
-    </p>
-    <p *ngIf="!isExpanded" class="lead">{{ text }}
+      <span *ngIf="text.length > textLength">
         <span *ngIf="isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read more ]</span>
         <span *ngIf="!isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read less ]</span>
+      </span>
+    </p>
+    <p *ngIf="!isExpanded" class="lead">{{ text }}
+      <span *ngIf="isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read more ]</span>
+      <span *ngIf="!isExpanded" (click)="onMoreLessSelect()" class="readMoreLess cursor-pointer">[ Read less ]</span>
     </p>
   
   `,

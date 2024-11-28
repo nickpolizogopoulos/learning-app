@@ -81,7 +81,7 @@ export class FizzBuzzComponent {
     this.result = undefined;
     setTimeout(() => {
         this.spinnerLoading = false;
-        this.randomNumber = Math.floor(Math.random() * 5000)
+        this.randomNumber = Math.floor(Math.random() * 5000);
       },
       500
     ); 
@@ -157,4 +157,5 @@ export class FizzBuzzComponent {
     this.spinnerLoading = false;
     this.emptyArrays();
   }
+  
 }

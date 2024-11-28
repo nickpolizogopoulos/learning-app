@@ -49,18 +49,18 @@ export class ThreeErrorHandlingComponent implements OnInit {
   onAddTodo( newItem: Todo ): void {
     this.isFetching = true;
     this.http
-    .post <{[key: string]: Todo}> (this.url, newItem)
-    .subscribe({
-      next: () => {
-        this.isFetching = false;
-        this.fetchTodos();
-      },
-      error: () => {
-        this.isFetching = false;
-        this.errorTitle = `You have reached the today's limit!`
-        this.error = 'You are not allowed to add new to-do items!'
-      }
-    });
+      .post <{[key: string]: Todo}> (this.url, newItem)
+      .subscribe({
+        next: () => {
+          this.isFetching = false;
+          this.fetchTodos();
+        },
+        error: () => {
+          this.isFetching = false;
+          this.errorTitle = `You have reached the today's limit!`
+          this.error = 'You are not allowed to add new to-do items!'
+        }
+      });
     
     this.form!.reset();
   }
@@ -83,7 +83,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
           this.isFetching = false;
           this.todoList = todos;
         }
-      })
+      });
   }
 
   onSingleTodoDelete( id: Todo['id'] ): void {
@@ -101,7 +101,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
           this.errorTitle = `Access denied!`
           this.error = 'You are not allowed to delete existing todos!'
         }
-      })
+      });
   }
 
   onClearList(): void {
@@ -119,7 +119,7 @@ export class ThreeErrorHandlingComponent implements OnInit {
           this.errorTitle = `Access denied!`
           this.error = 'You are not allowed to clear the todo list!'
         }
-      })
+      });
   }
 
   onCloseAlert(): void {

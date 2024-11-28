@@ -79,7 +79,7 @@ export class TwoPostRequestComponent implements OnInit {
           this.spinner = false;
           this.contacts = contacts;
         }
-      })
+      });
   }
 
   clearList(): void {
@@ -105,44 +105,48 @@ export class TwoPostRequestComponent implements OnInit {
 
   addFourDummyContacts(): void {
     this.dummyText = false;
-    this.http.post(this.url, 
+    this.http.post(
+      this.url, 
       {
         name: 'Nick P.',
         phone: '+30 6900000007'
       }
-      )
-      .subscribe({
-        next: () => this.fetchList()
-      });
+    )
+    .subscribe({
+      next: () => this.fetchList()
+    });
 
-    this.http.post(this.url, 
+    this.http.post(
+      this.url, 
       {
         name: 'Jelly M.',
         phone: '+30 6900000004'
       }
-      )
-      .subscribe({
-        next: () => this.fetchList()
-      });
+    )
+    .subscribe({
+      next: () => this.fetchList()
+    });
 
-    this.http.post(this.url, 
+    this.http.post(
+      this.url, 
       {
         name: 'Margo H.',
         phone: '+30 6900000000'
       }
-      )
-      .subscribe({
-        next: () => this.fetchList()
-      });
+    )
+    .subscribe({
+      next: () => this.fetchList()
+    });
 
-    this.http.post(this.url, 
+    this.http.post(
+      this.url, 
       {
         name: 'Alice Q.',
         phone: '+30 6900000000'
       }
-      )
-      .subscribe({
-        next: () => this.fetchList()
-      });
+    )
+    .subscribe({
+      next: () => this.fetchList()
+    });
   }
 }

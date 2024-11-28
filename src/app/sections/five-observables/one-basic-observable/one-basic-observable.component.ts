@@ -25,14 +25,15 @@ export class OneBasicObservableComponent implements OnDestroy {
   winningPrize: boolean = false;
 
   start(): void {
-    this.timer = interval(this.gameModeSpeed).subscribe({ 
-      next: count => {
-        this.runner = count;
-        this.gameIsRunning = true;
-        this.winningPrize = false;
-        this.startPressed = true;
-      }
-    });
+    this.timer = interval(this.gameModeSpeed)
+      .subscribe({ 
+        next: count => {
+          this.runner = count;
+          this.gameIsRunning = true;
+          this.winningPrize = false;
+          this.startPressed = true;
+        }
+      });
   }
 
   stop(): void {

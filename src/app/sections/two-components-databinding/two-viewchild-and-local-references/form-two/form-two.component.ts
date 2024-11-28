@@ -22,8 +22,8 @@ export class FormTwoComponent {
   infoMissingError: boolean = false;
   
   onAddImportant(nameInput: HTMLInputElement): void {
-    if (nameInput.value === '' || 
-      this.itemDescription?.nativeElement.value === '') {
+
+    if (nameInput.value === '' || this.itemDescription?.nativeElement.value === '') {
       this.infoMissingError = true;
       setTimeout(() =>
         this.infoMissingError = false,
@@ -31,7 +31,9 @@ export class FormTwoComponent {
       );
       return;
     }
+
     this.infoMissingError = false;
+    
     this.importantItem.emit({
       name: nameInput.value,
       description: this.itemDescription?.nativeElement.value,

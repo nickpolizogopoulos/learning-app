@@ -38,7 +38,7 @@ export class FiveBindingToDirectivePropertiesComponent {
 
   onIconClick(): void {
     this.extraInstructions = false;
-    this.responseMessage()
+    this.responseMessage();
   }
 
   onFillClick(): void {

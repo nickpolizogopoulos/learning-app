@@ -66,7 +66,8 @@ export class TwoPropertyBindingComponent {
 
   removeData(): void { 
     this.dataArray.pop()
-    if (this.dataArray.length === 0) this.isDisabled = true;
+    if (this.dataArray.length === 0)
+      this.isDisabled = true;
   }
   
   clearArray(): void {

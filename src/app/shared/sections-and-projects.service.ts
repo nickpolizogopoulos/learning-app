@@ -24,16 +24,16 @@ export class SectionsAndProjectsService {
   sectionImage: string = this.getImagePath('angular');
   projectImage: string = this.getImagePath('project');
 
-  getSections(): SectionsAndProjects[] {
-    return this.angularSections.slice();
+  get sections(): SectionsAndProjects[] {
+    return [...this.angularSections];
   }
 
-  getProjects(): SectionsAndProjects[] {
-    return this.angularProjects.slice();
+  get projects(): SectionsAndProjects[] {
+    return [...this.angularProjects];
   }
 
-  getLinks(): ExternalLink[] {
-    return this.externalNavLinks.slice();
+  get links(): ExternalLink[] {
+    return [...this.externalNavLinks];
   }
 
   //**ANGULAR LESSON SECTIONS
@@ -188,7 +188,7 @@ export class SectionsAndProjectsService {
     {
       name: 'Source Code',
       link: 'https://github.com/nickpolizogopoulos/learning-app'
-    },
+    }
   ];
 
 }

@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.homeCards = this.sections.getSections();
-    this.projectCards = this.sections.getProjects();
+    this.homeCards = this.sections.sections;
+    this.projectCards = this.sections.projects;
   }
 
   homeCards: SectionsAndProjects[] = [];

@@ -38,7 +38,7 @@ export class TwoReactiveFormComponent implements OnInit {
     number: 0,
     payment: false,
     notes: []
-  }
+  };
 
   ngOnInit(): void {
     const req = Validators.required;
@@ -85,7 +85,7 @@ export class TwoReactiveFormComponent implements OnInit {
       setTimeout(() =>
         this.alertSuccess = false,
         1600
-      )
+      );
     }
     
     this.detailsData.name = this.orderForm.get('nameReactive')?.value;
@@ -138,10 +138,11 @@ export class TwoReactiveFormComponent implements OnInit {
 
     if (this.forbiddenNames.indexOf(control.value) !== -1)
       return {'nameIsForbidden': true};
-    //in case the type doesnt have the null option.
+
+    //* in case the type doesnt have the null option.
     return null as any;
-    //We can also use this:
-    // return null!; 
+    //* We can also use this:
+    //* return null!; 
   }
 
   // forbiddenNumbersValidator(control:FormControl): {[key:string]:boolean} {

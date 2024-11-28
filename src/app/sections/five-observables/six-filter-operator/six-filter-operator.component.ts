@@ -70,9 +70,10 @@ export class SixFilterOperatorComponent implements OnInit, OnDestroy {
       } )
     )
 
-    this.subscription = operator.subscribe({
-      next: (data: number) => this.fizBuzzNumbers.push(data)
-    })
+    this.subscription = operator
+      .subscribe({
+        next: (data: number) => this.fizBuzzNumbers.push(data)
+      });
   }
 
   onReset(): void {

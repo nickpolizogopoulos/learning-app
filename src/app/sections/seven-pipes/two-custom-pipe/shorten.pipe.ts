@@ -11,7 +11,7 @@ export class ShortenPipe implements PipeTransform {
   transform( value: any, length: number ) { 
 
     return (
-      value.length > length
+          value.length > length
         ? value.substring(0, length) + '... ' 
         : value
     );
