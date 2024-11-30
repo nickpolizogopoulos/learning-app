@@ -12,7 +12,7 @@ import {
   selector: 'header[appHeader]',
   template: `
   
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-xl">
       <div class="container-fluid">
           <a class="navbar-brand ms-5 me-5" routerLink="/">
               <img width="150px" src="../../assets/images/learning-angular-logo.png" alt="logo">
@@ -63,6 +63,18 @@ import {
   
   `,
   styles: `
+
+    .navbar-collapse {
+      @media screen and (max-width: 991px) {
+        margin-top: 20px;
+      }
+    }
+    
+    .navbar-brand {
+      @media screen and (max-width: 991px) {
+        margin: 0 !important;
+      }
+    }
   
     .navbar-custom-colour {
       background-color: rgb(231, 231, 231);

@@ -4,9 +4,9 @@ import {
 } from '@angular/core';
 
 import {
-  SectionsAndProjects,
-  SectionsAndProjectsService
-} from '../shared/sections-and-projects.service';
+  SectionsAndProjectsService,
+  SectionsAndProjects
+} from 'src/app/shared/sections-and-projects.service';
 
 @Component({
   selector: 'app-home',

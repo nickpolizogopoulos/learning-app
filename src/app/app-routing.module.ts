@@ -7,7 +7,7 @@ import {
 
 //* APP PAGES
 import { AboutComponent } from "./pages/about.component";
-import { HomeComponent } from "./home/home.component";
+import { HomeComponent } from "./pages/home/home.component";
 import { PageNotFoundComponent } from "./pages/page-not-found.component";
 
 //* APP SECTIONS

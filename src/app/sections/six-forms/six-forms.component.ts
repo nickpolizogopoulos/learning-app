@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
   
     <h2>Forms - 2 Lessons.
-      <span (click)="onInfoClick()" class="lead cursor-pointer">[ info ]</span>
+      <span (click)="onInfoClick()" class="lead cursor-pointer">{{ information ? '[ close ]' : '[ info ]' }}</span>
       <span *ngIf="information" class="lead">
         Both forms are made for demonstration purposes only. 
         They <u><strong>do not</strong></u> collect, store or send data, anywhere. 
@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
 })
 export class SixFormsComponent {
 
-  information:boolean = false;
+  information: boolean = false;
 
   onInfoClick(): void {
     this.information = !this.information;

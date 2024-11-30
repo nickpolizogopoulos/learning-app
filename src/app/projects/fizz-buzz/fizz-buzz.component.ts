@@ -79,7 +79,8 @@ export class FizzBuzzComponent {
     this.spinnerLoading = true;
     this.randomNumber = undefined;
     this.result = undefined;
-    setTimeout(() => {
+    setTimeout(() =>
+      {
         this.spinnerLoading = false;
         this.randomNumber = Math.floor(Math.random() * 5000);
       },

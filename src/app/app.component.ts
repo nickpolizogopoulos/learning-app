@@ -15,6 +15,10 @@ import { Component } from '@angular/core';
   
     .main-content {
       margin: 40px 40px 0px 40px;
+      
+      @media screen and (max-width: 800px) {
+        margin: 40px 20px 0px 20px;;
+      }
     }
   
   `

@@ -25,15 +25,15 @@ export class SectionsAndProjectsService {
   projectImage: string = this.getImagePath('project');
 
   get sections(): SectionsAndProjects[] {
-    return [...this.angularSections];
+    return [ ...this.angularSections ];
   }
 
   get projects(): SectionsAndProjects[] {
-    return [...this.angularProjects];
+    return [ ...this.angularProjects ];
   }
 
   get links(): ExternalLink[] {
-    return [...this.externalNavLinks];
+    return [ ...this.externalNavLinks ];
   }
 
   //**ANGULAR LESSON SECTIONS

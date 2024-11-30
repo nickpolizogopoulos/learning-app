@@ -30,6 +30,8 @@ import { Component } from '@angular/core';
                 <span class="firebase">Firebase</span>
             </a>
             API for the HTTP section and deployment.
+        </p>
+        <p>
             The main focus was of course on
             <a  class="nodecor"
                 href="https://angular.io/"
@@ -90,12 +92,16 @@ import { Component } from '@angular/core';
   
     .explanation {
         font-size: 16px;
-        margin: 45px 0px 45px 30px;
+        margin: 45px 0 45px 30px;
         border-left: 2px solid rgba(36, 54, 99, 0.6);
-        padding: 5px 0px 5px 15px;
+        padding: 5px 0 5px 15px;
         
         & p {
             margin-bottom: 5px;
+        }
+        
+        @media screen and (max-width: 585px) {
+            margin: 45px 0 45px 0;
         }
     }
 
