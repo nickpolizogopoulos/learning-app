@@ -5,6 +5,8 @@ import {
     Routes
 } from "@angular/router";
 
+import { getTitle } from "./shared/app-title";
+
 //* APP PAGES
 import { AboutComponent } from "./pages/about.component";
 import { HomeComponent } from "./pages/home/home.component";
@@ -24,6 +26,7 @@ import { TenDynamicComponentsComponent } from "./sections/ten-dynamic-components
 import { ElevenStandaloneComponentsComponent } from "./sections/eleven-standalone-components/eleven-standalone-components.component";
 import { TwelveSignalsComponent } from "./sections/twelve-signals/twelve-signals.component";
 import { ThirteenNgrxComponent } from "./sections/thirteen-ngrx/thirteen-ngrx.component";
+import { FourteenAnimationsComponent } from "./sections/fourteen-animations/fourteen-animations.component";
 
 //* APP PROJECTS
 import { ToDoAppComponent } from "./projects/to-do-app/to-do-app.component";
@@ -31,17 +34,12 @@ import { SuperSignatureMakerComponent } from "./projects/super-signature-maker/s
 import { MyShoppingListComponent } from "./projects/my-shopping-list/my-shopping-list.component";
 import { FizzBuzzComponent } from "./projects/fizz-buzz/fizz-buzz.component";
 import { GreekGyroPitaOrderMakerComponent } from "./projects/greek-gyro-pita-order-maker/greek-gyro-pita-order-maker.component";
-import { FourteenAnimationsComponent } from "./sections/fourteen-animations/fourteen-animations.component";
 
-const appTitle: string = 'Learning Angular - ';
-
-const getTitle = ( pageTitle: string ): string => {
-    return appTitle + pageTitle;
+export const extraOptions: ExtraOptions = {
+    scrollPositionRestoration: 'enabled'
 };
 
-const appRoutes: Routes = [
-
-    //* SECTIONS -------------------------------
+const routes: Routes = [
     {
         path: '',
         title: 'Learning Angular 2+',
@@ -52,7 +50,9 @@ const appRoutes: Routes = [
         title: getTitle('About'), 
         component: AboutComponent 
     },
-    
+
+    //* SECTIONS =======================================================
+
     { 
         path: 'the-basics',
         title: getTitle('The Basics'), 
@@ -92,7 +92,7 @@ const appRoutes: Routes = [
         path: 'http-requests',
         title: getTitle('Http Requests'),
         component: EightHttpRequestsComponent
-     },
+    },
     { 
         path: 'authentication-route-protection',
         title: getTitle('Authentication'),
@@ -123,12 +123,12 @@ const appRoutes: Routes = [
         title: getTitle('Animations'),
         component: FourteenAnimationsComponent 
     },
-  
+
     //* PROJECTS -------------------------------
     { 
         path: 'project-to-do-application', 
         title: getTitle('To-Do App'),
-         component: ToDoAppComponent 
+        component: ToDoAppComponent 
     },
     { 
         path: 'project-super-signature-maker',
@@ -150,7 +150,7 @@ const appRoutes: Routes = [
         title: getTitle('Greek Pita Gyro Order Maker'),
         component: GreekGyroPitaOrderMakerComponent 
     },
-    
+
     //* 404 -------------------------------
     { 
         path: '404', 
@@ -163,21 +163,10 @@ const appRoutes: Routes = [
         path: '**', 
         redirectTo: '404'
     }
-  ];
-
-  const extraOptions: ExtraOptions = {
-    scrollPositionRestoration: 'enabled'
-  }
+];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(
-            appRoutes,
-            extraOptions
-        )
-    ],
-    exports: [
-        RouterModule
-    ]
+    imports: [RouterModule.forRoot( routes )],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}

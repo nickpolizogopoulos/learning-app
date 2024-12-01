@@ -2,11 +2,13 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+
 import {
-  SectionsAndProjectsService,
   type ExternalLink,
-  type SectionsAndProjects
-} from '../shared/sections-and-projects.service';
+  type SectionsAndProjects,
+  SectionsAndProjectsService
+} from '../sections-and-projects.service';
+
 
 @Component({
   selector: 'header[appHeader]',

@@ -37,16 +37,16 @@ export class TwoProgrammaticallyComponent implements OnDestroy {
   formHidden: boolean = false;
   starPlaying?: boolean;
   counter: number = 0;
-  private runAwaySubscription?: Subscription;
-  @ViewChild('form') form?: NgForm;
   runAwayWindow: boolean = false;
   emptyStars: boolean = false;
   runningAway: boolean = false;
   thiefName: string = '';
   alertMessage: string = 'Guess you dodged a bullet there.'
+  @ViewChild('form') form?: NgForm;
   @ViewChild(PlaceholderDirective, { static: false }) alertHost!: PlaceholderDirective; 
+  private runAwaySubscription?: Subscription;
   private alertSubscription?: Subscription;
-
+  
   pullKnife(): void {
     this.knifePulledOut = true;
   }
